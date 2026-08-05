@@ -35,6 +35,16 @@ rather than benchmarks of practice. And it makes the results
 with an executable certificate, replaying every identity and every
 counterexample in exact arithmetic, that anyone can re-run.
 
+The first releases are the foundations: complete, exact answers on
+deliberately small, fully declared classes. The arc of the program
+runs outward from there, extending the theory toward the systems
+practitioners actually run, including noisy observation, tolerance,
+and stochastic prediction, and converting theorems into instruments:
+reference points that learned models are scored against, and
+certification that a deployed simulation or digital twin can carry.
+The intended end state is that "certified" becomes something a
+simulation can be, with mathematics behind the word.
+
 ## Releases
 
 Papers are released under frozen tags containing the submitted
