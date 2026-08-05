@@ -46,13 +46,20 @@ mean an exact, checkable claim, not a label.
 
 ## How this repository works
 
-Work arrives here as releases: frozen tags, each containing the
-submitted sources, compiled PDFs, executable certificates with their
-canonical artifacts, and a hash manifest tying everything together.
-Released tags are never rewritten; corrections arrive as new releases
-that name what they correct. Between releases, the repository carries
-the general documents indexed below. The release index lives in
-[RELEASES.md](RELEASES.md); the first releases are in preparation.
+Every paper the program publishes lands here as a release. A release
+is a frozen tag that carries everything needed to verify the work:
+the paper and supplement sources exactly as submitted, the compiled
+PDFs, the certificate programs together with the canonical artifacts
+they produce, and a manifest listing the SHA-256 hash of every file.
+Once tagged, a release never changes. If we find an error, or someone
+shows us one, we publish a new release that states what it corrects,
+and the flawed tag stays in place as part of the record.
+
+The documents at the top level, indexed below, set the standing
+rules: how to verify a release, why no trust is required, how to
+contribute, and who runs the program. [RELEASES.md](RELEASES.md)
+indexes every release with its hashes; the first releases are in
+preparation.
 
 ## Start here
 
