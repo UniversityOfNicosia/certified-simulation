@@ -7,24 +7,33 @@ digital twins.**
 ![Artifacts: CC BY 4.0](https://img.shields.io/badge/artifacts-CC%20BY%204.0-green)
 ![Manuscripts: reserved](https://img.shields.io/badge/manuscripts-%C2%A9%20the%20authors-lightgrey)
 
-This repository is the public release record of the Certified
-Simulation research program at the University of Nicosia. The program
-establishes exact information-theoretic limits for coarse-grained
-prediction: when a reduced account of a finer computation determines
-its own future, what such an account must retain in order to do so,
-and the exact best performance that any consumer of the same retained
-data can achieve. Each result ships with machine-checked certificates
-that replay every identity and every counterexample in exact
-arithmetic.
+Certified Simulation is a joint initiative of [UNIC
+Evolve](ABOUT.md#unic-evolve) and the [Institute for Advanced
+Modelling and Simulation](ABOUT.md#institute-for-advanced-modelling-and-simulation)
+at the University of Nicosia. This repository is its public release
+record.
 
-Two ideas organize the program. First, fidelity claims about
-simulations, learned surrogates, and digital twins should be measured
-against proved reference points rather than against other models.
-These reference points are theorems, not benchmarks of practice:
-exact ceilings on success, equivalently floors on mismatch. Second,
-such claims should be *certifiable*. Every quantitative statement
-published here is paired with an executable certificate that anyone
-can re-run.
+Simulation is becoming infrastructure. Learned surrogates stand in
+for solvers, foundation models act as simulators, and digital twins
+of machines, buildings, and increasingly people inform decisions that
+used to require physical tests or expert judgment. The assurance
+practice around these systems has not kept pace: models are validated
+against other models, held-out data, and expert credibility reviews.
+All of that answers how well a particular model did. None of it
+answers the prior question: what could any model know, from the data
+this system actually retains, and where is the line beyond which no
+training, architecture, or scale can help?
+
+That question has exact answers, and this program proves them. For
+declared classes of coarse-grained computation it establishes when a
+reduced account of a finer process determines its own future, what
+such an account must retain in order to do so, and the exact best
+performance any consumer of the same retained data can achieve:
+ceilings on success, equivalently floors on mismatch, as theorems
+rather than benchmarks of practice. And it makes the results
+*certifiable*: every quantitative statement published here is paired
+with an executable certificate, replaying every identity and every
+counterexample in exact arithmetic, that anyone can re-run.
 
 ## Releases
 
