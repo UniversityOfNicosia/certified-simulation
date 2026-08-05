@@ -10,39 +10,38 @@ digital twins.**
 Certified Simulation is a joint initiative of [UNIC
 Evolve](ABOUT.md#unic-evolve) and the [Institute for Advanced
 Modelling and Simulation](ABOUT.md#institute-for-advanced-modelling-and-simulation)
-at the University of Nicosia. This repository is its public release
+at the University of Nicosia; this repository is its public release
 record.
 
 Simulation is becoming infrastructure. Learned surrogates stand in
 for solvers, foundation models act as simulators, and digital twins
 of machines, buildings, and increasingly people inform decisions that
-used to require physical tests or expert judgment. The assurance
-practice around these systems has not kept pace: models are validated
-against other models, held-out data, and expert credibility reviews.
-All of that answers how well a particular model did. None of it
-answers the prior question: what could any model know, from the data
-this system actually retains, and where is the line beyond which no
-training, architecture, or scale can help?
+once required physical tests or expert judgment. Assurance practice
+has not kept pace: models are validated against other models, against
+held-out data, and through expert review. All of this answers how
+well a particular model did. None of it answers the prior question:
+what could any model know from the data a system actually retains,
+and where is the line past which no training, architecture, or scale
+can help?
 
-That question has exact answers, and this program proves them. For
-declared classes of coarse-grained computation it establishes when a
-reduced account of a finer process determines its own future, what
-such an account must retain in order to do so, and the exact best
-performance any consumer of the same retained data can achieve:
-ceilings on success, equivalently floors on mismatch, as theorems
-rather than benchmarks of practice. And it makes the results
-*certifiable*: every quantitative statement published here is paired
-with an executable certificate, replaying every identity and every
-counterexample in exact arithmetic, that anyone can re-run.
+Questions of this kind have exact answers, and this program is
+proving them, class by class. For declared classes of coarse-grained
+computation it establishes when a reduced account of a finer process
+determines its own future, what the account must retain to do so, and
+the best performance any consumer of the same retained data can
+achieve: exact ceilings on success, equivalently floors on mismatch,
+theorems rather than benchmarks of practice. Each result is also
+*certifiable*: every quantitative statement published here comes
+paired with an executable certificate that replays every identity and
+every counterexample in exact arithmetic, and that anyone can re-run.
 
-The first releases are the foundations: complete, exact answers on
-deliberately small, fully declared classes. The arc of the program
-runs outward from there, extending the theory toward the systems
-practitioners actually run, including noisy observation, tolerance,
-and stochastic prediction, and converting theorems into instruments:
-reference points that learned models are scored against, and
-certification that a deployed simulation or digital twin can carry.
-The intended end state is that "certified" becomes something a
+The first releases are foundations: complete, exact answers on
+deliberately small, fully declared classes. The arc runs outward from
+there, toward the systems practitioners actually run (noisy
+observation, tolerance, stochastic prediction) and from theorems to
+instruments: reference points that learned models are scored against,
+and certification that a deployed simulation or digital twin can
+carry. The intended end state is that "certified" becomes something a
 simulation can be, with mathematics behind the word.
 
 ## Releases
