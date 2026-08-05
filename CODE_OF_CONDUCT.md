@@ -16,7 +16,7 @@ that matter most here:
   ideal contributions; speculation about competence or motive is
   not.
 - **Bring evidence.** Replication disputes are settled by commands,
-  environments, and hashes — the same standard the releases hold
+  environments, and hashes, the same standard the releases hold
   themselves to.
 - **Assume good faith**, especially across fields: this repository
   sits between numerical analysis, machine learning, and
@@ -26,15 +26,15 @@ that matter most here:
 
 ## Scope
 
-Applies to all interaction in this repository — issues, discussions,
+Applies to all interaction in this repository: issues, discussions,
 and any future forums linked from it.
 
 ## Reporting and enforcement
 
 Report unacceptable behavior privately via the repository's
-**Security → Report a vulnerability** flow (it reaches the
-maintainers directly and discreetly; conduct reports are welcome
-through it even though the name says vulnerability). Reports are
+**Security → Report a vulnerability** flow. It reaches the
+maintainers directly and discreetly, and conduct reports are welcome
+through it even though the name says vulnerability. Reports are
 reviewed promptly and handled with discretion; consequences follow
 the Covenant's enforcement guidelines, from a private warning up to
 a permanent interaction ban.

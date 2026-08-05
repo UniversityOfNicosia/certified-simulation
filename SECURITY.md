@@ -13,13 +13,13 @@ use, and handles no credentials.
 | **How** | GitHub private vulnerability reporting: **Security → Report a vulnerability** on this repository |
 | **Please avoid** | Public issues for anything sensitive |
 
-Reports are acknowledged and handled with discretion; confirmed
+Reports are acknowledged and handled with discretion. Confirmed
 problems are addressed in a subsequent tagged release with the fix
-noted (released tags themselves are never rewritten).
+noted; released tags themselves are never rewritten.
 
 ## Out of scope
 
 Suspected **mathematical or reproducibility errors** are welcome but
-are not security reports — please file a public issue instead, per
+are not security reports. Please file a public issue instead, per
 [CONTRIBUTING.md](CONTRIBUTING.md); they are triaged through the
 corrections process.
