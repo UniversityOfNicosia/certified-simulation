@@ -3,7 +3,7 @@
 ## University of Nicosia
 
 The University of Nicosia (UNIC) is a comprehensive research
-university and the largest university in Cyprus, ranked among the top
+university with campuses in Cyprus and Greece, ranked among the top
 501–600 universities worldwide by Times Higher Education. It was the
 first university to accept Bitcoin for tuition and to offer an
 accredited degree in digital currency. Its research today centers on
@@ -12,12 +12,17 @@ with particular focus on health span and longevity.
 
 ## UNIC Athens
 
-UNIC Athens is the university's base in Greece, located within
-[The Ellinikon](https://theellinikon.com.gr/en/), Europe's largest
-urban redevelopment, where the campus is planned to expand across an
-additional 150,000 square meters. It is designed as an instrumented
-environment in which education, research, residential life,
-hospitality, and food service operate as one system.
+[UNIC Athens](https://www.unic.ac.cy/athens/) is the university's
+branch campus in Greece, opened in 2025 at Elliniko and growing
+within [The Ellinikon](https://theellinikon.com.gr/en/), Europe's
+largest urban regeneration project. It hosts programs spanning
+medicine, law, pharmacy, psychology, business, and computer and data
+science, with dozens of specialised laboratories and
+clinical-simulation facilities from the outset, and it is built to
+function as a living laboratory for artificial intelligence,
+robotics, and biotechnology: an instrumented environment in which
+education, research, residential life, hospitality, and food service
+operate as one system.
 
 ## Institute for Advanced Modelling and Simulation
 
