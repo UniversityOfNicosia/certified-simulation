@@ -44,14 +44,15 @@ and certification that a deployed simulation or digital twin can
 carry. The intended end state is that "certified" becomes something a
 simulation can be, with mathematics behind the word.
 
-## Releases
+## How this repository works
 
-Papers are released under frozen tags containing the submitted
-sources, compiled PDFs, executable certificates with their canonical
-artifacts, and a hash manifest. Released tags are never rewritten;
-corrections arrive as new releases that name what they correct. The
-first releases are in preparation. The index lives in
-[RELEASES.md](RELEASES.md).
+Work arrives here as releases: frozen tags, each containing the
+submitted sources, compiled PDFs, executable certificates with their
+canonical artifacts, and a hash manifest tying everything together.
+Released tags are never rewritten; corrections arrive as new releases
+that name what they correct. Between releases, the repository carries
+the general documents indexed below. The release index lives in
+[RELEASES.md](RELEASES.md); the first releases are in preparation.
 
 ## Start here
 
