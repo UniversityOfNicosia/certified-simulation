@@ -36,13 +36,13 @@ paired with an executable certificate that replays every identity and
 every counterexample in exact arithmetic, and that anyone can re-run.
 
 The first releases are foundations: complete, exact answers on
-deliberately small, fully declared classes. The arc runs outward from
-there, toward the systems practitioners actually run (noisy
-observation, tolerance, stochastic prediction) and from theorems to
-instruments: reference points that learned models are scored against,
-and certification that a deployed simulation or digital twin can
-carry. The intended end state is that "certified" becomes something a
-simulation can be, with mathematics behind the word.
+deliberately small, fully declared classes. The work that follows
+extends the theory to more realistic settings, among them noisy
+observation, tolerance, and stochastic prediction, and builds
+practical tools on top: benchmarks that score learned models against
+proved limits, and in time a certification that a deployed simulation
+or digital twin can pass. The goal is for a certified simulation to
+mean an exact, checkable claim, not a label.
 
 ## How this repository works
 
