@@ -4,11 +4,16 @@
 
 The University of Nicosia (UNIC) is a comprehensive research
 university with campuses in Cyprus and Greece, ranked among the top
-501–600 universities worldwide by Times Higher Education. It was the
-first university to accept Bitcoin for tuition and to offer an
-accredited degree in digital currency. Its research today centers on
-the application of artificial intelligence to the human condition,
-with particular focus on health span and longevity.
+501–600 universities worldwide by Times Higher Education. Its schools
+span medicine, law, business, education, engineering, and the
+humanities and social sciences, serving students on campus and
+online. From Nicosia, the capital of Cyprus, the university has grown
+into an international institution, with graduates and partnerships
+across Europe, the Middle East, and beyond. It was the first
+university to accept Bitcoin for tuition and to offer an accredited
+degree in digital currency, and its research today centers on the
+application of artificial intelligence to the human condition, with
+particular focus on health span and longevity.
 
 ## UNIC Athens
 
@@ -32,22 +37,21 @@ Drikakis. Its research spans computational fluid dynamics, high-speed
 flows, AI for scientific computing, acoustics, and multiscale
 modelling, with applications from transport and defense to medicine,
 and collaborations including the U.S. Air Force Research Laboratory.
-Professor Drikakis, a Fellow of the Royal Aeronautical Society and
-twice recipient of the William Penney Fellowship for contributions to
-compressible fluid dynamics, has published over 400 papers and
-graduated 45 doctoral students who hold positions in academia and
-industry worldwide.
+Professor Drikakis is a Fellow of the Royal Aeronautical Society,
+with over 400 published papers and 45 graduated doctoral students.
 
 ## UNIC Evolve
 
 UNIC Evolve is the university's flagship interdisciplinary initiative
-on artificial intelligence for human health span and longevity. It
-builds continuously updated digital twins of humans, food, buildings,
-and the environment, and the operating layer that turns their
-measurements into everyday services for health and living, working in
-free-living conditions rather than laboratories, with the UNIC Athens
-district as its primary environment. Its programs are funded and
-built to reach deployment.
+on artificial intelligence for human health span and longevity. Its
+goal for the coming decade is to build continuously updated digital
+twins of humans, food, buildings, and the environment, together with
+the operating layer that turns their measurements into everyday
+services for health and living, working in free-living conditions
+rather than laboratories, with the UNIC Athens district as its
+primary environment. The first building blocks, including the
+university's [Evolve AI platform](https://evolve.unic.ac.cy/), are in
+operation.
 
 ## Certified Simulation
 

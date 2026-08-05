@@ -83,11 +83,11 @@ data under CC BY 4.0, manuscript sources and PDFs © the authors.
 
 ## Contributing
 
-No pull requests, by design: releases are byte-anchored to reviewed,
-frozen artifacts. Replication reports, independent reimplementations,
-corrections, and questions are welcome as issues.
-[CONTRIBUTING.md](CONTRIBUTING.md) explains what makes each one
-useful.
+We take no pull requests: releases are byte-anchored to reviewed,
+frozen artifacts, and an outside commit would break the anchoring.
+Everything else comes in through issues, from replication reports to
+corrections and questions. [CONTRIBUTING.md](CONTRIBUTING.md) covers
+the details, and Working with us, above, covers collaboration.
 
 ## Working with us
 
