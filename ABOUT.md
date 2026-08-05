@@ -19,8 +19,8 @@ particular focus on health span and longevity.
 ## UNIC Athens
 
 [UNIC Athens](https://www.unic.ac.cy/athens/) is the university's
-branch campus in Greece, opened in 2025 at Elliniko and growing
-within [The Ellinikon](https://theellinikon.com.gr/en/), Europe's
+branch campus in Greece, opened in 2025 and growing within
+[The Ellinikon](https://theellinikon.com.gr/en/), Europe's
 largest urban regeneration project. It hosts programs spanning
 medicine, law, pharmacy, psychology, business, and computer and data
 science, with dozens of specialised laboratories and
