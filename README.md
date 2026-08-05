@@ -87,7 +87,7 @@ We take no pull requests: releases are byte-anchored to reviewed,
 frozen artifacts, and an outside commit would break the anchoring.
 Everything else comes in through issues, from replication reports to
 corrections and questions. [CONTRIBUTING.md](CONTRIBUTING.md) covers
-the details, and Working with us, above, covers collaboration.
+the details, and Working with us, below, covers collaboration.
 
 ## Working with us
 
