@@ -32,6 +32,11 @@ Drikakis. Its research spans computational fluid dynamics, high-speed
 flows, AI for scientific computing, acoustics, and multiscale
 modelling, with applications from transport and defense to medicine,
 and collaborations including the U.S. Air Force Research Laboratory.
+Professor Drikakis, a Fellow of the Royal Aeronautical Society and
+twice recipient of the William Penney Fellowship for contributions to
+compressible fluid dynamics, has published over 400 papers and
+graduated 45 doctoral students who hold positions in academia and
+industry worldwide.
 
 ## UNIC Evolve
 
