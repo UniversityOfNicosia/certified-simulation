@@ -30,7 +30,7 @@ computation it establishes when a reduced account of a finer process
 determines its own future, what the account must retain to do so, and
 the best performance any consumer of the same retained data can
 achieve: exact ceilings on success, equivalently floors on mismatch,
-theorems rather than benchmarks of practice. Each result is also
+proved as theorems. Each result is also
 *certifiable*: every quantitative statement published here comes
 paired with an executable certificate that replays every identity and
 every counterexample in exact arithmetic, and that anyone can re-run.
@@ -41,8 +41,9 @@ extends the theory to more realistic settings, among them noisy
 observation, tolerance, and stochastic prediction, and builds
 practical tools on top: benchmarks that score learned models against
 proved limits, and in time a certification that a deployed simulation
-or digital twin can pass. The goal is for a certified simulation to
-mean an exact, checkable claim, not a label.
+or digital twin can pass. The goal is for a certified simulation
+to carry mathematical meaning: specific theorems, and a certificate
+anyone can re-run.
 
 ## How this repository works
 
