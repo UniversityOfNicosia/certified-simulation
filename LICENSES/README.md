@@ -14,6 +14,7 @@ directory.
 | **Code** (certifiers, tests, tooling) | Apache License 2.0 | [`Apache-2.0.txt`](Apache-2.0.txt) |
 | **Certificate artifacts and data** (`artifacts/` directories in releases) | Creative Commons Attribution 4.0 International | [`CC-BY-4.0.txt`](CC-BY-4.0.txt), [canonical](https://creativecommons.org/licenses/by/4.0/legalcode) |
 | **Manuscript sources and PDFs** | © the authors, all rights reserved¹ | n/a |
+| **Numerical-experiments code** (`papers/*/experiments/`) | MIT, by the directory's author | `LICENSE` file in each such directory |
 
 ¹ Except as licensed for distribution through arXiv and the relevant
 journal publishing agreements.
