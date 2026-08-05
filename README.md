@@ -46,12 +46,12 @@ documented in [PROVENANCE.md](PROVENANCE.md).
 
 ## Licensing
 
-Three components, three terms:
+Three components, three terms — [LICENSES/](LICENSES/README.md) is
+the authority:
 
-- **Code** (certifiers, tests, tooling): Apache License 2.0
-  ([LICENSE](LICENSE)).
+- **Code** (certifiers, tests, tooling): Apache License 2.0.
 - **Certificate artifacts and data**: Creative Commons Attribution
-  4.0 International ([LICENSES/](LICENSES/)).
+  4.0 International.
 - **Manuscript sources and PDFs**: © the authors, all rights
   reserved; preprints are distributed through arXiv under its
   license, and journal versions under the terms of the publishing
