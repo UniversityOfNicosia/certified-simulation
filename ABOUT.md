@@ -2,24 +2,55 @@
 
 ## University of Nicosia
 
-The [University of Nicosia](https://www.unic.ac.cy/) is the largest
-university in Cyprus, with research programs centered on how
-artificial intelligence and the underlying technologies of the
-Fourth Industrial Revolution can be used to improve the human
-condition.
+The University of Nicosia (UNIC) is a comprehensive research
+university and the largest university in Cyprus, ranked among the top
+501–600 universities worldwide by Times Higher Education. It was the
+first university to accept Bitcoin for tuition and to offer an
+accredited degree in digital currency. Its research today centers on
+the application of artificial intelligence to the human condition,
+with particular focus on health span and longevity.
+
+## UNIC Athens
+
+UNIC Athens is the university's base in Greece, located within
+[The Ellinikon](https://theellinikon.com.gr/en/), Europe's largest
+urban redevelopment, where the campus is planned to expand across an
+additional 150,000 square meters. It is designed as an instrumented
+environment in which education, research, residential life,
+hospitality, and food service operate as one system.
 
 ## Institute for Advanced Modelling and Simulation
 
-The Institute for Advanced Modelling and Simulation (IAMS) is the
-university's institute for computational science, modelling, and
-simulation, and the home of the mathematical research released here.
+[IAMS](https://www.unic.ac.cy/iams/) is the university's home for
+computational science, led by its President, Professor Dimitris
+Drikakis. Its research spans computational fluid dynamics, high-speed
+flows, AI for scientific computing, acoustics, and multiscale
+modelling, with applications from transport and defense to medicine,
+and collaborations including the U.S. Air Force Research Laboratory.
 
 ## UNIC Evolve
 
-UNIC Evolve is the university's interdisciplinary research and
-innovation initiative on the opportunities and risks of the
-approaching emergence of artificial superintelligence, and operates
-[Evolve](https://evolve.unic.ac.cy/), the university's AI platform.
-The Certified Simulation program is conducted under UNIC Evolve's
-research workflow, with the verification chain documented in
-[PROVENANCE.md](PROVENANCE.md).
+UNIC Evolve is the university's flagship interdisciplinary initiative
+on artificial intelligence for human health span and longevity. It
+builds continuously updated digital twins of humans, food, buildings,
+and the environment, and the operating layer that turns their
+measurements into everyday services for health and living, working in
+free-living conditions rather than laboratories, with the UNIC Athens
+district as its primary environment. Its programs are funded and
+built to reach deployment.
+
+## Certified Simulation
+
+Certified Simulation is a joint initiative of UNIC Evolve and IAMS.
+The twins at UNIC Evolve's core are simulations whose outputs will
+inform real decisions about people's food, environments, and health;
+such systems cannot merely perform well. Their predictive claims must
+be checkable, and the limits of what they can know from the data they
+retain must be established rather than assumed. This program builds
+that foundation: exact mathematical limits for coarse-grained
+prediction and executable certificates for every quantitative claim,
+with IAMS contributing the modelling and simulation depth and UNIC
+Evolve the deployment context and route to practice. The foundations
+are not specific to UNIC Evolve: the limits and certificates apply to
+simulations, learned surrogates, and digital twins generally, and are
+released here for exactly that use.
