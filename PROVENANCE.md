@@ -1,56 +1,52 @@
 # Provenance
 
-Every result released here follows one pipeline, and this file states
-it once so the releases can be checked rather than trusted.
+Provenance in this repository means exactly one thing: **every claim
+in a release can be checked from the release itself.** The chain
+below is designed so that validity is established by checking, not by
+trust — in the authors, the institution, or the tools that produced
+the work. Who or what wrote an artifact is irrelevant to whether it
+is correct; the release carries everything needed to decide that.
 
-## The research record
+## The chain
 
-Results are developed in an internal research record in which every
-load-bearing claim has a written derivation, an explicit declared
-scope, and a status ledger. Claims are frozen under content-addressed
-tags before review; frozen records are never edited afterwards.
+**1. Frozen releases.** Each release is an annotated tag and is never
+rewritten. Corrections appear as new releases that name what they
+correct.
 
-## Adversarial two-model review
+**2. Complete identity.** Each release ships a manifest recording the
+SHA-256 hash of every released file — sources, certificates,
+artifacts, and compiled PDFs — together with the exact source commit
+and tree identifiers. Anything you rebuild or regenerate can be
+compared byte for byte.
 
-The program operates an AI-assisted, human-responsible workflow.
-Construction and review are performed by two different AI systems
-from different model families in separated roles: a constructor
-produces derivations, certificates, and manuscript text; an
-independent reviewer examines only frozen, tagged artifacts — never
-conversations — and issues written verdicts with findings. Repairs
-are bounded and re-reviewed; a claim is promoted only on a passing
-verdict, and the review evidence is preserved. The human authors
-check the cited sources, the mathematical arguments, the executable
-evidence, and the final text, and assume responsibility for all
-content, as stated in each paper's acknowledgments.
+**3. Complete proofs.** Every load-bearing theorem is proved in full
+in the released paper and its supplement. The submitted pair is
+self-contained: verifying the mathematics requires nothing outside
+the release.
 
-## Executable certificates
+**4. Executable certificates.** Each quantitative statement is paired
+with a standalone program that re-derives the relevant operators from
+the definitions printed in the paper — deliberately sharing no
+library code with anything else — and replays every certified
+identity, probability law, and counterexample in exact rational
+arithmetic. Certificates emit canonical, byte-stable artifacts, and
+the tests that force regeneration to match ship in the release.
+Agreement is therefore evidence about the mathematics, not about a
+common implementation. Certificates are supplementary evidence; no
+proof relies on them.
 
-Each quantitative statement is paired with a certificate program
-that re-derives the relevant operators from the definitions in the
-paper and replays every identity, every probability law, and every
-counterexample in exact rational arithmetic — no floating point in
-any certified quantity. Certificates emit canonical byte-stable JSON
-artifacts whose regeneration is enforced by a permanent test suite.
-Certificates are supplementary computational evidence: complete
-analytic proofs of every load-bearing theorem are contained in the
-released papers and their supplements, and no proof relies on a
-certificate.
+**5. Import fidelity.** Where a paper composes previously established
+results, an executable audit pins every imported statement to its
+source by content hash and byte-compares the quoted text, so no
+statement can drift from what it cites.
 
-## Import fidelity
+**6. Independent archival.** Each release is deposited with a
+persistent DOI, so the record outlives this hosting platform.
 
-Where a paper composes previously established results, an executable
-audit pins every imported statement to its frozen source record by
-content hash and byte-compares the quoted statements, so that no
-paraphrase can drift from what was reviewed.
+## What this asks of you
 
-## Release anchoring
-
-Each public release tag records, in its manifest and in
-[RELEASES.md](RELEASES.md): the internal frozen tag it mirrors, the
-exact source commit and tree hashes, and SHA-256 hashes of every
-released file, including the compiled PDFs. Releases are archived
-with a persistent DOI. Verifying a release therefore requires no
-access to the internal record: the sources, certificates, and hashes
-in the release are self-contained, and the replay commands in
-[REPRODUCING.md](REPRODUCING.md) regenerate every certified artifact.
+Nothing, except to check: rebuild the PDFs from the released sources,
+replay the certificates, recompute the hashes, and read the proofs.
+[REPRODUCING.md](REPRODUCING.md) gives the commands. The chain holds
+whether the artifacts were produced by a person or a machine — that
+is the point.
