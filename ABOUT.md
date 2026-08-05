@@ -7,9 +7,10 @@ university with campuses in Cyprus and Greece, ranked among the top
 501–600 universities worldwide by Times Higher Education. Its schools
 span medicine, law, business, education, engineering, and the
 humanities and social sciences, serving students on campus and
-online. From Nicosia, the capital of Cyprus, the university has grown
-into an international institution, with graduates and partnerships
-across Europe, the Middle East, and beyond. It was the first
+online. Its research institutes work across computational science,
+medicine, and emerging technologies, participate in large European
+research consortia, and have held roles such as academic lead of the
+European Commission's EU Blockchain Observatory and Forum. It was the first
 university to accept Bitcoin for tuition and to offer an accredited
 degree in digital currency, and its research today centers on the
 application of artificial intelligence to the human condition, with
