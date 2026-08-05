@@ -1,7 +1,11 @@
 # Certified Simulation
 
-Mathematical certification for simulation, learned models, and digital
-twins.
+**Mathematical certification for simulation, learned models, and
+digital twins.**
+
+![Code: Apache-2.0](https://img.shields.io/badge/code-Apache--2.0-blue)
+![Artifacts: CC BY 4.0](https://img.shields.io/badge/artifacts-CC%20BY%204.0-green)
+![Manuscripts: reserved](https://img.shields.io/badge/manuscripts-%C2%A9%20the%20authors-lightgrey)
 
 This repository is the public release record of the Certified
 Simulation research program at the University of Nicosia. The program
@@ -24,41 +28,36 @@ that anyone can re-run.
 
 ## Releases
 
-Papers are released here as they ship, each under a frozen tag
-containing the submitted sources, compiled PDFs, executable
-certificates with their canonical artifacts, and a hash manifest
-tying the release to the program's internal research record. The
-first releases are in preparation; see [RELEASES.md](RELEASES.md)
-for the release index and [REPRODUCING.md](REPRODUCING.md) for
-replay instructions.
+Papers are released under frozen tags containing the submitted
+sources, compiled PDFs, executable certificates with their canonical
+artifacts, and a hash manifest. Released tags are never rewritten;
+corrections arrive as new releases that name what they correct. The
+first releases are in preparation — the index lives in
+[RELEASES.md](RELEASES.md).
 
-## About
+## Start here
 
-This research program is conducted at the **Institute for Advanced
-Modelling and Simulation** and **UNIC Evolve** at the [University of
-Nicosia](https://www.unic.ac.cy/). IAMS is the university's institute
-for computational science and simulation. UNIC Evolve is the
-university's interdisciplinary research and innovation initiative on
-the opportunities and risks of emerging artificial superintelligence;
-the work in this repository is produced under its AI-assisted,
-human-responsible research workflow, with the verification protocol
-documented in [PROVENANCE.md](PROVENANCE.md).
+| If you are… | Read |
+| --- | --- |
+| Checking whether the claims hold | [REPRODUCING.md](REPRODUCING.md) — the five-level verification ladder, from hashing the files to reimplementing the certificates independently |
+| Asking why you should not have to trust us | [PROVENANCE.md](PROVENANCE.md) — the six-link chain that makes every release checkable from its own contents |
+| Replicating, correcting, or building on the work | [CONTRIBUTING.md](CONTRIBUTING.md) — replication reports, independent reimplementation, and the corrections process |
+| Reusing code, data, or text | [LICENSES/](LICENSES/README.md) — three components, three terms |
+| Wondering who conducts this program | [ABOUT.md](ABOUT.md) — the university, the institute, and UNIC Evolve |
+
+Policies: [SECURITY.md](SECURITY.md) ·
+[CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) · [NOTICE](NOTICE)
 
 ## Licensing
 
 Three components, three terms — [LICENSES/](LICENSES/README.md) is
-the authority:
-
-- **Code** (certifiers, tests, tooling): Apache License 2.0.
-- **Certificate artifacts and data**: Creative Commons Attribution
-  4.0 International.
-- **Manuscript sources and PDFs**: © the authors, all rights
-  reserved; preprints are distributed through arXiv under its
-  license, and journal versions under the terms of the publishing
-  agreement.
+the authority: code under Apache-2.0, certificate artifacts and data
+under CC BY 4.0, manuscript sources and PDFs © the authors.
 
 ## Contributing
 
-This repository is a curated release record rather than a development
-tree; see [CONTRIBUTING.md](CONTRIBUTING.md). Replication reports and
-questions are welcome as issues.
+No pull requests, by design — releases are byte-anchored to reviewed,
+frozen artifacts. Replication reports, independent reimplementations,
+corrections, and questions are welcome as issues;
+[CONTRIBUTING.md](CONTRIBUTING.md) explains what makes each one
+useful.
