@@ -1,0 +1,8 @@
+* text=auto eol=lf
+*.pdf binary
+*.zip binary
+
+# Language statistics: count the certificate code, not the LaTeX bulk.
+*.tex linguist-detectable=false
+*.bib linguist-detectable=false
+*.md linguist-documentation

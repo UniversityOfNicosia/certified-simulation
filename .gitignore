@@ -1,0 +1,13 @@
+# Build outputs
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+*.synctex.gz
+build/
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
