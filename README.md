@@ -88,3 +88,15 @@ frozen artifacts. Replication reports, independent reimplementations,
 corrections, and questions are welcome as issues.
 [CONTRIBUTING.md](CONTRIBUTING.md) explains what makes each one
 useful.
+
+## Working with us
+
+The open problems are bigger than one group. If you work on the
+theory side and want to extend these results to new classes or
+settings, if you build learned simulators or digital twins and want
+to score them against proved limits, or if you want to help turn the
+theorems into benchmarks and certification instruments, we want to
+hear from you. Each paper's discussion section states the open
+directions we see; you will see others. Start with an issue
+describing your interest, or reach the program through
+[UNIC Evolve](https://evolve.unic.ac.cy/).

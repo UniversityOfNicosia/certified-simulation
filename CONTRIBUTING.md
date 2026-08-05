@@ -64,6 +64,29 @@ Questions about the results, their declared scopes, or the replay
 procedure are welcome as issues. Please search existing issues
 first, and keep one topic per issue.
 
+### 5. Push the work forward
+
+Replication keeps us honest; collaboration is how the program grows.
+We are actively looking for people who want to:
+
+- **extend the theory**: carry the exact-limits results to new
+  classes and settings, among them nonuniform grids, noisy
+  observation, tolerance-based recovery, and stochastic prediction.
+  Each paper's discussion section states the open directions we see,
+  and a well-posed problem statement in an issue is a fine way to
+  start a conversation;
+- **bring a system**: if you build learned surrogates, simulators, or
+  digital twins and want to score them against proved limits, or
+  eventually certify them, tell us about your setting. Real systems
+  shape which classes the theory should reach next;
+- **build the instruments**: benchmarks, verification tooling, and
+  certification processes on top of the theorems, jointly.
+
+Open an issue describing your interest, or reach the program through
+[UNIC Evolve](https://evolve.unic.ac.cy/). Joint work follows the
+same standard as everything here: declared scopes, complete proofs,
+and certificates anyone can re-run.
+
 ## Why pull requests are closed
 
 A release is checkable precisely because every file in it is pinned
@@ -83,9 +106,10 @@ each release's `CITATION.cff` gives the reference), manuscripts ©
 the authors. No permission is needed for anything the licenses
 already grant.
 
-## Collaboration and contact
+## Contact
 
 For public matters, the issue tracker is the front door. For
-academic collaboration inquiries, contact the authors at the
-addresses given in the released papers. Security-sensitive reports:
-see [SECURITY.md](SECURITY.md).
+collaboration, see [Push the work forward](#5-push-the-work-forward)
+above; academic inquiries can also go to the authors at the addresses
+given in the released papers. Security-sensitive reports: see
+[SECURITY.md](SECURITY.md).
