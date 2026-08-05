@@ -47,6 +47,4 @@ persistent DOI, so the record outlives this hosting platform.
 
 Nothing, except to check: rebuild the PDFs from the released sources,
 replay the certificates, recompute the hashes, and read the proofs.
-[REPRODUCING.md](REPRODUCING.md) gives the commands. The chain holds
-whether the artifacts were produced by a person or a machine — that
-is the point.
+[REPRODUCING.md](REPRODUCING.md) gives the commands.
