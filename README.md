@@ -66,6 +66,7 @@ preparation.
 
 | If you are… | Read |
 | --- | --- |
+| Looking for the results | [papers/finite-horizon-memory/](papers/finite-horizon-memory/): the first paper, with its manuscript, executable certificates, and experiments |
 | Checking whether the claims hold | [REPRODUCING.md](REPRODUCING.md): the five-level verification ladder, from hashing the files to reimplementing the certificates independently |
 | Asking why you should not have to trust us | [PROVENANCE.md](PROVENANCE.md): the six-link chain that makes every release checkable from its own contents |
 | Replicating, correcting, or building on the work | [CONTRIBUTING.md](CONTRIBUTING.md): replication reports, independent reimplementation, and the corrections process |
