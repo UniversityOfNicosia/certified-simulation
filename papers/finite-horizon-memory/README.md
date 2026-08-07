@@ -17,7 +17,7 @@ preparation for submission to the Journal of Scientific Computing.
 | `certificates/` | Exact-arithmetic certificate programs for the paper's results | staging |
 | `artifacts/` | The certificates' canonical outputs | staging |
 | `tests/` | Regeneration and pinning tests | staging |
-| `manuscript/` | Paper and supplement sources, compiled PDFs | pending final sources |
+| [`manuscript/`](manuscript/) | Paper and supplement sources, compiled PDFs | staged |
 
 This folder becomes the content of the paper's release tag when the
 manuscript is finalized; the release adds the hash manifest and the
