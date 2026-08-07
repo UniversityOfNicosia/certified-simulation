@@ -1,0 +1,18 @@
+[project]
+name = "certified-simulation"
+version = "0.1.0"
+description = "Exact limits of coarse prediction, proved as theorems and replayed by executable certificates"
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.12"
+dependencies = []
+
+[dependency-groups]
+dev = ["pytest>=8"]
+experiments = ["numpy>=2", "matplotlib>=3.9"]
+
+[tool.pytest.ini_options]
+testpaths = ["papers/finite-horizon-memory/tests"]
+
+[tool.uv]
+package = false

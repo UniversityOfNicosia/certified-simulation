@@ -11,3 +11,8 @@ __pycache__/
 *.pyc
 .venv/
 .pytest_cache/
+
+# Regenerated experiment outputs (the canonical figures live with the manuscript)
+papers/*/experiments/figures/
+papers/*/experiments/results/
+papers/*/experiments/tables/
