@@ -58,13 +58,21 @@
 %%%%
 
 
-\usepackage[a4paper,margin=1in]{geometry}
+\makeatletter
+\@ifpackageloaded{geometry}%
+  {\geometry{a4paper,margin=1in}}%
+  {\usepackage[a4paper,margin=1in]{geometry}}
+\makeatother
 \usepackage{amsmath,amssymb,amsthm,mathtools}
 \usepackage{booktabs}
 \usepackage{subcaption}
 \usepackage{microtype}
 \usepackage[numbers,sort&compress]{natbib}
-\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\makeatletter
+\@ifpackageloaded{hyperref}%
+  {\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}}%
+  {\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}}
+\makeatother
 \usepackage[nameinlink]{cleveref}
 
 \newtheorem{theorem}{Theorem}
@@ -2284,12 +2292,28 @@ publication.
 \subsection*{Author contributions}
 A.P. contributed to conceptualization, interpretation, verification, and writing.  N.C. contributed to conceptualization, mathematical analysis, numerical analysis, software, interpretation, verification, and writing.  D.D. contributed to conceptualization, numerical analysis, interpretation, verification, and writing.
 
+\section*{Acknowledgments}
+
+Generative-AI systems were used for literature discovery, adversarial
+mathematical review, copyediting suggestions, and assistance with
+experiment and verification code.  The authors checked the cited
+sources, mathematical arguments, numerical results, and final text,
+and remain able to defend each of them.  The authors assume
+responsibility for all content.
+
 \section*{Data and code availability}
 
-The source code, numerical data, and figure-generation scripts supporting this study are publicly available in the GitHub repository
-\url{https://github.com/nchrkis/FV_erasure}.  The repository contains the Python scripts used to generate all matrix tests, scalar finite-volume
-experiments, CSV files, LaTeX table fragments, and figures reported in the manuscript. The repository also
-contains instructions for reproducing the results.  No external CFD solver or proprietary software is required.
+The complete reproducibility package for this study is publicly
+available in the Certified Simulation repository of the University of
+Nicosia,
+\url{https://github.com/UniversityOfNicosia/certified-simulation},
+under \texttt{papers/finite-horizon-memory}.  The package contains
+the Python scripts that generate every matrix test, scalar
+finite-volume experiment, CSV file, LaTeX table fragment, and figure
+reported in the manuscript, together with instructions for
+reproducing the results, and executable certificates that replay the
+paper's exact results in exact rational arithmetic.  No external CFD
+solver or proprietary software is required.
 
 
 
