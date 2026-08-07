@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: >-
+  If you use this repository, please cite it as below. For results from a
+  specific paper, cite that paper directly; each paper folder lists its
+  reference as it becomes available.
+title: Certified Simulation
+type: software
+authors:
+  - family-names: Polemitis
+    given-names: Antonis
+    affiliation: UNIC Evolve, University of Nicosia
+  - family-names: Christakis
+    given-names: Nicholas
+    affiliation: >-
+      Institute for Advanced Modelling and Simulation, University of Nicosia
+  - family-names: Drikakis
+    given-names: Dimitris
+    affiliation: >-
+      Institute for Advanced Modelling and Simulation, University of Nicosia
+repository-code: 'https://github.com/UniversityOfNicosia/certified-simulation'
+url: 'https://github.com/UniversityOfNicosia/certified-simulation'
+keywords:
+  - certified simulation
+  - coarse-grained prediction
+  - predictive limits
+  - finite volume methods
+  - exact arithmetic
+  - executable certificates

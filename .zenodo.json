@@ -1,0 +1,29 @@
+{
+  "title": "Certified Simulation",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "Apache-2.0",
+  "description": "Exact limits of coarse prediction, proved as theorems and replayed by executable certificates. A joint initiative of UNIC Evolve and the Institute for Advanced Modelling and Simulation at the University of Nicosia. Code is licensed under Apache-2.0; certificates, artifacts, and documentation under CC BY 4.0; see LICENSES/ in the repository.",
+  "creators": [
+    {
+      "name": "Polemitis, Antonis",
+      "affiliation": "UNIC Evolve, University of Nicosia"
+    },
+    {
+      "name": "Christakis, Nicholas",
+      "affiliation": "Institute for Advanced Modelling and Simulation, University of Nicosia"
+    },
+    {
+      "name": "Drikakis, Dimitris",
+      "affiliation": "Institute for Advanced Modelling and Simulation, University of Nicosia"
+    }
+  ],
+  "keywords": [
+    "certified simulation",
+    "coarse-grained prediction",
+    "predictive limits",
+    "finite volume methods",
+    "exact arithmetic",
+    "executable certificates"
+  ]
+}

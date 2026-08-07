@@ -1,0 +1,48 @@
+name: replay
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  certificates:
+    name: Certificates replay byte-for-byte
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - name: Regenerate every certificate
+        run: |
+          uv run python papers/finite-horizon-memory/certificates/certify_finite_horizon_memory.py
+          uv run python papers/finite-horizon-memory/certificates/certify_queue_conditioning.py
+          uv run python papers/finite-horizon-memory/certificates/certify_dissipative_decay.py
+      - name: Require byte identity with the committed artifacts
+        run: git diff --exit-code -- papers/finite-horizon-memory/artifacts
+      - name: Run the replay test suite
+        run: uv run pytest -q
+
+  experiments:
+    name: Numerical experiments run end to end
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - name: Run the experiment and table pipeline
+        working-directory: papers/finite-horizon-memory/experiments
+        run: |
+          uv run --group experiments python run_experiments.py
+          uv run --group experiments python make_tables.py
+
+  hygiene:
+    name: Repository hygiene
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: No build residue is tracked
+        run: |
+          if git ls-files | grep -E '\.(aux|bbl|blg|synctex\.gz)$'; then
+            echo "LaTeX build residue is tracked; remove it." >&2
+            exit 1
+          fi
