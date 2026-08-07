@@ -13,11 +13,33 @@ preparation for submission to the Journal of Scientific Computing.
 
 | Directory | Contents | Status |
 | --- | --- | --- |
+| [`manuscript/`](manuscript/) | Paper source and the compiled PDF | staged |
+| [`certificates/`](certificates/) | One exact-arithmetic certificate program per theorem | staged |
+| [`artifacts/`](artifacts/) | The certificates' canonical outputs, replayed byte-for-byte by CI | staged |
+| [`tests/`](tests/) | Replay tests: regenerate each certificate and require byte identity | staged |
 | [`experiments/`](experiments/) | Numerical experiments: figures, CSV data, and LaTeX tables used in the paper | staged |
-| `certificates/` | Exact-arithmetic certificate programs for the paper's results | staging |
-| `artifacts/` | The certificates' canonical outputs | staging |
-| `tests/` | Regeneration and pinning tests | staging |
-| [`manuscript/`](manuscript/) | Paper and supplement sources, compiled PDFs | staged |
+
+## Replaying the paper
+
+The three theorems each have an executable certificate; the certificates
+and their exact scope are described in
+[`certificates/README.md`](certificates/README.md). From the repository
+root, with Python 3.12 or later:
+
+```bash
+python papers/finite-horizon-memory/certificates/certify_finite_horizon_memory.py
+python papers/finite-horizon-memory/certificates/certify_queue_conditioning.py
+python papers/finite-horizon-memory/certificates/certify_dissipative_decay.py
+```
+
+A successful replay reproduces the committed artifacts byte for byte.
+The floating-point illustrations regenerate with:
+
+```bash
+cd papers/finite-horizon-memory/experiments
+uv run --group experiments python run_experiments.py
+uv run --group experiments python make_tables.py
+```
 
 This folder becomes the content of the paper's release tag when the
 manuscript is finalized; the release adds the hash manifest and the
