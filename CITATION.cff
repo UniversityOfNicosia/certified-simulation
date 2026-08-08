@@ -9,14 +9,17 @@ authors:
   - family-names: Polemitis
     given-names: Antonis
     affiliation: UNIC Evolve, University of Nicosia
+    orcid: 'https://orcid.org/0000-0003-3188-8746'
   - family-names: Christakis
     given-names: Nicholas
     affiliation: >-
       Institute for Advanced Modelling and Simulation, University of Nicosia
+    orcid: 'https://orcid.org/0000-0001-9212-2336'
   - family-names: Drikakis
     given-names: Dimitris
     affiliation: >-
       Institute for Advanced Modelling and Simulation, University of Nicosia
+    orcid: 'https://orcid.org/0000-0002-3300-7669'
 repository-code: 'https://github.com/UniversityOfNicosia/certified-simulation'
 url: 'https://github.com/UniversityOfNicosia/certified-simulation'
 keywords:

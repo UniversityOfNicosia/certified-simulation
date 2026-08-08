@@ -7,15 +7,18 @@
   "creators": [
     {
       "name": "Polemitis, Antonis",
-      "affiliation": "UNIC Evolve, University of Nicosia"
+      "affiliation": "UNIC Evolve, University of Nicosia",
+      "orcid": "0000-0003-3188-8746"
     },
     {
       "name": "Christakis, Nicholas",
-      "affiliation": "Institute for Advanced Modelling and Simulation, University of Nicosia"
+      "affiliation": "Institute for Advanced Modelling and Simulation, University of Nicosia",
+      "orcid": "0000-0001-9212-2336"
     },
     {
       "name": "Drikakis, Dimitris",
-      "affiliation": "Institute for Advanced Modelling and Simulation, University of Nicosia"
+      "affiliation": "Institute for Advanced Modelling and Simulation, University of Nicosia",
+      "orcid": "0000-0002-3300-7669"
     }
   ],
   "keywords": [
