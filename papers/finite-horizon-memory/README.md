@@ -6,8 +6,10 @@ scalar advection under a first-order upwind finite-volume method, it
 determines exactly what additional information coarse parent averages
 need for exact prediction, when the algebraically visible information
 is recoverable in practice, and how unresolved information decays
-under the scheme's own dissipation. The manuscript is in final
-preparation for submission to the Journal of Scientific Computing.
+under the scheme's own dissipation. The manuscript is approved by all
+three authors; submission to arXiv and the Journal of Scientific
+Computing is in progress, and identifiers will be recorded here as
+they are assigned.
 
 ## Contents
 
@@ -41,9 +43,16 @@ uv run --group experiments python run_experiments.py
 uv run --group experiments python make_tables.py
 ```
 
-This folder becomes the content of the paper's release tag when the
-manuscript is finalized; the release adds the hash manifest and the
-literal replay commands, per [REPRODUCING.md](../../REPRODUCING.md).
+## Release
+
+This folder is released as
+[`finite-horizon-memory-v1`](https://github.com/UniversityOfNicosia/certified-simulation/releases/tag/finite-horizon-memory-v1)
+(9 August 2026), approved for submission by all three authors. The
+release carries the per-file hash manifest and the arXiv source
+package, and is archived at Zenodo under version DOI
+[10.5281/zenodo.21859861](https://doi.org/10.5281/zenodo.21859861).
+The verification ladder for checking the release is in
+[REPRODUCING.md](../../REPRODUCING.md).
 
 ## Licensing
 

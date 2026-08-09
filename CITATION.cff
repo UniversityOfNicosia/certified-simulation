@@ -22,6 +22,10 @@ authors:
     orcid: 'https://orcid.org/0000-0002-3300-7669'
 repository-code: 'https://github.com/UniversityOfNicosia/certified-simulation'
 url: 'https://github.com/UniversityOfNicosia/certified-simulation'
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.21859860
+    description: All-versions Zenodo archive of this repository
 keywords:
   - certified simulation
   - coarse-grained prediction
