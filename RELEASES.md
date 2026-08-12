@@ -17,5 +17,7 @@ version DOI
 [10.5281/zenodo.21859861](https://doi.org/10.5281/zenodo.21859861),
 all-versions DOI
 [10.5281/zenodo.21859860](https://doi.org/10.5281/zenodo.21859860).
-Submission identifiers (arXiv, journal) will be recorded here as they
-are assigned.
+The paper is posted at
+[arXiv:2608.08633](https://arxiv.org/abs/2608.08633)
+(DOI [10.48550/arXiv.2608.08633](https://doi.org/10.48550/arXiv.2608.08633)).
+The journal identifier will be recorded here when assigned.

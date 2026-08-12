@@ -6,10 +6,10 @@ scalar advection under a first-order upwind finite-volume method, it
 determines exactly what additional information coarse parent averages
 need for exact prediction, when the algebraically visible information
 is recoverable in practice, and how unresolved information decays
-under the scheme's own dissipation. The manuscript is approved by all
-three authors; submission to arXiv and the Journal of Scientific
-Computing is in progress, and identifiers will be recorded here as
-they are assigned.
+under the scheme's own dissipation. The paper is posted at
+[arXiv:2608.08633](https://arxiv.org/abs/2608.08633); submission to
+the Journal of Scientific Computing is in progress, and the journal
+identifier will be recorded here when assigned.
 
 ## Contents
 
@@ -51,6 +51,10 @@ This folder is released as
 release carries the per-file hash manifest and the arXiv source
 package, and is archived at Zenodo under version DOI
 [10.5281/zenodo.21859861](https://doi.org/10.5281/zenodo.21859861).
+The posted preprint is
+[arXiv:2608.08633](https://arxiv.org/abs/2608.08633)
+(DOI [10.48550/arXiv.2608.08633](https://doi.org/10.48550/arXiv.2608.08633)),
+produced from this release's source package.
 The verification ladder for checking the release is in
 [REPRODUCING.md](../../REPRODUCING.md).
 
