@@ -7,9 +7,10 @@ determines exactly what additional information coarse parent averages
 need for exact prediction, when the algebraically visible information
 is recoverable in practice, and how unresolved information decays
 under the scheme's own dissipation. The paper is posted at
-[arXiv:2608.08633](https://arxiv.org/abs/2608.08633); submission to
-the Journal of Scientific Computing is in progress, and the journal
-identifier will be recorded here when assigned.
+[arXiv:2608.08633](https://arxiv.org/abs/2608.08633) and was
+submitted to the Journal of Scientific Computing on 13 August 2026
+(reference JOMP-D-26-01496); the journal identifier will be recorded
+here on acceptance.
 
 ## Contents
 

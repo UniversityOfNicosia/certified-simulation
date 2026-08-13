@@ -19,5 +19,7 @@ all-versions DOI
 [10.5281/zenodo.21859860](https://doi.org/10.5281/zenodo.21859860).
 The paper is posted at
 [arXiv:2608.08633](https://arxiv.org/abs/2608.08633)
-(DOI [10.48550/arXiv.2608.08633](https://doi.org/10.48550/arXiv.2608.08633)).
-The journal identifier will be recorded here when assigned.
+(DOI [10.48550/arXiv.2608.08633](https://doi.org/10.48550/arXiv.2608.08633))
+and was submitted to the Journal of Scientific Computing on
+13 August 2026, submission reference JOMP-D-26-01496. The journal
+identifier will be recorded here on acceptance.
