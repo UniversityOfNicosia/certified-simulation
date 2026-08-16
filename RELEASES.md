@@ -20,6 +20,5 @@ all-versions DOI
 The paper is posted at
 [arXiv:2608.08633](https://arxiv.org/abs/2608.08633)
 (DOI [10.48550/arXiv.2608.08633](https://doi.org/10.48550/arXiv.2608.08633))
-and was submitted to the Journal of Scientific Computing on
-13 August 2026, submission reference JOMP-D-26-01496. The journal
-identifier will be recorded here on acceptance.
+and is under journal submission. The journal identifier will be
+recorded here on acceptance.
