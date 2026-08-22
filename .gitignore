@@ -16,3 +16,5 @@ __pycache__/
 papers/*/experiments/figures/
 papers/*/experiments/results/
 papers/*/experiments/tables/
+*.abs
+*.spl
