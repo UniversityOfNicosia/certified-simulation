@@ -18,8 +18,10 @@ jobs:
           uv run python papers/finite-horizon-memory/certificates/certify_finite_horizon_memory.py
           uv run python papers/finite-horizon-memory/certificates/certify_queue_conditioning.py
           uv run python papers/finite-horizon-memory/certificates/certify_dissipative_decay.py
+          uv run python papers/initial-trace-entropy-separation/certificates/certify_initial_trace_insufficiency.py
+          uv run python papers/initial-trace-entropy-separation/certificates/certify_entropy_accounting_separation.py
       - name: Require byte identity with the committed artifacts
-        run: git diff --exit-code -- papers/finite-horizon-memory/artifacts
+        run: git diff --exit-code -- 'papers/*/artifacts'
       - name: Run the replay test suite
         run: uv run pytest -q
 
@@ -34,6 +36,9 @@ jobs:
         run: |
           uv run --group experiments python run_experiments.py
           uv run --group experiments python make_tables.py
+      - name: Run the short note's author certificate script
+        working-directory: papers/initial-trace-entropy-separation/experiments
+        run: uv run python run_closure_certificates.py
 
   hygiene:
     name: Repository hygiene

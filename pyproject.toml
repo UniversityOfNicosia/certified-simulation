@@ -12,7 +12,7 @@ dev = ["pytest>=8"]
 experiments = ["numpy>=2", "matplotlib>=3.9"]
 
 [tool.pytest.ini_options]
-testpaths = ["papers/finite-horizon-memory/tests"]
+testpaths = ["papers"]
 
 [tool.uv]
 package = false
