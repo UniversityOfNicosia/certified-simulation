@@ -39,6 +39,28 @@ jobs:
       - name: Run the short note's author certificate script
         working-directory: papers/initial-trace-entropy-separation/experiments
         run: uv run python run_closure_certificates.py
+      - name: Run the fourth paper's self-tests, experiments, and tables
+        working-directory: papers/coarse-observability-high-order/src
+        run: |
+          uv run --group experiments python schemes.py
+          uv run --group experiments python certificates.py
+          uv run --group experiments python nonlinear.py
+          uv run --group experiments python run_experiments.py
+          uv run --group experiments python make_tables.py
+      - name: List the fourth paper's outputs that changed on this runner
+        run: git status --porcelain -- papers/coarse-observability-high-order/results papers/coarse-observability-high-order/figures
+      - name: Require byte identity for the fourth paper's reproducible outputs
+        working-directory: papers/coarse-observability-high-order/results
+        run: >-
+          git diff --exit-code --
+          tables
+          collision_certificate.csv
+          collision_certificate_exact.csv
+          erasure_orders.csv
+          stability_certificate.csv
+          local_observability.csv
+          rank_collision_catalogue.csv
+          rank_vs_horizon_smalllambda.csv
 
   hygiene:
     name: Repository hygiene

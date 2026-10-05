@@ -6,3 +6,7 @@
 *.tex linguist-detectable=false
 *.bib linguist-detectable=false
 *.md linguist-documentation
+
+# The fourth paper pins its reference CSVs exactly as the authors' scripts write them
+# (CRLF line endings from Python's csv module), so a rerun compares byte for byte.
+papers/coarse-observability-high-order/results/*.csv -text

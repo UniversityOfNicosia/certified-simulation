@@ -1,0 +1,3 @@
+object,x_lo,x_hi,lam_lo,lam_hi,certified,certified_lower_bound,bernstein_cells
+S,-1,1,0,0.5,True,0.1440179856729157,1
+Q_over_lambda,-1,1,0.5,1,True,0.041666666666666664,1
