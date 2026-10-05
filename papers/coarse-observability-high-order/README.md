@@ -67,8 +67,22 @@ with a separate implementation written from the manuscript's
 definitions, and pins its outputs as canonical artifacts:
 
 ```bash
-python papers/coarse-observability-high-order/certificates/CERTIFICATE_SCRIPTS
+python papers/coarse-observability-high-order/certificates/certify_observation_rank_structure.py
+python papers/coarse-observability-high-order/certificates/certify_dissipation_conditioning_erasure.py
 ```
+
+The two scripts run 355 exact checks between them and use only the
+Python standard library. They cover the universal rank ladder, the
+invisible subspace, the local ranks, the spectral-collision
+certificate, the dissipation coefficients, interior stability, the
+conditioning exponents at the working grids, and the erasure rates. A
+successful replay reproduces the committed artifacts byte for byte.
+Each artifact also records where the manuscript or the authors'
+outputs disagree with the exact values. The replay tests in `tests/`
+also compare every value the certificates transcribe against the
+committed `results/`. Rerunning the experiments rewrites the
+floating-point CSV files, so run the tests on a clean checkout.
+Continuous integration reruns both layers on every change.
 
 ## Release
 

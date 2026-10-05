@@ -20,6 +20,8 @@ jobs:
           uv run python papers/finite-horizon-memory/certificates/certify_dissipative_decay.py
           uv run python papers/initial-trace-entropy-separation/certificates/certify_initial_trace_insufficiency.py
           uv run python papers/initial-trace-entropy-separation/certificates/certify_entropy_accounting_separation.py
+          uv run python papers/coarse-observability-high-order/certificates/certify_observation_rank_structure.py
+          uv run python papers/coarse-observability-high-order/certificates/certify_dissipation_conditioning_erasure.py
       - name: Require byte identity with the committed artifacts
         run: git diff --exit-code -- 'papers/*/artifacts'
       - name: Run the replay test suite

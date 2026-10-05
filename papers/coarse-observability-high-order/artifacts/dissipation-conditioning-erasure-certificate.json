@@ -1,0 +1,3507 @@
+{
+  "arithmetic": "fractions.Fraction and Python integers; exact polynomial identities in Q[x, lambda]; exact Smith exponents over Q[lambda]/(lambda^12); exact Sturm brackets; rigorous outward-rounded intervals (2^-320 grid) for cos(2 pi v/N), pi (Machin), square roots (integer isqrt) and logarithms (atanh series with tail bounds)",
+  "check_count": 100,
+  "checks": {
+    "amplitude_series_two_routes_agree_bw": true,
+    "amplitude_series_two_routes_agree_fromm": true,
+    "amplitude_series_two_routes_agree_lw": true,
+    "amplitude_series_two_routes_agree_ub3": true,
+    "amplitude_series_two_routes_agree_ub5": true,
+    "amplitude_series_two_routes_agree_uw1": true,
+    "amplitude_series_two_routes_agree_weno5l": true,
+    "amplitude_series_two_routes_agree_weno5l_rk3": true,
+    "bw_leading_coefficient_double_root_at_lambda_1": true,
+    "common_value_A_half_3_over_64": true,
+    "conditioning_exact_brackets_slopes_approach_exact_exponent": true,
+    "conditioning_generic_rank_determined_exactly": true,
+    "conjecture_conditioning_exact_exponent_equals_L_q_single_stage_r6_r8": true,
+    "consistency_order_table_scheme_zoo_bw": true,
+    "consistency_order_table_scheme_zoo_fromm": true,
+    "consistency_order_table_scheme_zoo_lw": true,
+    "consistency_order_table_scheme_zoo_ub3": true,
+    "consistency_order_table_scheme_zoo_ub5": true,
+    "consistency_order_table_scheme_zoo_uw1": true,
+    "consistency_order_table_scheme_zoo_weno5l": true,
+    "consistency_order_table_scheme_zoo_weno5l_rk3": true,
+    "dissipative_order_and_leading_coefficient_bw": true,
+    "dissipative_order_and_leading_coefficient_fromm": true,
+    "dissipative_order_and_leading_coefficient_lw": true,
+    "dissipative_order_and_leading_coefficient_ub3": true,
+    "dissipative_order_and_leading_coefficient_ub5": true,
+    "dissipative_order_and_leading_coefficient_uw1": true,
+    "dissipative_order_and_leading_coefficient_weno5l": true,
+    "dissipative_order_and_leading_coefficient_weno5l_rk3": true,
+    "erasure_N384_defect_theta_series_route_overlaps_cosine_route": true,
+    "erasure_csv_one_minus_rho_within_8_units_of_2^-53": true,
+    "erasure_maximum_attained_at_k_1_strictly_all_N": true,
+    "erasure_orders_csv_A_values_bw": true,
+    "erasure_orders_csv_A_values_fromm": true,
+    "erasure_orders_csv_A_values_lw": true,
+    "erasure_orders_csv_A_values_ub3": true,
+    "erasure_orders_csv_A_values_ub5": true,
+    "erasure_orders_csv_A_values_uw1": true,
+    "erasure_orders_csv_A_values_weno5l": true,
+    "erasure_orders_csv_A_values_weno5l_rk3": true,
+    "erasure_orders_csv_two_s_and_A_exact_bw": true,
+    "erasure_orders_csv_two_s_and_A_exact_fromm": true,
+    "erasure_orders_csv_two_s_and_A_exact_lw": true,
+    "erasure_orders_csv_two_s_and_A_exact_ub3": true,
+    "erasure_orders_csv_two_s_and_A_exact_ub5": true,
+    "erasure_orders_csv_two_s_and_A_exact_uw1": true,
+    "erasure_orders_csv_two_s_and_A_exact_weno5l": true,
+    "erasure_orders_csv_two_s_and_A_exact_weno5l_rk3": true,
+    "erasure_ratio_N384_all_schemes_both_lambda_in_0_9999_1_0009": true,
+    "erasure_slopes_match_minus_2s_to_three_decimals_except_ub5_lambda_0_9": true,
+    "erasure_slopes_reproduce_authors_fits_except_ub5_lambda_0_9": true,
+    "erasure_slopes_rk3_round_to_minus_4_009_and_minus_4_001": true,
+    "fe_antidissipative_every_lambda": true,
+    "fe_maximum_interior_and_unstable_lambda_1/2": true,
+    "fe_maximum_interior_and_unstable_lambda_9/10": true,
+    "fe_rho_N_unstable_matches_authors_csv": true,
+    "fe_rho_minus_one_about_0_19_at_half": true,
+    "fe_second_moment_minus_two_lambda_squared": true,
+    "half_life_table_and_csv_reproduced": true,
+    "interior_stability_divisible_by_one_minus_x_power_s": true,
+    "interior_stability_quotient_bw": true,
+    "interior_stability_quotient_fromm_affine": true,
+    "interior_stability_quotient_lw": true,
+    "interior_stability_quotient_ub3_affine": true,
+    "interior_stability_quotient_ub5_quadratic": true,
+    "interior_stability_quotient_uw1": true,
+    "interpolation_members_lambda_half_N384_ratio_within_1e-4_of_unity": true,
+    "leading_coefficient_positive_on_open_interval_bw": true,
+    "leading_coefficient_positive_on_open_interval_fromm": true,
+    "leading_coefficient_positive_on_open_interval_lw": true,
+    "leading_coefficient_positive_on_open_interval_ub3": true,
+    "leading_coefficient_positive_on_open_interval_ub5": true,
+    "leading_coefficient_positive_on_open_interval_uw1": true,
+    "leading_coefficient_positive_on_open_interval_weno5l_rk3": true,
+    "modified_equation_constants_at_lambda_half": true,
+    "odd_degree_closed_form_A_equals_2_abs_omega_over_factorial": true,
+    "only_zero_of_A_in_0_1_is_lambda_1_for_interpolation_members": true,
+    "quartet_two_values_at_lambda_half_within_3e-5": true,
+    "queue_conditioning_csv_not_in_induced_euclidean_norm": true,
+    "queue_conditioning_csv_sigma_70_cells_relative_1e-3_coordinate_convention": true,
+    "queue_conditioning_csv_sigma_lambda_half_relative_1e-9": true,
+    "queue_exponent_fits_from_exact_sigma_within_0_05_of_exact_exponent": true,
+    "queue_exponents_fits_within_0_05_and_table_rounding": true,
+    "queue_exponents_table_predicted_equals_exact_exponent": true,
+    "reflection_duality_bw_lw_autocorrelations": true,
+    "rk3_bernstein_bound_matches_authors_csv_Q_over_lambda": true,
+    "rk3_bernstein_bound_matches_authors_csv_S": true,
+    "rk3_bernstein_bounds_quoted_0_1440_and_1_24": true,
+    "rk3_bernstein_certificate_positive_Q_over_lambda": true,
+    "rk3_bernstein_certificate_positive_S": true,
+    "rk3_decomposition_Q_equals_lambda_times_one_minus_x_S_plus_lambda3_over_3": true,
+    "rk3_exclusion_exponent_three_not_one_at_L1": true,
+    "rk3_imaginary_axis_amplitude_identity": true,
+    "rk3_lambda_half_N384_ratio_outside_1e-4_of_unity": true,
+    "rk3_leading_coefficient_nonzero_on_0_1": true,
+    "ub5_lambda_0_9_N384_ratio_is_0_99994": true,
+    "ub5_lambda_0_9_exact_slope_rounds_to_minus_5_999": true,
+    "ub5_next_order_correction_matches_theta8_term": true,
+    "uw1_N64_rho_0_99880_and_1e-17_after_3_25e4_steps": true,
+    "weno5_flux_symbol_i_theta_plus_real_theta6": true
+  },
+  "conditioning": {
+    "bw_P8_r6": [
+      {
+        "L": 1,
+        "L_q": 1,
+        "decade_slopes": [
+          "9.98434e-1",
+          "9.99844e-1",
+          "9.99984e-1"
+        ],
+        "exact_exponent": 1,
+        "q": 1,
+        "sigma_squared_brackets_lambda_1e-2_to_1e-5": [
+          [
+            "1.37780555556e-5",
+            "1.37780555556e-5"
+          ],
+          [
+            "1.38777805556e-7",
+            "1.38777805556e-7"
+          ],
+          [
+            "1.38877778056e-9",
+            "1.38877778056e-9"
+          ],
+          [
+            "1.38887777781e-11",
+            "1.38887777781e-11"
+          ]
+        ],
+        "smith_exponents": [
+          1
+        ]
+      },
+      {
+        "L": 2,
+        "L_q": 2,
+        "decade_slopes": [
+          "1.99952e+0",
+          "1.99996e+0",
+          "2.00000e+0"
+        ],
+        "exact_exponent": 2,
+        "q": 2,
+        "sigma_squared_brackets_lambda_1e-2_to_1e-5": [
+          [
+            "1.24419284264e-9",
+            "1.24419284264e-9"
+          ],
+          [
+            "1.24693573210e-13",
+            "1.24693573210e-13"
+          ],
+          [
+            "1.24719373732e-17",
+            "1.24719373732e-17"
+          ],
+          [
+            "1.24721937537e-21",
+            "1.24721937537e-21"
+          ]
+        ],
+        "smith_exponents": [
+          1,
+          2
+        ]
+      },
+      {
+        "L": 3,
+        "L_q": 3,
+        "decade_slopes": [
+          "3.00145e+0",
+          "3.00015e+0",
+          "3.00001e+0"
+        ],
+        "exact_exponent": 3,
+        "q": 3,
+        "sigma_squared_brackets_lambda_1e-2_to_1e-5": [
+          [
+            "1.52590599897e-13",
+            "1.52590599897e-13"
+          ],
+          [
+            "1.51577489727e-19",
+            "1.51577489727e-19"
+          ],
+          [
+            "1.51473854544e-25",
+            "1.51473854544e-25"
+          ],
+          [
+            "1.51463468207e-31",
+            "1.51463468207e-31"
+          ]
+        ],
+        "smith_exponents": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "L": 4,
+        "L_q": 4,
+        "decade_slopes": [
+          "3.97946e+0",
+          "3.99796e+0",
+          "3.99980e+0"
+        ],
+        "exact_exponent": 4,
+        "q": 5,
+        "sigma_squared_brackets_lambda_1e-2_to_1e-5": [
+          [
+            "1.85614721646e-20",
+            "1.85614721646e-20"
+          ],
+          [
+            "2.04031247732e-28",
+            "2.04031247732e-28"
+          ],
+          [
+            "2.05958318982e-36",
+            "2.05958318982e-36"
+          ],
+          [
+            "2.06151902941e-44",
+            "2.06151902941e-44"
+          ]
+        ],
+        "smith_exponents": [
+          1,
+          2,
+          3,
+          4,
+          4
+        ]
+      },
+      {
+        "L": 5,
+        "L_q": 4,
+        "decade_slopes": [
+          "3.96893e+0",
+          "3.99662e+0",
+          "3.99966e+0"
+        ],
+        "exact_exponent": 4,
+        "q": 5,
+        "sigma_squared_brackets_lambda_1e-2_to_1e-5": [
+          [
+            "4.56544455014e-19",
+            "4.56544455014e-19"
+          ],
+          [
+            "5.26781650430e-27",
+            "5.26781650430e-27"
+          ],
+          [
+            "5.35037157521e-35",
+            "5.35037157522e-35"
+          ],
+          [
+            "5.35875019263e-43",
+            "5.35875019263e-43"
+          ]
+        ],
+        "smith_exponents": [
+          1,
+          2,
+          3,
+          4,
+          4
+        ]
+      }
+    ],
+    "bw_P8_r8": [
+      {
+        "L": 1,
+        "L_q": 1,
+        "exact_exponent": 1,
+        "q": 1,
+        "smith_exponents": [
+          1
+        ]
+      },
+      {
+        "L": 2,
+        "L_q": 2,
+        "exact_exponent": 2,
+        "q": 2,
+        "smith_exponents": [
+          1,
+          2
+        ]
+      },
+      {
+        "L": 3,
+        "L_q": 3,
+        "exact_exponent": 3,
+        "q": 3,
+        "smith_exponents": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "L": 4,
+        "L_q": 4,
+        "exact_exponent": 4,
+        "q": 4,
+        "smith_exponents": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "L": 5,
+        "L_q": 5,
+        "exact_exponent": 5,
+        "q": 6,
+        "smith_exponents": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          5
+        ]
+      },
+      {
+        "L": 6,
+        "L_q": 6,
+        "exact_exponent": 6,
+        "q": 7,
+        "smith_exponents": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          5,
+          6
+        ]
+      },
+      {
+        "L": 7,
+        "L_q": 6,
+        "exact_exponent": 6,
+        "q": 7,
+        "smith_exponents": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          5,
+          6
+        ]
+      }
+    ],
+    "fromm_P8_r6": [
+      {
+        "L": 1,
+        "L_q": 1,
+        "decade_slopes": [
+          "9.96480e-1",
+          "9.99650e-1",
+          "9.99965e-1"
+        ],
+        "exact_exponent": 1,
+        "q": 2,
+        "sigma_squared_brackets_lambda_1e-2_to_1e-5": [
+          [
+            "8.65383991347e-7",
+            "8.65383991347e-7"
+          ],
+          [
+            "8.79524736408e-9",
+            "8.79524736408e-9"
+          ],
+          [
+            "8.80943234583e-11",
+            "8.80943234583e-11"
+          ],
+          [
+            "8.81085128455e-13",
+            "8.81085128455e-13"
+          ]
+        ],
+        "smith_exponents": [
+          1,
+          1
+        ]
+      },
+      {
+        "L": 2,
+        "L_q": 2,
+        "decade_slopes": [
+          "1.99464e+0",
+          "1.99947e+0",
+          "1.99995e+0"
+        ],
+        "exact_exponent": 2,
+        "q": 4,
+        "sigma_squared_brackets_lambda_1e-2_to_1e-5": [
+          [
+            "2.37980876188e-13",
+            "2.37980876188e-13"
+          ],
+          [
+            "2.43930829572e-17",
+            "2.43930829572e-17"
+          ],
+          [
+            "2.44530743866e-21",
+            "2.44530743866e-21"
+          ],
+          [
+            "2.44590784608e-25",
+            "2.44590784608e-25"
+          ]
+        ],
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2
+        ]
+      },
+      {
+        "L": 3,
+        "L_q": 3,
+        "decade_slopes": [
+          "3.00049e+0",
+          "3.00005e+0",
+          "3.00000e+0"
+        ],
+        "exact_exponent": 3,
+        "q": 5,
+        "sigma_squared_brackets_lambda_1e-2_to_1e-5": [
+          [
+            "8.01120725499e-15",
+            "8.01120725499e-15"
+          ],
+          [
+            "7.99299115950e-21",
+            "7.99299115950e-21"
+          ],
+          [
+            "7.99115725870e-27",
+            "7.99115725870e-27"
+          ],
+          [
+            "7.99097376914e-33",
+            "7.99097376914e-33"
+          ]
+        ],
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2,
+          3
+        ]
+      },
+      {
+        "L": 4,
+        "L_q": 3,
+        "decade_slopes": [
+          "2.99837e+0",
+          "2.99984e+0",
+          "2.99998e+0"
+        ],
+        "exact_exponent": 3,
+        "q": 5,
+        "sigma_squared_brackets_lambda_1e-2_to_1e-5": [
+          [
+            "6.70280062310e-14",
+            "6.70280062310e-14"
+          ],
+          [
+            "6.75329256382e-20",
+            "6.75329256382e-20"
+          ],
+          [
+            "6.75825001018e-26",
+            "6.75825001018e-26"
+          ],
+          [
+            "6.75874494040e-32",
+            "6.75874494040e-32"
+          ]
+        ],
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2,
+          3
+        ]
+      },
+      {
+        "L": 5,
+        "L_q": 3,
+        "decade_slopes": [
+          "2.99626e+0",
+          "2.99963e+0",
+          "2.99996e+0"
+        ],
+        "exact_exponent": 3,
+        "q": 5,
+        "sigma_squared_brackets_lambda_1e-2_to_1e-5": [
+          [
+            "3.13451967276e-13",
+            "3.13451967276e-13"
+          ],
+          [
+            "3.18901244393e-19",
+            "3.18901244394e-19"
+          ],
+          [
+            "3.19439426163e-25",
+            "3.19439426163e-25"
+          ],
+          [
+            "3.19493189064e-31",
+            "3.19493189064e-31"
+          ]
+        ],
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2,
+          3
+        ]
+      }
+    ],
+    "fromm_P8_r8": [
+      {
+        "L": 1,
+        "L_q": 1,
+        "exact_exponent": 1,
+        "q": 2,
+        "smith_exponents": [
+          1,
+          1
+        ]
+      },
+      {
+        "L": 2,
+        "L_q": 2,
+        "exact_exponent": 2,
+        "q": 4,
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2
+        ]
+      },
+      {
+        "L": 3,
+        "L_q": 3,
+        "exact_exponent": 3,
+        "q": 6,
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2,
+          3,
+          3
+        ]
+      },
+      {
+        "L": 4,
+        "L_q": 4,
+        "exact_exponent": 4,
+        "q": 7,
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2,
+          3,
+          3,
+          4
+        ]
+      },
+      {
+        "L": 5,
+        "L_q": 4,
+        "exact_exponent": 4,
+        "q": 7,
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2,
+          3,
+          3,
+          4
+        ]
+      },
+      {
+        "L": 6,
+        "L_q": 4,
+        "exact_exponent": 4,
+        "q": 7,
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2,
+          3,
+          3,
+          4
+        ]
+      },
+      {
+        "L": 7,
+        "L_q": 4,
+        "exact_exponent": 4,
+        "q": 7,
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2,
+          3,
+          3,
+          4
+        ]
+      }
+    ],
+    "lw_P8_r6": [
+      {
+        "L": 1,
+        "L_q": 1,
+        "decade_slopes": [
+          "1.00253e+0",
+          "1.00026e+0",
+          "1.00003e+0"
+        ],
+        "exact_exponent": 1,
+        "q": 2,
+        "sigma_squared_brackets_lambda_1e-2_to_1e-5": [
+          [
+            "6.45275202285e-7",
+            "6.45275202285e-7"
+          ],
+          [
+            "6.37807492983e-9",
+            "6.37807492983e-9"
+          ],
+          [
+            "6.37054231821e-11",
+            "6.37054231821e-11"
+          ],
+          [
+            "6.36978842384e-13",
+            "6.36978842384e-13"
+          ]
+        ],
+        "smith_exponents": [
+          1,
+          1
+        ]
+      },
+      {
+        "L": 2,
+        "L_q": 2,
+        "decade_slopes": [
+          "1.99909e+0",
+          "1.99999e+0",
+          "2.00000e+0"
+        ],
+        "exact_exponent": 2,
+        "q": 4,
+        "sigma_squared_brackets_lambda_1e-2_to_1e-5": [
+          [
+            "3.45760112174e-12",
+            "3.45760112174e-12"
+          ],
+          [
+            "3.47207424359e-16",
+            "3.47207424359e-16"
+          ],
+          [
+            "3.47222074225e-20",
+            "3.47222074225e-20"
+          ],
+          [
+            "3.47222220742e-24",
+            "3.47222220742e-24"
+          ]
+        ],
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2
+        ]
+      },
+      {
+        "L": 3,
+        "L_q": 3,
+        "decade_slopes": [
+          "3.00024e+0",
+          "3.00000e+0",
+          "3.00000e+0"
+        ],
+        "exact_exponent": 3,
+        "q": 5,
+        "sigma_squared_brackets_lambda_1e-2_to_1e-5": [
+          [
+            "6.86060402562e-17",
+            "6.86060402562e-17"
+          ],
+          [
+            "6.85314549298e-23",
+            "6.85314549298e-23"
+          ],
+          [
+            "6.85307092861e-29",
+            "6.85307092861e-29"
+          ],
+          [
+            "6.85307018297e-35",
+            "6.85307018297e-35"
+          ]
+        ],
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2,
+          3
+        ]
+      },
+      {
+        "L": 4,
+        "L_q": 3,
+        "decade_slopes": [
+          "3.00021e+0",
+          "3.00000e+0",
+          "3.00000e+0"
+        ],
+        "exact_exponent": 3,
+        "q": 5,
+        "sigma_squared_brackets_lambda_1e-2_to_1e-5": [
+          [
+            "5.80199352073e-16",
+            "5.80199352073e-16"
+          ],
+          [
+            "5.79642718403e-22",
+            "5.79642718403e-22"
+          ],
+          [
+            "5.79637152990e-28",
+            "5.79637152990e-28"
+          ],
+          [
+            "5.79637097336e-34",
+            "5.79637097336e-34"
+          ]
+        ],
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2,
+          3
+        ]
+      },
+      {
+        "L": 5,
+        "L_q": 3,
+        "decade_slopes": [
+          "3.00018e+0",
+          "3.00000e+0",
+          "3.00000e+0"
+        ],
+        "exact_exponent": 3,
+        "q": 5,
+        "sigma_squared_brackets_lambda_1e-2_to_1e-5": [
+          [
+            "2.74234823080e-15",
+            "2.74234823080e-15"
+          ],
+          [
+            "2.74005935107e-21",
+            "2.74005935107e-21"
+          ],
+          [
+            "2.74003646308e-27",
+            "2.74003646308e-27"
+          ],
+          [
+            "2.74003623420e-33",
+            "2.74003623420e-33"
+          ]
+        ],
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2,
+          3
+        ]
+      }
+    ],
+    "lw_P8_r8": [
+      {
+        "L": 1,
+        "L_q": 1,
+        "exact_exponent": 1,
+        "q": 2,
+        "smith_exponents": [
+          1,
+          1
+        ]
+      },
+      {
+        "L": 2,
+        "L_q": 2,
+        "exact_exponent": 2,
+        "q": 4,
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2
+        ]
+      },
+      {
+        "L": 3,
+        "L_q": 3,
+        "exact_exponent": 3,
+        "q": 6,
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2,
+          3,
+          3
+        ]
+      },
+      {
+        "L": 4,
+        "L_q": 4,
+        "exact_exponent": 4,
+        "q": 7,
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2,
+          3,
+          3,
+          4
+        ]
+      },
+      {
+        "L": 5,
+        "L_q": 4,
+        "exact_exponent": 4,
+        "q": 7,
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2,
+          3,
+          3,
+          4
+        ]
+      },
+      {
+        "L": 6,
+        "L_q": 4,
+        "exact_exponent": 4,
+        "q": 7,
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2,
+          3,
+          3,
+          4
+        ]
+      },
+      {
+        "L": 7,
+        "L_q": 4,
+        "exact_exponent": 4,
+        "q": 7,
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2,
+          3,
+          3,
+          4
+        ]
+      }
+    ],
+    "ub3_P8_r6": [
+      {
+        "L": 1,
+        "L_q": 1,
+        "decade_slopes": [
+          "9.97317e-1",
+          "9.99739e-1",
+          "9.99974e-1"
+        ],
+        "exact_exponent": 1,
+        "q": 2,
+        "sigma_squared_brackets_lambda_1e-2_to_1e-5": [
+          [
+            "1.11543560097e-6",
+            "1.11543560097e-6"
+          ],
+          [
+            "1.12930538453e-8",
+            "1.12930538453e-8"
+          ],
+          [
+            "1.13066477075e-10",
+            "1.13066477075e-10"
+          ],
+          [
+            "1.13080042813e-12",
+            "1.13080042813e-12"
+          ]
+        ],
+        "smith_exponents": [
+          1,
+          1
+        ]
+      },
+      {
+        "L": 2,
+        "L_q": 2,
+        "decade_slopes": [
+          "1.98999e+0",
+          "1.99900e+0",
+          "1.99990e+0"
+        ],
+        "exact_exponent": 2,
+        "q": 4,
+        "sigma_squared_brackets_lambda_1e-2_to_1e-5": [
+          [
+            "7.33598440385e-13",
+            "7.33598440385e-13"
+          ],
+          [
+            "7.68210070327e-17",
+            "7.68210070327e-17"
+          ],
+          [
+            "7.71753013569e-21",
+            "7.71753013569e-21"
+          ],
+          [
+            "7.72108138577e-25",
+            "7.72108138577e-25"
+          ]
+        ],
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2
+        ]
+      },
+      {
+        "L": 3,
+        "L_q": 3,
+        "decade_slopes": [
+          "3.00699e+0",
+          "3.00070e+0",
+          "3.00007e+0"
+        ],
+        "exact_exponent": 3,
+        "q": 5,
+        "sigma_squared_brackets_lambda_1e-2_to_1e-5": [
+          [
+            "2.16632364824e-15",
+            "2.16632364824e-15"
+          ],
+          [
+            "2.09769345663e-21",
+            "2.09769345663e-21"
+          ],
+          [
+            "2.09093634908e-27",
+            "2.09093634908e-27"
+          ],
+          [
+            "2.09026169211e-33",
+            "2.09026169211e-33"
+          ]
+        ],
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2,
+          3
+        ]
+      },
+      {
+        "L": 4,
+        "L_q": 3,
+        "decade_slopes": [
+          "3.00551e+0",
+          "3.00056e+0",
+          "3.00006e+0"
+        ],
+        "exact_exponent": 3,
+        "q": 5,
+        "sigma_squared_brackets_lambda_1e-2_to_1e-5": [
+          [
+            "1.81848561406e-14",
+            "1.81848561406e-14"
+          ],
+          [
+            "1.77292808649e-20",
+            "1.77292808649e-20"
+          ],
+          [
+            "1.76839663718e-26",
+            "1.76839663718e-26"
+          ],
+          [
+            "1.76794374946e-32",
+            "1.76794374946e-32"
+          ]
+        ],
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2,
+          3
+        ]
+      },
+      {
+        "L": 5,
+        "L_q": 3,
+        "decade_slopes": [
+          "3.00404e+0",
+          "3.00041e+0",
+          "3.00004e+0"
+        ],
+        "exact_exponent": 3,
+        "q": 5,
+        "sigma_squared_brackets_lambda_1e-2_to_1e-5": [
+          [
+            "8.53208185472e-14",
+            "8.53208185472e-14"
+          ],
+          [
+            "8.37477421923e-20",
+            "8.37477421923e-20"
+          ],
+          [
+            "8.35887960464e-26",
+            "8.35887960465e-26"
+          ],
+          [
+            "8.35728865015e-32",
+            "8.35728865015e-32"
+          ]
+        ],
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2,
+          3
+        ]
+      }
+    ],
+    "ub3_P8_r8": [
+      {
+        "L": 1,
+        "L_q": 1,
+        "exact_exponent": 1,
+        "q": 2,
+        "smith_exponents": [
+          1,
+          1
+        ]
+      },
+      {
+        "L": 2,
+        "L_q": 2,
+        "exact_exponent": 2,
+        "q": 4,
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2
+        ]
+      },
+      {
+        "L": 3,
+        "L_q": 3,
+        "exact_exponent": 3,
+        "q": 6,
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2,
+          3,
+          3
+        ]
+      },
+      {
+        "L": 4,
+        "L_q": 4,
+        "exact_exponent": 4,
+        "q": 7,
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2,
+          3,
+          3,
+          4
+        ]
+      },
+      {
+        "L": 5,
+        "L_q": 4,
+        "exact_exponent": 4,
+        "q": 7,
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2,
+          3,
+          3,
+          4
+        ]
+      },
+      {
+        "L": 6,
+        "L_q": 4,
+        "exact_exponent": 4,
+        "q": 7,
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2,
+          3,
+          3,
+          4
+        ]
+      },
+      {
+        "L": 7,
+        "L_q": 4,
+        "exact_exponent": 4,
+        "q": 7,
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2,
+          3,
+          3,
+          4
+        ]
+      }
+    ],
+    "ub5_P8_r6": [
+      {
+        "L": 1,
+        "L_q": 1,
+        "decade_slopes": [
+          "9.99659e-1",
+          "9.99974e-1",
+          "9.99997e-1"
+        ],
+        "exact_exponent": 1,
+        "q": 2,
+        "sigma_squared_brackets_lambda_1e-2_to_1e-5": [
+          [
+            "1.52235486049e-6",
+            "1.52235486049e-6"
+          ],
+          [
+            "1.52474909766e-8",
+            "1.52474909766e-8"
+          ],
+          [
+            "1.52493301359e-10",
+            "1.52493301359e-10"
+          ],
+          [
+            "1.52495085111e-12",
+            "1.52495085111e-12"
+          ]
+        ],
+        "smith_exponents": [
+          1,
+          1
+        ]
+      },
+      {
+        "L": 2,
+        "L_q": 2,
+        "decade_slopes": [
+          "1.99170e+0",
+          "1.99917e+0",
+          "1.99992e+0"
+        ],
+        "exact_exponent": 2,
+        "q": 4,
+        "sigma_squared_brackets_lambda_1e-2_to_1e-5": [
+          [
+            "3.79519664726e-12",
+            "3.79519664727e-12"
+          ],
+          [
+            "3.94301272350e-16",
+            "3.94301272350e-16"
+          ],
+          [
+            "3.95807400471e-20",
+            "3.95807400471e-20"
+          ],
+          [
+            "3.95958296227e-24",
+            "3.95958296227e-24"
+          ]
+        ],
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2
+        ]
+      },
+      {
+        "L": 3,
+        "L_q": 3,
+        "decade_slopes": [
+          "3.00657e+0",
+          "3.00066e+0",
+          "3.00007e+0"
+        ],
+        "exact_exponent": 3,
+        "q": 5,
+        "sigma_squared_brackets_lambda_1e-2_to_1e-5": [
+          [
+            "2.50887250514e-15",
+            "2.50887250514e-15"
+          ],
+          [
+            "2.43410216057e-21",
+            "2.43410216057e-21"
+          ],
+          [
+            "2.42676425122e-27",
+            "2.42676425122e-27"
+          ],
+          [
+            "2.42603183912e-33",
+            "2.42603183912e-33"
+          ]
+        ],
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2,
+          3
+        ]
+      },
+      {
+        "L": 4,
+        "L_q": 3,
+        "decade_slopes": [
+          "3.00592e+0",
+          "3.00059e+0",
+          "3.00006e+0"
+        ],
+        "exact_exponent": 3,
+        "q": 5,
+        "sigma_squared_brackets_lambda_1e-2_to_1e-5": [
+          [
+            "2.11504433264e-14",
+            "2.11504433264e-14"
+          ],
+          [
+            "2.05812495514e-20",
+            "2.05812495514e-20"
+          ],
+          [
+            "2.05251297861e-26",
+            "2.05251297861e-26"
+          ],
+          [
+            "2.05195258119e-32",
+            "2.05195258119e-32"
+          ]
+        ],
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2,
+          3
+        ]
+      },
+      {
+        "L": 5,
+        "L_q": 3,
+        "decade_slopes": [
+          "3.00528e+0",
+          "3.00053e+0",
+          "3.00005e+0"
+        ],
+        "exact_exponent": 3,
+        "q": 5,
+        "sigma_squared_brackets_lambda_1e-2_to_1e-5": [
+          [
+            "9.96557258228e-14",
+            "9.96557258228e-14"
+          ],
+          [
+            "9.72602360622e-20",
+            "9.72602360622e-20"
+          ],
+          [
+            "9.70227157418e-26",
+            "9.70227157418e-26"
+          ],
+          [
+            "9.69989845199e-32",
+            "9.69989845200e-32"
+          ]
+        ],
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2,
+          3
+        ]
+      }
+    ],
+    "ub5_P8_r8": [
+      {
+        "L": 1,
+        "L_q": 1,
+        "exact_exponent": 1,
+        "q": 2,
+        "smith_exponents": [
+          1,
+          1
+        ]
+      },
+      {
+        "L": 2,
+        "L_q": 2,
+        "exact_exponent": 2,
+        "q": 4,
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2
+        ]
+      },
+      {
+        "L": 3,
+        "L_q": 3,
+        "exact_exponent": 3,
+        "q": 7,
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2,
+          3,
+          3,
+          3
+        ]
+      },
+      {
+        "L": 4,
+        "L_q": 3,
+        "exact_exponent": 3,
+        "q": 7,
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2,
+          3,
+          3,
+          3
+        ]
+      },
+      {
+        "L": 5,
+        "L_q": 3,
+        "exact_exponent": 3,
+        "q": 7,
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2,
+          3,
+          3,
+          3
+        ]
+      },
+      {
+        "L": 6,
+        "L_q": 3,
+        "exact_exponent": 3,
+        "q": 7,
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2,
+          3,
+          3,
+          3
+        ]
+      },
+      {
+        "L": 7,
+        "L_q": 3,
+        "exact_exponent": 3,
+        "q": 7,
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2,
+          3,
+          3,
+          3
+        ]
+      }
+    ],
+    "uw1_P8_r6": [
+      {
+        "L": 1,
+        "L_q": 1,
+        "decade_slopes": [
+          "1.00000e+0",
+          "1.00000e+0",
+          "1.00000e+0"
+        ],
+        "exact_exponent": 1,
+        "q": 1,
+        "sigma_squared_brackets_lambda_1e-2_to_1e-5": [
+          [
+            "5.55555555556e-6",
+            "5.55555555556e-6"
+          ],
+          [
+            "5.55555555556e-8",
+            "5.55555555556e-8"
+          ],
+          [
+            "5.55555555556e-10",
+            "5.55555555556e-10"
+          ],
+          [
+            "5.55555555556e-12",
+            "5.55555555556e-12"
+          ]
+        ],
+        "smith_exponents": [
+          1
+        ]
+      },
+      {
+        "L": 2,
+        "L_q": 2,
+        "decade_slopes": [
+          "2.00156e+0",
+          "2.00016e+0",
+          "2.00002e+0"
+        ],
+        "exact_exponent": 2,
+        "q": 2,
+        "sigma_squared_brackets_lambda_1e-2_to_1e-5": [
+          [
+            "1.12003107456e-10",
+            "1.12003107456e-10"
+          ],
+          [
+            "1.11200031108e-14",
+            "1.11200031108e-14"
+          ],
+          [
+            "1.11120000311e-18",
+            "1.11120000311e-18"
+          ],
+          [
+            "1.11112000003e-22",
+            "1.11112000003e-22"
+          ]
+        ],
+        "smith_exponents": [
+          1,
+          2
+        ]
+      },
+      {
+        "L": 3,
+        "L_q": 3,
+        "decade_slopes": [
+          "3.00371e+0",
+          "3.00037e+0",
+          "3.00004e+0"
+        ],
+        "exact_exponent": 3,
+        "q": 3,
+        "sigma_squared_brackets_lambda_1e-2_to_1e-5": [
+          [
+            "2.97996639676e-15",
+            "2.97996639676e-15"
+          ],
+          [
+            "2.92952261837e-21",
+            "2.92952261837e-21"
+          ],
+          [
+            "2.92453068321e-27",
+            "2.92453068321e-27"
+          ],
+          [
+            "2.92403201043e-33",
+            "2.92403201043e-33"
+          ]
+        ],
+        "smith_exponents": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "L": 4,
+        "L_q": 4,
+        "decade_slopes": [
+          "4.00579e+0",
+          "4.00058e+0",
+          "4.00006e+0"
+        ],
+        "exact_exponent": 4,
+        "q": 4,
+        "sigma_squared_brackets_lambda_1e-2_to_1e-5": [
+          [
+            "8.29348660828e-20",
+            "8.29348660828e-20"
+          ],
+          [
+            "8.07537302593e-28",
+            "8.07537302593e-28"
+          ],
+          [
+            "8.05391062967e-36",
+            "8.05391062967e-36"
+          ],
+          [
+            "8.05176783976e-44",
+            "8.05176783976e-44"
+          ]
+        ],
+        "smith_exponents": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "L": 5,
+        "L_q": 5,
+        "decade_slopes": [
+          "5.00780e+0",
+          "5.00078e+0",
+          "5.00008e+0"
+        ],
+        "exact_exponent": 5,
+        "q": 5,
+        "sigma_squared_brackets_lambda_1e-2_to_1e-5": [
+          [
+            "2.30348306209e-24",
+            "2.30348306209e-24"
+          ],
+          [
+            "2.22220600661e-34",
+            "2.22220600661e-34"
+          ],
+          [
+            "2.21425075776e-44",
+            "2.21425075776e-44"
+          ],
+          [
+            "2.21345693116e-54",
+            "2.21345693116e-54"
+          ]
+        ],
+        "smith_exponents": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      }
+    ],
+    "uw1_P8_r8": [
+      {
+        "L": 1,
+        "L_q": 1,
+        "exact_exponent": 1,
+        "q": 1,
+        "smith_exponents": [
+          1
+        ]
+      },
+      {
+        "L": 2,
+        "L_q": 2,
+        "exact_exponent": 2,
+        "q": 2,
+        "smith_exponents": [
+          1,
+          2
+        ]
+      },
+      {
+        "L": 3,
+        "L_q": 3,
+        "exact_exponent": 3,
+        "q": 3,
+        "smith_exponents": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "L": 4,
+        "L_q": 4,
+        "exact_exponent": 4,
+        "q": 4,
+        "smith_exponents": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "L": 5,
+        "L_q": 5,
+        "exact_exponent": 5,
+        "q": 5,
+        "smith_exponents": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "L": 6,
+        "L_q": 6,
+        "exact_exponent": 6,
+        "q": 6,
+        "smith_exponents": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "L": 7,
+        "L_q": 7,
+        "exact_exponent": 7,
+        "q": 7,
+        "smith_exponents": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      }
+    ],
+    "weno5l_P8_r6": [
+      {
+        "L": 1,
+        "L_q": 1,
+        "decade_slopes": [
+          "1.00000e+0",
+          "1.00000e+0",
+          "1.00000e+0"
+        ],
+        "exact_exponent": 1,
+        "q": 2,
+        "sigma_squared_brackets_lambda_1e-2_to_1e-5": [
+          [
+            "1.52495282683e-6",
+            "1.52495282683e-6"
+          ],
+          [
+            "1.52495282683e-8",
+            "1.52495282683e-8"
+          ],
+          [
+            "1.52495282683e-10",
+            "1.52495282683e-10"
+          ],
+          [
+            "1.52495282683e-12",
+            "1.52495282683e-12"
+          ]
+        ],
+        "smith_exponents": [
+          1,
+          1
+        ]
+      },
+      {
+        "L": 2,
+        "L_q": 2,
+        "decade_slopes": [
+          "2.00192e+0",
+          "2.00019e+0",
+          "2.00002e+0"
+        ],
+        "exact_exponent": 2,
+        "q": 4,
+        "sigma_squared_brackets_lambda_1e-2_to_1e-5": [
+          [
+            "3.99874120953e-12",
+            "3.99874120953e-12"
+          ],
+          [
+            "3.96362667389e-16",
+            "3.96362667389e-16"
+          ],
+          [
+            "3.96013802858e-20",
+            "3.96013802858e-20"
+          ],
+          [
+            "3.95978939098e-24",
+            "3.95978939098e-24"
+          ]
+        ],
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2
+        ]
+      },
+      {
+        "L": 3,
+        "L_q": 3,
+        "decade_slopes": [
+          "3.00079e+0",
+          "3.00008e+0",
+          "3.00001e+0"
+        ],
+        "exact_exponent": 3,
+        "q": 5,
+        "sigma_squared_brackets_lambda_1e-2_to_1e-5": [
+          [
+            "2.43577643585e-15",
+            "2.43577643585e-15"
+          ],
+          [
+            "2.42694745173e-21",
+            "2.42694745173e-21"
+          ],
+          [
+            "2.42605031593e-27",
+            "2.42605031593e-27"
+          ],
+          [
+            "2.42596046093e-33",
+            "2.42596046093e-33"
+          ]
+        ],
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2,
+          3
+        ]
+      },
+      {
+        "L": 4,
+        "L_q": 3,
+        "decade_slopes": [
+          "3.00018e+0",
+          "3.00002e+0",
+          "3.00000e+0"
+        ],
+        "exact_exponent": 3,
+        "q": 5,
+        "sigma_squared_brackets_lambda_1e-2_to_1e-5": [
+          [
+            "2.05374576160e-14",
+            "2.05374576160e-14"
+          ],
+          [
+            "2.05207860631e-20",
+            "2.05207860631e-20"
+          ],
+          [
+            "2.05190917980e-26",
+            "2.05190917980e-26"
+          ],
+          [
+            "2.05189220967e-32",
+            "2.05189220967e-32"
+          ]
+        ],
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2,
+          3
+        ]
+      },
+      {
+        "L": 5,
+        "L_q": 3,
+        "decade_slopes": [
+          "2.99957e+0",
+          "2.99996e+0",
+          "3.00000e+0"
+        ],
+        "exact_exponent": 3,
+        "q": 5,
+        "sigma_squared_brackets_lambda_1e-2_to_1e-5": [
+          [
+            "9.67825946438e-14",
+            "9.67825946439e-14"
+          ],
+          [
+            "9.69746561019e-20",
+            "9.69746561019e-20"
+          ],
+          [
+            "9.69941756550e-26",
+            "9.69941756550e-26"
+          ],
+          [
+            "9.69961306909e-32",
+            "9.69961306909e-32"
+          ]
+        ],
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2,
+          3
+        ]
+      }
+    ],
+    "weno5l_P8_r8": [
+      {
+        "L": 1,
+        "L_q": 1,
+        "exact_exponent": 1,
+        "q": 2,
+        "smith_exponents": [
+          1,
+          1
+        ]
+      },
+      {
+        "L": 2,
+        "L_q": 2,
+        "exact_exponent": 2,
+        "q": 4,
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2
+        ]
+      },
+      {
+        "L": 3,
+        "L_q": 3,
+        "exact_exponent": 3,
+        "q": 7,
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2,
+          3,
+          3,
+          3
+        ]
+      },
+      {
+        "L": 4,
+        "L_q": 3,
+        "exact_exponent": 3,
+        "q": 7,
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2,
+          3,
+          3,
+          3
+        ]
+      },
+      {
+        "L": 5,
+        "L_q": 3,
+        "exact_exponent": 3,
+        "q": 7,
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2,
+          3,
+          3,
+          3
+        ]
+      },
+      {
+        "L": 6,
+        "L_q": 3,
+        "exact_exponent": 3,
+        "q": 7,
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2,
+          3,
+          3,
+          3
+        ]
+      },
+      {
+        "L": 7,
+        "L_q": 3,
+        "exact_exponent": 3,
+        "q": 7,
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2,
+          3,
+          3,
+          3
+        ]
+      }
+    ],
+    "weno5l_rk3_P8_r6": [
+      {
+        "L": 1,
+        "L_q": 1,
+        "decade_slopes": [
+          "2.98852e+0",
+          "2.99887e+0",
+          "2.99989e+0"
+        ],
+        "exact_exponent": 3,
+        "q": 3,
+        "sigma_squared_brackets_lambda_1e-2_to_1e-5": [
+          [
+            "1.95671181335e-21",
+            "1.95671181335e-21"
+          ],
+          [
+            "2.06296934170e-27",
+            "2.06296934170e-27"
+          ],
+          [
+            "2.07376528185e-33",
+            "2.07376528185e-33"
+          ],
+          [
+            "2.07484658215e-39",
+            "2.07484658215e-39"
+          ]
+        ],
+        "smith_exponents": [
+          1,
+          1,
+          3
+        ]
+      },
+      {
+        "L": 2,
+        "L_q": 2,
+        "exact_exponent": 3,
+        "q": 5,
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2,
+          3
+        ]
+      },
+      {
+        "L": 3,
+        "L_q": 2,
+        "exact_exponent": 3,
+        "q": 5,
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2,
+          3
+        ]
+      },
+      {
+        "L": 4,
+        "L_q": 2,
+        "exact_exponent": 3,
+        "q": 5,
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2,
+          3
+        ]
+      },
+      {
+        "L": 5,
+        "L_q": 2,
+        "exact_exponent": 3,
+        "q": 5,
+        "smith_exponents": [
+          1,
+          1,
+          2,
+          2,
+          3
+        ]
+      }
+    ],
+    "weno5l_rk3_P8_r8": [
+      {
+        "L": 1,
+        "L_q": 1,
+        "exact_exponent": 3,
+        "q": 3,
+        "smith_exponents": [
+          1,
+          1,
+          3
+        ]
+      }
+    ]
+  },
+  "conditioning_exclusion": {
+    "r6": {
+      "exact_exponent": 3,
+      "nonzero_parents": [
+        0,
+        1,
+        2,
+        7
+      ],
+      "rho_1": 3,
+      "smith_exponents": [
+        1,
+        1,
+        3
+      ]
+    },
+    "r8": {
+      "exact_exponent": 3,
+      "nonzero_parents": [
+        0,
+        1,
+        2,
+        7
+      ],
+      "rho_1": 3,
+      "smith_exponents": [
+        1,
+        1,
+        3
+      ]
+    }
+  },
+  "discrepancies": [
+    {
+      "claim": "nondissipative_lambdas_in_(0,1] = ''",
+      "finding": "A(lambda) = 1/2*lam^1 + -5/4*lam^2 + 1*lam^3 + -1/4*lam^4 vanishes at lambda = 1 (exact zeros in (0,1]: ['1']); the manuscript's tab:scheme-zoo lists lambda=1 as nondissipative, so the CSV omits it",
+      "location": "results/erasure_orders.csv, row bw"
+    },
+    {
+      "claim": "ratio at N=384 in [0.9999,1.0009] except UB5 at lambda=0.9 (0.989, a visible next-order correction at 2s=6)",
+      "finding": "rigorous value for UB5 at lambda=0.9 is 9.99942104975e-1 (1-rho_N = 3.05309495414e-14), inside [0.9999, 1.0009]; the next-order theta^8 term predicts a correction of -5.790e-5, not -0.011; 0.989 is a double-precision artifact (1-rho_N is about 2.7499835e+2 units of 2^-53 and the CSV value is 3 units low)",
+      "location": "article.tex line 1010 (E4c), label sec:exp-erasure"
+    },
+    {
+      "claim": "the measured ratio is within 1e-4 of unity at N=384 for every scheme at lambda=1/2",
+      "finding": "exact ratio for WENO5-LIN+SSP-RK3 at lambda=1/2, N=384 is 1.00083436840e+0 (deviation 8.3e-4); the 1e-4 statement holds for the six interpolation members only",
+      "location": "article.tex line 745 (proof of prop:contraction-general)"
+    },
+    {
+      "claim": "log-log slopes on the last three N match -2s to three decimals for every stable scheme (-6.000)",
+      "finding": "for UB5 at lambda=0.9 the authors' fit is -6.00728077181369 (contaminated by the N=384 float value) and the exact slope is -5.9993735e+0; neither rounds to -6.000 (the exact one rounds to -5.999); all other cells reproduce the authors' fits to 1e-5",
+      "location": "article.tex line 1010 (E4c) and results/erasure_rate_fits.csv (ub5, 0.9)"
+    }
+  ],
+  "dissipation": {
+    "bw": {
+      "A": "1/2*lam^1 + -5/4*lam^2 + 1*lam^3 + -1/4*lam^4",
+      "authors_csv_nondissipative": "",
+      "nondissipative_lambdas_in_0_1": [
+        "1"
+      ],
+      "two_s": 4
+    },
+    "fromm": {
+      "A": "1/4*lam^1 + -1/2*lam^2 + 1/2*lam^3 + -1/4*lam^4",
+      "authors_csv_nondissipative": "1",
+      "nondissipative_lambdas_in_0_1": [
+        "1"
+      ],
+      "two_s": 4
+    },
+    "lw": {
+      "A": "1/4*lam^2 + -1/4*lam^4",
+      "authors_csv_nondissipative": "1",
+      "nondissipative_lambdas_in_0_1": [
+        "1"
+      ],
+      "two_s": 4
+    },
+    "ub3": {
+      "A": "1/6*lam^1 + -1/12*lam^2 + -1/6*lam^3 + 1/12*lam^4",
+      "authors_csv_nondissipative": "1",
+      "nondissipative_lambdas_in_0_1": [
+        "1"
+      ],
+      "two_s": 4
+    },
+    "ub5": {
+      "A": "1/30*lam^1 + -1/90*lam^2 + -1/24*lam^3 + 1/72*lam^4 + 1/120*lam^5 + -1/360*lam^6",
+      "authors_csv_nondissipative": "1",
+      "nondissipative_lambdas_in_0_1": [
+        "1"
+      ],
+      "two_s": 6
+    },
+    "uw1": {
+      "A": "1*lam^1 + -1*lam^2",
+      "authors_csv_nondissipative": "1",
+      "nondissipative_lambdas_in_0_1": [
+        "1"
+      ],
+      "two_s": 2
+    },
+    "weno5l": {
+      "A": "-1*lam^2",
+      "two_s": 2
+    },
+    "weno5l_rk3": {
+      "A": "1/12*lam^4",
+      "authors_csv_nondissipative": "",
+      "nondissipative_lambdas_in_0_1": [],
+      "two_s": 4
+    }
+  },
+  "erasure": {
+    "bw_lambda_0.5_N192": {
+      "authors_error_in_units_of_2^-53": "1.15e-2",
+      "authors_one_minus_rho": "2.687499134346183e-08",
+      "authors_ratio": "0.9998215410485636",
+      "one_minus_rho": "2.68749913422e-8",
+      "one_minus_rho_in_units_of_2^-53": "2.4206840e+8",
+      "ratio": "9.99821541001e-1"
+    },
+    "bw_lambda_0.5_N24": {
+      "authors_error_in_units_of_2^-53": "7.06e-1",
+      "authors_one_minus_rho": "0.00010885429782425682",
+      "authors_ratio": "0.9886891974612911",
+      "one_minus_rho": "1.08854297824e-4",
+      "one_minus_rho_in_units_of_2^-53": "9.8047235e+11",
+      "ratio": "9.88689197462e-1"
+    },
+    "bw_lambda_0.5_N384": {
+      "authors_error_in_units_of_2^-53": "6.27e-1",
+      "authors_one_minus_rho": "1.6799118762733656e-09",
+      "authors_ratio": "0.9999554214524651",
+      "one_minus_rho": "1.67991180671e-9",
+      "one_minus_rho_in_units_of_2^-53": "1.5131300e+7",
+      "ratio": "9.99955380044e-1"
+    },
+    "bw_lambda_0.5_N48": {
+      "authors_error_in_units_of_2^-53": "2.29e-1",
+      "authors_one_minus_rho": "6.861623251586124e-06",
+      "authors_ratio": "0.9971512998919093",
+      "one_minus_rho": "6.86162325156e-6",
+      "one_minus_rho_in_units_of_2^-53": "6.1804008e+10",
+      "ratio": "9.97151299888e-1"
+    },
+    "bw_lambda_0.5_N96": {
+      "authors_error_in_units_of_2^-53": "6.98e-2",
+      "authors_one_minus_rho": "4.2976975156427955e-07",
+      "authors_ratio": "0.9992864970019618",
+      "one_minus_rho": "4.29769751557e-7",
+      "one_minus_rho_in_units_of_2^-53": "3.8710218e+9",
+      "ratio": "9.99286496984e-1"
+    },
+    "bw_lambda_0.9_N192": {
+      "authors_error_in_units_of_2^-53": "2.46e+0",
+      "authors_one_minus_rho": "1.4189992514346272e-09",
+      "authors_ratio": "0.9998213356587218",
+      "one_minus_rho": "1.41899952481e-9",
+      "one_minus_rho_in_units_of_2^-53": "1.2781211e+7",
+      "ratio": "9.99821528275e-1"
+    },
+    "bw_lambda_0.9_N24": {
+      "authors_error_in_units_of_2^-53": "6.24e-1",
+      "authors_one_minus_rho": "5.747210619855281e-06",
+      "authors_ratio": "0.9886382268719962",
+      "one_minus_rho": "5.74721061992e-6",
+      "one_minus_rho_in_units_of_2^-53": "5.1766271e+10",
+      "ratio": "9.88638226884e-1"
+    },
+    "bw_lambda_0.9_N384": {
+      "authors_error_in_units_of_2^-53": "1.66e+0",
+      "authors_one_minus_rho": "8.86991591286801e-11",
+      "authors_ratio": "0.999953302720152",
+      "one_minus_rho": "8.86993433236e-11",
+      "one_minus_rho_in_units_of_2^-53": "7.9893266e+5",
+      "ratio": "9.99955379248e-1"
+    },
+    "bw_lambda_0.9_N48": {
+      "authors_error_in_units_of_2^-53": "3.57e-1",
+      "authors_one_minus_rho": "3.6229253030928277e-07",
+      "authors_ratio": "0.9971480593706376",
+      "one_minus_rho": "3.62292530349e-7",
+      "one_minus_rho_in_units_of_2^-53": "3.2632410e+9",
+      "ratio": "9.97148059480e-1"
+    },
+    "bw_lambda_0.9_N96": {
+      "authors_error_in_units_of_2^-53": "6.96e-1",
+      "authors_one_minus_rho": "2.2691838186261748e-08",
+      "authors_ratio": "0.999286290188409",
+      "one_minus_rho": "2.26918382635e-8",
+      "one_minus_rho_in_units_of_2^-53": "2.0438991e+8",
+      "ratio": "9.99286293590e-1"
+    },
+    "fromm_lambda_0.5_N192": {
+      "authors_error_in_units_of_2^-53": "1.06e+0",
+      "authors_one_minus_rho": "2.687738942519502e-08",
+      "authors_ratio": "0.9999107561014503",
+      "one_minus_rho": "2.68773895434e-8",
+      "one_minus_rho_in_units_of_2^-53": "2.4209000e+8",
+      "ratio": "9.99910760498e-1"
+    },
+    "fromm_lambda_0.5_N24": {
+      "authors_error_in_units_of_2^-53": "2.10e+0",
+      "authors_one_minus_rho": "0.00010947251837389871",
+      "authors_ratio": "0.9943042994030292",
+      "one_minus_rho": "1.09472518374e-4",
+      "one_minus_rho_in_units_of_2^-53": "9.8604079e+11",
+      "ratio": "9.94304299405e-1"
+    },
+    "fromm_lambda_0.5_N384": {
+      "authors_error_in_units_of_2^-53": "9.58e-1",
+      "authors_one_minus_rho": "1.679949179766993e-09",
+      "authors_ratio": "0.9999776260878502",
+      "one_minus_rho": "1.67994928612e-9",
+      "one_minus_rho_in_units_of_2^-53": "1.5131638e+7",
+      "ratio": "9.99977689396e-1"
+    },
+    "fromm_lambda_0.5_N48": {
+      "authors_error_in_units_of_2^-53": "9.40e-3",
+      "authors_one_minus_rho": "6.871406974862104e-06",
+      "authors_ratio": "0.9985730993735658",
+      "one_minus_rho": "6.87140697486e-6",
+      "one_minus_rho_in_units_of_2^-53": "6.1892132e+10",
+      "ratio": "9.98573099373e-1"
+    },
+    "fromm_lambda_0.5_N96": {
+      "authors_error_in_units_of_2^-53": "3.59e-1",
+      "authors_one_minus_rho": "4.2992311322098686e-07",
+      "authors_ratio": "0.9996430884841395",
+      "one_minus_rho": "4.29923113261e-7",
+      "one_minus_rho_in_units_of_2^-53": "3.8724031e+9",
+      "ratio": "9.99643088577e-1"
+    },
+    "fromm_lambda_0.9_N192": {
+      "authors_error_in_units_of_2^-53": "1.69e+0",
+      "authors_one_minus_rho": "1.1739306748914657e-08",
+      "authors_ratio": "0.9998479891935205",
+      "one_minus_rho": "1.17393069363e-8",
+      "one_minus_rho_in_units_of_2^-53": "1.0573828e+8",
+      "ratio": "9.99848005153e-1"
+    },
+    "fromm_lambda_0.9_N24": {
+      "authors_error_in_units_of_2^-53": "1.28e+0",
+      "authors_one_minus_rho": "4.762621617671048e-05",
+      "authors_ratio": "0.990324806026032",
+      "one_minus_rho": "4.76262161769e-5",
+      "one_minus_rho_in_units_of_2^-53": "4.2897882e+11",
+      "ratio": "9.90324806029e-1"
+    },
+    "fromm_lambda_0.9_N384": {
+      "authors_error_in_units_of_2^-53": "2.49e-1",
+      "authors_one_minus_rho": "7.337903618065411e-10",
+      "authors_ratio": "0.9999620365108014",
+      "one_minus_rho": "7.33790334155e-10",
+      "one_minus_rho_in_units_of_2^-53": "6.6093958e+6",
+      "ratio": "9.99961998829e-1"
+    },
+    "fromm_lambda_0.9_N48": {
+      "authors_error_in_units_of_2^-53": "1.95e+0",
+      "authors_one_minus_rho": "2.9984192104759444e-06",
+      "authors_ratio": "0.9975712240440809",
+      "one_minus_rho": "2.99841921069e-6",
+      "one_minus_rho_in_units_of_2^-53": "2.7007359e+10",
+      "ratio": "9.97571224116e-1"
+    },
+    "fromm_lambda_0.9_N96": {
+      "authors_error_in_units_of_2^-53": "2.60e+0",
+      "authors_one_minus_rho": "1.8774328014448116e-07",
+      "authors_ratio": "0.9993921763864496",
+      "one_minus_rho": "1.87743280433e-7",
+      "one_minus_rho_in_units_of_2^-53": "1.6910411e+9",
+      "ratio": "9.99392177923e-1"
+    },
+    "lw_lambda_0.5_N192": {
+      "authors_error_in_units_of_2^-53": "1.01e+0",
+      "authors_one_minus_rho": "2.6874991454484132e-08",
+      "authors_ratio": "0.9998215451788901",
+      "one_minus_rho": "2.68749913422e-8",
+      "one_minus_rho_in_units_of_2^-53": "2.4206840e+8",
+      "ratio": "9.99821541001e-1"
+    },
+    "lw_lambda_0.5_N24": {
+      "authors_error_in_units_of_2^-53": "1.71e+0",
+      "authors_one_minus_rho": "0.0001088542978241458",
+      "authors_ratio": "0.9886891974602828",
+      "one_minus_rho": "1.08854297824e-4",
+      "one_minus_rho_in_units_of_2^-53": "9.8047235e+11",
+      "ratio": "9.88689197462e-1"
+    },
+    "lw_lambda_0.5_N384": {
+      "authors_error_in_units_of_2^-53": "3.73e-1",
+      "authors_one_minus_rho": "1.6799117652510631e-09",
+      "authors_ratio": "0.9999553553672407",
+      "one_minus_rho": "1.67991180671e-9",
+      "one_minus_rho_in_units_of_2^-53": "1.5131300e+7",
+      "ratio": "9.99955380044e-1"
+    },
+    "lw_lambda_0.5_N48": {
+      "authors_error_in_units_of_2^-53": "2.29e-1",
+      "authors_one_minus_rho": "6.861623251586124e-06",
+      "authors_ratio": "0.9971512998919093",
+      "one_minus_rho": "6.86162325156e-6",
+      "one_minus_rho_in_units_of_2^-53": "6.1804008e+10",
+      "ratio": "9.97151299888e-1"
+    },
+    "lw_lambda_0.5_N96": {
+      "authors_error_in_units_of_2^-53": "6.98e-2",
+      "authors_one_minus_rho": "4.2976975156427955e-07",
+      "authors_ratio": "0.9992864970019618",
+      "one_minus_rho": "4.29769751557e-7",
+      "one_minus_rho_in_units_of_2^-53": "3.8710218e+9",
+      "ratio": "9.99286496984e-1"
+    },
+    "lw_lambda_0.9_N192": {
+      "authors_error_in_units_of_2^-53": "1.13e+0",
+      "authors_one_minus_rho": "2.2058992965590107e-08",
+      "authors_ratio": "0.9998215442610395",
+      "one_minus_rho": "2.20589928405e-8",
+      "one_minus_rho_in_units_of_2^-53": "1.9868974e+8",
+      "ratio": "9.99821538593e-1"
+    },
+    "lw_lambda_0.9_N24": {
+      "authors_error_in_units_of_2^-53": "4.08e-1",
+      "authors_one_minus_rho": "8.934673613825161e-05",
+      "authors_ratio": "0.9886795535729233",
+      "one_minus_rho": "8.93467361383e-5",
+      "one_minus_rho_in_units_of_2^-53": "8.0476386e+11",
+      "ratio": "9.88679553573e-1"
+    },
+    "lw_lambda_0.9_N384": {
+      "authors_error_in_units_of_2^-53": "3.45e-1",
+      "authors_one_minus_rho": "1.3788715724771805e-09",
+      "authors_ratio": "0.999955352146713",
+      "one_minus_rho": "1.37887161074e-9",
+      "one_minus_rho_in_units_of_2^-53": "1.2419771e+7",
+      "ratio": "9.99955379893e-1"
+    },
+    "lw_lambda_0.9_N48": {
+      "authors_error_in_units_of_2^-53": "1.03e+0",
+      "authors_one_minus_rho": "5.63201690240156e-06",
+      "authors_ratio": "0.997150686854938",
+      "one_minus_rho": "5.63201690229e-6",
+      "one_minus_rho_in_units_of_2^-53": "5.0728698e+10",
+      "ratio": "9.97150686835e-1"
+    },
+    "lw_lambda_0.9_N96": {
+      "authors_error_in_units_of_2^-53": "2.46e+0",
+      "authors_one_minus_rho": "3.527549987669687e-07",
+      "authors_ratio": "0.9992864592775076",
+      "one_minus_rho": "3.52754998494e-7",
+      "one_minus_rho_in_units_of_2^-53": "3.1773346e+9",
+      "ratio": "9.99286458504e-1"
+    },
+    "max_abs_ratio_difference_authors_csv_vs_exact": "1.090e-2",
+    "ub3_lambda_0.5_N192": {
+      "authors_error_in_units_of_2^-53": "1.06e+0",
+      "authors_one_minus_rho": "2.687738942519502e-08",
+      "authors_ratio": "0.9999107561014503",
+      "one_minus_rho": "2.68773895434e-8",
+      "one_minus_rho_in_units_of_2^-53": "2.4209000e+8",
+      "ratio": "9.99910760498e-1"
+    },
+    "ub3_lambda_0.5_N24": {
+      "authors_error_in_units_of_2^-53": "1.10e+0",
+      "authors_one_minus_rho": "0.00010947251837400973",
+      "authors_ratio": "0.9943042994040376",
+      "one_minus_rho": "1.09472518374e-4",
+      "one_minus_rho_in_units_of_2^-53": "9.8604079e+11",
+      "ratio": "9.94304299405e-1"
+    },
+    "ub3_lambda_0.5_N384": {
+      "authors_error_in_units_of_2^-53": "9.58e-1",
+      "authors_one_minus_rho": "1.679949179766993e-09",
+      "authors_ratio": "0.9999776260878502",
+      "one_minus_rho": "1.67994928612e-9",
+      "one_minus_rho_in_units_of_2^-53": "1.5131638e+7",
+      "ratio": "9.99977689396e-1"
+    },
+    "ub3_lambda_0.5_N48": {
+      "authors_error_in_units_of_2^-53": "9.40e-3",
+      "authors_one_minus_rho": "6.871406974862104e-06",
+      "authors_ratio": "0.9985730993735658",
+      "one_minus_rho": "6.87140697486e-6",
+      "one_minus_rho_in_units_of_2^-53": "6.1892132e+10",
+      "ratio": "9.98573099373e-1"
+    },
+    "ub3_lambda_0.5_N96": {
+      "authors_error_in_units_of_2^-53": "3.59e-1",
+      "authors_one_minus_rho": "4.2992311322098686e-07",
+      "authors_ratio": "0.9996430884841395",
+      "one_minus_rho": "4.29923113261e-7",
+      "one_minus_rho_in_units_of_2^-53": "3.8724031e+9",
+      "ratio": "9.99643088577e-1"
+    },
+    "ub3_lambda_0.9_N192": {
+      "authors_error_in_units_of_2^-53": "3.25e-1",
+      "authors_one_minus_rho": "8.987285693429214e-09",
+      "authors_ratio": "0.9998536470647409",
+      "one_minus_rho": "8.98728572949e-9",
+      "one_minus_rho_in_units_of_2^-53": "8.0950273e+7",
+      "ratio": "9.99853651077e-1"
+    },
+    "ub3_lambda_0.9_N24": {
+      "authors_error_in_units_of_2^-53": "8.43e-1",
+      "authors_one_minus_rho": "3.647397691020071e-05",
+      "authors_ratio": "0.990674668880397",
+      "one_minus_rho": "3.64739769103e-5",
+      "one_minus_rho_in_units_of_2^-53": "3.2852838e+11",
+      "ratio": "9.90674668883e-1"
+    },
+    "ub3_lambda_0.9_N384": {
+      "authors_error_in_units_of_2^-53": "5.18e-1",
+      "authors_one_minus_rho": "5.617670773006012e-10",
+      "authors_ratio": "0.9999635132561822",
+      "one_minus_rho": "5.61767019771e-10",
+      "one_minus_rho_in_units_of_2^-53": "5.0599475e+6",
+      "ratio": "9.99963410852e-1"
+    },
+    "ub3_lambda_0.9_N48": {
+      "authors_error_in_units_of_2^-53": "6.82e-1",
+      "authors_one_minus_rho": "2.2956993739331466e-06",
+      "authors_ratio": "0.9976608682818359",
+      "one_minus_rho": "2.29569937401e-6",
+      "one_minus_rho_in_units_of_2^-53": "2.0677822e+10",
+      "ratio": "9.97660868315e-1"
+    },
+    "ub3_lambda_0.9_N96": {
+      "authors_error_in_units_of_2^-53": "1.40e+0",
+      "authors_one_minus_rho": "1.437334468112894e-07",
+      "authors_ratio": "0.9994147280788898",
+      "one_minus_rho": "1.43733446655e-7",
+      "one_minus_rho_in_units_of_2^-53": "1.2946358e+9",
+      "ratio": "9.99414726995e-1"
+    },
+    "ub5_lambda_0.5_N192": {
+      "authors_error_in_units_of_2^-53": "8.89e-1",
+      "authors_one_minus_rho": "5.996203533698008e-12",
+      "authors_ratio": "0.9998491469040733",
+      "one_minus_rho": "5.99610479423e-12",
+      "one_minus_rho_in_units_of_2^-53": "5.4008111e+4",
+      "ratio": "9.99832682392e-1"
+    },
+    "ub5_lambda_0.5_N24": {
+      "authors_error_in_units_of_2^-53": "6.65e-1",
+      "authors_one_minus_rho": "1.555358100868709e-06",
+      "authors_ratio": "0.9893468786478486",
+      "one_minus_rho": "1.55535810079e-6",
+      "one_minus_rho_in_units_of_2^-53": "1.4009420e+10",
+      "ratio": "9.89346878601e-1"
+    },
+    "ub5_lambda_0.5_N384": {
+      "authors_error_in_units_of_2^-53": "1.74e-2",
+      "authors_one_minus_rho": "9.370282327836321e-14",
+      "authors_ratio": "0.9999787353805927",
+      "one_minus_rho": "9.37008960178e-14",
+      "one_minus_rho_in_units_of_2^-53": "8.4398264e+2",
+      "ratio": "9.99958168022e-1",
+      "ratio_20_digits": "9.9995816802206905347e-1",
+      "ratio_enclosure_width": "6.0e-83"
+    },
+    "ub5_lambda_0.5_N48": {
+      "authors_error_in_units_of_2^-53": "8.16e-2",
+      "authors_one_minus_rho": "2.449847591456944e-08",
+      "authors_ratio": "0.9973262122124643",
+      "one_minus_rho": "2.44984759236e-8",
+      "one_minus_rho_in_units_of_2^-53": "2.2066265e+8",
+      "ratio": "9.97326212581e-1"
+    },
+    "ub5_lambda_0.5_N96": {
+      "authors_error_in_units_of_2^-53": "3.51e-1",
+      "authors_one_minus_rho": "3.835580741906597e-10",
+      "authors_ratio": "0.9993307929979963",
+      "one_minus_rho": "3.83558113105e-10",
+      "one_minus_rho_in_units_of_2^-53": "3.4547844e+6",
+      "ratio": "9.99330894386e-1"
+    },
+    "ub5_lambda_0.9_N192": {
+      "authors_error_in_units_of_2^-53": "2.84e+0",
+      "authors_one_minus_rho": "1.9533263895255004e-12",
+      "authors_ratio": "0.9996072279647245",
+      "one_minus_rho": "1.95364141172e-12",
+      "one_minus_rho_in_units_of_2^-53": "1.7596837e+4",
+      "ratio": "9.99768439356e-1"
+    },
+    "ub5_lambda_0.9_N24": {
+      "authors_error_in_units_of_2^-53": "1.57e+0",
+      "authors_one_minus_rho": "5.047157805027069e-07",
+      "authors_ratio": "0.9852842306504344",
+      "one_minus_rho": "5.04715780677e-7",
+      "one_minus_rho_in_units_of_2^-53": "4.5460756e+9",
+      "ratio": "9.85284230990e-1"
+    },
+    "ub5_lambda_0.9_N384": {
+      "authors_error_in_units_of_2^-53": "3.00e+0",
+      "authors_one_minus_rho": "3.019806626980426e-14",
+      "authors_ratio": "0.9890395944304833",
+      "one_minus_rho": "3.05309495414e-14",
+      "one_minus_rho_in_units_of_2^-53": "2.7499835e+2",
+      "ratio": "9.99942104975e-1",
+      "ratio_20_digits": "9.9994210497547416856e-1",
+      "ratio_enclosure_width": "9.2e-83"
+    },
+    "ub5_lambda_0.9_N48": {
+      "authors_error_in_units_of_2^-53": "1.87e+0",
+      "authors_one_minus_rho": "7.974363724905231e-09",
+      "authors_ratio": "0.9963012221786118",
+      "one_minus_rho": "7.97436393228e-9",
+      "one_minus_rho_in_units_of_2^-53": "7.1826685e+7",
+      "ratio": "9.96301248088e-1"
+    },
+    "ub5_lambda_0.9_N96": {
+      "authors_error_in_units_of_2^-53": "1.42e+0",
+      "authors_one_minus_rho": "1.249460535035496e-10",
+      "authors_ratio": "0.999072809669394",
+      "one_minus_rho": "1.24946210949e-10",
+      "one_minus_rho_in_units_of_2^-53": "1.1254154e+6",
+      "ratio": "9.99074068609e-1"
+    },
+    "uw1_lambda_0.5_N192": {
+      "authors_error_in_units_of_2^-53": "1.81e-1",
+      "authors_one_minus_rho": "0.00013386209043819708",
+      "authors_ratio": "0.9999776893527832",
+      "one_minus_rho": "1.33862090438e-4",
+      "one_minus_rho_in_units_of_2^-53": "1.2057225e+12",
+      "ratio": "9.99977689353e-1"
+    },
+    "uw1_lambda_0.5_N24": {
+      "authors_error_in_units_of_2^-53": "2.63e-1",
+      "authors_one_minus_rho": "0.008555138626189618",
+      "authors_ratio": "0.9985729211479477",
+      "one_minus_rho": "8.55513862619e-3",
+      "one_minus_rho_in_units_of_2^-53": "7.7057838e+13",
+      "ratio": "9.98572921148e-1"
+    },
+    "uw1_lambda_0.5_N384": {
+      "authors_error_in_units_of_2^-53": "8.81e-1",
+      "authors_one_minus_rho": "3.3466082598798685e-05",
+      "authors_ratio": "0.9999944222979765",
+      "one_minus_rho": "3.34660825989e-5",
+      "one_minus_rho_in_units_of_2^-53": "3.0143567e+11",
+      "ratio": "9.99994422301e-1"
+    },
+    "uw1_lambda_0.5_N48": {
+      "authors_error_in_units_of_2^-53": "7.50e-1",
+      "authors_one_minus_rho": "0.00214107676139641",
+      "authors_ratio": "0.9996430774292928",
+      "one_minus_rho": "2.14107676140e-3",
+      "one_minus_rho_in_units_of_2^-53": "1.9285105e+13",
+      "ratio": "9.99643077429e-1"
+    },
+    "uw1_lambda_0.5_N64": {
+      "rho_N": "9.98795456205e-1",
+      "steps_to_1e-17": "3.2477330e+4"
+    },
+    "uw1_lambda_0.5_N96": {
+      "authors_error_in_units_of_2^-53": "3.61e-1",
+      "authors_one_minus_rho": "0.0005354125236343155",
+      "authors_ratio": "0.9999107598009139",
+      "one_minus_rho": "5.35412523634e-4",
+      "one_minus_rho_in_units_of_2^-53": "4.8225673e+12",
+      "ratio": "9.99910759801e-1"
+    },
+    "uw1_lambda_0.9_N192": {
+      "authors_error_in_units_of_2^-53": "1.02e+0",
+      "authors_one_minus_rho": "4.818828818253795e-05",
+      "authors_ratio": "0.9999348523730587",
+      "one_minus_rho": "4.81882881827e-5",
+      "one_minus_rho_in_units_of_2^-53": "4.3404151e+11",
+      "ratio": "9.99934852375e-1"
+    },
+    "uw1_lambda_0.9_N24": {
+      "authors_error_in_units_of_2^-53": "1.32e-1",
+      "authors_one_minus_rho": "0.0030713923594968273",
+      "authors_ratio": "0.9958307497416042",
+      "one_minus_rho": "3.07139235950e-3",
+      "one_minus_rho_in_units_of_2^-53": "2.7664643e+13",
+      "ratio": "9.95830749742e-1"
+    },
+    "uw1_lambda_0.9_N384": {
+      "authors_error_in_units_of_2^-53": "3.71e-2",
+      "authors_one_minus_rho": "1.2047660712499741e-05",
+      "authors_ratio": "0.9999837130848378",
+      "one_minus_rho": "1.20476607125e-5",
+      "one_minus_rho_in_units_of_2^-53": "1.0851568e+11",
+      "ratio": "9.99983713085e-1"
+    },
+    "uw1_lambda_0.9_N48": {
+      "authors_error_in_units_of_2^-53": "6.11e-1",
+      "authors_one_minus_rho": "0.0007702591259176605",
+      "authors_ratio": "0.9989576492709107",
+      "one_minus_rho": "7.70259125918e-4",
+      "one_minus_rho_in_units_of_2^-53": "6.9378774e+12",
+      "ratio": "9.98957649271e-1"
+    },
+    "uw1_lambda_0.9_N96": {
+      "authors_error_in_units_of_2^-53": "2.42e-1",
+      "authors_one_minus_rho": "0.00019271547815347123",
+      "authors_ratio": "0.9997394100586907",
+      "one_minus_rho": "1.92715478153e-4",
+      "one_minus_rho_in_units_of_2^-53": "1.7358267e+12",
+      "ratio": "9.99739410059e-1"
+    },
+    "weno5l_rk3_lambda_0.5_N192": {
+      "authors_error_in_units_of_2^-53": "7.53e-1",
+      "authors_one_minus_rho": "2.9966088499477905e-09",
+      "authors_ratio": "1.0033367586937312",
+      "one_minus_rho": "2.99660893358e-9",
+      "one_minus_rho_in_units_of_2^-53": "2.6991054e+7",
+      "ratio": "1.00333678669e+0"
+    },
+    "weno5l_rk3_lambda_0.5_N24": {
+      "authors_error_in_units_of_2^-53": "2.22e+0",
+      "authors_one_minus_rho": "1.4800928987535045e-05",
+      "authors_ratio": "1.2098894582365327",
+      "one_minus_rho": "1.48009289878e-5",
+      "one_minus_rho_in_units_of_2^-53": "1.3331492e+11",
+      "ratio": "1.20988945826e+0"
+    },
+    "weno5l_rk3_lambda_0.5_N384": {
+      "authors_error_in_units_of_2^-53": "4.47e+0",
+      "authors_one_minus_rho": "1.868204480004465e-10",
+      "authors_ratio": "1.0008317115274865",
+      "one_minus_rho": "1.86820943946e-10",
+      "one_minus_rho_in_units_of_2^-53": "1.6827335e+6",
+      "ratio": "1.00083436840e+0"
+    },
+    "weno5l_rk3_lambda_0.5_N48": {
+      "authors_error_in_units_of_2^-53": "1.90e-2",
+      "authors_one_minus_rho": "8.052327806762349e-07",
+      "authors_ratio": "1.0531691934603817",
+      "one_minus_rho": "8.05232780678e-7",
+      "one_minus_rho_in_units_of_2^-53": "7.2528921e+9",
+      "ratio": "1.05316919346e+0"
+    },
+    "weno5l_rk3_lambda_0.5_N96": {
+      "authors_error_in_units_of_2^-53": "1.74e+0",
+      "authors_one_minus_rho": "4.8423576148870495e-08",
+      "authors_ratio": "1.0133361653626667",
+      "one_minus_rho": "4.84235759561e-8",
+      "one_minus_rho_in_units_of_2^-53": "4.3616080e+8",
+      "ratio": "1.01333616133e+0"
+    },
+    "weno5l_rk3_lambda_0.9_N192": {
+      "authors_error_in_units_of_2^-53": "1.15e+0",
+      "authors_one_minus_rho": "3.1361938046536864e-08",
+      "authors_ratio": "1.0002983165201227",
+      "one_minus_rho": "3.13619381739e-8",
+      "one_minus_rho_in_units_of_2^-53": "2.8248323e+8",
+      "ratio": "1.00029832058e+0"
+    },
+    "weno5l_rk3_lambda_0.9_N24": {
+      "authors_error_in_units_of_2^-53": "9.38e-2",
+      "authors_one_minus_rho": "0.0001307997404476069",
+      "authors_ratio": "1.01852942362734",
+      "one_minus_rho": "1.30799740448e-4",
+      "one_minus_rho_in_units_of_2^-53": "1.1781393e+12",
+      "ratio": "1.01852942363e+0"
+    },
+    "weno5l_rk3_lambda_0.9_N384": {
+      "authors_error_in_units_of_2^-53": "4.10e+0",
+      "authors_one_minus_rho": "1.959682305319177e-09",
+      "authors_ratio": "1.0000743744937066",
+      "one_minus_rho": "1.95968276033e-9",
+      "one_minus_rho_in_units_of_2^-53": "1.7651253e+7",
+      "ratio": "1.00007460670e+0"
+    },
+    "weno5l_rk3_lambda_0.9_N48": {
+      "authors_error_in_units_of_2^-53": "9.83e-1",
+      "authors_one_minus_rho": "8.06430031408123e-06",
+      "authors_ratio": "1.004739259909956",
+      "one_minus_rho": "8.06430031419e-6",
+      "one_minus_rho_in_units_of_2^-53": "7.2636760e+10",
+      "ratio": "1.00473925992e+0"
+    },
+    "weno5l_rk3_lambda_0.9_N96": {
+      "authors_error_in_units_of_2^-53": "4.20e+0",
+      "authors_one_minus_rho": "5.022391084130717e-07",
+      "authors_ratio": "1.0011915835101732",
+      "one_minus_rho": "5.02239108879e-7",
+      "one_minus_rho_in_units_of_2^-53": "4.5237677e+9",
+      "ratio": "1.00119158444e+0"
+    }
+  },
+  "erasure_slopes": {
+    "bw_lambda_0.5": {
+      "authors_slope": "-3.999517290021494",
+      "exact_slope": "-3.9995173e+0"
+    },
+    "bw_lambda_0.9": {
+      "authors_slope": "-3.9995186691425726",
+      "exact_slope": "-3.9995172e+0"
+    },
+    "fromm_lambda_0.5": {
+      "authors_slope": "-3.9997586363539566",
+      "exact_slope": "-3.9997586e+0"
+    },
+    "fromm_lambda_0.9": {
+      "authors_slope": "-3.9995888000273467",
+      "exact_slope": "-3.9995888e+0"
+    },
+    "lw_lambda_0.5": {
+      "authors_slope": "-3.999517337694035",
+      "exact_slope": "-3.9995173e+0"
+    },
+    "lw_lambda_0.9": {
+      "authors_slope": "-3.9995173127853887",
+      "exact_slope": "-3.9995173e+0"
+    },
+    "ub3_lambda_0.5": {
+      "authors_slope": "-3.9997586363539566",
+      "exact_slope": "-3.9997586e+0"
+    },
+    "ub3_lambda_0.9": {
+      "authors_slope": "-3.999604012058697",
+      "exact_slope": "-3.9996041e+0"
+    },
+    "ub5_lambda_0.5": {
+      "authors_slope": "-5.999532446936501",
+      "exact_slope": "-5.9995474e+0"
+    },
+    "ub5_lambda_0.9": {
+      "authors_slope": "-6.00728077181369",
+      "exact_slope": "-5.9993735e+0"
+    },
+    "uw1_lambda_0.5": {
+      "authors_slope": "-1.9999396474038997",
+      "exact_slope": "-1.9999396e+0"
+    },
+    "uw1_lambda_0.9": {
+      "authors_slope": "-1.9998237482169545",
+      "exact_slope": "-1.9998237e+0"
+    },
+    "weno5l_rk3_lambda_0.5": {
+      "authors_slope": "-4.008956723776011",
+      "exact_slope": "-4.0089548e+0"
+    },
+    "weno5l_rk3_lambda_0.9": {
+      "authors_slope": "-4.000805386244981",
+      "exact_slope": "-4.0008052e+0"
+    }
+  },
+  "fe_interior_maximum": {
+    "1/2": {
+      "attained_at_interior_frequency": true,
+      "max_abs_g_minus_1": [
+        "1.87630467852e-1",
+        "1.87630467852e-1"
+      ]
+    },
+    "9/10": {
+      "attained_at_interior_frequency": true,
+      "max_abs_g_minus_1": [
+        "6.12185661290e-1",
+        "6.12185661290e-1"
+      ]
+    }
+  },
+  "fe_rho_N_minus_one": {
+    "lambda_0.5_N192": "1.87570176764e-1",
+    "lambda_0.5_N24": "1.86966254318e-1",
+    "lambda_0.5_N384": "1.87628588121e-1",
+    "lambda_0.5_N48": "1.86966254318e-1",
+    "lambda_0.5_N96": "1.87518252702e-1",
+    "lambda_0.9_N192": "6.12185619335e-1",
+    "lambda_0.9_N24": "6.08936234861e-1",
+    "lambda_0.9_N384": "6.12185619335e-1",
+    "lambda_0.9_N48": "6.09156100283e-1",
+    "lambda_0.9_N96": "6.12185619335e-1"
+  },
+  "half_life": {
+    "bw": {
+      "authors_retention": 312,
+      "authors_table": "1.010e5",
+      "n_half": "1.010176130e+5",
+      "retention_vs_uw1": "3.1236993e+2"
+    },
+    "fromm": {
+      "authors_retention": 312,
+      "authors_table": "1.009e5",
+      "n_half": "1.008737805e+5",
+      "retention_vs_uw1": "3.1192517e+2"
+    },
+    "lw": {
+      "authors_retention": 312,
+      "authors_table": "1.010e5",
+      "n_half": "1.010176130e+5",
+      "retention_vs_uw1": "3.1236993e+2"
+    },
+    "ub3": {
+      "authors_retention": 312,
+      "authors_table": "1.009e5",
+      "n_half": "1.008737805e+5",
+      "retention_vs_uw1": "3.1192517e+2"
+    },
+    "ub5": {
+      "authors_retention": 87500,
+      "authors_table": "2.829e7",
+      "n_half": "2.829348137e+7",
+      "retention_vs_uw1": "8.7490019e+4"
+    },
+    "uw1": {
+      "authors_retention": 1,
+      "authors_table": "3.234e2",
+      "n_half": "3.233909626e+2",
+      "retention_vs_uw1": "1.0000000e+0"
+    },
+    "weno5l_rk3": {
+      "authors_retention": 2662,
+      "authors_table": "8.608e5",
+      "n_half": "8.608031343e+5",
+      "retention_vs_uw1": "2.6618033e+3"
+    }
+  },
+  "passed": 100,
+  "queue_exponent_refits_from_exact_sigma": {
+    "bw_L1": {
+      "authors_fit": "0.9965743365175631",
+      "exact_exponent": 1,
+      "fit_from_exact_sigma": "9.9657434e-1"
+    },
+    "bw_L2": {
+      "authors_fit": "1.998834013989332",
+      "exact_exponent": 2,
+      "fit_from_exact_sigma": "1.9988340e+0"
+    },
+    "bw_L3": {
+      "authors_fit": "3.0029888815906287",
+      "exact_exponent": 3,
+      "fit_from_exact_sigma": "3.0029889e+0"
+    },
+    "bw_L4": {
+      "authors_fit": "3.954677050984206",
+      "exact_exponent": 4,
+      "fit_from_exact_sigma": "3.9546392e+0"
+    },
+    "bw_L5": {
+      "authors_fit": "3.9519310164899153",
+      "exact_exponent": 4,
+      "fit_from_exact_sigma": "3.9519050e+0"
+    },
+    "fromm_L1": {
+      "authors_fit": "0.9922361924175401",
+      "exact_exponent": 1,
+      "fit_from_exact_sigma": "9.9223619e-1"
+    },
+    "fromm_L2": {
+      "authors_fit": "1.9881812726217594",
+      "exact_exponent": 2,
+      "fit_from_exact_sigma": "1.9881813e+0"
+    },
+    "fromm_L3": {
+      "authors_fit": "3.001049207844211",
+      "exact_exponent": 3,
+      "fit_from_exact_sigma": "3.0010492e+0"
+    },
+    "fromm_L4": {
+      "authors_fit": "2.996213779011643",
+      "exact_exponent": 3,
+      "fit_from_exact_sigma": "2.9962138e+0"
+    },
+    "fromm_L5": {
+      "authors_fit": "2.9912409956092767",
+      "exact_exponent": 3,
+      "fit_from_exact_sigma": "2.9912410e+0"
+    },
+    "lw_L1": {
+      "authors_fit": "1.0053509509151486",
+      "exact_exponent": 1,
+      "fit_from_exact_sigma": "1.0053510e+0"
+    },
+    "lw_L2": {
+      "authors_fit": "1.9949937627438314",
+      "exact_exponent": 2,
+      "fit_from_exact_sigma": "1.9949938e+0"
+    },
+    "lw_L3": {
+      "authors_fit": "3.0014030108442387",
+      "exact_exponent": 3,
+      "fit_from_exact_sigma": "3.0014031e+0"
+    },
+    "lw_L4": {
+      "authors_fit": "3.0012375814298777",
+      "exact_exponent": 3,
+      "fit_from_exact_sigma": "3.0012375e+0"
+    },
+    "lw_L5": {
+      "authors_fit": "3.0010758962560526",
+      "exact_exponent": 3,
+      "fit_from_exact_sigma": "3.0010759e+0"
+    },
+    "max_abs_difference_exact_data_fit_vs_authors_fit": "2.049e-4",
+    "ub3_L1": {
+      "authors_fit": "0.9938505039332135",
+      "exact_exponent": 1,
+      "fit_from_exact_sigma": "9.9385050e-1"
+    },
+    "ub3_L2": {
+      "authors_fit": "1.9780795958250799",
+      "exact_exponent": 2,
+      "fit_from_exact_sigma": "1.9780796e+0"
+    },
+    "ub3_L3": {
+      "authors_fit": "3.0151779911787537",
+      "exact_exponent": 3,
+      "fit_from_exact_sigma": "3.0151780e+0"
+    },
+    "ub3_L4": {
+      "authors_fit": "3.0117988877052064",
+      "exact_exponent": 3,
+      "fit_from_exact_sigma": "3.0117989e+0"
+    },
+    "ub3_L5": {
+      "authors_fit": "3.0084221163791938",
+      "exact_exponent": 3,
+      "fit_from_exact_sigma": "3.0084221e+0"
+    },
+    "ub5_L1": {
+      "authors_fit": "0.99891966094897",
+      "exact_exponent": 1,
+      "fit_from_exact_sigma": "9.9891966e-1"
+    },
+    "ub5_L2": {
+      "authors_fit": "1.9818238663283154",
+      "exact_exponent": 2,
+      "fit_from_exact_sigma": "1.9818239e+0"
+    },
+    "ub5_L3": {
+      "authors_fit": "3.014380838584226",
+      "exact_exponent": 3,
+      "fit_from_exact_sigma": "3.0143808e+0"
+    },
+    "ub5_L4": {
+      "authors_fit": "3.01288859252921",
+      "exact_exponent": 3,
+      "fit_from_exact_sigma": "3.0128886e+0"
+    },
+    "ub5_L5": {
+      "authors_fit": "3.0114008335703057",
+      "exact_exponent": 3,
+      "fit_from_exact_sigma": "3.0114008e+0"
+    },
+    "uw1_L1": {
+      "authors_fit": "0.9999999999999929",
+      "exact_exponent": 1,
+      "fit_from_exact_sigma": "1.0000000e+0"
+    },
+    "uw1_L2": {
+      "authors_fit": "2.0034048031290745",
+      "exact_exponent": 2,
+      "fit_from_exact_sigma": "2.0034048e+0"
+    },
+    "uw1_L3": {
+      "authors_fit": "3.0081023794138355",
+      "exact_exponent": 3,
+      "fit_from_exact_sigma": "3.0081024e+0"
+    },
+    "uw1_L4": {
+      "authors_fit": "4.012656183970116",
+      "exact_exponent": 4,
+      "fit_from_exact_sigma": "4.0126582e+0"
+    },
+    "uw1_L5": {
+      "authors_fit": "5.017272732389844",
+      "exact_exponent": 5,
+      "fit_from_exact_sigma": "5.0170679e+0"
+    },
+    "weno5l_L1": {
+      "authors_fit": "0.999999999999999",
+      "exact_exponent": 1,
+      "fit_from_exact_sigma": "1.0000000e+0"
+    },
+    "weno5l_L2": {
+      "authors_fit": "2.0041910174233606",
+      "exact_exponent": 2,
+      "fit_from_exact_sigma": "2.0041910e+0"
+    },
+    "weno5l_L3": {
+      "authors_fit": "3.0016595247478146",
+      "exact_exponent": 3,
+      "fit_from_exact_sigma": "3.0016595e+0"
+    },
+    "weno5l_L4": {
+      "authors_fit": "3.0003728217195107",
+      "exact_exponent": 3,
+      "fit_from_exact_sigma": "3.0003728e+0"
+    },
+    "weno5l_L5": {
+      "authors_fit": "2.9990901935018566",
+      "exact_exponent": 3,
+      "fit_from_exact_sigma": "2.9990902e+0"
+    }
+  },
+  "queue_sigma_comparison": {
+    "bw_L1_lambda_0.001": {
+      "authors_sigma": "0.0003725289325080013",
+      "exact_sigma": "3.725289325e-4",
+      "relative_deviation": "1.65e-14"
+    },
+    "bw_L1_lambda_0.5": {
+      "authors_sigma": "0.15023130314433286",
+      "exact_sigma": "1.502313031e-1",
+      "relative_deviation": "1.81e-16"
+    },
+    "bw_L2_lambda_0.001": {
+      "authors_sigma": "3.531197717639761e-07",
+      "exact_sigma": "3.531197718e-7",
+      "relative_deviation": "4.04e-11"
+    },
+    "bw_L2_lambda_0.5": {
+      "authors_sigma": "0.06791120401599661",
+      "exact_sigma": "6.791120402e-2",
+      "relative_deviation": "6.15e-12"
+    },
+    "bw_L3_lambda_0.001": {
+      "authors_sigma": "3.8932954224596313e-10",
+      "exact_sigma": "3.893295387e-10",
+      "relative_deviation": "9.05e-9"
+    },
+    "bw_L3_lambda_0.5": {
+      "authors_sigma": "0.04184225812476911",
+      "exact_sigma": "4.184225812e-2",
+      "relative_deviation": "3.57e-11"
+    },
+    "bw_L4_lambda_0.001": {
+      "authors_sigma": "1.428074721831081e-14",
+      "exact_sigma": "1.428395070e-14",
+      "relative_deviation": "2.24e-4"
+    },
+    "bw_L4_lambda_0.5": {
+      "authors_sigma": "1.7072032409239418e-05",
+      "exact_sigma": "1.707203241e-5",
+      "relative_deviation": "1.21e-10"
+    },
+    "bw_L5_lambda_0.001": {
+      "authors_sigma": "7.256818963417702e-14",
+      "exact_sigma": "7.257972518e-14",
+      "relative_deviation": "1.59e-4"
+    },
+    "bw_L5_lambda_0.5": {
+      "authors_sigma": "0.02332142866822184",
+      "exact_sigma": "2.332142867e-2",
+      "relative_deviation": "3.27e-12"
+    },
+    "fromm_L1_lambda_0.001": {
+      "authors_sigma": "9.378298014073632e-05",
+      "exact_sigma": "9.378298014e-5",
+      "relative_deviation": "1.01e-11"
+    },
+    "fromm_L1_lambda_0.5": {
+      "authors_sigma": "0.024603440438150558",
+      "exact_sigma": "2.460344044e-2",
+      "relative_deviation": "4.16e-11"
+    },
+    "fromm_L2_lambda_0.001": {
+      "authors_sigma": "4.938935410911794e-09",
+      "exact_sigma": "4.938935407e-9",
+      "relative_deviation": "8.09e-10"
+    },
+    "fromm_L2_lambda_0.5": {
+      "authors_sigma": "0.0004582199576738181",
+      "exact_sigma": "4.582199577e-4",
+      "relative_deviation": "8.16e-11"
+    },
+    "fromm_L3_lambda_0.001": {
+      "authors_sigma": "8.940352619276333e-11",
+      "exact_sigma": "8.940352991e-11",
+      "relative_deviation": "4.16e-8"
+    },
+    "fromm_L3_lambda_0.5": {
+      "authors_sigma": "0.000853306112950595",
+      "exact_sigma": "8.533061128e-4",
+      "relative_deviation": "1.58e-10"
+    },
+    "fromm_L4_lambda_0.001": {
+      "authors_sigma": "2.598709816481987e-10",
+      "exact_sigma": "2.598709788e-10",
+      "relative_deviation": "1.09e-8"
+    },
+    "fromm_L4_lambda_0.5": {
+      "authors_sigma": "0.005065098076654768",
+      "exact_sigma": "5.065098076e-3",
+      "relative_deviation": "7.70e-11"
+    },
+    "fromm_L5_lambda_0.001": {
+      "authors_sigma": "5.647134158524118e-10",
+      "exact_sigma": "5.647134178e-10",
+      "relative_deviation": "3.47e-9"
+    },
+    "fromm_L5_lambda_0.5": {
+      "authors_sigma": "0.010085524444154548",
+      "exact_sigma": "1.008552444e-2",
+      "relative_deviation": "5.93e-11"
+    },
+    "lw_L1_lambda_0.001": {
+      "authors_sigma": "7.986285074944274e-05",
+      "exact_sigma": "7.986285075e-5",
+      "relative_deviation": "3.52e-11"
+    },
+    "lw_L1_lambda_0.5": {
+      "authors_sigma": "0.039232966673617045",
+      "exact_sigma": "3.923296667e-2",
+      "relative_deviation": "1.82e-11"
+    },
+    "lw_L2_lambda_0.001": {
+      "authors_sigma": "1.8633502739900617e-08",
+      "exact_sigma": "1.863350274e-8",
+      "relative_deviation": "5.93e-11"
+    },
+    "lw_L2_lambda_0.5": {
+      "authors_sigma": "0.001528161288348921",
+      "exact_sigma": "1.528161288e-3",
+      "relative_deviation": "3.21e-11"
+    },
+    "lw_L3_lambda_0.001": {
+      "authors_sigma": "8.278375008545204e-12",
+      "exact_sigma": "8.278372724e-12",
+      "relative_deviation": "2.76e-7"
+    },
+    "lw_L3_lambda_0.5": {
+      "authors_sigma": "0.0023469127148638895",
+      "exact_sigma": "2.346912715e-3",
+      "relative_deviation": "1.54e-10"
+    },
+    "lw_L4_lambda_0.001": {
+      "authors_sigma": "2.4075761211993468e-11",
+      "exact_sigma": "2.407577036e-11",
+      "relative_deviation": "3.80e-7"
+    },
+    "lw_L4_lambda_0.5": {
+      "authors_sigma": "0.004385258430951231",
+      "exact_sigma": "4.385258431e-3",
+      "relative_deviation": "9.61e-11"
+    },
+    "lw_L5_lambda_0.001": {
+      "authors_sigma": "5.234557789475536e-11",
+      "exact_sigma": "5.234557622e-11",
+      "relative_deviation": "3.20e-8"
+    },
+    "lw_L5_lambda_0.5": {
+      "authors_sigma": "0.006256478219656945",
+      "exact_sigma": "6.256478219e-3",
+      "relative_deviation": "3.94e-11"
+    },
+    "max_relative_deviation": "3.39e-4",
+    "min_sigma_over_frobenius_norm": "8.54e-15",
+    "ub3_L1_lambda_0.001": {
+      "authors_sigma": "0.00010626878114153037",
+      "exact_sigma": "1.062687811e-4",
+      "relative_deviation": "4.17e-11"
+    },
+    "ub3_L1_lambda_0.5": {
+      "authors_sigma": "0.024603440438150558",
+      "exact_sigma": "2.460344044e-2",
+      "relative_deviation": "4.16e-11"
+    },
+    "ub3_L2_lambda_0.001": {
+      "authors_sigma": "8.764759383059032e-09",
+      "exact_sigma": "8.764759383e-9",
+      "relative_deviation": "2.50e-11"
+    },
+    "ub3_L2_lambda_0.5": {
+      "authors_sigma": "0.0004582199576738181",
+      "exact_sigma": "4.582199577e-4",
+      "relative_deviation": "8.16e-11"
+    },
+    "ub3_L3_lambda_0.001": {
+      "authors_sigma": "4.580058280844092e-11",
+      "exact_sigma": "4.580058358e-11",
+      "relative_deviation": "1.69e-8"
+    },
+    "ub3_L3_lambda_0.5": {
+      "authors_sigma": "0.000853306112950595",
+      "exact_sigma": "8.533061128e-4",
+      "relative_deviation": "1.58e-10"
+    },
+    "ub3_L4_lambda_0.001": {
+      "authors_sigma": "1.3315134717066035e-10",
+      "exact_sigma": "1.331513457e-10",
+      "relative_deviation": "1.11e-8"
+    },
+    "ub3_L4_lambda_0.5": {
+      "authors_sigma": "0.005065098076654768",
+      "exact_sigma": "5.065098076e-3",
+      "relative_deviation": "7.70e-11"
+    },
+    "ub3_L5_lambda_0.001": {
+      "authors_sigma": "2.8939201994649493e-10",
+      "exact_sigma": "2.893920217e-10",
+      "relative_deviation": "5.96e-9"
+    },
+    "ub3_L5_lambda_0.5": {
+      "authors_sigma": "0.010085524444154548",
+      "exact_sigma": "1.008552444e-2",
+      "relative_deviation": "5.93e-11"
+    },
+    "ub5_L1_lambda_0.001": {
+      "authors_sigma": "0.00012348073119571525",
+      "exact_sigma": "1.234807312e-4",
+      "relative_deviation": "2.26e-11"
+    },
+    "ub5_L1_lambda_0.5": {
+      "authors_sigma": "0.03412127764778298",
+      "exact_sigma": "3.412127765e-2",
+      "relative_deviation": "1.72e-11"
+    },
+    "ub5_L2_lambda_0.001": {
+      "authors_sigma": "1.985702072978931e-08",
+      "exact_sigma": "1.985702073e-8",
+      "relative_deviation": "5.32e-11"
+    },
+    "ub5_L2_lambda_0.5": {
+      "authors_sigma": "0.0013646949808023509",
+      "exact_sigma": "1.364694981e-3",
+      "relative_deviation": "1.53e-10"
+    },
+    "ub5_L3_lambda_0.001": {
+      "authors_sigma": "4.933661869345951e-11",
+      "exact_sigma": "4.933662088e-11",
+      "relative_deviation": "4.44e-8"
+    },
+    "ub5_L3_lambda_0.5": {
+      "authors_sigma": "0.002671610074303655",
+      "exact_sigma": "2.671610074e-3",
+      "relative_deviation": "7.59e-11"
+    },
+    "ub5_L4_lambda_0.001": {
+      "authors_sigma": "1.4346166155140804e-10",
+      "exact_sigma": "1.434616658e-10",
+      "relative_deviation": "2.94e-8"
+    },
+    "ub5_L4_lambda_0.5": {
+      "authors_sigma": "0.006561249157067288",
+      "exact_sigma": "6.561249157e-3",
+      "relative_deviation": "8.61e-11"
+    },
+    "ub5_L5_lambda_0.001": {
+      "authors_sigma": "3.118657366184629e-10",
+      "exact_sigma": "3.118657340e-10",
+      "relative_deviation": "8.42e-9"
+    },
+    "ub5_L5_lambda_0.5": {
+      "authors_sigma": "0.013382022771767704",
+      "exact_sigma": "1.338202277e-2",
+      "relative_deviation": "5.63e-11"
+    },
+    "uw1_L1_lambda_0.001": {
+      "authors_sigma": "0.0002357022603955225",
+      "exact_sigma": "2.357022604e-4",
+      "relative_deviation": "2.82e-14"
+    },
+    "uw1_L1_lambda_0.5": {
+      "authors_sigma": "0.11785113019775792",
+      "exact_sigma": "1.178511302e-1",
+      "relative_deviation": "6.22e-18"
+    },
+    "uw1_L2_lambda_0.001": {
+      "authors_sigma": "1.0545142536000952e-07",
+      "exact_sigma": "1.054514254e-7",
+      "relative_deviation": "6.25e-11"
+    },
+    "uw1_L2_lambda_0.5": {
+      "authors_sigma": "0.031830500937508756",
+      "exact_sigma": "3.183050094e-2",
+      "relative_deviation": "7.07e-12"
+    },
+    "uw1_L3_lambda_0.001": {
+      "authors_sigma": "5.4125066840862496e-11",
+      "exact_sigma": "5.412506460e-11",
+      "relative_deviation": "4.13e-8"
+    },
+    "uw1_L3_lambda_0.5": {
+      "authors_sigma": "0.01100153298656112",
+      "exact_sigma": "1.100153299e-2",
+      "relative_deviation": "4.29e-12"
+    },
+    "uw1_L4_lambda_0.001": {
+      "authors_sigma": "2.8417677365641474e-14",
+      "exact_sigma": "2.841720082e-14",
+      "relative_deviation": "1.68e-5"
+    },
+    "uw1_L4_lambda_0.5": {
+      "authors_sigma": "0.003877216159864174",
+      "exact_sigma": "3.877216160e-3",
+      "relative_deviation": "1.27e-10"
+    },
+    "uw1_L5_lambda_0.001": {
+      "authors_sigma": "1.490201107436457e-17",
+      "exact_sigma": "1.490706546e-17",
+      "relative_deviation": "3.39e-4"
+    },
+    "uw1_L5_lambda_0.5": {
+      "authors_sigma": "0.0013574099802340347",
+      "exact_sigma": "1.357409980e-3",
+      "relative_deviation": "2.03e-10"
+    },
+    "weno5l_L1_lambda_0.001": {
+      "authors_sigma": "0.00012348898035182884",
+      "exact_sigma": "1.234889804e-4",
+      "relative_deviation": "3.55e-11"
+    },
+    "weno5l_L1_lambda_0.5": {
+      "authors_sigma": "0.061744490175913894",
+      "exact_sigma": "6.174449018e-2",
+      "relative_deviation": "3.55e-11"
+    },
+    "weno5l_L2_lambda_0.001": {
+      "authors_sigma": "1.990885901684776e-08",
+      "exact_sigma": "1.990885902e-8",
+      "relative_deviation": "2.58e-11"
+    },
+    "weno5l_L2_lambda_0.5": {
+      "authors_sigma": "0.006483166715073911",
+      "exact_sigma": "6.483166715e-3",
+      "relative_deviation": "5.72e-11"
+    },
+    "weno5l_L3_lambda_0.001": {
+      "authors_sigma": "4.926406039707148e-11",
+      "exact_sigma": "4.926405841e-11",
+      "relative_deviation": "4.03e-8"
+    },
+    "weno5l_L3_lambda_0.5": {
+      "authors_sigma": "0.006187367342664743",
+      "exact_sigma": "6.187367342e-3",
+      "relative_deviation": "1.26e-10"
+    },
+    "weno5l_L4_lambda_0.001": {
+      "authors_sigma": "1.43250787202976e-10",
+      "exact_sigma": "1.432507804e-10",
+      "relative_deviation": "4.78e-8"
+    },
+    "weno5l_L4_lambda_0.5": {
+      "authors_sigma": "0.01811144109433808",
+      "exact_sigma": "1.811144109e-2",
+      "relative_deviation": "1.46e-10"
+    },
+    "weno5l_L5_lambda_0.001": {
+      "authors_sigma": "3.114075434320395e-10",
+      "exact_sigma": "3.114075403e-10",
+      "relative_deviation": "1.02e-8"
+    },
+    "weno5l_L5_lambda_0.5": {
+      "authors_sigma": "0.038872912912450375",
+      "exact_sigma": "3.887291291e-2",
+      "relative_deviation": "2.89e-11"
+    }
+  },
+  "results": "2s and A(lambda) for all eight operators; interior-stability factorizations; prop:weno-fe; prop:rk3-stability Bernstein bounds; exact conditioning exponents and the WENO5-LIN+SSP-RK3 exclusion; rigorous erasure ratios N=24..384; half-lives",
+  "rk3_stability_certificate": {
+    "Q_over_lambda": {
+      "authors_certified_lower_bound": "0.041666666666666664",
+      "bernstein_degrees": [
+        13,
+        5
+      ],
+      "box": [
+        "-1",
+        "1",
+        "1/2",
+        "1"
+      ],
+      "min_bernstein_coefficient": "1/24",
+      "min_bernstein_decimal": "4.166666666666667e-2"
+    },
+    "S": {
+      "authors_certified_lower_bound": "0.1440179856729157",
+      "bernstein_degrees": [
+        12,
+        5
+      ],
+      "box": [
+        "-1",
+        "1",
+        "0",
+        "1/2"
+      ],
+      "min_bernstein_coefficient": "236225501/1640250000",
+      "min_bernstein_decimal": "1.440179856729157e-1"
+    }
+  },
+  "schema": "certified-simulation/coarse-observability-high-order/independent-dissipation-conditioning-erasure/v1",
+  "scope": {
+    "convention": "Singular values are reported in the coordinates xi_1..xi_{r-1} of the zero-mean profile (basis e_j - e_0), the convention that reproduces queue_conditioning.csv; the induced Euclidean norm changes each singular value by a factor in [1, sqrt(r)] and no exponent.",
+    "established": "Exact asymptotic exponents of sigma+_min(O_L iota_K) as lambda->0 for the seven single-stage operators at (P,r)=(8,6) and (8,8), L=1..r-1, from lambda-adic Smith forms of the polynomial matrix; they equal L_q in every case, so conj:conditioning holds at these two grids. For WENO5-LIN+SSP-RK3 at L=1 the exponent is exactly 3.",
+    "independence": "No file under the authors' src/ was opened; reference values are transcribed from results/*.csv and results/tables/*.tex only for comparison.",
+    "numerical_evidence": "Exact Sturm brackets of sigma+_min at lambda=1e-2..1e-5 and their decade slopes; the conjecture for general (P, r) remains unproved."
+  },
+  "ub5_lambda_0_9_N384": {
+    "B_over_A": "-2.16250000000e-1",
+    "authors_csv_one_minus_rho": "3.019806626980426e-14",
+    "authors_csv_ratio": "0.9890395944304833",
+    "one_minus_rho_N": "3.05309495414e-14",
+    "predicted_next_order_correction": "-5.78950e-5",
+    "ratio": "9.99942104975e-1"
+  },
+  "verdict": "pass"
+}

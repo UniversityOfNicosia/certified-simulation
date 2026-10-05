@@ -1,0 +1,3156 @@
+{
+  "arithmetic": "fractions.Fraction and Python integers; exact ranks over Q; exact zero tests in Q[x]/Phi_N(x); rigorous outward-rounded fixed-point intervals (2^-320 grid) for cos/sin(2 pi v/N); tolerance zero for every exact statement",
+  "check_count": 255,
+  "checks": {
+    "beam_warming_matches_section_2_display": true,
+    "bw_local_ladder_jumps_by_two_at_L4": true,
+    "bw_pure_shift_at_lambda_two_table_caption": true,
+    "coefficients_match_authors_table_bw": true,
+    "coefficients_match_authors_table_fromm": true,
+    "coefficients_match_authors_table_lw": true,
+    "coefficients_match_authors_table_ub3": true,
+    "coefficients_match_authors_table_ub5": true,
+    "coefficients_match_authors_table_uw1": true,
+    "coefficients_match_authors_table_weno5l": true,
+    "coefficients_match_authors_table_weno5l_rk3": true,
+    "collision_certificate_2408_pairs": true,
+    "collision_certificate_matches_authors_csv_bw_P8_r6": true,
+    "collision_certificate_matches_authors_csv_bw_P8_r8": true,
+    "collision_certificate_matches_authors_csv_fromm_P8_r6": true,
+    "collision_certificate_matches_authors_csv_fromm_P8_r8": true,
+    "collision_certificate_matches_authors_csv_lw_P8_r6": true,
+    "collision_certificate_matches_authors_csv_lw_P8_r8": true,
+    "collision_certificate_matches_authors_csv_ub3_P8_r6": true,
+    "collision_certificate_matches_authors_csv_ub3_P8_r8": true,
+    "collision_certificate_matches_authors_csv_ub5_P8_r6": true,
+    "collision_certificate_matches_authors_csv_ub5_P8_r8": true,
+    "collision_certificate_matches_authors_csv_uw1_P8_r6": true,
+    "collision_certificate_matches_authors_csv_uw1_P8_r8": true,
+    "collision_certificate_matches_authors_csv_weno5l_P8_r6": true,
+    "collision_certificate_matches_authors_csv_weno5l_P8_r8": true,
+    "collision_certificate_matches_authors_csv_weno5l_rk3_P8_r6": true,
+    "collision_certificate_matches_authors_csv_weno5l_rk3_P8_r8": true,
+    "collision_control_central_average_general_formula": true,
+    "collision_set_empty_on_0_1_bw_P8_r6": true,
+    "collision_set_empty_on_0_1_bw_P8_r8": true,
+    "collision_set_empty_on_0_1_fromm_P8_r6": true,
+    "collision_set_empty_on_0_1_fromm_P8_r8": true,
+    "collision_set_empty_on_0_1_lw_P8_r6": true,
+    "collision_set_empty_on_0_1_lw_P8_r8": true,
+    "collision_set_empty_on_0_1_ub3_P8_r6": true,
+    "collision_set_empty_on_0_1_ub3_P8_r8": true,
+    "collision_set_empty_on_0_1_ub5_P8_r6": true,
+    "collision_set_empty_on_0_1_ub5_P8_r8": true,
+    "collision_set_empty_on_0_1_uw1_P8_r6": true,
+    "collision_set_empty_on_0_1_uw1_P8_r8": true,
+    "collision_set_empty_on_0_1_weno5l_P8_r6": true,
+    "collision_set_empty_on_0_1_weno5l_P8_r8": true,
+    "collision_set_empty_on_0_1_weno5l_rk3_P8_r6": true,
+    "collision_set_empty_on_0_1_weno5l_rk3_P8_r8": true,
+    "collision_worst_pair_lax_wendroff_r8_bound_5_62e-3": true,
+    "consistency_sum_of_coefficients_bw": true,
+    "consistency_sum_of_coefficients_fromm": true,
+    "consistency_sum_of_coefficients_lw": true,
+    "consistency_sum_of_coefficients_ub3": true,
+    "consistency_sum_of_coefficients_ub5": true,
+    "consistency_sum_of_coefficients_uw1": true,
+    "consistency_sum_of_coefficients_weno5l": true,
+    "consistency_sum_of_coefficients_weno5l_rk3": true,
+    "detection_delay_compensated_pairs_exact": true,
+    "detection_delay_kernel_dimensions_working_grids": true,
+    "effective_support_nominal_on_open_interval_bw": true,
+    "effective_support_nominal_on_open_interval_fromm": true,
+    "effective_support_nominal_on_open_interval_lw": true,
+    "effective_support_nominal_on_open_interval_ub3": true,
+    "effective_support_nominal_on_open_interval_ub5": true,
+    "effective_support_nominal_on_open_interval_uw1": true,
+    "first_order_node_velocities_section_e2": true,
+    "fromm_c0_factorization_appendix_a": true,
+    "fromm_equals_ub3_at_lambda_half": true,
+    "fromm_minus_ub3_newton_identity": true,
+    "half_life_table_T_loc_and_shielding_columns": true,
+    "identity_at_lambda_zero_bw": true,
+    "identity_at_lambda_zero_fromm": true,
+    "identity_at_lambda_zero_lw": true,
+    "identity_at_lambda_zero_ub3": true,
+    "identity_at_lambda_zero_ub5": true,
+    "identity_at_lambda_zero_uw1": true,
+    "identity_at_lambda_zero_weno5l": true,
+    "identity_at_lambda_zero_weno5l_rk3": true,
+    "invisible_subspace_all_cases": true,
+    "invisible_subspace_bw_P3_r4_lambda_1": true,
+    "invisible_subspace_bw_P3_r4_lambda_1/10": true,
+    "invisible_subspace_bw_P3_r4_lambda_1/2": true,
+    "invisible_subspace_bw_P3_r4_lambda_1/3": true,
+    "invisible_subspace_bw_P3_r4_lambda_9/10": true,
+    "invisible_subspace_bw_P8_r6_lambda_1/2": true,
+    "invisible_subspace_bw_P8_r6_lambda_1/3": true,
+    "invisible_subspace_bw_P8_r6_lambda_9/10": true,
+    "invisible_subspace_bw_P8_r8_lambda_1/2": true,
+    "invisible_subspace_fromm_P3_r4_lambda_1": true,
+    "invisible_subspace_fromm_P3_r4_lambda_1/10": true,
+    "invisible_subspace_fromm_P3_r4_lambda_1/2": true,
+    "invisible_subspace_fromm_P3_r4_lambda_1/3": true,
+    "invisible_subspace_fromm_P3_r4_lambda_9/10": true,
+    "invisible_subspace_fromm_P8_r6_lambda_1/2": true,
+    "invisible_subspace_fromm_P8_r6_lambda_1/3": true,
+    "invisible_subspace_fromm_P8_r6_lambda_9/10": true,
+    "invisible_subspace_fromm_P8_r8_lambda_1/2": true,
+    "invisible_subspace_lw_P3_r4_lambda_1": true,
+    "invisible_subspace_lw_P3_r4_lambda_1/10": true,
+    "invisible_subspace_lw_P3_r4_lambda_1/2": true,
+    "invisible_subspace_lw_P3_r4_lambda_1/3": true,
+    "invisible_subspace_lw_P3_r4_lambda_9/10": true,
+    "invisible_subspace_lw_P8_r6_lambda_1/2": true,
+    "invisible_subspace_lw_P8_r6_lambda_1/3": true,
+    "invisible_subspace_lw_P8_r6_lambda_9/10": true,
+    "invisible_subspace_lw_P8_r8_lambda_1/2": true,
+    "invisible_subspace_ub3_P3_r4_lambda_1": true,
+    "invisible_subspace_ub3_P3_r4_lambda_1/10": true,
+    "invisible_subspace_ub3_P3_r4_lambda_1/2": true,
+    "invisible_subspace_ub3_P3_r4_lambda_1/3": true,
+    "invisible_subspace_ub3_P3_r4_lambda_9/10": true,
+    "invisible_subspace_ub3_P8_r6_lambda_1/2": true,
+    "invisible_subspace_ub3_P8_r6_lambda_1/3": true,
+    "invisible_subspace_ub3_P8_r6_lambda_9/10": true,
+    "invisible_subspace_ub3_P8_r8_lambda_1/2": true,
+    "invisible_subspace_ub5_P3_r4_lambda_1": true,
+    "invisible_subspace_ub5_P3_r4_lambda_1/10": true,
+    "invisible_subspace_ub5_P3_r4_lambda_1/2": true,
+    "invisible_subspace_ub5_P3_r4_lambda_1/3": true,
+    "invisible_subspace_ub5_P3_r4_lambda_9/10": true,
+    "invisible_subspace_ub5_P8_r6_lambda_1/2": true,
+    "invisible_subspace_ub5_P8_r6_lambda_1/3": true,
+    "invisible_subspace_ub5_P8_r6_lambda_9/10": true,
+    "invisible_subspace_ub5_P8_r8_lambda_1/2": true,
+    "invisible_subspace_uw1_P3_r4_lambda_1": true,
+    "invisible_subspace_uw1_P3_r4_lambda_1/10": true,
+    "invisible_subspace_uw1_P3_r4_lambda_1/2": true,
+    "invisible_subspace_uw1_P3_r4_lambda_1/3": true,
+    "invisible_subspace_uw1_P3_r4_lambda_9/10": true,
+    "invisible_subspace_uw1_P8_r6_lambda_1/2": true,
+    "invisible_subspace_uw1_P8_r6_lambda_1/3": true,
+    "invisible_subspace_uw1_P8_r6_lambda_9/10": true,
+    "invisible_subspace_uw1_P8_r8_lambda_1/2": true,
+    "invisible_subspace_weno5l_P3_r4_lambda_1": true,
+    "invisible_subspace_weno5l_P3_r4_lambda_1/10": true,
+    "invisible_subspace_weno5l_P3_r4_lambda_1/2": true,
+    "invisible_subspace_weno5l_P3_r4_lambda_1/3": true,
+    "invisible_subspace_weno5l_P3_r4_lambda_9/10": true,
+    "invisible_subspace_weno5l_P8_r6_lambda_1/2": true,
+    "invisible_subspace_weno5l_P8_r6_lambda_1/3": true,
+    "invisible_subspace_weno5l_P8_r6_lambda_9/10": true,
+    "invisible_subspace_weno5l_P8_r8_lambda_1/2": true,
+    "invisible_subspace_weno5l_rk3_P3_r4_lambda_1": true,
+    "invisible_subspace_weno5l_rk3_P3_r4_lambda_1/10": true,
+    "invisible_subspace_weno5l_rk3_P3_r4_lambda_1/2": true,
+    "invisible_subspace_weno5l_rk3_P3_r4_lambda_1/3": true,
+    "invisible_subspace_weno5l_rk3_P3_r4_lambda_9/10": true,
+    "invisible_subspace_weno5l_rk3_P8_r6_lambda_1/2": true,
+    "invisible_subspace_weno5l_rk3_P8_r6_lambda_1/3": true,
+    "invisible_subspace_weno5l_rk3_P8_r6_lambda_9/10": true,
+    "invisible_subspace_weno5l_rk3_P8_r8_lambda_1/2": true,
+    "lambda_zero_control_rank_collapses_to_P": true,
+    "lax_wendroff_matches_section_2_display": true,
+    "lax_wendroff_second_order_node_gaps_sqrt3_lambda_squared": true,
+    "lemma_collision_finite_coefficient_degree_at_most_w": true,
+    "local_rank_early_horizon_sigma_L": true,
+    "local_rank_lambda_one_pure_shift_single_collar": true,
+    "local_rank_matches_authors_local_observability_csv": true,
+    "local_rank_saturation_r_minus_1": true,
+    "local_rank_wraparound_bound_attained_all_horizons": true,
+    "no_spectral_collision_at_any_tested_courant_number": true,
+    "nominal_reach_table_scheme_zoo_bw": true,
+    "nominal_reach_table_scheme_zoo_fromm": true,
+    "nominal_reach_table_scheme_zoo_lw": true,
+    "nominal_reach_table_scheme_zoo_ub3": true,
+    "nominal_reach_table_scheme_zoo_ub5": true,
+    "nominal_reach_table_scheme_zoo_uw1": true,
+    "nominal_reach_table_scheme_zoo_weno5l": true,
+    "nominal_reach_table_scheme_zoo_weno5l_rk3": true,
+    "pure_shift_at_lambda_one_bw": true,
+    "pure_shift_at_lambda_one_fromm": true,
+    "pure_shift_at_lambda_one_lw": true,
+    "pure_shift_at_lambda_one_ub3": true,
+    "pure_shift_at_lambda_one_ub5": true,
+    "pure_shift_at_lambda_one_uw1": true,
+    "rank_general_formula_all_cases": true,
+    "rank_universal_ladder_all_collision_free_cases": true,
+    "rank_universal_ladder_bw_P3_r4_lambda_1": true,
+    "rank_universal_ladder_bw_P3_r4_lambda_1/10": true,
+    "rank_universal_ladder_bw_P3_r4_lambda_1/2": true,
+    "rank_universal_ladder_bw_P3_r4_lambda_1/3": true,
+    "rank_universal_ladder_bw_P3_r4_lambda_9/10": true,
+    "rank_universal_ladder_bw_P8_r6_lambda_1/2": true,
+    "rank_universal_ladder_bw_P8_r6_lambda_1/3": true,
+    "rank_universal_ladder_bw_P8_r6_lambda_9/10": true,
+    "rank_universal_ladder_bw_P8_r8_lambda_1/2": true,
+    "rank_universal_ladder_fromm_P3_r4_lambda_1": true,
+    "rank_universal_ladder_fromm_P3_r4_lambda_1/10": true,
+    "rank_universal_ladder_fromm_P3_r4_lambda_1/2": true,
+    "rank_universal_ladder_fromm_P3_r4_lambda_1/3": true,
+    "rank_universal_ladder_fromm_P3_r4_lambda_9/10": true,
+    "rank_universal_ladder_fromm_P8_r6_lambda_1/2": true,
+    "rank_universal_ladder_fromm_P8_r6_lambda_1/3": true,
+    "rank_universal_ladder_fromm_P8_r6_lambda_9/10": true,
+    "rank_universal_ladder_fromm_P8_r8_lambda_1/2": true,
+    "rank_universal_ladder_lw_P3_r4_lambda_1": true,
+    "rank_universal_ladder_lw_P3_r4_lambda_1/10": true,
+    "rank_universal_ladder_lw_P3_r4_lambda_1/2": true,
+    "rank_universal_ladder_lw_P3_r4_lambda_1/3": true,
+    "rank_universal_ladder_lw_P3_r4_lambda_9/10": true,
+    "rank_universal_ladder_lw_P8_r6_lambda_1/2": true,
+    "rank_universal_ladder_lw_P8_r6_lambda_1/3": true,
+    "rank_universal_ladder_lw_P8_r6_lambda_9/10": true,
+    "rank_universal_ladder_lw_P8_r8_lambda_1/2": true,
+    "rank_universal_ladder_ub3_P3_r4_lambda_1": true,
+    "rank_universal_ladder_ub3_P3_r4_lambda_1/10": true,
+    "rank_universal_ladder_ub3_P3_r4_lambda_1/2": true,
+    "rank_universal_ladder_ub3_P3_r4_lambda_1/3": true,
+    "rank_universal_ladder_ub3_P3_r4_lambda_9/10": true,
+    "rank_universal_ladder_ub3_P8_r6_lambda_1/2": true,
+    "rank_universal_ladder_ub3_P8_r6_lambda_1/3": true,
+    "rank_universal_ladder_ub3_P8_r6_lambda_9/10": true,
+    "rank_universal_ladder_ub3_P8_r8_lambda_1/2": true,
+    "rank_universal_ladder_ub5_P3_r4_lambda_1": true,
+    "rank_universal_ladder_ub5_P3_r4_lambda_1/10": true,
+    "rank_universal_ladder_ub5_P3_r4_lambda_1/2": true,
+    "rank_universal_ladder_ub5_P3_r4_lambda_1/3": true,
+    "rank_universal_ladder_ub5_P3_r4_lambda_9/10": true,
+    "rank_universal_ladder_ub5_P8_r6_lambda_1/2": true,
+    "rank_universal_ladder_ub5_P8_r6_lambda_1/3": true,
+    "rank_universal_ladder_ub5_P8_r6_lambda_9/10": true,
+    "rank_universal_ladder_ub5_P8_r8_lambda_1/2": true,
+    "rank_universal_ladder_uw1_P3_r4_lambda_1": true,
+    "rank_universal_ladder_uw1_P3_r4_lambda_1/10": true,
+    "rank_universal_ladder_uw1_P3_r4_lambda_1/2": true,
+    "rank_universal_ladder_uw1_P3_r4_lambda_1/3": true,
+    "rank_universal_ladder_uw1_P3_r4_lambda_9/10": true,
+    "rank_universal_ladder_uw1_P8_r6_lambda_1/2": true,
+    "rank_universal_ladder_uw1_P8_r6_lambda_1/3": true,
+    "rank_universal_ladder_uw1_P8_r6_lambda_9/10": true,
+    "rank_universal_ladder_uw1_P8_r8_lambda_1/2": true,
+    "rank_universal_ladder_weno5l_P3_r4_lambda_1": true,
+    "rank_universal_ladder_weno5l_P3_r4_lambda_1/10": true,
+    "rank_universal_ladder_weno5l_P3_r4_lambda_1/2": true,
+    "rank_universal_ladder_weno5l_P3_r4_lambda_1/3": true,
+    "rank_universal_ladder_weno5l_P3_r4_lambda_9/10": true,
+    "rank_universal_ladder_weno5l_P8_r6_lambda_1/2": true,
+    "rank_universal_ladder_weno5l_P8_r6_lambda_1/3": true,
+    "rank_universal_ladder_weno5l_P8_r6_lambda_9/10": true,
+    "rank_universal_ladder_weno5l_P8_r8_lambda_1/2": true,
+    "rank_universal_ladder_weno5l_rk3_P3_r4_lambda_1": true,
+    "rank_universal_ladder_weno5l_rk3_P3_r4_lambda_1/10": true,
+    "rank_universal_ladder_weno5l_rk3_P3_r4_lambda_1/2": true,
+    "rank_universal_ladder_weno5l_rk3_P3_r4_lambda_1/3": true,
+    "rank_universal_ladder_weno5l_rk3_P3_r4_lambda_9/10": true,
+    "rank_universal_ladder_weno5l_rk3_P8_r6_lambda_1/2": true,
+    "rank_universal_ladder_weno5l_rk3_P8_r6_lambda_1/3": true,
+    "rank_universal_ladder_weno5l_rk3_P8_r6_lambda_9/10": true,
+    "rank_universal_ladder_weno5l_rk3_P8_r8_lambda_1/2": true,
+    "remark_lambda_orders_rk3_graded_by_stage": true,
+    "remark_lambda_orders_single_stage_coefficients_theta_lambda": true,
+    "rk3_interior_coefficients_s2_to_s6_vanish_once_in_0_1": true,
+    "rk3_local_ladder_0_3_5_and_0_3_7": true,
+    "rk3_other_coefficients_nonzero_on_0_1": true,
+    "rk3_outer_coefficients_remark_effective_support": true,
+    "ssp_rk3_shu_osher_equals_third_order_taylor": true,
+    "weno5l_fe_affine_coefficients_nonzero_on_0_1": true,
+    "width_law_refuted_collars_law_holds": true
+  },
+  "collision_cases_found": [],
+  "collision_certificate": {
+    "bw_P8_r6": {
+      "authors_certified_min_q": "1.0",
+      "certified_pairs": 105,
+      "max_q_degree": 2,
+      "min_bernstein_coefficient": "1.00000000000000e+0",
+      "min_valuation": 1,
+      "pairs": 105,
+      "worst_pair_k_kprime": [
+        17,
+        25
+      ]
+    },
+    "bw_P8_r8": {
+      "authors_certified_min_q": "0.585786437626905",
+      "certified_pairs": 196,
+      "max_q_degree": 2,
+      "min_bernstein_coefficient": "5.85786437626905e-1",
+      "min_valuation": 1,
+      "pairs": 196,
+      "worst_pair_k_kprime": [
+        33,
+        41
+      ]
+    },
+    "fromm_P8_r6": {
+      "authors_certified_min_q": "0.9075165176855672",
+      "certified_pairs": 105,
+      "max_q_degree": 2,
+      "min_bernstein_coefficient": "9.07516517685567e-1",
+      "min_valuation": 1,
+      "pairs": 105,
+      "worst_pair_k_kprime": [
+        35,
+        43
+      ]
+    },
+    "fromm_P8_r8": {
+      "authors_certified_min_q": "0.5233126323246691",
+      "certified_pairs": 196,
+      "max_q_degree": 2,
+      "min_bernstein_coefficient": "5.23312632324669e-1",
+      "min_valuation": 1,
+      "pairs": 196,
+      "worst_pair_k_kprime": [
+        49,
+        57
+      ]
+    },
+    "lw_P8_r6": {
+      "authors_certified_min_q": "0.017037086855465858",
+      "certified_pairs": 105,
+      "max_q_degree": 2,
+      "min_bernstein_coefficient": "1.70370868554659e-2",
+      "min_valuation": 1,
+      "pairs": 105,
+      "worst_pair_k_kprime": [
+        9,
+        17
+      ]
+    },
+    "lw_P8_r8": {
+      "authors_certified_min_q": "0.005627861071295757",
+      "certified_pairs": 196,
+      "max_q_degree": 2,
+      "min_bernstein_coefficient": "5.62786107129576e-3",
+      "min_valuation": 1,
+      "pairs": 196,
+      "worst_pair_k_kprime": [
+        11,
+        19
+      ]
+    },
+    "ub3_P8_r6": {
+      "authors_certified_min_q": "0.5487820222673201",
+      "certified_pairs": 105,
+      "max_q_degree": 4,
+      "min_bernstein_coefficient": "5.48782022267320e-1",
+      "min_valuation": 1,
+      "pairs": 105,
+      "worst_pair_k_kprime": [
+        33,
+        41
+      ]
+    },
+    "ub3_P8_r8": {
+      "authors_certified_min_q": "0.31590508338973555",
+      "certified_pairs": 196,
+      "max_q_degree": 4,
+      "min_bernstein_coefficient": "3.15905083389736e-1",
+      "min_valuation": 1,
+      "pairs": 196,
+      "worst_pair_k_kprime": [
+        12,
+        20
+      ]
+    },
+    "ub5_P8_r6": {
+      "authors_certified_min_q": "0.3827763452672109",
+      "certified_pairs": 105,
+      "max_q_degree": 8,
+      "min_bernstein_coefficient": "3.82776345267211e-1",
+      "min_valuation": 1,
+      "pairs": 105,
+      "worst_pair_k_kprime": [
+        10,
+        18
+      ]
+    },
+    "ub5_P8_r8": {
+      "authors_certified_min_q": "0.22782365774656357",
+      "certified_pairs": 196,
+      "max_q_degree": 8,
+      "min_bernstein_coefficient": "2.27823657746564e-1",
+      "min_valuation": 1,
+      "pairs": 196,
+      "worst_pair_k_kprime": [
+        42,
+        50
+      ]
+    },
+    "uw1_P8_r6": {
+      "authors_certified_min_q": "1.0",
+      "certified_pairs": 105,
+      "max_q_degree": 0,
+      "min_bernstein_coefficient": "1.00000000000000e+0",
+      "min_valuation": 1,
+      "pairs": 105,
+      "worst_pair_k_kprime": [
+        25,
+        33
+      ]
+    },
+    "uw1_P8_r8": {
+      "authors_certified_min_q": "0.585786437626905",
+      "certified_pairs": 196,
+      "max_q_degree": 0,
+      "min_bernstein_coefficient": "5.85786437626905e-1",
+      "min_valuation": 1,
+      "pairs": 196,
+      "worst_pair_k_kprime": [
+        33,
+        41
+      ]
+    },
+    "weno5l_P8_r6": {
+      "authors_certified_min_q": "0.3827763452672109",
+      "certified_pairs": 105,
+      "max_q_degree": 0,
+      "min_bernstein_coefficient": "3.82776345267211e-1",
+      "min_valuation": 1,
+      "pairs": 105,
+      "worst_pair_k_kprime": [
+        10,
+        18
+      ]
+    },
+    "weno5l_P8_r8": {
+      "authors_certified_min_q": "0.22782365774656357",
+      "certified_pairs": 196,
+      "max_q_degree": 0,
+      "min_bernstein_coefficient": "2.27823657746564e-1",
+      "min_valuation": 1,
+      "pairs": 196,
+      "worst_pair_k_kprime": [
+        42,
+        50
+      ]
+    },
+    "weno5l_rk3_P8_r6": {
+      "authors_certified_min_q": "0.16419994343317945",
+      "certified_pairs": 105,
+      "max_q_degree": 4,
+      "min_bernstein_coefficient": "1.64199943433179e-1",
+      "min_valuation": 1,
+      "pairs": 105,
+      "worst_pair_k_kprime": [
+        10,
+        18
+      ]
+    },
+    "weno5l_rk3_P8_r8": {
+      "authors_certified_min_q": "0.09269219719868338",
+      "certified_pairs": 196,
+      "max_q_degree": 4,
+      "min_bernstein_coefficient": "9.26921971986834e-2",
+      "min_valuation": 1,
+      "pairs": 196,
+      "worst_pair_k_kprime": [
+        33,
+        41
+      ]
+    }
+  },
+  "collision_controls": {
+    "P2_r3": {
+      "class_node_counts": [
+        1,
+        2
+      ],
+      "ladder": [
+        2,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    "P4_r4": {
+      "class_node_counts": [
+        1,
+        4,
+        2,
+        4
+      ],
+      "ladder": [
+        4,
+        7,
+        9,
+        11,
+        11,
+        11
+      ]
+    },
+    "P4_r6": {
+      "class_node_counts": [
+        1,
+        6,
+        3,
+        6
+      ],
+      "ladder": [
+        4,
+        7,
+        10,
+        12,
+        14,
+        16,
+        16,
+        16
+      ]
+    },
+    "P8_r6": {
+      "class_node_counts": [
+        1,
+        6,
+        6,
+        6,
+        3,
+        6,
+        6,
+        6
+      ],
+      "ladder": [
+        8,
+        15,
+        22,
+        28,
+        34,
+        40,
+        40,
+        40
+      ]
+    }
+  },
+  "detection_delays": {
+    "bw_t0_1": {
+      "first_detection": 1,
+      "j1": 0,
+      "j2": 4
+    },
+    "bw_t0_2": {
+      "first_detection": 2,
+      "j1": 0,
+      "j2": 2
+    },
+    "fromm_t0_1": {
+      "first_detection": 1,
+      "j1": 1,
+      "j2": 4
+    },
+    "lw_t0_1": {
+      "first_detection": 1,
+      "j1": 1,
+      "j2": 5
+    },
+    "lw_t0_2": {
+      "first_detection": 2,
+      "j1": 2,
+      "j2": 4
+    },
+    "ub3_t0_1": {
+      "first_detection": 1,
+      "j1": 1,
+      "j2": 4
+    },
+    "ub5_t0_1": {
+      "first_detection": 1,
+      "j1": 2,
+      "j2": 3
+    },
+    "uw1_t0_1": {
+      "first_detection": 1,
+      "j1": 0,
+      "j2": 5
+    },
+    "uw1_t0_2": {
+      "first_detection": 2,
+      "j1": 0,
+      "j2": 4
+    },
+    "uw1_t0_3": {
+      "first_detection": 3,
+      "j1": 0,
+      "j2": 3
+    },
+    "uw1_t0_4": {
+      "first_detection": 4,
+      "j1": 0,
+      "j2": 2
+    },
+    "uw1_t0_5": {
+      "first_detection": 5,
+      "j1": 0,
+      "j2": 1
+    },
+    "weno5l_rk3_t0_0": {
+      "first_detection": 1,
+      "j1": 0,
+      "j2": 5
+    }
+  },
+  "discrepancies": [
+    {
+      "claim": "across all 13 (scheme, depth) pairs the first separation occurs exactly at t*=t0",
+      "finding": "for the WENO5-LIN+SSP-RK3 pair (t0=0, j1=0, j2=5) the first separation is at step 1, not t0=0 (zero-mean data are never visible at step 0); the authors' delayed_collisions.csv records t_detect_predicted=1 for that row",
+      "location": "article.tex line 1041 (E5)"
+    }
+  ],
+  "local_ranks": {
+    "bw_r6_lambda_1": {
+      "m_L": 1,
+      "m_R": 0,
+      "rho": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    "bw_r6_lambda_1/10": {
+      "m_L": 2,
+      "m_R": 0,
+      "rho": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    "bw_r6_lambda_1/2": {
+      "m_L": 2,
+      "m_R": 0,
+      "rho": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    "bw_r6_lambda_9/10": {
+      "m_L": 2,
+      "m_R": 0,
+      "rho": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    "bw_r8_lambda_1": {
+      "m_L": 1,
+      "m_R": 0,
+      "rho": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    "bw_r8_lambda_1/10": {
+      "m_L": 2,
+      "m_R": 0,
+      "rho": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    "bw_r8_lambda_1/2": {
+      "m_L": 2,
+      "m_R": 0,
+      "rho": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    "bw_r8_lambda_9/10": {
+      "m_L": 2,
+      "m_R": 0,
+      "rho": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    "fromm_r6_lambda_1": {
+      "m_L": 1,
+      "m_R": 0,
+      "rho": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    "fromm_r6_lambda_1/10": {
+      "m_L": 2,
+      "m_R": 1,
+      "rho": [
+        0,
+        2,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    "fromm_r6_lambda_1/2": {
+      "m_L": 2,
+      "m_R": 1,
+      "rho": [
+        0,
+        2,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    "fromm_r6_lambda_9/10": {
+      "m_L": 2,
+      "m_R": 1,
+      "rho": [
+        0,
+        2,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    "fromm_r8_lambda_1": {
+      "m_L": 1,
+      "m_R": 0,
+      "rho": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    "fromm_r8_lambda_1/10": {
+      "m_L": 2,
+      "m_R": 1,
+      "rho": [
+        0,
+        2,
+        4,
+        6,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    "fromm_r8_lambda_1/2": {
+      "m_L": 2,
+      "m_R": 1,
+      "rho": [
+        0,
+        2,
+        4,
+        6,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    "fromm_r8_lambda_9/10": {
+      "m_L": 2,
+      "m_R": 1,
+      "rho": [
+        0,
+        2,
+        4,
+        6,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    "lw_r6_lambda_1": {
+      "m_L": 1,
+      "m_R": 0,
+      "rho": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    "lw_r6_lambda_1/10": {
+      "m_L": 1,
+      "m_R": 1,
+      "rho": [
+        0,
+        2,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    "lw_r6_lambda_1/2": {
+      "m_L": 1,
+      "m_R": 1,
+      "rho": [
+        0,
+        2,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    "lw_r6_lambda_9/10": {
+      "m_L": 1,
+      "m_R": 1,
+      "rho": [
+        0,
+        2,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    "lw_r8_lambda_1": {
+      "m_L": 1,
+      "m_R": 0,
+      "rho": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    "lw_r8_lambda_1/10": {
+      "m_L": 1,
+      "m_R": 1,
+      "rho": [
+        0,
+        2,
+        4,
+        6,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    "lw_r8_lambda_1/2": {
+      "m_L": 1,
+      "m_R": 1,
+      "rho": [
+        0,
+        2,
+        4,
+        6,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    "lw_r8_lambda_9/10": {
+      "m_L": 1,
+      "m_R": 1,
+      "rho": [
+        0,
+        2,
+        4,
+        6,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    "ub3_r6_lambda_1": {
+      "m_L": 1,
+      "m_R": 0,
+      "rho": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    "ub3_r6_lambda_1/10": {
+      "m_L": 2,
+      "m_R": 1,
+      "rho": [
+        0,
+        2,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    "ub3_r6_lambda_1/2": {
+      "m_L": 2,
+      "m_R": 1,
+      "rho": [
+        0,
+        2,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    "ub3_r6_lambda_9/10": {
+      "m_L": 2,
+      "m_R": 1,
+      "rho": [
+        0,
+        2,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    "ub3_r8_lambda_1": {
+      "m_L": 1,
+      "m_R": 0,
+      "rho": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    "ub3_r8_lambda_1/10": {
+      "m_L": 2,
+      "m_R": 1,
+      "rho": [
+        0,
+        2,
+        4,
+        6,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    "ub3_r8_lambda_1/2": {
+      "m_L": 2,
+      "m_R": 1,
+      "rho": [
+        0,
+        2,
+        4,
+        6,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    "ub3_r8_lambda_9/10": {
+      "m_L": 2,
+      "m_R": 1,
+      "rho": [
+        0,
+        2,
+        4,
+        6,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    "ub5_r6_lambda_1": {
+      "m_L": 1,
+      "m_R": 0,
+      "rho": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    "ub5_r6_lambda_1/10": {
+      "m_L": 3,
+      "m_R": 2,
+      "rho": [
+        0,
+        2,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    "ub5_r6_lambda_1/2": {
+      "m_L": 3,
+      "m_R": 2,
+      "rho": [
+        0,
+        2,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    "ub5_r6_lambda_9/10": {
+      "m_L": 3,
+      "m_R": 2,
+      "rho": [
+        0,
+        2,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    "ub5_r8_lambda_1": {
+      "m_L": 1,
+      "m_R": 0,
+      "rho": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    "ub5_r8_lambda_1/10": {
+      "m_L": 3,
+      "m_R": 2,
+      "rho": [
+        0,
+        2,
+        4,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    "ub5_r8_lambda_1/2": {
+      "m_L": 3,
+      "m_R": 2,
+      "rho": [
+        0,
+        2,
+        4,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    "ub5_r8_lambda_9/10": {
+      "m_L": 3,
+      "m_R": 2,
+      "rho": [
+        0,
+        2,
+        4,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    "uw1_r6_lambda_1": {
+      "m_L": 1,
+      "m_R": 0,
+      "rho": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    "uw1_r6_lambda_1/10": {
+      "m_L": 1,
+      "m_R": 0,
+      "rho": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    "uw1_r6_lambda_1/2": {
+      "m_L": 1,
+      "m_R": 0,
+      "rho": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    "uw1_r6_lambda_9/10": {
+      "m_L": 1,
+      "m_R": 0,
+      "rho": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    "uw1_r8_lambda_1": {
+      "m_L": 1,
+      "m_R": 0,
+      "rho": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    "uw1_r8_lambda_1/10": {
+      "m_L": 1,
+      "m_R": 0,
+      "rho": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    "uw1_r8_lambda_1/2": {
+      "m_L": 1,
+      "m_R": 0,
+      "rho": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    "uw1_r8_lambda_9/10": {
+      "m_L": 1,
+      "m_R": 0,
+      "rho": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    "weno5l_r6_lambda_1": {
+      "m_L": 3,
+      "m_R": 2,
+      "rho": [
+        0,
+        2,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    "weno5l_r6_lambda_1/10": {
+      "m_L": 3,
+      "m_R": 2,
+      "rho": [
+        0,
+        2,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    "weno5l_r6_lambda_1/2": {
+      "m_L": 3,
+      "m_R": 2,
+      "rho": [
+        0,
+        2,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    "weno5l_r6_lambda_9/10": {
+      "m_L": 3,
+      "m_R": 2,
+      "rho": [
+        0,
+        2,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    "weno5l_r8_lambda_1": {
+      "m_L": 3,
+      "m_R": 2,
+      "rho": [
+        0,
+        2,
+        4,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    "weno5l_r8_lambda_1/10": {
+      "m_L": 3,
+      "m_R": 2,
+      "rho": [
+        0,
+        2,
+        4,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    "weno5l_r8_lambda_1/2": {
+      "m_L": 3,
+      "m_R": 2,
+      "rho": [
+        0,
+        2,
+        4,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    "weno5l_r8_lambda_9/10": {
+      "m_L": 3,
+      "m_R": 2,
+      "rho": [
+        0,
+        2,
+        4,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    "weno5l_rk3_r6_lambda_1": {
+      "m_L": 9,
+      "m_R": 6,
+      "rho": [
+        0,
+        3,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    "weno5l_rk3_r6_lambda_1/10": {
+      "m_L": 9,
+      "m_R": 6,
+      "rho": [
+        0,
+        3,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    "weno5l_rk3_r6_lambda_1/2": {
+      "m_L": 9,
+      "m_R": 6,
+      "rho": [
+        0,
+        3,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    "weno5l_rk3_r6_lambda_9/10": {
+      "m_L": 9,
+      "m_R": 6,
+      "rho": [
+        0,
+        3,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    "weno5l_rk3_r8_lambda_1": {
+      "m_L": 9,
+      "m_R": 6,
+      "rho": [
+        0,
+        3,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    "weno5l_rk3_r8_lambda_1/10": {
+      "m_L": 9,
+      "m_R": 6,
+      "rho": [
+        0,
+        3,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    "weno5l_rk3_r8_lambda_1/2": {
+      "m_L": 9,
+      "m_R": 6,
+      "rho": [
+        0,
+        3,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    "weno5l_rk3_r8_lambda_9/10": {
+      "m_L": 9,
+      "m_R": 6,
+      "rho": [
+        0,
+        3,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    }
+  },
+  "passed": 255,
+  "rank_cases": {
+    "bw_P3_r4_lambda_1": {
+      "class_node_counts": [
+        1,
+        4,
+        4
+      ],
+      "collision_free": true,
+      "ladder": [
+        3,
+        5,
+        7,
+        9,
+        9,
+        9
+      ]
+    },
+    "bw_P3_r4_lambda_1/10": {
+      "class_node_counts": [
+        1,
+        4,
+        4
+      ],
+      "collision_free": true,
+      "ladder": [
+        3,
+        5,
+        7,
+        9,
+        9,
+        9
+      ]
+    },
+    "bw_P3_r4_lambda_1/2": {
+      "class_node_counts": [
+        1,
+        4,
+        4
+      ],
+      "collision_free": true,
+      "ladder": [
+        3,
+        5,
+        7,
+        9,
+        9,
+        9
+      ]
+    },
+    "bw_P3_r4_lambda_1/3": {
+      "class_node_counts": [
+        1,
+        4,
+        4
+      ],
+      "collision_free": true,
+      "ladder": [
+        3,
+        5,
+        7,
+        9,
+        9,
+        9
+      ]
+    },
+    "bw_P3_r4_lambda_9/10": {
+      "class_node_counts": [
+        1,
+        4,
+        4
+      ],
+      "collision_free": true,
+      "ladder": [
+        3,
+        5,
+        7,
+        9,
+        9,
+        9
+      ]
+    },
+    "bw_P8_r6_lambda_1/2": {
+      "class_node_counts": [
+        1,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "collision_free": true,
+      "ladder": [
+        8,
+        15,
+        22,
+        29,
+        36,
+        43,
+        43,
+        43
+      ]
+    },
+    "bw_P8_r6_lambda_1/3": {
+      "class_node_counts": [
+        1,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "collision_free": true,
+      "ladder": [
+        8,
+        15,
+        22,
+        29,
+        36,
+        43,
+        43,
+        43
+      ]
+    },
+    "bw_P8_r6_lambda_9/10": {
+      "class_node_counts": [
+        1,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "collision_free": true,
+      "ladder": [
+        8,
+        15,
+        22,
+        29,
+        36,
+        43,
+        43,
+        43
+      ]
+    },
+    "bw_P8_r8_lambda_1/2": {
+      "class_node_counts": [
+        1,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "collision_free": true,
+      "ladder": [
+        8,
+        15,
+        22,
+        29,
+        36,
+        43,
+        50,
+        57,
+        57,
+        57
+      ]
+    },
+    "fromm_P3_r4_lambda_1": {
+      "class_node_counts": [
+        1,
+        4,
+        4
+      ],
+      "collision_free": true,
+      "ladder": [
+        3,
+        5,
+        7,
+        9,
+        9,
+        9
+      ]
+    },
+    "fromm_P3_r4_lambda_1/10": {
+      "class_node_counts": [
+        1,
+        4,
+        4
+      ],
+      "collision_free": true,
+      "ladder": [
+        3,
+        5,
+        7,
+        9,
+        9,
+        9
+      ]
+    },
+    "fromm_P3_r4_lambda_1/2": {
+      "class_node_counts": [
+        1,
+        4,
+        4
+      ],
+      "collision_free": true,
+      "ladder": [
+        3,
+        5,
+        7,
+        9,
+        9,
+        9
+      ]
+    },
+    "fromm_P3_r4_lambda_1/3": {
+      "class_node_counts": [
+        1,
+        4,
+        4
+      ],
+      "collision_free": true,
+      "ladder": [
+        3,
+        5,
+        7,
+        9,
+        9,
+        9
+      ]
+    },
+    "fromm_P3_r4_lambda_9/10": {
+      "class_node_counts": [
+        1,
+        4,
+        4
+      ],
+      "collision_free": true,
+      "ladder": [
+        3,
+        5,
+        7,
+        9,
+        9,
+        9
+      ]
+    },
+    "fromm_P8_r6_lambda_1/2": {
+      "class_node_counts": [
+        1,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "collision_free": true,
+      "ladder": [
+        8,
+        15,
+        22,
+        29,
+        36,
+        43,
+        43,
+        43
+      ]
+    },
+    "fromm_P8_r6_lambda_1/3": {
+      "class_node_counts": [
+        1,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "collision_free": true,
+      "ladder": [
+        8,
+        15,
+        22,
+        29,
+        36,
+        43,
+        43,
+        43
+      ]
+    },
+    "fromm_P8_r6_lambda_9/10": {
+      "class_node_counts": [
+        1,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "collision_free": true,
+      "ladder": [
+        8,
+        15,
+        22,
+        29,
+        36,
+        43,
+        43,
+        43
+      ]
+    },
+    "fromm_P8_r8_lambda_1/2": {
+      "class_node_counts": [
+        1,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "collision_free": true,
+      "ladder": [
+        8,
+        15,
+        22,
+        29,
+        36,
+        43,
+        50,
+        57,
+        57,
+        57
+      ]
+    },
+    "lw_P3_r4_lambda_1": {
+      "class_node_counts": [
+        1,
+        4,
+        4
+      ],
+      "collision_free": true,
+      "ladder": [
+        3,
+        5,
+        7,
+        9,
+        9,
+        9
+      ]
+    },
+    "lw_P3_r4_lambda_1/10": {
+      "class_node_counts": [
+        1,
+        4,
+        4
+      ],
+      "collision_free": true,
+      "ladder": [
+        3,
+        5,
+        7,
+        9,
+        9,
+        9
+      ]
+    },
+    "lw_P3_r4_lambda_1/2": {
+      "class_node_counts": [
+        1,
+        4,
+        4
+      ],
+      "collision_free": true,
+      "ladder": [
+        3,
+        5,
+        7,
+        9,
+        9,
+        9
+      ]
+    },
+    "lw_P3_r4_lambda_1/3": {
+      "class_node_counts": [
+        1,
+        4,
+        4
+      ],
+      "collision_free": true,
+      "ladder": [
+        3,
+        5,
+        7,
+        9,
+        9,
+        9
+      ]
+    },
+    "lw_P3_r4_lambda_9/10": {
+      "class_node_counts": [
+        1,
+        4,
+        4
+      ],
+      "collision_free": true,
+      "ladder": [
+        3,
+        5,
+        7,
+        9,
+        9,
+        9
+      ]
+    },
+    "lw_P8_r6_lambda_1/2": {
+      "class_node_counts": [
+        1,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "collision_free": true,
+      "ladder": [
+        8,
+        15,
+        22,
+        29,
+        36,
+        43,
+        43,
+        43
+      ]
+    },
+    "lw_P8_r6_lambda_1/3": {
+      "class_node_counts": [
+        1,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "collision_free": true,
+      "ladder": [
+        8,
+        15,
+        22,
+        29,
+        36,
+        43,
+        43,
+        43
+      ]
+    },
+    "lw_P8_r6_lambda_9/10": {
+      "class_node_counts": [
+        1,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "collision_free": true,
+      "ladder": [
+        8,
+        15,
+        22,
+        29,
+        36,
+        43,
+        43,
+        43
+      ]
+    },
+    "lw_P8_r8_lambda_1/2": {
+      "class_node_counts": [
+        1,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "collision_free": true,
+      "ladder": [
+        8,
+        15,
+        22,
+        29,
+        36,
+        43,
+        50,
+        57,
+        57,
+        57
+      ]
+    },
+    "ub3_P3_r4_lambda_1": {
+      "class_node_counts": [
+        1,
+        4,
+        4
+      ],
+      "collision_free": true,
+      "ladder": [
+        3,
+        5,
+        7,
+        9,
+        9,
+        9
+      ]
+    },
+    "ub3_P3_r4_lambda_1/10": {
+      "class_node_counts": [
+        1,
+        4,
+        4
+      ],
+      "collision_free": true,
+      "ladder": [
+        3,
+        5,
+        7,
+        9,
+        9,
+        9
+      ]
+    },
+    "ub3_P3_r4_lambda_1/2": {
+      "class_node_counts": [
+        1,
+        4,
+        4
+      ],
+      "collision_free": true,
+      "ladder": [
+        3,
+        5,
+        7,
+        9,
+        9,
+        9
+      ]
+    },
+    "ub3_P3_r4_lambda_1/3": {
+      "class_node_counts": [
+        1,
+        4,
+        4
+      ],
+      "collision_free": true,
+      "ladder": [
+        3,
+        5,
+        7,
+        9,
+        9,
+        9
+      ]
+    },
+    "ub3_P3_r4_lambda_9/10": {
+      "class_node_counts": [
+        1,
+        4,
+        4
+      ],
+      "collision_free": true,
+      "ladder": [
+        3,
+        5,
+        7,
+        9,
+        9,
+        9
+      ]
+    },
+    "ub3_P8_r6_lambda_1/2": {
+      "class_node_counts": [
+        1,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "collision_free": true,
+      "ladder": [
+        8,
+        15,
+        22,
+        29,
+        36,
+        43,
+        43,
+        43
+      ]
+    },
+    "ub3_P8_r6_lambda_1/3": {
+      "class_node_counts": [
+        1,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "collision_free": true,
+      "ladder": [
+        8,
+        15,
+        22,
+        29,
+        36,
+        43,
+        43,
+        43
+      ]
+    },
+    "ub3_P8_r6_lambda_9/10": {
+      "class_node_counts": [
+        1,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "collision_free": true,
+      "ladder": [
+        8,
+        15,
+        22,
+        29,
+        36,
+        43,
+        43,
+        43
+      ]
+    },
+    "ub3_P8_r8_lambda_1/2": {
+      "class_node_counts": [
+        1,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "collision_free": true,
+      "ladder": [
+        8,
+        15,
+        22,
+        29,
+        36,
+        43,
+        50,
+        57,
+        57,
+        57
+      ]
+    },
+    "ub5_P3_r4_lambda_1": {
+      "class_node_counts": [
+        1,
+        4,
+        4
+      ],
+      "collision_free": true,
+      "ladder": [
+        3,
+        5,
+        7,
+        9,
+        9,
+        9
+      ]
+    },
+    "ub5_P3_r4_lambda_1/10": {
+      "class_node_counts": [
+        1,
+        4,
+        4
+      ],
+      "collision_free": true,
+      "ladder": [
+        3,
+        5,
+        7,
+        9,
+        9,
+        9
+      ]
+    },
+    "ub5_P3_r4_lambda_1/2": {
+      "class_node_counts": [
+        1,
+        4,
+        4
+      ],
+      "collision_free": true,
+      "ladder": [
+        3,
+        5,
+        7,
+        9,
+        9,
+        9
+      ]
+    },
+    "ub5_P3_r4_lambda_1/3": {
+      "class_node_counts": [
+        1,
+        4,
+        4
+      ],
+      "collision_free": true,
+      "ladder": [
+        3,
+        5,
+        7,
+        9,
+        9,
+        9
+      ]
+    },
+    "ub5_P3_r4_lambda_9/10": {
+      "class_node_counts": [
+        1,
+        4,
+        4
+      ],
+      "collision_free": true,
+      "ladder": [
+        3,
+        5,
+        7,
+        9,
+        9,
+        9
+      ]
+    },
+    "ub5_P8_r6_lambda_1/2": {
+      "class_node_counts": [
+        1,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "collision_free": true,
+      "ladder": [
+        8,
+        15,
+        22,
+        29,
+        36,
+        43,
+        43,
+        43
+      ]
+    },
+    "ub5_P8_r6_lambda_1/3": {
+      "class_node_counts": [
+        1,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "collision_free": true,
+      "ladder": [
+        8,
+        15,
+        22,
+        29,
+        36,
+        43,
+        43,
+        43
+      ]
+    },
+    "ub5_P8_r6_lambda_9/10": {
+      "class_node_counts": [
+        1,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "collision_free": true,
+      "ladder": [
+        8,
+        15,
+        22,
+        29,
+        36,
+        43,
+        43,
+        43
+      ]
+    },
+    "ub5_P8_r8_lambda_1/2": {
+      "class_node_counts": [
+        1,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "collision_free": true,
+      "ladder": [
+        8,
+        15,
+        22,
+        29,
+        36,
+        43,
+        50,
+        57,
+        57,
+        57
+      ]
+    },
+    "uw1_P3_r4_lambda_1": {
+      "class_node_counts": [
+        1,
+        4,
+        4
+      ],
+      "collision_free": true,
+      "ladder": [
+        3,
+        5,
+        7,
+        9,
+        9,
+        9
+      ]
+    },
+    "uw1_P3_r4_lambda_1/10": {
+      "class_node_counts": [
+        1,
+        4,
+        4
+      ],
+      "collision_free": true,
+      "ladder": [
+        3,
+        5,
+        7,
+        9,
+        9,
+        9
+      ]
+    },
+    "uw1_P3_r4_lambda_1/2": {
+      "class_node_counts": [
+        1,
+        4,
+        4
+      ],
+      "collision_free": true,
+      "ladder": [
+        3,
+        5,
+        7,
+        9,
+        9,
+        9
+      ]
+    },
+    "uw1_P3_r4_lambda_1/3": {
+      "class_node_counts": [
+        1,
+        4,
+        4
+      ],
+      "collision_free": true,
+      "ladder": [
+        3,
+        5,
+        7,
+        9,
+        9,
+        9
+      ]
+    },
+    "uw1_P3_r4_lambda_9/10": {
+      "class_node_counts": [
+        1,
+        4,
+        4
+      ],
+      "collision_free": true,
+      "ladder": [
+        3,
+        5,
+        7,
+        9,
+        9,
+        9
+      ]
+    },
+    "uw1_P8_r6_lambda_1/2": {
+      "class_node_counts": [
+        1,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "collision_free": true,
+      "ladder": [
+        8,
+        15,
+        22,
+        29,
+        36,
+        43,
+        43,
+        43
+      ]
+    },
+    "uw1_P8_r6_lambda_1/3": {
+      "class_node_counts": [
+        1,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "collision_free": true,
+      "ladder": [
+        8,
+        15,
+        22,
+        29,
+        36,
+        43,
+        43,
+        43
+      ]
+    },
+    "uw1_P8_r6_lambda_9/10": {
+      "class_node_counts": [
+        1,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "collision_free": true,
+      "ladder": [
+        8,
+        15,
+        22,
+        29,
+        36,
+        43,
+        43,
+        43
+      ]
+    },
+    "uw1_P8_r8_lambda_1/2": {
+      "class_node_counts": [
+        1,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "collision_free": true,
+      "ladder": [
+        8,
+        15,
+        22,
+        29,
+        36,
+        43,
+        50,
+        57,
+        57,
+        57
+      ]
+    },
+    "weno5l_P3_r4_lambda_1": {
+      "class_node_counts": [
+        1,
+        4,
+        4
+      ],
+      "collision_free": true,
+      "ladder": [
+        3,
+        5,
+        7,
+        9,
+        9,
+        9
+      ]
+    },
+    "weno5l_P3_r4_lambda_1/10": {
+      "class_node_counts": [
+        1,
+        4,
+        4
+      ],
+      "collision_free": true,
+      "ladder": [
+        3,
+        5,
+        7,
+        9,
+        9,
+        9
+      ]
+    },
+    "weno5l_P3_r4_lambda_1/2": {
+      "class_node_counts": [
+        1,
+        4,
+        4
+      ],
+      "collision_free": true,
+      "ladder": [
+        3,
+        5,
+        7,
+        9,
+        9,
+        9
+      ]
+    },
+    "weno5l_P3_r4_lambda_1/3": {
+      "class_node_counts": [
+        1,
+        4,
+        4
+      ],
+      "collision_free": true,
+      "ladder": [
+        3,
+        5,
+        7,
+        9,
+        9,
+        9
+      ]
+    },
+    "weno5l_P3_r4_lambda_9/10": {
+      "class_node_counts": [
+        1,
+        4,
+        4
+      ],
+      "collision_free": true,
+      "ladder": [
+        3,
+        5,
+        7,
+        9,
+        9,
+        9
+      ]
+    },
+    "weno5l_P8_r6_lambda_1/2": {
+      "class_node_counts": [
+        1,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "collision_free": true,
+      "ladder": [
+        8,
+        15,
+        22,
+        29,
+        36,
+        43,
+        43,
+        43
+      ]
+    },
+    "weno5l_P8_r6_lambda_1/3": {
+      "class_node_counts": [
+        1,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "collision_free": true,
+      "ladder": [
+        8,
+        15,
+        22,
+        29,
+        36,
+        43,
+        43,
+        43
+      ]
+    },
+    "weno5l_P8_r6_lambda_9/10": {
+      "class_node_counts": [
+        1,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "collision_free": true,
+      "ladder": [
+        8,
+        15,
+        22,
+        29,
+        36,
+        43,
+        43,
+        43
+      ]
+    },
+    "weno5l_P8_r8_lambda_1/2": {
+      "class_node_counts": [
+        1,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "collision_free": true,
+      "ladder": [
+        8,
+        15,
+        22,
+        29,
+        36,
+        43,
+        50,
+        57,
+        57,
+        57
+      ]
+    },
+    "weno5l_rk3_P3_r4_lambda_1": {
+      "class_node_counts": [
+        1,
+        4,
+        4
+      ],
+      "collision_free": true,
+      "ladder": [
+        3,
+        5,
+        7,
+        9,
+        9,
+        9
+      ]
+    },
+    "weno5l_rk3_P3_r4_lambda_1/10": {
+      "class_node_counts": [
+        1,
+        4,
+        4
+      ],
+      "collision_free": true,
+      "ladder": [
+        3,
+        5,
+        7,
+        9,
+        9,
+        9
+      ]
+    },
+    "weno5l_rk3_P3_r4_lambda_1/2": {
+      "class_node_counts": [
+        1,
+        4,
+        4
+      ],
+      "collision_free": true,
+      "ladder": [
+        3,
+        5,
+        7,
+        9,
+        9,
+        9
+      ]
+    },
+    "weno5l_rk3_P3_r4_lambda_1/3": {
+      "class_node_counts": [
+        1,
+        4,
+        4
+      ],
+      "collision_free": true,
+      "ladder": [
+        3,
+        5,
+        7,
+        9,
+        9,
+        9
+      ]
+    },
+    "weno5l_rk3_P3_r4_lambda_9/10": {
+      "class_node_counts": [
+        1,
+        4,
+        4
+      ],
+      "collision_free": true,
+      "ladder": [
+        3,
+        5,
+        7,
+        9,
+        9,
+        9
+      ]
+    },
+    "weno5l_rk3_P8_r6_lambda_1/2": {
+      "class_node_counts": [
+        1,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "collision_free": true,
+      "ladder": [
+        8,
+        15,
+        22,
+        29,
+        36,
+        43,
+        43,
+        43
+      ]
+    },
+    "weno5l_rk3_P8_r6_lambda_1/3": {
+      "class_node_counts": [
+        1,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "collision_free": true,
+      "ladder": [
+        8,
+        15,
+        22,
+        29,
+        36,
+        43,
+        43,
+        43
+      ]
+    },
+    "weno5l_rk3_P8_r6_lambda_9/10": {
+      "class_node_counts": [
+        1,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "collision_free": true,
+      "ladder": [
+        8,
+        15,
+        22,
+        29,
+        36,
+        43,
+        43,
+        43
+      ]
+    },
+    "weno5l_rk3_P8_r8_lambda_1/2": {
+      "class_node_counts": [
+        1,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "collision_free": true,
+      "ladder": [
+        8,
+        15,
+        22,
+        29,
+        36,
+        43,
+        50,
+        57,
+        57,
+        57
+      ]
+    }
+  },
+  "results": "Scheme coefficients from the manuscript text; thm:rank-universal (general and universal formulas); thm:invisible-general; prop:local-rank, lem:local-upper and conj:local-rank at r=6,8; prop:collision-certificate at (8,6),(8,8); cor:detection-delay(ii) on the E5 pairs",
+  "schema": "certified-simulation/coarse-observability-high-order/independent-rank-structure/v1",
+  "scheme_coefficients": {
+    "BW": {
+      "0": "1 + -3/2*lam^1 + 1/2*lam^2",
+      "1": "2*lam^1 + -1*lam^2",
+      "2": "-1/2*lam^1 + 1/2*lam^2"
+    },
+    "FR": {
+      "-1": "-1/4*lam^1 + 1/4*lam^2",
+      "0": "1 + -3/4*lam^1 + -1/4*lam^2",
+      "1": "5/4*lam^1 + -1/4*lam^2",
+      "2": "-1/4*lam^1 + 1/4*lam^2"
+    },
+    "LW": {
+      "-1": "-1/2*lam^1 + 1/2*lam^2",
+      "0": "1 + -1*lam^2",
+      "1": "1/2*lam^1 + 1/2*lam^2"
+    },
+    "UB3": {
+      "-1": "-1/3*lam^1 + 1/2*lam^2 + -1/6*lam^3",
+      "0": "1 + -1/2*lam^1 + -1*lam^2 + 1/2*lam^3",
+      "1": "1*lam^1 + 1/2*lam^2 + -1/2*lam^3",
+      "2": "-1/6*lam^1 + 1/6*lam^3"
+    },
+    "UB5": {
+      "-1": "-1/2*lam^1 + 2/3*lam^2 + -1/24*lam^3 + -1/6*lam^4 + 1/24*lam^5",
+      "-2": "1/20*lam^1 + -1/24*lam^2 + -1/24*lam^3 + 1/24*lam^4 + -1/120*lam^5",
+      "0": "1 + -1/3*lam^1 + -5/4*lam^2 + 5/12*lam^3 + 1/4*lam^4 + -1/12*lam^5",
+      "1": "1*lam^1 + 2/3*lam^2 + -7/12*lam^3 + -1/6*lam^4 + 1/12*lam^5",
+      "2": "-1/4*lam^1 + -1/24*lam^2 + 7/24*lam^3 + 1/24*lam^4 + -1/24*lam^5",
+      "3": "1/30*lam^1 + -1/24*lam^3 + 1/120*lam^5"
+    },
+    "UW1": {
+      "0": "1 + -1*lam^1",
+      "1": "1*lam^1"
+    },
+    "WENO5-LIN+FE": {
+      "-1": "-1/2*lam^1",
+      "-2": "1/20*lam^1",
+      "0": "1 + -1/3*lam^1",
+      "1": "1*lam^1",
+      "2": "-1/4*lam^1",
+      "3": "1/30*lam^1"
+    },
+    "WENO5-LIN+SSP-RK3": {
+      "-1": "-1/2*lam^1 + 13/60*lam^2 + 6253/72000*lam^3",
+      "-2": "1/20*lam^1 + 13/120*lam^2 + -1849/28800*lam^3",
+      "-3": "-1/40*lam^2 + -9/800*lam^3",
+      "-4": "1/800*lam^2 + 7/1200*lam^3",
+      "-5": "-1/1600*lam^3",
+      "-6": "1/48000*lam^3",
+      "0": "1 + -1/3*lam^1 + -329/720*lam^2 + 10211/64800*lam^3",
+      "1": "1*lam^1 + -31/150*lam^2 + -49/200*lam^3",
+      "2": "-1/4*lam^1 + 17/30*lam^2 + -449/9600*lam^3",
+      "3": "1/30*lam^1 + -47/180*lam^2 + 9467/43200*lam^3",
+      "4": "31/480*lam^2 + -427/3000*lam^3",
+      "5": "-1/120*lam^2 + 121/2400*lam^3",
+      "6": "1/1800*lam^2 + -961/86400*lam^3",
+      "7": "23/14400*lam^3",
+      "8": "-1/7200*lam^3",
+      "9": "1/162000*lam^3"
+    }
+  },
+  "scope": {
+    "exclusion": "Finite sweeps do not prove the quantified statements; the collision certificate is specific to the two grid pairs, as in the manuscript.",
+    "executed": "392 exact rank ladders (P in 2,3,4 with r in 3,4,6 at lambda in 1/10,1/3,1/2,9/10,1; (8,6) at 1/3,1/2,9/10; (8,8) at 1/2; L=0..r+1); local ranks at P=8, r=6,8, lambda in 1/10,1/2,9/10,1, L=0..r+3; 2408 collision pairs",
+    "independence": "No file under the authors' src/ was opened; reference values are transcribed from results/*.csv and results/tables/*.tex only for comparison."
+  },
+  "verdict": "pass"
+}
