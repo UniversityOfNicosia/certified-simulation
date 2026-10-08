@@ -1,6 +1,6 @@
 {
   "arithmetic": "fractions.Fraction and Python integers; exact polynomial identities in Q[x, lambda]; exact Smith exponents over Q[lambda]/(lambda^12); exact Sturm brackets; rigorous outward-rounded intervals (2^-320 grid) for cos(2 pi v/N), pi (Machin), square roots (integer isqrt) and logarithms (atanh series with tail bounds)",
-  "check_count": 100,
+  "check_count": 110,
   "checks": {
     "amplitude_series_two_routes_agree_bw": true,
     "amplitude_series_two_routes_agree_fromm": true,
@@ -31,6 +31,10 @@
     "dissipative_order_and_leading_coefficient_uw1": true,
     "dissipative_order_and_leading_coefficient_weno5l": true,
     "dissipative_order_and_leading_coefficient_weno5l_rk3": true,
+    "e3_basis_gram_matrix_eigenvalues_1_and_r": true,
+    "e3_coordinate_to_induced_factor_within_1_and_sqrt_r_all_350_cells": true,
+    "e3_factor_depends_on_lambda_lw_L1_1_174_to_1_807": true,
+    "e3_finite_range_fits_change_up_to_8_4e-3_three_table_entries": true,
     "erasure_N384_defect_theta_series_route_overlaps_cosine_route": true,
     "erasure_csv_one_minus_rho_within_8_units_of_2^-53": true,
     "erasure_maximum_attained_at_k_1_strictly_all_N": true,
@@ -42,6 +46,13 @@
     "erasure_orders_csv_A_values_uw1": true,
     "erasure_orders_csv_A_values_weno5l": true,
     "erasure_orders_csv_A_values_weno5l_rk3": true,
+    "erasure_orders_csv_nondissipative_column_equals_exact_zeros_bw": true,
+    "erasure_orders_csv_nondissipative_column_equals_exact_zeros_fromm": true,
+    "erasure_orders_csv_nondissipative_column_equals_exact_zeros_lw": true,
+    "erasure_orders_csv_nondissipative_column_equals_exact_zeros_ub3": true,
+    "erasure_orders_csv_nondissipative_column_equals_exact_zeros_ub5": true,
+    "erasure_orders_csv_nondissipative_column_equals_exact_zeros_uw1": true,
+    "erasure_orders_csv_nondissipative_column_equals_exact_zeros_weno5l_rk3": true,
     "erasure_orders_csv_two_s_and_A_exact_bw": true,
     "erasure_orders_csv_two_s_and_A_exact_fromm": true,
     "erasure_orders_csv_two_s_and_A_exact_lw": true,
@@ -50,10 +61,9 @@
     "erasure_orders_csv_two_s_and_A_exact_uw1": true,
     "erasure_orders_csv_two_s_and_A_exact_weno5l": true,
     "erasure_orders_csv_two_s_and_A_exact_weno5l_rk3": true,
+    "erasure_quoted_slopes_are_three_decimal_roundings_of_exact_slopes": true,
     "erasure_ratio_N384_all_schemes_both_lambda_in_0_9999_1_0009": true,
-    "erasure_slopes_match_minus_2s_to_three_decimals_except_ub5_lambda_0_9": true,
     "erasure_slopes_reproduce_authors_fits_except_ub5_lambda_0_9": true,
-    "erasure_slopes_rk3_round_to_minus_4_009_and_minus_4_001": true,
     "fe_antidissipative_every_lambda": true,
     "fe_maximum_interior_and_unstable_lambda_1/2": true,
     "fe_maximum_interior_and_unstable_lambda_9/10": true,
@@ -95,10 +105,10 @@
     "rk3_decomposition_Q_equals_lambda_times_one_minus_x_S_plus_lambda3_over_3": true,
     "rk3_exclusion_exponent_three_not_one_at_L1": true,
     "rk3_imaginary_axis_amplitude_identity": true,
-    "rk3_lambda_half_N384_ratio_outside_1e-4_of_unity": true,
+    "rk3_lambda_half_N384_ratio_is_1_0008_outside_1e-4": true,
     "rk3_leading_coefficient_nonzero_on_0_1": true,
     "ub5_lambda_0_9_N384_ratio_is_0_99994": true,
-    "ub5_lambda_0_9_exact_slope_rounds_to_minus_5_999": true,
+    "ub5_lambda_0_9_high_precision_values_0_99994_and_minus_5_9994": true,
     "ub5_next_order_correction_matches_theta8_term": true,
     "uw1_N64_rho_0_99880_and_1e-17_after_3_25e4_steps": true,
     "weno5_flux_symbol_i_theta_plus_real_theta6": true
@@ -2141,30 +2151,20 @@
   },
   "discrepancies": [
     {
-      "claim": "nondissipative_lambdas_in_(0,1] = ''",
-      "finding": "A(lambda) = 1/2*lam^1 + -5/4*lam^2 + 1*lam^3 + -1/4*lam^4 vanishes at lambda = 1 (exact zeros in (0,1]: ['1']); the manuscript's tab:scheme-zoo lists lambda=1 as nondissipative, so the CSV omits it",
-      "location": "results/erasure_orders.csv, row bw"
+      "claim": "the Gram matrix of e_j - e_0 has eigenvalues 1 and r, so every singular value changes by a lambda-independent factor in [1, sqrt r] and the fitted exponents are unaffected",
+      "finding": "eigenvalues 1 and r verified exactly and every factor lies in [1, sqrt 6], but the factor depends on lambda in 33 of 35 cells (LW, L=1: 1.1737e+0 at lambda=1/1000 to 1.8074e+0 at lambda=1/2); only the bound is lambda-independent; the asymptotic exponents are unaffected (exact Smith exponents), but the finite-range fits move by up to 8.4e-3 and 3 two-decimal entries of tab:queue-exponents change (lw_L1: 1.01 -> 1.00; bw_L5: 3.95 -> 3.94; ub5_L1: 1.00 -> 0.99)",
+      "location": "sec:exp-conditioning (E3), new coordinate-convention sentence"
     },
     {
-      "claim": "ratio at N=384 in [0.9999,1.0009] except UB5 at lambda=0.9 (0.989, a visible next-order correction at 2s=6)",
-      "finding": "rigorous value for UB5 at lambda=0.9 is 9.99942104975e-1 (1-rho_N = 3.05309495414e-14), inside [0.9999, 1.0009]; the next-order theta^8 term predicts a correction of -5.790e-5, not -0.011; 0.989 is a double-precision artifact (1-rho_N is about 2.7499835e+2 units of 2^-53 and the CSV value is 3 units low)",
-      "location": "article.tex line 1010 (E4c), label sec:exp-erasure"
-    },
-    {
-      "claim": "the measured ratio is within 1e-4 of unity at N=384 for every scheme at lambda=1/2",
-      "finding": "exact ratio for WENO5-LIN+SSP-RK3 at lambda=1/2, N=384 is 1.00083436840e+0 (deviation 8.3e-4); the 1e-4 statement holds for the six interpolation members only",
-      "location": "article.tex line 745 (proof of prop:contraction-general)"
-    },
-    {
-      "claim": "log-log slopes on the last three N match -2s to three decimals for every stable scheme (-6.000)",
-      "finding": "for UB5 at lambda=0.9 the authors' fit is -6.00728077181369 (contaminated by the N=384 float value) and the exact slope is -5.9993735e+0; neither rounds to -6.000 (the exact one rounds to -5.999); all other cells reproduce the authors' fits to 1e-5",
-      "location": "article.tex line 1010 (E4c) and results/erasure_rate_fits.csv (ub5, 0.9)"
+      "claim": "slopes match -2s to three decimals for every stable scheme (... -5.999 for UB5 at lambda=0.9; WENO5-LIN + SSP-RK3 -4.009 and -4.001)",
+      "finding": "every quoted value is the exact three-decimal rounding, but the quantifier fails for the cells it lists (ub5_lambda_0.9, weno5l_rk3_lambda_0.5, weno5l_rk3_lambda_0.9): exact slopes -5.9993735e+0, -4.0089548e+0, -4.0008052e+0; minor wording only",
+      "location": "sec:exp-erasure, E4(c) slope sentence (wording)"
     }
   ],
   "dissipation": {
     "bw": {
       "A": "1/2*lam^1 + -5/4*lam^2 + 1*lam^3 + -1/4*lam^4",
-      "authors_csv_nondissipative": "",
+      "authors_csv_nondissipative": "1",
       "nondissipative_lambdas_in_0_1": [
         "1"
       ],
@@ -2904,7 +2904,7 @@
       "retention_vs_uw1": "3.1192517e+2"
     },
     "ub5": {
-      "authors_retention": 87500,
+      "authors_retention": 87490,
       "authors_table": "2.829e7",
       "n_half": "2.829348137e+7",
       "retention_vs_uw1": "8.7490019e+4"
@@ -2922,183 +2922,439 @@
       "retention_vs_uw1": "2.6618033e+3"
     }
   },
-  "passed": 100,
+  "passed": 110,
   "queue_exponent_refits_from_exact_sigma": {
     "bw_L1": {
       "authors_fit": "0.9965743365175631",
       "exact_exponent": 1,
-      "fit_from_exact_sigma": "9.9657434e-1"
+      "fit_from_exact_sigma": "9.9657434e-1",
+      "fit_from_exact_sigma_induced_norm": "9.9632645e-1"
     },
     "bw_L2": {
       "authors_fit": "1.998834013989332",
       "exact_exponent": 2,
-      "fit_from_exact_sigma": "1.9988340e+0"
+      "fit_from_exact_sigma": "1.9988340e+0",
+      "fit_from_exact_sigma_induced_norm": "1.9990661e+0"
     },
     "bw_L3": {
       "authors_fit": "3.0029888815906287",
       "exact_exponent": 3,
-      "fit_from_exact_sigma": "3.0029889e+0"
+      "fit_from_exact_sigma": "3.0029889e+0",
+      "fit_from_exact_sigma_induced_norm": "3.0035120e+0"
     },
     "bw_L4": {
       "authors_fit": "3.954677050984206",
       "exact_exponent": 4,
-      "fit_from_exact_sigma": "3.9546392e+0"
+      "fit_from_exact_sigma": "3.9546392e+0",
+      "fit_from_exact_sigma_induced_norm": "3.9529400e+0"
     },
     "bw_L5": {
       "authors_fit": "3.9519310164899153",
       "exact_exponent": 4,
-      "fit_from_exact_sigma": "3.9519050e+0"
+      "fit_from_exact_sigma": "3.9519050e+0",
+      "fit_from_exact_sigma_induced_norm": "3.9449443e+0"
+    },
+    "convention_comparison": {
+      "factor_ranges": {
+        "bw_L1": {
+          "at_lambda": "1/1000",
+          "at_lambda_max": "1/2",
+          "max_factor": "1.0556e+0",
+          "min_factor": "1.0351e+0"
+        },
+        "bw_L2": {
+          "at_lambda": "1/2",
+          "at_lambda_max": "1/1000",
+          "max_factor": "1.0370e+0",
+          "min_factor": "1.0192e+0"
+        },
+        "bw_L3": {
+          "at_lambda": "1/2",
+          "at_lambda_max": "1/1000",
+          "max_factor": "1.0519e+0",
+          "min_factor": "1.0201e+0"
+        },
+        "bw_L4": {
+          "at_lambda": "1/1000",
+          "at_lambda_max": "1/2",
+          "max_factor": "2.0261e+0",
+          "min_factor": "1.9889e+0"
+        },
+        "bw_L5": {
+          "at_lambda": "1/2",
+          "at_lambda_max": "3485527984255849/100000000000000000",
+          "max_factor": "2.0460e+0",
+          "min_factor": "1.4416e+0"
+        },
+        "fromm_L1": {
+          "at_lambda": "1/1000",
+          "at_lambda_max": "1/2",
+          "max_factor": "2.1700e+0",
+          "min_factor": "2.0835e+0"
+        },
+        "fromm_L2": {
+          "at_lambda": "1/1000",
+          "at_lambda_max": "1/2",
+          "max_factor": "1.0003e+0",
+          "min_factor": "1.0000e+0"
+        },
+        "fromm_L3": {
+          "at_lambda": "22360679774997897/1000000000000000000",
+          "at_lambda_max": "1/2",
+          "max_factor": "1.0009e+0",
+          "min_factor": "1.0000e+0"
+        },
+        "fromm_L4": {
+          "at_lambda": "12148905329030643/5000000000000000000",
+          "at_lambda_max": "1/2",
+          "max_factor": "1.0008e+0",
+          "min_factor": "1.0000e+0"
+        },
+        "fromm_L5": {
+          "at_lambda": "1/1000",
+          "at_lambda_max": "1/2",
+          "max_factor": "1.0030e+0",
+          "min_factor": "1.0000e+0"
+        },
+        "lw_L1": {
+          "at_lambda": "1/1000",
+          "at_lambda_max": "1/2",
+          "max_factor": "1.8074e+0",
+          "min_factor": "1.1737e+0"
+        },
+        "lw_L2": {
+          "at_lambda": "1/1000",
+          "at_lambda_max": "1/2",
+          "max_factor": "1.0012e+0",
+          "min_factor": "1.0000e+0"
+        },
+        "lw_L3": {
+          "at_lambda": "3787483200735143/1000000000000000000",
+          "at_lambda_max": "1/2",
+          "max_factor": "1.0007e+0",
+          "min_factor": "1.0000e+0"
+        },
+        "lw_L4": {
+          "at_lambda": "12148905329030643/5000000000000000000",
+          "at_lambda_max": "1/2",
+          "max_factor": "1.0030e+0",
+          "min_factor": "1.0000e+0"
+        },
+        "lw_L5": {
+          "at_lambda": "3787483200735143/1000000000000000000",
+          "at_lambda_max": "1/2",
+          "max_factor": "1.0044e+0",
+          "min_factor": "1.0000e+0"
+        },
+        "ub3_L1": {
+          "at_lambda": "1/1000",
+          "at_lambda_max": "1/2",
+          "max_factor": "2.1700e+0",
+          "min_factor": "1.8221e+0"
+        },
+        "ub3_L2": {
+          "at_lambda": "1/1000",
+          "at_lambda_max": "1/2",
+          "max_factor": "1.0003e+0",
+          "min_factor": "1.0000e+0"
+        },
+        "ub3_L3": {
+          "at_lambda": "9202754968205043/1000000000000000000",
+          "at_lambda_max": "1/2",
+          "max_factor": "1.0009e+0",
+          "min_factor": "1.0000e+0"
+        },
+        "ub3_L4": {
+          "at_lambda": "1/1000",
+          "at_lambda_max": "1/2",
+          "max_factor": "1.0008e+0",
+          "min_factor": "1.0000e+0"
+        },
+        "ub3_L5": {
+          "at_lambda": "3485527984255849/100000000000000000",
+          "at_lambda_max": "1/2",
+          "max_factor": "1.0030e+0",
+          "min_factor": "1.0000e+0"
+        },
+        "ub5_L1": {
+          "at_lambda": "1/1000",
+          "at_lambda_max": "1/2",
+          "max_factor": "2.1086e+0",
+          "min_factor": "1.5674e+0"
+        },
+        "ub5_L2": {
+          "at_lambda": "1/1000",
+          "at_lambda_max": "1/2",
+          "max_factor": "1.0129e+0",
+          "min_factor": "1.0043e+0"
+        },
+        "ub5_L3": {
+          "at_lambda": "1/1000",
+          "at_lambda_max": "1/2",
+          "max_factor": "1.0183e+0",
+          "min_factor": "1.0002e+0"
+        },
+        "ub5_L4": {
+          "at_lambda": "1/1000",
+          "at_lambda_max": "1/2",
+          "max_factor": "1.0180e+0",
+          "min_factor": "1.0002e+0"
+        },
+        "ub5_L5": {
+          "at_lambda": "1/1000",
+          "at_lambda_max": "1/2",
+          "max_factor": "1.0056e+0",
+          "min_factor": "1.0002e+0"
+        },
+        "uw1_L1": {
+          "at_lambda": "15587755020547783/10000000000000000000",
+          "at_lambda_max": "15587755020547783/10000000000000000000",
+          "max_factor": "1.0954e+0",
+          "min_factor": "1.0954e+0"
+        },
+        "uw1_L2": {
+          "at_lambda": "1/2",
+          "at_lambda_max": "1/1000",
+          "max_factor": "1.1179e+0",
+          "min_factor": "1.0673e+0"
+        },
+        "uw1_L3": {
+          "at_lambda": "1/2",
+          "at_lambda_max": "1/1000",
+          "max_factor": "1.1546e+0",
+          "min_factor": "1.0818e+0"
+        },
+        "uw1_L4": {
+          "at_lambda": "1/2",
+          "at_lambda_max": "1/1000",
+          "max_factor": "1.2245e+0",
+          "min_factor": "1.1191e+0"
+        },
+        "uw1_L5": {
+          "at_lambda": "1/2",
+          "at_lambda_max": "1/1000",
+          "max_factor": "1.4139e+0",
+          "min_factor": "1.2268e+0"
+        },
+        "weno5l_L1": {
+          "at_lambda": "3485527984255849/100000000000000000",
+          "at_lambda_max": "1/1000",
+          "max_factor": "1.5658e+0",
+          "min_factor": "1.5658e+0"
+        },
+        "weno5l_L2": {
+          "at_lambda": "1/1000",
+          "at_lambda_max": "1/2",
+          "max_factor": "1.0208e+0",
+          "min_factor": "1.0043e+0"
+        },
+        "weno5l_L3": {
+          "at_lambda": "1/1000",
+          "at_lambda_max": "1/2",
+          "max_factor": "1.0010e+0",
+          "min_factor": "1.0002e+0"
+        },
+        "weno5l_L4": {
+          "at_lambda": "1/1000",
+          "at_lambda_max": "1/2",
+          "max_factor": "1.0019e+0",
+          "min_factor": "1.0002e+0"
+        },
+        "weno5l_L5": {
+          "at_lambda": "1/1000",
+          "at_lambda_max": "1/2",
+          "max_factor": "1.0006e+0",
+          "min_factor": "1.0002e+0"
+        }
+      },
+      "lambda_dependent_factor_cells": 33,
+      "max_abs_fit_change_coordinate_vs_induced_norm": "8.442e-3",
+      "two_decimal_table_entries_changed": [
+        "lw_L1: 1.01 -> 1.00",
+        "bw_L5: 3.95 -> 3.94",
+        "ub5_L1: 1.00 -> 0.99"
+      ]
     },
     "fromm_L1": {
       "authors_fit": "0.9922361924175401",
       "exact_exponent": 1,
-      "fit_from_exact_sigma": "9.9223619e-1"
+      "fit_from_exact_sigma": "9.9223619e-1",
+      "fit_from_exact_sigma_induced_norm": "9.9145524e-1"
     },
     "fromm_L2": {
       "authors_fit": "1.9881812726217594",
       "exact_exponent": 2,
-      "fit_from_exact_sigma": "1.9881813e+0"
+      "fit_from_exact_sigma": "1.9881813e+0",
+      "fit_from_exact_sigma_induced_norm": "1.9881803e+0"
     },
     "fromm_L3": {
       "authors_fit": "3.001049207844211",
       "exact_exponent": 3,
-      "fit_from_exact_sigma": "3.0010492e+0"
+      "fit_from_exact_sigma": "3.0010492e+0",
+      "fit_from_exact_sigma_induced_norm": "3.0010492e+0"
     },
     "fromm_L4": {
       "authors_fit": "2.996213779011643",
       "exact_exponent": 3,
-      "fit_from_exact_sigma": "2.9962138e+0"
+      "fit_from_exact_sigma": "2.9962138e+0",
+      "fit_from_exact_sigma_induced_norm": "2.9962138e+0"
     },
     "fromm_L5": {
       "authors_fit": "2.9912409956092767",
       "exact_exponent": 3,
-      "fit_from_exact_sigma": "2.9912410e+0"
+      "fit_from_exact_sigma": "2.9912410e+0",
+      "fit_from_exact_sigma_induced_norm": "2.9912410e+0"
     },
     "lw_L1": {
       "authors_fit": "1.0053509509151486",
       "exact_exponent": 1,
-      "fit_from_exact_sigma": "1.0053510e+0"
+      "fit_from_exact_sigma": "1.0053510e+0",
+      "fit_from_exact_sigma_induced_norm": "9.9950667e-1"
     },
     "lw_L2": {
       "authors_fit": "1.9949937627438314",
       "exact_exponent": 2,
-      "fit_from_exact_sigma": "1.9949938e+0"
+      "fit_from_exact_sigma": "1.9949938e+0",
+      "fit_from_exact_sigma_induced_norm": "1.9949905e+0"
     },
     "lw_L3": {
       "authors_fit": "3.0014030108442387",
       "exact_exponent": 3,
-      "fit_from_exact_sigma": "3.0014031e+0"
+      "fit_from_exact_sigma": "3.0014031e+0",
+      "fit_from_exact_sigma_induced_norm": "3.0014031e+0"
     },
     "lw_L4": {
       "authors_fit": "3.0012375814298777",
       "exact_exponent": 3,
-      "fit_from_exact_sigma": "3.0012375e+0"
+      "fit_from_exact_sigma": "3.0012375e+0",
+      "fit_from_exact_sigma_induced_norm": "3.0012375e+0"
     },
     "lw_L5": {
       "authors_fit": "3.0010758962560526",
       "exact_exponent": 3,
-      "fit_from_exact_sigma": "3.0010759e+0"
+      "fit_from_exact_sigma": "3.0010759e+0",
+      "fit_from_exact_sigma_induced_norm": "3.0010759e+0"
     },
     "max_abs_difference_exact_data_fit_vs_authors_fit": "2.049e-4",
     "ub3_L1": {
       "authors_fit": "0.9938505039332135",
       "exact_exponent": 1,
-      "fit_from_exact_sigma": "9.9385050e-1"
+      "fit_from_exact_sigma": "9.9385050e-1",
+      "fit_from_exact_sigma_induced_norm": "9.8822250e-1"
     },
     "ub3_L2": {
       "authors_fit": "1.9780795958250799",
       "exact_exponent": 2,
-      "fit_from_exact_sigma": "1.9780796e+0"
+      "fit_from_exact_sigma": "1.9780796e+0",
+      "fit_from_exact_sigma_induced_norm": "1.9780780e+0"
     },
     "ub3_L3": {
       "authors_fit": "3.0151779911787537",
       "exact_exponent": 3,
-      "fit_from_exact_sigma": "3.0151780e+0"
+      "fit_from_exact_sigma": "3.0151780e+0",
+      "fit_from_exact_sigma_induced_norm": "3.0151780e+0"
     },
     "ub3_L4": {
       "authors_fit": "3.0117988877052064",
       "exact_exponent": 3,
-      "fit_from_exact_sigma": "3.0117989e+0"
+      "fit_from_exact_sigma": "3.0117989e+0",
+      "fit_from_exact_sigma_induced_norm": "3.0117989e+0"
     },
     "ub3_L5": {
       "authors_fit": "3.0084221163791938",
       "exact_exponent": 3,
-      "fit_from_exact_sigma": "3.0084221e+0"
+      "fit_from_exact_sigma": "3.0084221e+0",
+      "fit_from_exact_sigma_induced_norm": "3.0084221e+0"
     },
     "ub5_L1": {
       "authors_fit": "0.99891966094897",
       "exact_exponent": 1,
-      "fit_from_exact_sigma": "9.9891966e-1"
+      "fit_from_exact_sigma": "9.9891966e-1",
+      "fit_from_exact_sigma_induced_norm": "9.9047730e-1"
     },
     "ub5_L2": {
       "authors_fit": "1.9818238663283154",
       "exact_exponent": 2,
-      "fit_from_exact_sigma": "1.9818239e+0"
+      "fit_from_exact_sigma": "1.9818239e+0",
+      "fit_from_exact_sigma_induced_norm": "1.9816410e+0"
     },
     "ub5_L3": {
       "authors_fit": "3.014380838584226",
       "exact_exponent": 3,
-      "fit_from_exact_sigma": "3.0143808e+0"
+      "fit_from_exact_sigma": "3.0143808e+0",
+      "fit_from_exact_sigma_induced_norm": "3.0143751e+0"
     },
     "ub5_L4": {
       "authors_fit": "3.01288859252921",
       "exact_exponent": 3,
-      "fit_from_exact_sigma": "3.0128886e+0"
+      "fit_from_exact_sigma": "3.0128886e+0",
+      "fit_from_exact_sigma_induced_norm": "3.0128793e+0"
     },
     "ub5_L5": {
       "authors_fit": "3.0114008335703057",
       "exact_exponent": 3,
-      "fit_from_exact_sigma": "3.0114008e+0"
+      "fit_from_exact_sigma": "3.0114008e+0",
+      "fit_from_exact_sigma_induced_norm": "3.0113878e+0"
     },
     "uw1_L1": {
       "authors_fit": "0.9999999999999929",
       "exact_exponent": 1,
-      "fit_from_exact_sigma": "1.0000000e+0"
+      "fit_from_exact_sigma": "1.0000000e+0",
+      "fit_from_exact_sigma_induced_norm": "1.0000000e+0"
     },
     "uw1_L2": {
       "authors_fit": "2.0034048031290745",
       "exact_exponent": 2,
-      "fit_from_exact_sigma": "2.0034048e+0"
+      "fit_from_exact_sigma": "2.0034048e+0",
+      "fit_from_exact_sigma_induced_norm": "2.0040944e+0"
     },
     "uw1_L3": {
       "authors_fit": "3.0081023794138355",
       "exact_exponent": 3,
-      "fit_from_exact_sigma": "3.0081024e+0"
+      "fit_from_exact_sigma": "3.0081024e+0",
+      "fit_from_exact_sigma_induced_norm": "3.0091188e+0"
     },
     "uw1_L4": {
       "authors_fit": "4.012656183970116",
       "exact_exponent": 4,
-      "fit_from_exact_sigma": "4.0126582e+0"
+      "fit_from_exact_sigma": "4.0126582e+0",
+      "fit_from_exact_sigma_induced_norm": "4.0140668e+0"
     },
     "uw1_L5": {
       "authors_fit": "5.017272732389844",
       "exact_exponent": 5,
-      "fit_from_exact_sigma": "5.0170679e+0"
+      "fit_from_exact_sigma": "5.0170679e+0",
+      "fit_from_exact_sigma_induced_norm": "5.0192069e+0"
     },
     "weno5l_L1": {
       "authors_fit": "0.999999999999999",
       "exact_exponent": 1,
-      "fit_from_exact_sigma": "1.0000000e+0"
+      "fit_from_exact_sigma": "1.0000000e+0",
+      "fit_from_exact_sigma_induced_norm": "1.0000000e+0"
     },
     "weno5l_L2": {
       "authors_fit": "2.0041910174233606",
       "exact_exponent": 2,
-      "fit_from_exact_sigma": "2.0041910e+0"
+      "fit_from_exact_sigma": "2.0041910e+0",
+      "fit_from_exact_sigma_induced_norm": "2.0040371e+0"
     },
     "weno5l_L3": {
       "authors_fit": "3.0016595247478146",
       "exact_exponent": 3,
-      "fit_from_exact_sigma": "3.0016595e+0"
+      "fit_from_exact_sigma": "3.0016595e+0",
+      "fit_from_exact_sigma_induced_norm": "3.0016561e+0"
     },
     "weno5l_L4": {
       "authors_fit": "3.0003728217195107",
       "exact_exponent": 3,
-      "fit_from_exact_sigma": "3.0003728e+0"
+      "fit_from_exact_sigma": "3.0003728e+0",
+      "fit_from_exact_sigma_induced_norm": "3.0003658e+0"
     },
     "weno5l_L5": {
       "authors_fit": "2.9990901935018566",
       "exact_exponent": 3,
-      "fit_from_exact_sigma": "2.9990902e+0"
+      "fit_from_exact_sigma": "2.9990902e+0",
+      "fit_from_exact_sigma_induced_norm": "2.9990794e+0"
     }
   },
   "queue_sigma_comparison": {
@@ -3490,15 +3746,18 @@
   },
   "schema": "certified-simulation/coarse-observability-high-order/independent-dissipation-conditioning-erasure/v1",
   "scope": {
-    "convention": "Singular values are reported in the coordinates xi_1..xi_{r-1} of the zero-mean profile (basis e_j - e_0), the convention that reproduces queue_conditioning.csv; the induced Euclidean norm changes each singular value by a factor in [1, sqrt(r)] and no exponent.",
+    "convention": "Singular values are reported in the coordinates xi_1..xi_{r-1} of the zero-mean profile (basis e_j - e_0), the convention sec:exp-conditioning declares and that reproduces queue_conditioning.csv; the induced Euclidean norm changes each singular value by a lambda-dependent factor in [1, sqrt(r)] and no asymptotic exponent.",
     "established": "Exact asymptotic exponents of sigma+_min(O_L iota_K) as lambda->0 for the seven single-stage operators at (P,r)=(8,6) and (8,8), L=1..r-1, from lambda-adic Smith forms of the polynomial matrix; they equal L_q in every case, so conj:conditioning holds at these two grids. For WENO5-LIN+SSP-RK3 at L=1 the exponent is exactly 3.",
     "independence": "No file under the authors' src/ was opened; reference values are transcribed from results/*.csv and results/tables/*.tex only for comparison.",
+    "manuscript_version": "Checked against the 5 October 2026 rebuild of article.tex and supplementary.tex.",
     "numerical_evidence": "Exact Sturm brackets of sigma+_min at lambda=1e-2..1e-5 and their decade slopes; the conjecture for general (P, r) remains unproved."
   },
   "ub5_lambda_0_9_N384": {
     "B_over_A": "-2.16250000000e-1",
     "authors_csv_one_minus_rho": "3.019806626980426e-14",
     "authors_csv_ratio": "0.9890395944304833",
+    "authors_csv_slope": "-6.00728077181369",
+    "exact_slope_last_three_N": "-5.9993735e+0",
     "one_minus_rho_N": "3.05309495414e-14",
     "predicted_next_order_correction": "-5.78950e-5",
     "ratio": "9.99942104975e-1"

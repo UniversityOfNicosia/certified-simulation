@@ -1,6 +1,6 @@
 {
   "arithmetic": "fractions.Fraction and Python integers; exact ranks over Q; exact zero tests in Q[x]/Phi_N(x); rigorous outward-rounded fixed-point intervals (2^-320 grid) for cos/sin(2 pi v/N); tolerance zero for every exact statement",
-  "check_count": 255,
+  "check_count": 258,
   "checks": {
     "beam_warming_matches_section_2_display": true,
     "bw_local_ladder_jumps_by_two_at_L4": true,
@@ -58,6 +58,9 @@
     "consistency_sum_of_coefficients_weno5l_rk3": true,
     "detection_delay_compensated_pairs_exact": true,
     "detection_delay_kernel_dimensions_working_grids": true,
+    "detection_delay_t0_zero_pair_detected_at_first_step": true,
+    "detection_delay_twelve_pairs_with_t0_at_least_one_exact_at_t0": true,
+    "detection_jump_sizes_exact_range_2_76e-3_to_0_118": true,
     "effective_support_nominal_on_open_interval_bw": true,
     "effective_support_nominal_on_open_interval_fromm": true,
     "effective_support_nominal_on_open_interval_lw": true,
@@ -528,74 +531,100 @@
     "bw_t0_1": {
       "first_detection": 1,
       "j1": 0,
-      "j2": 4
+      "j2": 4,
+      "separation_at_detection": "2.946e-2",
+      "separation_squared_at_detection": "1/1152"
     },
     "bw_t0_2": {
       "first_detection": 2,
       "j1": 0,
-      "j2": 2
+      "j2": 2,
+      "separation_at_detection": "3.683e-3",
+      "separation_squared_at_detection": "1/73728"
     },
     "fromm_t0_1": {
       "first_detection": 1,
       "j1": 1,
-      "j2": 4
+      "j2": 4,
+      "separation_at_detection": "1.473e-2",
+      "separation_squared_at_detection": "1/4608"
     },
     "lw_t0_1": {
       "first_detection": 1,
       "j1": 1,
-      "j2": 5
+      "j2": 5,
+      "separation_at_detection": "8.839e-2",
+      "separation_squared_at_detection": "1/128"
     },
     "lw_t0_2": {
       "first_detection": 2,
       "j1": 2,
-      "j2": 4
+      "j2": 4,
+      "separation_at_detection": "3.315e-2",
+      "separation_squared_at_detection": "9/8192"
     },
     "ub3_t0_1": {
       "first_detection": 1,
       "j1": 1,
-      "j2": 4
+      "j2": 4,
+      "separation_at_detection": "1.473e-2",
+      "separation_squared_at_detection": "1/4608"
     },
     "ub5_t0_1": {
       "first_detection": 1,
       "j1": 2,
-      "j2": 3
+      "j2": 3,
+      "separation_at_detection": "2.762e-3",
+      "separation_squared_at_detection": "1/131072"
     },
     "uw1_t0_1": {
       "first_detection": 1,
       "j1": 0,
-      "j2": 5
+      "j2": 5,
+      "separation_at_detection": "1.179e-1",
+      "separation_squared_at_detection": "1/72"
     },
     "uw1_t0_2": {
       "first_detection": 2,
       "j1": 0,
-      "j2": 4
+      "j2": 4,
+      "separation_at_detection": "5.893e-2",
+      "separation_squared_at_detection": "1/288"
     },
     "uw1_t0_3": {
       "first_detection": 3,
       "j1": 0,
-      "j2": 3
+      "j2": 3,
+      "separation_at_detection": "2.946e-2",
+      "separation_squared_at_detection": "1/1152"
     },
     "uw1_t0_4": {
       "first_detection": 4,
       "j1": 0,
-      "j2": 2
+      "j2": 2,
+      "separation_at_detection": "1.473e-2",
+      "separation_squared_at_detection": "1/4608"
     },
     "uw1_t0_5": {
       "first_detection": 5,
       "j1": 0,
-      "j2": 1
+      "j2": 1,
+      "separation_at_detection": "7.366e-3",
+      "separation_squared_at_detection": "1/18432"
     },
     "weno5l_rk3_t0_0": {
       "first_detection": 1,
       "j1": 0,
-      "j2": 5
+      "j2": 5,
+      "separation_at_detection": "1.179e-1",
+      "separation_squared_at_detection": "26897761724479/1934917632000000"
     }
   },
   "discrepancies": [
     {
-      "claim": "across all 13 (scheme, depth) pairs the first separation occurs exactly at t*=t0",
-      "finding": "for the WENO5-LIN+SSP-RK3 pair (t0=0, j1=0, j2=5) the first separation is at step 1, not t0=0 (zero-mean data are never visible at step 0); the authors' delayed_collisions.csv records t_detect_predicted=1 for that row",
-      "location": "article.tex line 1041 (E5)"
+      "claim": "coarse averages are zero to roundoff through step t0-1 and jump to O(10^-1) at t0",
+      "finding": "exact coarse separations ||R A^t0 v||_2 at lambda=1/2 range from 2.76e-3 (UB5, t0=1) and 3.68e-3 (BW, t0=2) to 0.118 (UW1, t0=1); 9 of the 12 pairs with t0>=1 jump to less than 0.05 (pre-existing clause, unchanged in the 5 October rebuild)",
+      "location": "sec:exp-collisions (E5), first paragraph"
     }
   ],
   "local_ranks": {
@@ -1688,7 +1717,7 @@
       ]
     }
   },
-  "passed": 255,
+  "passed": 258,
   "rank_cases": {
     "bw_P3_r4_lambda_1": {
       "class_node_counts": [

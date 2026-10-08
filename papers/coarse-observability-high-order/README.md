@@ -62,6 +62,12 @@ near 1e-17 and machine-precision empirical ranks, can differ between
 machines. Figure PDFs embed the Matplotlib version and a timestamp, so
 a regenerated figure never hash-matches the committed one.
 
+One cell lies below double-precision resolution. For UB5 at λ = 0.9 and
+N = 384, 1 − ρ_N is about 3×10⁻¹⁴, so the double-precision entries in
+`erasure_rates.csv` and `erasure_rate_fits.csv` carry rounding error
+there and differ between machines. The manuscript quotes the
+high-precision values for that cell instead.
+
 The independent certificate suite re-derives the paper's exact results
 with a separate implementation written from the manuscript's
 definitions, and pins its outputs as canonical artifacts:
@@ -71,7 +77,7 @@ python papers/coarse-observability-high-order/certificates/certify_observation_r
 python papers/coarse-observability-high-order/certificates/certify_dissipation_conditioning_erasure.py
 ```
 
-The two scripts run 355 exact checks between them and use only the
+The two scripts run 368 exact checks between them and use only the
 Python standard library. They cover the universal rank ladder, the
 invisible subspace, the local ranks, the spectral-collision
 certificate, the dissipation coefficients, interior stability, the

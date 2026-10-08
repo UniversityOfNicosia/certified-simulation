@@ -122,11 +122,8 @@ def table_half_life() -> None:
         ratio = pred / n12_uw1
         if ratio < 1.5:
             ret = "$1$"
-        elif ratio < 1.0e4:
-            ret = f"${round(ratio):,}$".replace(",", "{,}")
         else:
-            sig3 = float(f"{ratio:.3g}")
-            ret = f"${round(sig3):,}$".replace(",", "{,}")
+            ret = f"${round(ratio):,}$".replace(",", "{,}")
         lines.append(f"{label} & {r['t0']} & {tloc[key]} & {_sci(pred)} & "
                      f"{_sci(fit)}{dagger} & {ret} \\\\")
     _write("half_life.tex", lines)

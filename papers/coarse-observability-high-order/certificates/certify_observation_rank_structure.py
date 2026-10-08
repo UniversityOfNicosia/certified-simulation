@@ -47,7 +47,7 @@ import hashlib
 import json
 import re
 from fractions import Fraction as Q
-from math import comb
+from math import comb, isqrt
 from pathlib import Path
 from typing import Any
 
@@ -716,6 +716,12 @@ def decimal_text(q: Q, digits: int = 15) -> str:
     return f"{sign}{text[0]}.{text[1:]}e{exponent:+d}"
 
 
+def sqrt_decimal(q: Q, digits: int) -> str:
+    """Decimal rendering of sqrt(q), q >= 0, from an integer square root accurate to 1e-40."""
+    scale = 10**40
+    return decimal_text(Q(isqrt((q.numerator * scale * scale) // q.denominator), scale), digits)
+
+
 # ----------------------------------------------------------------------------
 # Whole-interval collision certificate (prop:collision-certificate).
 
@@ -1207,8 +1213,11 @@ def build_certificate() -> dict[str, Any]:
 
     # ------------------------------------------------------------------
     # cor:detection-delay(ii) on the E5 compensated pairs (P = 8, r = 6, lambda = 1/2).
+    # sec:exp-collisions: the 12 pairs with t0 >= 1 separate exactly at t0, and the
+    # WENO5-LIN+SSP-RK3 pair (t0 = 0) is detected at the first step.
     delayed: dict[str, Any] = {}
     delayed_ok = True
+    jumps: dict[str, Q] = {}
     for name, t0, j1, j2, t_pred, t_meas in AUTHORS_DELAYED_PAIRS:
         coeffs = at_lambda(operators[name], Q(1, 2))
         m_left, m_right = reaches(coeffs)
@@ -1219,16 +1228,39 @@ def build_certificate() -> dict[str, Any]:
             exact_value = history[t0][1] == coeffs[m_left] ** t0 / 6
         ok = (j1, j2) == expected_j and detected == t_pred == t_meas == max(t0, 1) and exact_value
         delayed_ok &= ok
-        delayed[f"{name}_t0_{t0}"] = {"j1": j1, "j2": j2, "first_detection": detected}
+        # coarse separation ||R A^t v||_2 at the first detection step, squared and exact
+        jump_squared = sum((x * x for x in history[max(t0, 1)]), Q(0))
+        jumps[f"{name}_t0_{t0}"] = jump_squared
+        delayed[f"{name}_t0_{t0}"] = {
+            "j1": j1,
+            "j2": j2,
+            "first_detection": detected,
+            "separation_squared_at_detection": str(jump_squared),
+            "separation_at_detection": sqrt_decimal(jump_squared, 4),
+        }
     checks["detection_delay_compensated_pairs_exact"] = delayed_ok
+    positive_depth = [row for row in AUTHORS_DELAYED_PAIRS if row[1] >= 1]
+    checks["detection_delay_twelve_pairs_with_t0_at_least_one_exact_at_t0"] = (
+        len(positive_depth) == 12 and delayed_ok
+    )
+    checks["detection_delay_t0_zero_pair_detected_at_first_step"] = (
+        delayed["weno5l_rk3_t0_0"]["first_detection"] == 1
+    )
+    deep = {k: v for k, v in jumps.items() if not k.endswith("_t0_0")}
+    below = sorted(k for k, v in deep.items() if v < Q(1, 400))  # separation < 0.05
+    checks["detection_jump_sizes_exact_range_2_76e-3_to_0_118"] = (
+        min(deep.values()) == Q(1, 131072) == deep["ub5_t0_1"]
+        and max(deep.values()) == Q(1, 72) == deep["uw1_t0_1"]
+        and len(below) == 9
+    )
     discrepancies.append(
         {
-            "location": "article.tex line 1041 (E5)",
-            "claim": "across all 13 (scheme, depth) pairs the first separation occurs exactly at t*=t0",
+            "location": "sec:exp-collisions (E5), first paragraph",
+            "claim": "coarse averages are zero to roundoff through step t0-1 and jump to O(10^-1) at t0",
             "finding": (
-                "for the WENO5-LIN+SSP-RK3 pair (t0=0, j1=0, j2=5) the first separation is at "
-                "step 1, not t0=0 (zero-mean data are never visible at step 0); the authors' "
-                "delayed_collisions.csv records t_detect_predicted=1 for that row"
+                "exact coarse separations ||R A^t0 v||_2 at lambda=1/2 range from 2.76e-3 (UB5, "
+                "t0=1) and 3.68e-3 (BW, t0=2) to 0.118 (UW1, t0=1); 9 of the 12 pairs with t0>=1 "
+                "jump to less than 0.05 (pre-existing clause, unchanged in the 5 October rebuild)"
             ),
         }
     )

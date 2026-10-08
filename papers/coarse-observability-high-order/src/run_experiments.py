@@ -121,6 +121,7 @@ Dependencies: Python >= 3.10, NumPy, Matplotlib.
 from __future__ import annotations
 
 import csv
+from fractions import Fraction
 from pathlib import Path
 
 import matplotlib
@@ -779,9 +780,13 @@ def experiment_erasure() -> None:
             orders[name] = (two_s, A)
             coeffs = [float(a) for a in A]
             roots = np.roots(coeffs[::-1]) if any(coeffs) else np.array([])
-            nondiss = sorted(float(z.real) for z in np.atleast_1d(roots)
-                             if abs(z.imag) < 1e-9
-                             and 1e-9 < z.real <= 1 + 1e-9)
+            # A multiple root comes back from np.roots with an O(sqrt(eps))
+            # imaginary part, so snap to a nearby rational and accept it
+            # only if A vanishes there exactly.
+            cands = {Fraction(float(z.real)).limit_denominator(10 ** 4)
+                     for z in np.atleast_1d(roots) if abs(z.imag) < 1e-6}
+            nondiss = sorted(float(x) for x in cands if 0 < x <= 1
+                             and sum(a * x ** i for i, a in enumerate(A)) == 0)
             w.writerow([name, two_s, sch.poly_to_string(A),
                         _eval_poly(A, 0.5), _eval_poly(A, 0.9),
                         ";".join(f"{x:.12g}" for x in nondiss)])

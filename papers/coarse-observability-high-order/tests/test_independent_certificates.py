@@ -4,7 +4,8 @@ Each test rebuilds a certificate from scratch with its script and requires
 byte identity with the committed artifact, then re-checks a few statements
 directly so that a stale artifact and a stale script cannot pass together.
 A third test confirms that every value the certificates transcribe from the
-authors' published outputs matches those files byte for byte. It reads the
+authors' published outputs matches those files byte for byte, and that
+article.tex quotes the rebuilt values the certificates verify. It reads the
 paper's committed results/ directory, or COARSE_OBSERVABILITY_RESULTS when set,
 and skips when neither exists. Rerunning the experiments rewrites the
 floating-point CSVs, so run this test on a clean checkout.
@@ -36,7 +37,7 @@ PUBLISHED_SHA256 = {
     "local_observability.csv": "659cfc5ad6bb0036a44c296e8ba2e20a3041ac95b41dce7afb5733b71a5413cb",
     "collision_certificate_exact.csv": "b791b63ad3f155f1328bcc4cbff019e8354a9311353961acfe53d10267797a2f",
     "stability_certificate.csv": "592fcd8efb41292c2e8bd75d804f5bbc5e710ce8833c826e1cf375d59aa9c259",
-    "erasure_orders.csv": "930f5cc07fbc2f663e98a7ba16b3b15f12c4da9516c1f30ed1674223c13d9efe",
+    "erasure_orders.csv": "0915e917d9d76609405d153bb5dc824a6bab605523e4d2d919f0eaaa41d9083b",
     "erasure_rates.csv": "ff162133138324797f4c1da0e14019f549f684d18d6e4aa21e7f3b482cb345b8",
     "erasure_rate_fits.csv": "4a03ecfd3c2b15cef6f1592f47e8de4df5e8701fb1048e4b332543cd6795ac7a",
     "delayed_collisions.csv": "2e51a59ab3718e3458bb81f572401085379dc5fae63408bebce5868f3d0d7c99",
@@ -44,7 +45,24 @@ PUBLISHED_SHA256 = {
     "queue_conditioning.csv": "8bc0e02d9ec320b12e51a3e45b3a12ee13e4205bacf0ebbb9be0678476c435d0",
     "tables/coefficients.tex": "3772da1610d9001373f4e4766d518ccda0e7a0713a92a0fc40619f6e7df4dd32",
     "tables/queue_exponents.tex": "e72ed5e971b0b4f22fdf8c3ed61da83f1e24db9e22fc92e67aed3a83dc272633",
-    "tables/half_life.tex": "779f576d8eead4f145b5ab1bf2536037685a48d09dbd6009fac1fbe239e8bd82",
+    "tables/half_life.tex": "7e2dcdda2dacb584c57379a0faa27a6bbb227b4ee2dd7a5c59659f657da0b214",
+}
+
+# Values quoted in article.tex (5 October 2026 rebuild) that the certificates verify, with
+# the number of times each must occur: E4(c) and the proof of prop:contraction-general,
+# E5 in sec:exp-collisions, the E3 convention sentence, and the UB5 retention ratio in
+# rem:double-penalty, tab:half-life and sec:discussion.
+MANUSCRIPT_QUOTES = {
+    r"$87{,}490$": 3,
+    r"$87{,}500$": 0,
+    r"within $10^{-4}$ of unity at $N=384$ for the six interpolation-based members": 1,
+    r"equals $1.0008$ for WENO5-LIN + SSP-RK3": 1,
+    r"lies in $[0.9999,1.0009]$ for all schemes and both $\lambda$.": 1,
+    r"$-5.999$ for UB5 at $\lambda=0.9$": 1,
+    r"($0.99994$ and $-5.9994$)": 1,
+    r"($0.989$ and $-6.007$)": 1,
+    r"the $12$ (scheme, depth) pairs with $t_0\ge1$": 1,
+    r"its Gram matrix has eigenvalues $1$ and $r$": 1,
 }
 
 _MODULES: dict[str, object] = {}
@@ -109,6 +127,11 @@ def test_observation_rank_structure_replays() -> None:
     worst = document["collision_certificate"]["lw_P8_r8"]["min_bernstein_coefficient"]
     assert worst.startswith("5.6278610712957")
     assert document["collision_cases_found"] == []
+    # E5: twelve pairs with t0 >= 1; the UB5 pair jumps to sqrt(2)/512 at its first step.
+    assert sum(1 for row in module.AUTHORS_DELAYED_PAIRS if row[1] >= 1) == 12
+    _, history = module.first_detection(module.at_lambda(ops["ub5"], Q(1, 2)), 8, 6, 2, 3, 2)
+    assert history[0] == [Q(0)] * 8 and sum(x * x for x in history[1]) == Q(1, 131072)
+    assert document["detection_delays"]["weno5l_rk3_t0_0"]["first_detection"] == 1
     assert document["check_count"] == len(document["checks"])
 
 
@@ -143,6 +166,20 @@ def test_dissipation_conditioning_erasure_replays() -> None:
     for name in module.SINGLE_STAGE:
         for entry in document["conditioning"][f"{name}_P8_r6"]:
             assert entry["exact_exponent"] == entry["L_q"]
+    # E3: the Gram matrix I + J of the basis e_j - e_0 (r = 6) is (z - 1)^4 (z - 6).
+    gram = [[2 if i == j else 1 for j in range(5)] for i in range(5)]
+    assert module.charpoly_int(gram) == [-6, 25, -40, 30, -10, 1]
+    # Proof of prop:contraction-general: WENO5-LIN + SSP-RK3 at lambda = 1/2, N = 384 is 1.0008.
+    info = module.contraction_factor(ops["weno5l_rk3"], Q(1, 2), 384)
+    d_lo, d_hi = info["defect"]
+    rho_lo, rho_hi = module.sqrt_bounds(1 - d_hi, 1 - d_lo)
+    th_lo, th_hi = module.theta_one(384)
+    low = (1 - rho_hi) / (Q(1, 384) * th_hi**4)
+    high = (1 - rho_lo) / (Q(1, 384) * th_lo**4)
+    assert module.decimal_places(low, 4) == module.decimal_places(high, 4) == Q(10008, 10**4)
+    # tab:half-life, rem:double-penalty, sec:discussion: UB5 retains 87,490 times longer.
+    assert document["half_life"]["ub5"]["authors_retention"] == 87490
+    assert document["half_life"]["ub5"]["retention_vs_uw1"].startswith("8.7490019")
     assert document["check_count"] == len(document["checks"])
 
 
@@ -176,6 +213,8 @@ def test_transcriptions_match_published_outputs() -> None:
         target = supplement if line.startswith("$") else article
         for cell in re.findall(r"\$[^$]*\$", line):
             assert cell in target, cell
+    for quote, count in MANUSCRIPT_QUOTES.items():
+        assert article.count(quote) == count, quote
 
     def rows(name: str) -> list[dict[str, str]]:
         with open(results / name, newline="", encoding="utf-8") as handle:
@@ -222,8 +261,12 @@ def test_transcriptions_match_published_outputs() -> None:
         for r in rows("erasure_rates.csv")
     }
     assert rates == diss.AUTHORS_ERASURE_RATES
-    slopes = {(r["scheme"], r["lambda"]): r["slope_fit"] for r in rows("erasure_rate_fits.csv") if r["scheme"] != "weno5l"}
+    fit_rows = rows("erasure_rate_fits.csv")
+    slopes = {(r["scheme"], r["lambda"]): r["slope_fit"] for r in fit_rows if r["scheme"] != "weno5l"}
     assert slopes == diss.AUTHORS_ERASURE_SLOPES
+    # The fits file repeats the N = 384 ratio of erasure_rates.csv (the 0.989 entry for UB5).
+    for r in fit_rows:
+        assert r["ratio_at_largest_N"] == rates[(r["scheme"], r["lambda"], 384)][2]
 
     fits = {(r["scheme"], int(r["L"])): (int(r["q"]), r["gamma_fit"]) for r in rows("queue_conditioning_fits.csv")}
     assert fits == diss.AUTHORS_QUEUE_FITS

@@ -996,7 +996,7 @@ AUTHORS_EROSION_ORDERS = {
     # erasure_orders.csv: two_s, A_exact, A_at_0.5, A_at_0.9, nondissipative lambdas in (0,1].
     "uw1": (2, "1*lam + -1*lam^2", "0.25", "0.08999999999999997", "1"),
     "lw": (4, "1/4*lam^2 + -1/4*lam^4", "0.046875", "0.03847500000000001", "1"),
-    "bw": (4, "1/2*lam + -5/4*lam^2 + 1*lam^3 + -1/4*lam^4", "0.046875", "0.0024749999999999217", ""),
+    "bw": (4, "1/2*lam + -5/4*lam^2 + 1*lam^3 + -1/4*lam^4", "0.046875", "0.0024749999999999217", "1"),
     "fromm": (4, "1/4*lam + -1/2*lam^2 + 1/2*lam^3 + -1/4*lam^4", "0.046875", "0.02047500000000002", "1"),
     "ub3": (4, "1/6*lam + -1/12*lam^2 + -1/6*lam^3 + 1/12*lam^4", "0.046875", "0.01567499999999998", "1"),
     "ub5": (
@@ -1269,7 +1269,7 @@ AUTHORS_HALF_LIFE = {
     "bw": ("1.010e5", 312, "101017.61304653295", "0.9999931383767484"),
     "fromm": ("1.009e5", 312, "100873.78052919685", "0.9999931285930251"),
     "ub3": ("1.009e5", 312, "100873.78052919685", "0.9999931285930251"),
-    "ub5": ("2.829e7", 87500, "28293481.37763951", "0.9999999755015241"),
+    "ub5": ("2.829e7", 87490, "28293481.37763951", "0.9999999755015241"),
     "weno5l_rk3": ("8.608e5", 2662, "860803.1343500284", "0.9999991947672193"),
 }
 
@@ -1285,6 +1285,35 @@ def parse_csv_poly(text: str) -> Poly:
         coeffs[degree] = coeffs.get(degree, Q(0)) + Q(c)
     top = max(coeffs)
     return ptrim(coeffs.get(i, Q(0)) for i in range(top + 1))
+
+
+def decimal_places(q: Q, places: int) -> Q:
+    """q rounded to `places` decimal places, halves away from zero."""
+    scale = 10**places
+    magnitude = (2 * abs(q.numerator) * scale + q.denominator) // (2 * q.denominator)
+    return Q(magnitude if q >= 0 else -magnitude, scale)
+
+
+def least_squares_slope(xs: list[Q], ys: list[Q]) -> Q:
+    mean_x = sum(xs, Q(0)) / len(xs)
+    mean_y = sum(ys, Q(0)) / len(ys)
+    return sum(((x - mean_x) * (y - mean_y) for x, y in zip(xs, ys)), Q(0)) / sum(
+        ((x - mean_x) ** 2 for x in xs), Q(0)
+    )
+
+
+def sqrt_decimal_text(q: Q, digits: int) -> str:
+    """Decimal rendering of sqrt(q), q >= 0, via the 2^-BITS square-root enclosure."""
+    lo, hi = sqrt_bounds(q, q)
+    return decimal_text((lo + hi) / 2, digits)
+
+
+def fixed_text(q: Q, places: int) -> str:
+    """q rounded to `places` decimal places, rendered with exactly that many digits."""
+    value = decimal_places(q, places)
+    scaled = abs(value.numerator) * 10**places // value.denominator
+    whole, fraction = divmod(scaled, 10**places)
+    return f"{'-' if value < 0 else ''}{whole}.{fraction:0{places}d}"
 
 
 def significant_round(q: Q, digits: int) -> Q:
@@ -1355,15 +1384,19 @@ def build_certificate() -> dict[str, Any]:
                 "nondissipative_lambdas_in_0_1": nondiss,
                 "authors_csv_nondissipative": ref[4],
             }
+            # tab:scheme-zoo and erasure_orders.csv: the nondissipative values in (0,1] are
+            # exactly the zeros of A there (lambda = 1 for the six interpolation members,
+            # including the double root of Beam-Warming; none for the SSP-RK3 pairing).
+            checks[f"erasure_orders_csv_nondissipative_column_equals_exact_zeros_{name}"] = (
+                ",".join(nondiss) == ref[4]
+            )
             if ",".join(nondiss) != ref[4]:
                 discrepancies.append(
                     {
                         "location": "results/erasure_orders.csv, row " + name,
                         "claim": f"nondissipative_lambdas_in_(0,1] = '{ref[4]}'",
                         "finding": (
-                            f"A(lambda) = {poly_text(coeff)} vanishes at lambda = 1 "
-                            f"(exact zeros in (0,1]: {nondiss}); the manuscript's tab:scheme-zoo "
-                            "lists lambda=1 as nondissipative, so the CSV omits it"
+                            f"A(lambda) = {poly_text(coeff)} vanishes in (0,1] exactly at {nondiss}"
                         ),
                     }
                 )
@@ -1633,8 +1666,17 @@ def build_certificate() -> dict[str, Any]:
     checks["queue_exponents_table_predicted_equals_exact_exponent"] = table_ok
     checks["queue_exponents_fits_within_0_05_and_table_rounding"] = fit_ok
 
-    # The E3 data reproduced: exact sigma+_min at the authors' Courant grid,
-    # in the coordinate convention xi_1..xi_{r-1} (basis e_j - e_0).
+    # The E3 data reproduced: exact sigma+_min at the authors' Courant grid, in the
+    # coordinate convention xi_1..xi_{r-1} (basis e_j - e_0) that sec:exp-conditioning now
+    # declares, and in the induced Euclidean norm of the zero-mean subspace for comparison.
+    # The basis e_j - e_0 has Gram matrix I + J, with eigenvalues 1 (r-2 times) and r.
+    gram_basis_ok = True
+    for children in (6, 8):
+        size = children - 1
+        basis_gram = [[2 if i == j else 1 for j in range(size)] for i in range(size)]
+        expected = pmul(ppow((Q(-1), Q(1)), size - 1), (Q(-children), Q(1)))
+        gram_basis_ok &= tuple(Q(c) for c in charpoly_int(basis_gram)) == expected
+    checks["e3_basis_gram_matrix_eigenvalues_1_and_r"] = gram_basis_ok
     epsilon = Q(1, 2**52)
     sigma_ok = True
     sigma_half_ok = True
@@ -1645,21 +1687,38 @@ def build_certificate() -> dict[str, Any]:
     sigma_comparison: dict[str, Any] = {}
     refit_within_005 = True
     max_refit_deviation = Q(0)
+    factor_bound_ok = True
+    resolution = Q(1, 2**28)
+    lambda_dependent_cells = []
+    convention_fit_change = Q(0)
+    table_entries_changed = []
+    factor_ranges: dict[str, Any] = {}
     for name in SINGLE_STAGE:
         powers = laurent_powers(operators[name], 5)
         blocks_all = local_polynomial_blocks(powers, 8, 6, 5)
         for horizon in range(1, 6):
             full = [row for block in blocks_all[1 : horizon + 1] for row in block if any(row)]
-            xs, ys = [], []
+            xs, ys, ys_metric = [], [], []
+            factor_low: tuple[Q, Q] | None = None  # (upper bound, lambda) of the smallest factor^2
+            factor_high: tuple[Q, Q] | None = None  # (lower bound, lambda) of the largest factor^2
             for lam_text in QUEUE_LAMBDAS:
                 lam = Q(lam_text)
                 if lam > Q(5, 100) and lam_text != "0.5":
                     continue
                 matrix = [[peval(p, lam) for p in row] for row in full]
                 _, lo, hi, frob = gram_bracket(matrix, 32)
+                metric_lo, metric_hi = metric_bracket(matrix, 6)
+                # factor^2 = sigma_coordinate^2 / sigma_induced^2 lies in [lo/metric_hi, hi/metric_lo]
+                f_lo, f_hi = lo / metric_hi, hi / metric_lo
+                factor_bound_ok &= f_lo >= 1 - resolution and f_hi <= 6 * (1 + resolution)
+                if factor_low is None or f_hi < factor_low[0]:
+                    factor_low = (f_hi, lam)
+                if factor_high is None or f_lo > factor_high[0]:
+                    factor_high = (f_lo, lam)
                 if lam <= Q(5, 100):
                     xs.append(ln_mid(lam))
                     ys.append(ln_mid((lo + hi) / 2) / 2)
+                    ys_metric.append(ln_mid((metric_lo + metric_hi) / 2) / 2)
                 key = (name, horizon, lam_text)
                 if key in AUTHORS_QUEUE_SIGMA:
                     ref = Q(AUTHORS_QUEUE_SIGMA[key])
@@ -1678,16 +1737,28 @@ def build_certificate() -> dict[str, Any]:
                     }
                     tolerance = 1024 * epsilon * sqrt_bounds(frob, frob)[1]
                     if lam_text == "0.5":
-                        o_lo, o_hi = sqrt_bounds(*metric_bracket(matrix, 6))
+                        o_lo, o_hi = sqrt_bounds(metric_lo, metric_hi)
                         orthonormal_mismatch |= not (o_lo - tolerance <= ref <= o_hi + tolerance)
-            mean_x = sum(xs, Q(0)) / len(xs)
-            mean_y = sum(ys, Q(0)) / len(ys)
-            slope = sum(((x - mean_x) * (yy - mean_y) for x, yy in zip(xs, ys)), Q(0)) / sum(
-                ((x - mean_x) ** 2 for x in xs), Q(0)
-            )
+            assert factor_low is not None and factor_high is not None
+            if factor_high[0] > factor_low[0]:
+                lambda_dependent_cells.append(f"{name}_L{horizon}")
+            factor_ranges[f"{name}_L{horizon}"] = {
+                "min_factor": sqrt_decimal_text(factor_low[0], 5),
+                "at_lambda": str(factor_low[1]),
+                "max_factor": sqrt_decimal_text(factor_high[0], 5),
+                "at_lambda_max": str(factor_high[1]),
+            }
+            slope = least_squares_slope(xs, ys)
+            slope_metric = least_squares_slope(xs, ys_metric)
+            convention_fit_change = max(convention_fit_change, abs(slope - slope_metric))
+            if decimal_places(slope, 2) != decimal_places(slope_metric, 2):
+                table_entries_changed.append(
+                    f"{name}_L{horizon}: {fixed_text(slope, 2)} -> {fixed_text(slope_metric, 2)}"
+                )
             authors_fit = Q(AUTHORS_QUEUE_FITS[(name, horizon)][1])
             refits[f"{name}_L{horizon}"] = {
                 "fit_from_exact_sigma": decimal_text(slope, 8),
+                "fit_from_exact_sigma_induced_norm": decimal_text(slope_metric, 8),
                 "authors_fit": AUTHORS_QUEUE_FITS[(name, horizon)][1],
                 "exact_exponent": exact_exponents[(name, 6, horizon)],
             }
@@ -1700,6 +1771,42 @@ def build_certificate() -> dict[str, Any]:
     sigma_comparison["min_sigma_over_frobenius_norm"] = decimal_text(conditioning_ratio, 3)
     checks["queue_exponent_fits_from_exact_sigma_within_0_05_of_exact_exponent"] = refit_within_005
     refits["max_abs_difference_exact_data_fit_vs_authors_fit"] = decimal_text(max_refit_deviation, 4)
+    # sec:exp-conditioning (rebuilt): the factor lies in [1, sqrt(r)] in every cell, but it
+    # depends on lambda in most cells, and the finite-range fits move between conventions.
+    checks["e3_coordinate_to_induced_factor_within_1_and_sqrt_r_all_350_cells"] = factor_bound_ok
+    lw_range = factor_ranges["lw_L1"]
+    checks["e3_factor_depends_on_lambda_lw_L1_1_174_to_1_807"] = (
+        "lw_L1" in lambda_dependent_cells
+        and lw_range["min_factor"] == "1.1737e+0"
+        and lw_range["max_factor"] == "1.8074e+0"
+    )
+    checks["e3_finite_range_fits_change_up_to_8_4e-3_three_table_entries"] = (
+        Q(8, 1000) < convention_fit_change < Q(9, 1000) and len(table_entries_changed) == 3
+    )
+    refits["convention_comparison"] = {
+        "max_abs_fit_change_coordinate_vs_induced_norm": decimal_text(convention_fit_change, 4),
+        "two_decimal_table_entries_changed": table_entries_changed,
+        "lambda_dependent_factor_cells": len(lambda_dependent_cells),
+        "factor_ranges": factor_ranges,
+    }
+    discrepancies.append(
+        {
+            "location": "sec:exp-conditioning (E3), new coordinate-convention sentence",
+            "claim": (
+                "the Gram matrix of e_j - e_0 has eigenvalues 1 and r, so every singular value changes "
+                "by a lambda-independent factor in [1, sqrt r] and the fitted exponents are unaffected"
+            ),
+            "finding": (
+                "eigenvalues 1 and r verified exactly and every factor lies in [1, sqrt 6], but the factor "
+                f"depends on lambda in {len(lambda_dependent_cells)} of 35 cells (LW, L=1: "
+                f"{lw_range['min_factor']} at lambda={lw_range['at_lambda']} to {lw_range['max_factor']} at "
+                f"lambda={lw_range['at_lambda_max']}); only the bound is lambda-independent; the asymptotic "
+                "exponents are unaffected (exact Smith exponents), but the finite-range fits move by up to "
+                f"{decimal_text(convention_fit_change, 2)} and {len(table_entries_changed)} two-decimal entries "
+                f"of tab:queue-exponents change ({'; '.join(table_entries_changed)})"
+            ),
+        }
+    )
 
     # Exclusion of WENO5-LIN + SSP-RK3 at L = 1.
     exclusion: dict[str, Any] = {}
@@ -1845,36 +1952,17 @@ def build_certificate() -> dict[str, Any]:
         "authors_csv_ratio": ub5["authors_ratio"],
         "authors_csv_one_minus_rho": ub5["authors_one_minus_rho"],
     }
-    discrepancies.append(
-        {
-            "location": "article.tex line 1010 (E4c), label sec:exp-erasure",
-            "claim": "ratio at N=384 in [0.9999,1.0009] except UB5 at lambda=0.9 (0.989, a visible next-order correction at 2s=6)",
-            "finding": (
-                f"rigorous value for UB5 at lambda=0.9 is {ub5['ratio']} (1-rho_N = {ub5['one_minus_rho']}), "
-                "inside [0.9999, 1.0009]; the next-order theta^8 term predicts a correction of "
-                f"{decimal_text(predicted_correction, 4)}, not -0.011; 0.989 is a double-precision artifact "
-                f"(1-rho_N is about {ub5['one_minus_rho_in_units_of_2^-53']} units of 2^-53 and the CSV value is 3 units low)"
-            ),
-        }
-    )
-    rk3_half = erasure["weno5l_rk3_lambda_0.5_N384"]
-    checks["rk3_lambda_half_N384_ratio_outside_1e-4_of_unity"] = (
-        exact_ratio[("weno5l_rk3", "0.5", 384)][0] - 1 > Q(1, 10**4)
-    )
+    # proof of prop:contraction-general (rebuilt): within 1e-4 of unity for the six
+    # interpolation-based members at lambda = 1/2, and 1.0008 for WENO5-LIN + SSP-RK3.
     checks["interpolation_members_lambda_half_N384_ratio_within_1e-4_of_unity"] = all(
         abs(exact_ratio[(name, "0.5", 384)][0] - 1) < Q(1, 10**4)
         and abs(exact_ratio[(name, "0.5", 384)][1] - 1) < Q(1, 10**4)
         for name in ("uw1", "lw", "bw", "fromm", "ub3", "ub5")
     )
-    discrepancies.append(
-        {
-            "location": "article.tex line 745 (proof of prop:contraction-general)",
-            "claim": "the measured ratio is within 1e-4 of unity at N=384 for every scheme at lambda=1/2",
-            "finding": (
-                f"exact ratio for WENO5-LIN+SSP-RK3 at lambda=1/2, N=384 is {rk3_half['ratio']} "
-                "(deviation 8.3e-4); the 1e-4 statement holds for the six interpolation members only"
-            ),
-        }
+    rk3_lo, rk3_hi = exact_ratio[("weno5l_rk3", "0.5", 384)]
+    checks["rk3_lambda_half_N384_ratio_is_1_0008_outside_1e-4"] = (
+        rk3_lo - 1 > Q(1, 10**4)
+        and decimal_places(rk3_lo, 4) == decimal_places(rk3_hi, 4) == Q(10008, 10**4)
     )
     # Slopes over the last three N (least squares over equally spaced log N).
     slopes: dict[str, Any] = {}
@@ -1893,16 +1981,15 @@ def build_certificate() -> dict[str, Any]:
                 "exact_slope": decimal_text(mid, 8),
                 "authors_slope": AUTHORS_ERASURE_SLOPES[(name, lam_text)],
             }
-    checks["erasure_slopes_match_minus_2s_to_three_decimals_except_ub5_lambda_0_9"] = all(
-        abs(slope_values[(n, lt)] + orders[n]) < Q(5, 10**4)
-        for n in STABLE
-        if n != "weno5l_rk3"
-        for lt in ("0.5", "0.9")
-        if (n, lt) != ("ub5", "0.9")
-    )
-    checks["erasure_slopes_rk3_round_to_minus_4_009_and_minus_4_001"] = (
-        abs(slope_values[("weno5l_rk3", "0.5")] - Q(-4009, 1000)) < Q(5, 10**4)
-        and abs(slope_values[("weno5l_rk3", "0.9")] - Q(-4001, 1000)) < Q(5, 10**4)
+    # sec:exp-erasure E4(c) (rebuilt): the quoted slopes are the three-decimal roundings of
+    # the exact least-squares slopes: -2.000, -4.000, -6.000, and -5.999 for UB5 at
+    # lambda = 0.9; WENO5-LIN + SSP-RK3 -4.009 and -4.001.
+    quoted = {(n, lt): Q(-orders[n]) for n in STABLE if n != "weno5l_rk3" for lt in ("0.5", "0.9")}
+    quoted[("ub5", "0.9")] = Q(-5999, 1000)
+    quoted[("weno5l_rk3", "0.5")] = Q(-4009, 1000)
+    quoted[("weno5l_rk3", "0.9")] = Q(-4001, 1000)
+    checks["erasure_quoted_slopes_are_three_decimal_roundings_of_exact_slopes"] = all(
+        decimal_places(slope_values[key], 3) == value for key, value in quoted.items()
     )
     # UB5 at lambda=0.5 differs by about 1.5e-5: its N=384 double is correctly rounded but
     # 1 - rho_N is only 844 units of 2^-53, a 2e-5 quantization of the input.
@@ -1911,19 +1998,31 @@ def build_certificate() -> dict[str, Any]:
         for key, text in AUTHORS_ERASURE_SLOPES.items()
         if key != ("ub5", "0.9")
     )
+    # E4(c) (rebuilt): for UB5 at lambda = 0.9 the high-precision values 0.99994 and -5.9994,
+    # 1 - rho_384 ~ 3e-14, and the double-precision CSV entries 0.989 and -6.007.
     ub5_slope = slope_values[("ub5", "0.9")]
-    checks["ub5_lambda_0_9_exact_slope_rounds_to_minus_5_999"] = (
-        Q(-59995, 10**4) <= ub5_slope < Q(-59985, 10**4)
+    u_lo, u_hi = exact_u[("ub5", "0.9", 384)]
+    checks["ub5_lambda_0_9_high_precision_values_0_99994_and_minus_5_9994"] = (
+        decimal_places(ub5_lo, 5) == decimal_places(ub5_hi, 5) == Q(99994, 10**5)
+        and decimal_places(ub5_slope, 4) == Q(-59994, 10**4)
+        and significant_round(u_lo, 1) == significant_round(u_hi, 1) == Q(3, 10**14)
+        and decimal_places(Q(AUTHORS_ERASURE_RATES[("ub5", "0.9", 384)][2]), 3) == Q(989, 1000)
+        and decimal_places(Q(AUTHORS_ERASURE_SLOPES[("ub5", "0.9")]), 3) == Q(-6007, 1000)
     )
+    ub5_finding["exact_slope_last_three_N"] = slopes["ub5_lambda_0.9"]["exact_slope"]
+    ub5_finding["authors_csv_slope"] = AUTHORS_ERASURE_SLOPES[("ub5", "0.9")]
+    remaining_quantifier = [
+        f"{n}_lambda_{lt}" for (n, lt), v in slope_values.items() if abs(v + orders[n]) >= Q(5, 10**4)
+    ]
     discrepancies.append(
         {
-            "location": "article.tex line 1010 (E4c) and results/erasure_rate_fits.csv (ub5, 0.9)",
-            "claim": "log-log slopes on the last three N match -2s to three decimals for every stable scheme (-6.000)",
+            "location": "sec:exp-erasure, E4(c) slope sentence (wording)",
+            "claim": "slopes match -2s to three decimals for every stable scheme (... -5.999 for UB5 at lambda=0.9; WENO5-LIN + SSP-RK3 -4.009 and -4.001)",
             "finding": (
-                f"for UB5 at lambda=0.9 the authors' fit is {AUTHORS_ERASURE_SLOPES[('ub5', '0.9')]} "
-                f"(contaminated by the N=384 float value) and the exact slope is "
-                f"{slopes['ub5_lambda_0.9']['exact_slope']}; neither rounds to -6.000 (the exact one "
-                "rounds to -5.999); all other cells reproduce the authors' fits to 1e-5"
+                "every quoted value is the exact three-decimal rounding, but the quantifier fails for "
+                f"the cells it lists ({', '.join(sorted(remaining_quantifier))}): exact slopes "
+                f"{slopes['ub5_lambda_0.9']['exact_slope']}, {slopes['weno5l_rk3_lambda_0.5']['exact_slope']}, "
+                f"{slopes['weno5l_rk3_lambda_0.9']['exact_slope']}; minor wording only"
             ),
         }
     )
@@ -1969,8 +2068,9 @@ def build_certificate() -> dict[str, Any]:
         half_ok &= significant_round(n_mid, 4) == table_value
         half_ok &= abs(Q(csv_half) - n_mid) / n_mid < Q(1, 10**7)
         half_ok &= abs(Q(csv_rho) - (rho_lo + rho_hi) / 2) < Q(1, 10**15)
-        # retention entries are rounded to three or four significant digits
-        half_ok &= abs(ratio - retention) / retention < Q(5, 10**3)
+        # retention entries (tab:half-life, rem:double-penalty, sec:discussion) are the exact
+        # ratios rounded to the nearest integer: 1, 312, 312, 312, 312, 87,490, 2,662
+        half_ok &= decimal_places(ratio, 0) == retention
         half_life[name] = {
             "n_half": decimal_text(n_mid, 10),
             "retention_vs_uw1": decimal_text(ratio, 8),
@@ -2006,9 +2106,12 @@ def build_certificate() -> dict[str, Any]:
             ),
             "convention": (
                 "Singular values are reported in the coordinates xi_1..xi_{r-1} of the zero-mean "
-                "profile (basis e_j - e_0), the convention that reproduces queue_conditioning.csv; "
-                "the induced Euclidean norm changes each singular value by a factor in [1, sqrt(r)] "
-                "and no exponent."
+                "profile (basis e_j - e_0), the convention sec:exp-conditioning declares and that "
+                "reproduces queue_conditioning.csv; the induced Euclidean norm changes each singular "
+                "value by a lambda-dependent factor in [1, sqrt(r)] and no asymptotic exponent."
+            ),
+            "manuscript_version": (
+                "Checked against the 5 October 2026 rebuild of article.tex and supplementary.tex."
             ),
             "independence": (
                 "No file under the authors' src/ was opened; reference values are transcribed "
