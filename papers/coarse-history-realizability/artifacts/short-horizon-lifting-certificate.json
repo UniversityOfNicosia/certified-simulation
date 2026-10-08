@@ -1,0 +1,979 @@
+{
+  "arithmetic": "fractions.Fraction and Python integers; exact ranks over Q by fraction-free integer elimination; tolerance zero",
+  "check_count": 175,
+  "checks": {
+    "authors_csv_row_1_matches_exact_values": true,
+    "authors_fragment_row_1_matches_table_row_1": true,
+    "collar_flux_formula_matches_upwind_evolution": true,
+    "collar_map_binomial_inverse_exact_L1": true,
+    "collar_map_binomial_inverse_exact_L2": true,
+    "collar_map_binomial_inverse_exact_L3": true,
+    "collar_map_binomial_inverse_exact_L4": true,
+    "collar_map_binomial_inverse_exact_L5": true,
+    "collar_map_binomial_inverse_exact_L6": true,
+    "collar_map_binomial_inversion_integer_identity_t_le_12": true,
+    "collar_map_lower_triangular_diagonal_lambda^(t+1)_L1": true,
+    "collar_map_lower_triangular_diagonal_lambda^(t+1)_L2": true,
+    "collar_map_lower_triangular_diagonal_lambda^(t+1)_L3": true,
+    "collar_map_lower_triangular_diagonal_lambda^(t+1)_L4": true,
+    "collar_map_lower_triangular_diagonal_lambda^(t+1)_L5": true,
+    "collar_map_lower_triangular_diagonal_lambda^(t+1)_L6": true,
+    "example_canonical_lift_Rx_and_RAx": true,
+    "example_canonical_lift_collar": true,
+    "example_canonical_lift_flux_factor_T_1_lambda": true,
+    "example_canonical_lift_g0": true,
+    "example_canonical_lift_history_mass_conserving": true,
+    "example_canonical_lift_register_unique_zero_mean": true,
+    "example_canonical_lift_reproduces_history": true,
+    "example_canonical_lift_unnormalized_gauge_differs_by_gauge_direction": true,
+    "example_canonical_lift_upstream_shift_reading_fails": true,
+    "example_canonical_lift_x": true,
+    "hypothesis_lambda_zero_history_map_not_onto": true,
+    "mutation_fiber_formula_P(r-L)+L_rejected": true,
+    "mutation_inverse_without_lambda^-(t+1)_breaks_right_inverse": true,
+    "mutation_register_without_mean_removal_lifts_but_breaks_convention": true,
+    "observation_short_theorem_algebra_also_holds_at_lambda_3/2_and_-1/2": true,
+    "remark_B0_inverse_square_wave_grows_as_P/4": true,
+    "remark_every_lift_has_collar_spread_r_lambda^-L": true,
+    "setting_B0_inverse_formula_unique_zero_mean_solution_P2": true,
+    "setting_B0_inverse_formula_unique_zero_mean_solution_P3": true,
+    "setting_B0_inverse_formula_unique_zero_mean_solution_P4": true,
+    "setting_B0_inverse_formula_unique_zero_mean_solution_P5": true,
+    "setting_B0_inverse_formula_unique_zero_mean_solution_P8": true,
+    "setting_B_range_zero_mean_kernel_constants_P2": true,
+    "setting_B_range_zero_mean_kernel_constants_P3": true,
+    "setting_B_range_zero_mean_kernel_constants_P4": true,
+    "setting_B_range_zero_mean_kernel_constants_P5": true,
+    "setting_B_range_zero_mean_kernel_constants_P8": true,
+    "setting_RS^r_equals_Pi_P_R_P2": true,
+    "setting_RS^r_equals_Pi_P_R_P3": true,
+    "setting_RS^r_equals_Pi_P_R_P4": true,
+    "setting_parent_update_identity_P2": true,
+    "setting_parent_update_identity_P3": true,
+    "setting_parent_update_identity_P4": true,
+    "setting_shift_matches_displayed_upwind_update_P2": true,
+    "setting_shift_matches_displayed_upwind_update_P3": true,
+    "setting_shift_matches_displayed_upwind_update_P4": true,
+    "setting_update_conserves_fine_sum_P2": true,
+    "setting_update_conserves_fine_sum_P3": true,
+    "setting_update_conserves_fine_sum_P4": true,
+    "table_row_1_parameters_match_example": true,
+    "table_row_1_result_exact_lift": true,
+    "thm_short_all_claims_P5_r6_L0_3_5": true,
+    "thm_short_fiber_dimension_P(r-L-1)+L_P2_r1": true,
+    "thm_short_fiber_dimension_P(r-L-1)+L_P2_r2": true,
+    "thm_short_fiber_dimension_P(r-L-1)+L_P2_r3": true,
+    "thm_short_fiber_dimension_P(r-L-1)+L_P2_r4": true,
+    "thm_short_fiber_dimension_P(r-L-1)+L_P2_r5": true,
+    "thm_short_fiber_dimension_P(r-L-1)+L_P3_r1": true,
+    "thm_short_fiber_dimension_P(r-L-1)+L_P3_r2": true,
+    "thm_short_fiber_dimension_P(r-L-1)+L_P3_r3": true,
+    "thm_short_fiber_dimension_P(r-L-1)+L_P3_r4": true,
+    "thm_short_fiber_dimension_P(r-L-1)+L_P3_r5": true,
+    "thm_short_fiber_dimension_P(r-L-1)+L_P4_r1": true,
+    "thm_short_fiber_dimension_P(r-L-1)+L_P4_r2": true,
+    "thm_short_fiber_dimension_P(r-L-1)+L_P4_r3": true,
+    "thm_short_fiber_dimension_P(r-L-1)+L_P4_r4": true,
+    "thm_short_fiber_dimension_P(r-L-1)+L_P4_r5": true,
+    "thm_short_fiber_is_lift_plus_kernel_P2_r1": true,
+    "thm_short_fiber_is_lift_plus_kernel_P2_r2": true,
+    "thm_short_fiber_is_lift_plus_kernel_P2_r3": true,
+    "thm_short_fiber_is_lift_plus_kernel_P2_r4": true,
+    "thm_short_fiber_is_lift_plus_kernel_P2_r5": true,
+    "thm_short_fiber_is_lift_plus_kernel_P3_r1": true,
+    "thm_short_fiber_is_lift_plus_kernel_P3_r2": true,
+    "thm_short_fiber_is_lift_plus_kernel_P3_r3": true,
+    "thm_short_fiber_is_lift_plus_kernel_P3_r4": true,
+    "thm_short_fiber_is_lift_plus_kernel_P3_r5": true,
+    "thm_short_fiber_is_lift_plus_kernel_P4_r1": true,
+    "thm_short_fiber_is_lift_plus_kernel_P4_r2": true,
+    "thm_short_fiber_is_lift_plus_kernel_P4_r3": true,
+    "thm_short_fiber_is_lift_plus_kernel_P4_r4": true,
+    "thm_short_fiber_is_lift_plus_kernel_P4_r5": true,
+    "thm_short_image_equals_M_P2_r1": true,
+    "thm_short_image_equals_M_P2_r2": true,
+    "thm_short_image_equals_M_P2_r3": true,
+    "thm_short_image_equals_M_P2_r4": true,
+    "thm_short_image_equals_M_P2_r5": true,
+    "thm_short_image_equals_M_P3_r1": true,
+    "thm_short_image_equals_M_P3_r2": true,
+    "thm_short_image_equals_M_P3_r3": true,
+    "thm_short_image_equals_M_P3_r4": true,
+    "thm_short_image_equals_M_P3_r5": true,
+    "thm_short_image_equals_M_P4_r1": true,
+    "thm_short_image_equals_M_P4_r2": true,
+    "thm_short_image_equals_M_P4_r3": true,
+    "thm_short_image_equals_M_P4_r4": true,
+    "thm_short_image_equals_M_P4_r5": true,
+    "thm_short_kernel_spanned_by_gauge_and_interior_P2_r1": true,
+    "thm_short_kernel_spanned_by_gauge_and_interior_P2_r2": true,
+    "thm_short_kernel_spanned_by_gauge_and_interior_P2_r3": true,
+    "thm_short_kernel_spanned_by_gauge_and_interior_P2_r4": true,
+    "thm_short_kernel_spanned_by_gauge_and_interior_P2_r5": true,
+    "thm_short_kernel_spanned_by_gauge_and_interior_P3_r1": true,
+    "thm_short_kernel_spanned_by_gauge_and_interior_P3_r2": true,
+    "thm_short_kernel_spanned_by_gauge_and_interior_P3_r3": true,
+    "thm_short_kernel_spanned_by_gauge_and_interior_P3_r4": true,
+    "thm_short_kernel_spanned_by_gauge_and_interior_P3_r5": true,
+    "thm_short_kernel_spanned_by_gauge_and_interior_P4_r1": true,
+    "thm_short_kernel_spanned_by_gauge_and_interior_P4_r2": true,
+    "thm_short_kernel_spanned_by_gauge_and_interior_P4_r3": true,
+    "thm_short_kernel_spanned_by_gauge_and_interior_P4_r4": true,
+    "thm_short_kernel_spanned_by_gauge_and_interior_P4_r5": true,
+    "thm_short_lift_is_unique_fiber_point_obeying_convention_P2_r1": true,
+    "thm_short_lift_is_unique_fiber_point_obeying_convention_P2_r2": true,
+    "thm_short_lift_is_unique_fiber_point_obeying_convention_P2_r3": true,
+    "thm_short_lift_is_unique_fiber_point_obeying_convention_P2_r4": true,
+    "thm_short_lift_is_unique_fiber_point_obeying_convention_P2_r5": true,
+    "thm_short_lift_is_unique_fiber_point_obeying_convention_P3_r1": true,
+    "thm_short_lift_is_unique_fiber_point_obeying_convention_P3_r2": true,
+    "thm_short_lift_is_unique_fiber_point_obeying_convention_P3_r3": true,
+    "thm_short_lift_is_unique_fiber_point_obeying_convention_P3_r4": true,
+    "thm_short_lift_is_unique_fiber_point_obeying_convention_P3_r5": true,
+    "thm_short_lift_is_unique_fiber_point_obeying_convention_P4_r1": true,
+    "thm_short_lift_is_unique_fiber_point_obeying_convention_P4_r2": true,
+    "thm_short_lift_is_unique_fiber_point_obeying_convention_P4_r3": true,
+    "thm_short_lift_is_unique_fiber_point_obeying_convention_P4_r4": true,
+    "thm_short_lift_is_unique_fiber_point_obeying_convention_P4_r5": true,
+    "thm_short_lift_obeys_zero_mean_gauge_zero_interior_convention_P2_r1": true,
+    "thm_short_lift_obeys_zero_mean_gauge_zero_interior_convention_P2_r2": true,
+    "thm_short_lift_obeys_zero_mean_gauge_zero_interior_convention_P2_r3": true,
+    "thm_short_lift_obeys_zero_mean_gauge_zero_interior_convention_P2_r4": true,
+    "thm_short_lift_obeys_zero_mean_gauge_zero_interior_convention_P2_r5": true,
+    "thm_short_lift_obeys_zero_mean_gauge_zero_interior_convention_P3_r1": true,
+    "thm_short_lift_obeys_zero_mean_gauge_zero_interior_convention_P3_r2": true,
+    "thm_short_lift_obeys_zero_mean_gauge_zero_interior_convention_P3_r3": true,
+    "thm_short_lift_obeys_zero_mean_gauge_zero_interior_convention_P3_r4": true,
+    "thm_short_lift_obeys_zero_mean_gauge_zero_interior_convention_P3_r5": true,
+    "thm_short_lift_obeys_zero_mean_gauge_zero_interior_convention_P4_r1": true,
+    "thm_short_lift_obeys_zero_mean_gauge_zero_interior_convention_P4_r2": true,
+    "thm_short_lift_obeys_zero_mean_gauge_zero_interior_convention_P4_r3": true,
+    "thm_short_lift_obeys_zero_mean_gauge_zero_interior_convention_P4_r4": true,
+    "thm_short_lift_obeys_zero_mean_gauge_zero_interior_convention_P4_r5": true,
+    "thm_short_normalized_lift_is_linear_right_inverse_P2_r1": true,
+    "thm_short_normalized_lift_is_linear_right_inverse_P2_r2": true,
+    "thm_short_normalized_lift_is_linear_right_inverse_P2_r3": true,
+    "thm_short_normalized_lift_is_linear_right_inverse_P2_r4": true,
+    "thm_short_normalized_lift_is_linear_right_inverse_P2_r5": true,
+    "thm_short_normalized_lift_is_linear_right_inverse_P3_r1": true,
+    "thm_short_normalized_lift_is_linear_right_inverse_P3_r2": true,
+    "thm_short_normalized_lift_is_linear_right_inverse_P3_r3": true,
+    "thm_short_normalized_lift_is_linear_right_inverse_P3_r4": true,
+    "thm_short_normalized_lift_is_linear_right_inverse_P3_r5": true,
+    "thm_short_normalized_lift_is_linear_right_inverse_P4_r1": true,
+    "thm_short_normalized_lift_is_linear_right_inverse_P4_r2": true,
+    "thm_short_normalized_lift_is_linear_right_inverse_P4_r3": true,
+    "thm_short_normalized_lift_is_linear_right_inverse_P4_r4": true,
+    "thm_short_normalized_lift_is_linear_right_inverse_P4_r5": true,
+    "thm_short_sharp_count_r=L+1_fiber_is_L_gauge_only_P2_r2": true,
+    "thm_short_sharp_count_r=L+1_fiber_is_L_gauge_only_P2_r3": true,
+    "thm_short_sharp_count_r=L+1_fiber_is_L_gauge_only_P2_r4": true,
+    "thm_short_sharp_count_r=L+1_fiber_is_L_gauge_only_P2_r5": true,
+    "thm_short_sharp_count_r=L+1_fiber_is_L_gauge_only_P3_r2": true,
+    "thm_short_sharp_count_r=L+1_fiber_is_L_gauge_only_P3_r3": true,
+    "thm_short_sharp_count_r=L+1_fiber_is_L_gauge_only_P3_r4": true,
+    "thm_short_sharp_count_r=L+1_fiber_is_L_gauge_only_P3_r5": true,
+    "thm_short_sharp_count_r=L+1_fiber_is_L_gauge_only_P4_r2": true,
+    "thm_short_sharp_count_r=L+1_fiber_is_L_gauge_only_P4_r3": true,
+    "thm_short_sharp_count_r=L+1_fiber_is_L_gauge_only_P4_r4": true,
+    "thm_short_sharp_count_r=L+1_fiber_is_L_gauge_only_P4_r5": true
+  },
+  "collar_to_flux": {
+    "T_3_lambda_1/2": [
+      [
+        "1/2",
+        "0/1",
+        "0/1"
+      ],
+      [
+        "1/4",
+        "1/4",
+        "0/1"
+      ],
+      [
+        "1/8",
+        "1/4",
+        "1/8"
+      ]
+    ],
+    "T_3_lambda_1/2_inverse": [
+      [
+        "2/1",
+        "0/1",
+        "0/1"
+      ],
+      [
+        "-2/1",
+        "4/1",
+        "0/1"
+      ],
+      [
+        "2/1",
+        "-8/1",
+        "8/1"
+      ]
+    ]
+  },
+  "discrepancies": [],
+  "example_canonical_lift": {
+    "Phi0": [
+      "-1/1",
+      "1/1"
+    ],
+    "RAx": [
+      "1/1",
+      "-1/1"
+    ],
+    "Rx": [
+      "0/1",
+      "0/1"
+    ],
+    "T_1_lambda": [
+      [
+        "1/2"
+      ]
+    ],
+    "collar_c_K0": [
+      "-2/1",
+      "2/1"
+    ],
+    "g0": [
+      "-2/1",
+      "2/1"
+    ],
+    "normalized_lift_x": [
+      "2/1",
+      "-2/1",
+      "-2/1",
+      "2/1"
+    ],
+    "parameters": {
+      "L": 1,
+      "P": 2,
+      "lambda": "1/2",
+      "r": 2
+    },
+    "unnormalized_gauge_lift": [
+      "0/1",
+      "0/1",
+      "-4/1",
+      "4/1"
+    ],
+    "upstream_shift_RAx": [
+      "-1/1",
+      "1/1"
+    ],
+    "y0": [
+      "0/1",
+      "0/1"
+    ],
+    "y1": [
+      "1/1",
+      "-1/1"
+    ]
+  },
+  "interpretations": [
+    "Fine states are stored parent-major, x_{K,j} at index K*r + j; the note's x=(2,-2|-2,2) lists (x_{0,0}, x_{0,1} | x_{1,0}, x_{1,1}).",
+    "S is the downstream shift of the displayed two-case definition; it equals the periodic index shift i -> i-1 of the displayed update. Under the opposite (upstream) reading the example's lift would give RAx = (-1,1), not (1,-1).",
+    "Flux registers carry the factor lambda: Phi_{K,t} = lambda (A^t x)_{K,r-1}, and y^{t+1} = y^t - B Phi^t / r.",
+    "The normalized lift uses the zero-mean register B_0^{-1}g; the partial-sum register without the mean removed gives the lift (0,0|-4,4), also in the fiber, which differs from the normalized lift by a gauge direction. The authors' output matches the zero-mean convention."
+  ],
+  "passed": 175,
+  "remark_collar_spreads_c0_minus_c1": {
+    "L1_r2_lambda_1/10": "-20/1",
+    "L1_r2_lambda_1/100": "-200/1",
+    "L1_r2_lambda_1/1000": "-2000/1",
+    "L1_r3_lambda_1/10": "-30/1",
+    "L1_r3_lambda_1/100": "-300/1",
+    "L1_r3_lambda_1/1000": "-3000/1",
+    "L2_r3_lambda_1/10": "-300/1",
+    "L2_r3_lambda_1/100": "-30000/1",
+    "L2_r3_lambda_1/1000": "-3000000/1",
+    "L2_r4_lambda_1/10": "-400/1",
+    "L2_r4_lambda_1/100": "-40000/1",
+    "L2_r4_lambda_1/1000": "-4000000/1",
+    "L3_r4_lambda_1/10": "-4000/1",
+    "L3_r4_lambda_1/100": "-4000000/1",
+    "L3_r4_lambda_1/1000": "-4000000000/1",
+    "L3_r5_lambda_1/10": "-5000/1",
+    "L3_r5_lambda_1/100": "-5000000/1",
+    "L3_r5_lambda_1/1000": "-5000000000/1"
+  },
+  "results": "sec:hierarchy (S, A, R, conservation, R S^r = Pi_P R, B and the B_0^{-1} formula, the parent-update identity); the collar-to-flux map T_{L,lambda} and its binomial inverse; thm:short-realization (image, normalized right inverse, convention, fiber dimension, kernel basis, fibers); ex:canonical-lift; tab:certificates row 1; the remark on algebraic versus stable lifting",
+  "schema": "certified-simulation/coarse-history-realizability/independent-short-horizon-lifting/v1",
+  "scope": {
+    "analytic": "The note proves thm:short-realization for all P >= 2, r >= 1, 0 < lambda <= 1 and 0 <= L <= r-1.",
+    "exclusion": "Finite sweeps do not prove the quantified statements; the proofs in the note carry the general claims. The binomial inverse is proved here for every lambda != 0 through an integer identity.",
+    "executed": "Exact checks for P = 2,3,4, r = 1..5, every L = 0..r-1 and lambda in {1/10, 1/3, 1/2, 2/3, 9/10, 1} (270 instances), and P = 5, r = 6, L = 0,3,5 at lambda = 1/3, 1. Per instance: im O_{L,r} = M_{P,L} by an exact rank count with every column of O_{L,r} in M_{P,L}; O L = I on a basis of M_{P,L}; linearity; the convention; uniqueness by full column rank of O stacked with the convention functionals; the kernel's dimension and explicit basis; fiber translates.",
+    "independence": "No file of the authors' code was opened. Manuscript values and the authors' generated outputs are transcribed only for comparison."
+  },
+  "short_horizon_cases": {
+    "P2_r1_L0": {
+      "P(r-L-1)+L": 0,
+      "dim_M": 2,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 0,
+      "rank_O": 2
+    },
+    "P2_r2_L0": {
+      "P(r-L-1)+L": 2,
+      "dim_M": 2,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 2,
+      "rank_O": 2
+    },
+    "P2_r2_L1": {
+      "P(r-L-1)+L": 1,
+      "dim_M": 3,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 1,
+      "rank_O": 3
+    },
+    "P2_r3_L0": {
+      "P(r-L-1)+L": 4,
+      "dim_M": 2,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 4,
+      "rank_O": 2
+    },
+    "P2_r3_L1": {
+      "P(r-L-1)+L": 3,
+      "dim_M": 3,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 3,
+      "rank_O": 3
+    },
+    "P2_r3_L2": {
+      "P(r-L-1)+L": 2,
+      "dim_M": 4,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 2,
+      "rank_O": 4
+    },
+    "P2_r4_L0": {
+      "P(r-L-1)+L": 6,
+      "dim_M": 2,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 6,
+      "rank_O": 2
+    },
+    "P2_r4_L1": {
+      "P(r-L-1)+L": 5,
+      "dim_M": 3,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 5,
+      "rank_O": 3
+    },
+    "P2_r4_L2": {
+      "P(r-L-1)+L": 4,
+      "dim_M": 4,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 4,
+      "rank_O": 4
+    },
+    "P2_r4_L3": {
+      "P(r-L-1)+L": 3,
+      "dim_M": 5,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 3,
+      "rank_O": 5
+    },
+    "P2_r5_L0": {
+      "P(r-L-1)+L": 8,
+      "dim_M": 2,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 8,
+      "rank_O": 2
+    },
+    "P2_r5_L1": {
+      "P(r-L-1)+L": 7,
+      "dim_M": 3,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 7,
+      "rank_O": 3
+    },
+    "P2_r5_L2": {
+      "P(r-L-1)+L": 6,
+      "dim_M": 4,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 6,
+      "rank_O": 4
+    },
+    "P2_r5_L3": {
+      "P(r-L-1)+L": 5,
+      "dim_M": 5,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 5,
+      "rank_O": 5
+    },
+    "P2_r5_L4": {
+      "P(r-L-1)+L": 4,
+      "dim_M": 6,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 4,
+      "rank_O": 6
+    },
+    "P3_r1_L0": {
+      "P(r-L-1)+L": 0,
+      "dim_M": 3,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 0,
+      "rank_O": 3
+    },
+    "P3_r2_L0": {
+      "P(r-L-1)+L": 3,
+      "dim_M": 3,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 3,
+      "rank_O": 3
+    },
+    "P3_r2_L1": {
+      "P(r-L-1)+L": 1,
+      "dim_M": 5,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 1,
+      "rank_O": 5
+    },
+    "P3_r3_L0": {
+      "P(r-L-1)+L": 6,
+      "dim_M": 3,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 6,
+      "rank_O": 3
+    },
+    "P3_r3_L1": {
+      "P(r-L-1)+L": 4,
+      "dim_M": 5,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 4,
+      "rank_O": 5
+    },
+    "P3_r3_L2": {
+      "P(r-L-1)+L": 2,
+      "dim_M": 7,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 2,
+      "rank_O": 7
+    },
+    "P3_r4_L0": {
+      "P(r-L-1)+L": 9,
+      "dim_M": 3,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 9,
+      "rank_O": 3
+    },
+    "P3_r4_L1": {
+      "P(r-L-1)+L": 7,
+      "dim_M": 5,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 7,
+      "rank_O": 5
+    },
+    "P3_r4_L2": {
+      "P(r-L-1)+L": 5,
+      "dim_M": 7,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 5,
+      "rank_O": 7
+    },
+    "P3_r4_L3": {
+      "P(r-L-1)+L": 3,
+      "dim_M": 9,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 3,
+      "rank_O": 9
+    },
+    "P3_r5_L0": {
+      "P(r-L-1)+L": 12,
+      "dim_M": 3,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 12,
+      "rank_O": 3
+    },
+    "P3_r5_L1": {
+      "P(r-L-1)+L": 10,
+      "dim_M": 5,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 10,
+      "rank_O": 5
+    },
+    "P3_r5_L2": {
+      "P(r-L-1)+L": 8,
+      "dim_M": 7,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 8,
+      "rank_O": 7
+    },
+    "P3_r5_L3": {
+      "P(r-L-1)+L": 6,
+      "dim_M": 9,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 6,
+      "rank_O": 9
+    },
+    "P3_r5_L4": {
+      "P(r-L-1)+L": 4,
+      "dim_M": 11,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 4,
+      "rank_O": 11
+    },
+    "P4_r1_L0": {
+      "P(r-L-1)+L": 0,
+      "dim_M": 4,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 0,
+      "rank_O": 4
+    },
+    "P4_r2_L0": {
+      "P(r-L-1)+L": 4,
+      "dim_M": 4,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 4,
+      "rank_O": 4
+    },
+    "P4_r2_L1": {
+      "P(r-L-1)+L": 1,
+      "dim_M": 7,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 1,
+      "rank_O": 7
+    },
+    "P4_r3_L0": {
+      "P(r-L-1)+L": 8,
+      "dim_M": 4,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 8,
+      "rank_O": 4
+    },
+    "P4_r3_L1": {
+      "P(r-L-1)+L": 5,
+      "dim_M": 7,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 5,
+      "rank_O": 7
+    },
+    "P4_r3_L2": {
+      "P(r-L-1)+L": 2,
+      "dim_M": 10,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 2,
+      "rank_O": 10
+    },
+    "P4_r4_L0": {
+      "P(r-L-1)+L": 12,
+      "dim_M": 4,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 12,
+      "rank_O": 4
+    },
+    "P4_r4_L1": {
+      "P(r-L-1)+L": 9,
+      "dim_M": 7,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 9,
+      "rank_O": 7
+    },
+    "P4_r4_L2": {
+      "P(r-L-1)+L": 6,
+      "dim_M": 10,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 6,
+      "rank_O": 10
+    },
+    "P4_r4_L3": {
+      "P(r-L-1)+L": 3,
+      "dim_M": 13,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 3,
+      "rank_O": 13
+    },
+    "P4_r5_L0": {
+      "P(r-L-1)+L": 16,
+      "dim_M": 4,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 16,
+      "rank_O": 4
+    },
+    "P4_r5_L1": {
+      "P(r-L-1)+L": 13,
+      "dim_M": 7,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 13,
+      "rank_O": 7
+    },
+    "P4_r5_L2": {
+      "P(r-L-1)+L": 10,
+      "dim_M": 10,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 10,
+      "rank_O": 10
+    },
+    "P4_r5_L3": {
+      "P(r-L-1)+L": 7,
+      "dim_M": 13,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 7,
+      "rank_O": 13
+    },
+    "P4_r5_L4": {
+      "P(r-L-1)+L": 4,
+      "dim_M": 16,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 4,
+      "rank_O": 16
+    },
+    "P5_r6_L0_lambda_1/1": {
+      "P(r-L-1)+L": 25,
+      "dim_M": 5,
+      "nullity": 25,
+      "rank_O": 5
+    },
+    "P5_r6_L0_lambda_1/3": {
+      "P(r-L-1)+L": 25,
+      "dim_M": 5,
+      "nullity": 25,
+      "rank_O": 5
+    },
+    "P5_r6_L3_lambda_1/1": {
+      "P(r-L-1)+L": 13,
+      "dim_M": 17,
+      "nullity": 13,
+      "rank_O": 17
+    },
+    "P5_r6_L3_lambda_1/3": {
+      "P(r-L-1)+L": 13,
+      "dim_M": 17,
+      "nullity": 13,
+      "rank_O": 17
+    },
+    "P5_r6_L5_lambda_1/1": {
+      "P(r-L-1)+L": 5,
+      "dim_M": 25,
+      "nullity": 5,
+      "rank_O": 25
+    },
+    "P5_r6_L5_lambda_1/3": {
+      "P(r-L-1)+L": 5,
+      "dim_M": 25,
+      "nullity": 5,
+      "rank_O": 25
+    }
+  },
+  "verdict": "pass"
+}

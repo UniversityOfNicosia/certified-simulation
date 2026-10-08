@@ -22,8 +22,13 @@ jobs:
           uv run python papers/initial-trace-entropy-separation/certificates/certify_entropy_accounting_separation.py
           uv run python papers/coarse-observability-high-order/certificates/certify_observation_rank_structure.py
           uv run python papers/coarse-observability-high-order/certificates/certify_dissipation_conditioning_erasure.py
+          uv run python papers/coarse-history-realizability/certificates/certify_short_horizon_lifting.py
+          uv run python papers/coarse-history-realizability/certificates/certify_long_horizon_minimal_r.py
       - name: Require byte identity with the committed artifacts
         run: git diff --exit-code -- 'papers/*/artifacts'
+      - name: Regenerate the third paper's author outputs for the replay tests
+        working-directory: papers/coarse-history-realizability/experiments
+        run: uv run python run_history_realizability_certificates.py
       - name: Run the replay test suite
         run: uv run pytest -q
 
@@ -41,6 +46,9 @@ jobs:
       - name: Run the short note's author certificate script
         working-directory: papers/initial-trace-entropy-separation/experiments
         run: uv run python run_closure_certificates.py
+      - name: Run the third paper's author certificate script
+        working-directory: papers/coarse-history-realizability/experiments
+        run: uv run python run_history_realizability_certificates.py
       - name: Run the fourth paper's self-tests, experiments, and tables
         working-directory: papers/coarse-observability-high-order/src
         run: |

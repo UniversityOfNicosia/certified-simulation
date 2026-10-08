@@ -1,0 +1,1804 @@
+{
+  "arithmetic": "fractions.Fraction and Python integers; exact ranks over Q by fraction-free integer elimination; tolerance zero",
+  "bibliography": {
+    "cited_count": 22,
+    "cited_keys_in_order_of_first_citation": [
+      "LeVeque2002",
+      "EymardGallouetHerbin2000",
+      "Berger1987",
+      "BergerColella1989",
+      "McCorquodaleColella2011",
+      "OsherSanders1983",
+      "ConstantinescuSandu2007",
+      "BarSinai2019",
+      "KochkovEtAl2021",
+      "polemitis2026exactfinitehorizonmemoryconditioning",
+      "PolemitisChristakisDrikakis2026OneStep",
+      "Willems1986ExactModelling",
+      "PoldermanWillems1998",
+      "MarkovskyDorfler2021",
+      "CohnDee1988",
+      "HoKalman1966",
+      "Moore1981",
+      "Forney2011",
+      "Antoulas2005",
+      "BennerGugercinWillcox2015",
+      "PeherstorferWillcox2016",
+      "Kevrekidis2003"
+    ],
+    "entries_not_cited": [
+      "ChorinHaldKupferman2002",
+      "ParishDuraisamy2017",
+      "Stinis2015",
+      "AgdesteinSanderse2025",
+      "AgdesteinVerstappenSanderse2026",
+      "SanderseEtAl2025"
+    ],
+    "findings": [
+      {
+        "claim": "note = {Manuscript submitted to Applied Numerical Mathematics}",
+        "finding": "stated status is inaccurate: as of 2026-10-08 the companion note has not been submitted; the repository records it as staged for sign-off, to be posted to arXiv and submitted after its release is frozen (papers/initial-trace-entropy-separation/README.md)",
+        "location": "references.bib entry PolemitisChristakisDrikakis2026OneStep (printed as [11])"
+      },
+      {
+        "claim": "eprint = {2608.08633}, archivePrefix = {arXiv}, url = {...}",
+        "finding": "the identifier is correct (arXiv:2608.08633, as recorded in papers/finite-horizon-memory/README.md) but the unsrt style prints none of eprint, archivePrefix or url, so reference [10] in Exact_lifting.pdf reads only 'Exact finite-horizon memory, ... prediction, 2026.' with no arXiv identifier or status; a note or howpublished field is needed",
+        "location": "references.bib entry polemitis2026exactfinitehorizonmemoryconditioning (printed as [10])"
+      },
+      {
+        "claim": "author fields Gallou{\"e}t and D{\"o}rfler",
+        "finding": "the umlaut macro lacks its backslash; Exact_lifting.pdf prints Gallou\"et and D\"orfler (a closing double quote before the vowel); the fields need {\\\"e} and {\\\"o}",
+        "location": "references.bib entries EymardGallouetHerbin2000 and MarkovskyDorfler2021 ([2], [14])"
+      }
+    ],
+    "missing_entries": [],
+    "transcribed_fields": {
+      "EymardGallouetHerbin2000": [
+        "Gallou{\"e}t"
+      ],
+      "MarkovskyDorfler2021": [
+        "D{\"o}rfler"
+      ],
+      "PolemitisChristakisDrikakis2026OneStep": [
+        "@misc{PolemitisChristakisDrikakis2026OneStep,",
+        "note={ManuscriptsubmittedtoAppliedNumericalMathematics},"
+      ],
+      "polemitis2026exactfinitehorizonmemoryconditioning": [
+        "@misc{polemitis2026exactfinitehorizonmemoryconditioning,",
+        "eprint={2608.08633},",
+        "archivePrefix={arXiv},",
+        "url={https://arxiv.org/abs/2608.08633}"
+      ]
+    }
+  },
+  "check_count": 162,
+  "checks": {
+    "authors_csv_header": true,
+    "authors_csv_row_2_matches_exact_residuals": true,
+    "authors_csv_row_3_matches_exact_values": true,
+    "authors_fragment_cells_match_table_1": true,
+    "authors_fragment_lacks_line_breaks_and_glues_rule_commands": true,
+    "bibliography_every_cited_key_has_an_entry": true,
+    "bibliography_no_duplicate_entry_keys": true,
+    "columns_by_integer_evolution_match_fraction_evolution": true,
+    "cor_image_codimension_in_M_is_(P-1)(L+1-r)_P2": true,
+    "cor_image_codimension_in_M_is_(P-1)(L+1-r)_P3": true,
+    "cor_image_codimension_in_M_is_(P-1)(L+1-r)_P4": true,
+    "cor_minimal_child_count_is_L+1_by_search_P2": true,
+    "cor_minimal_child_count_is_L+1_by_search_P3": true,
+    "cor_minimal_child_count_is_L+1_by_search_P4": true,
+    "cor_sharpness_history_mass_conserving_not_realizable_P2": true,
+    "cor_sharpness_history_mass_conserving_not_realizable_P3": true,
+    "cor_sharpness_history_mass_conserving_not_realizable_P4": true,
+    "example_nonrealizable_lifts_with_r3": true,
+    "example_nonrealizable_mass_conserving_and_nonnegative": true,
+    "example_nonrealizable_not_in_image_by_exact_rank": true,
+    "example_nonrealizable_prediction": true,
+    "example_nonrealizable_recurrence_coefficients_r2_lambda_1/2": true,
+    "example_nonrealizable_residual": true,
+    "example_nonrealizable_residual_sign_convention": true,
+    "hypothesis_P>=2_needed_P1_realizes_all_with_r1": true,
+    "hypothesis_lambda>0_needed_not_onto_at_r=L+1": true,
+    "identity_RA^t_triangular_in_RS^j_diagonal_lambda^t_P2": true,
+    "identity_RA^t_triangular_in_RS^j_diagonal_lambda^t_P3": true,
+    "identity_RS^r_equals_Pi_P_R_P2": true,
+    "identity_RS^r_equals_Pi_P_R_P3": true,
+    "identity_binomial_expansion_equals_lambda^r_S^r_P2": true,
+    "identity_binomial_expansion_equals_lambda^r_S^r_P3": true,
+    "identity_layer_difference_P2": true,
+    "identity_layer_difference_P3": true,
+    "kernel_ladder_short_then_saturated_at_r-1_P2_r1": true,
+    "kernel_ladder_short_then_saturated_at_r-1_P2_r2": true,
+    "kernel_ladder_short_then_saturated_at_r-1_P2_r3": true,
+    "kernel_ladder_short_then_saturated_at_r-1_P2_r4": true,
+    "kernel_ladder_short_then_saturated_at_r-1_P2_r5": true,
+    "kernel_ladder_short_then_saturated_at_r-1_P3_r1": true,
+    "kernel_ladder_short_then_saturated_at_r-1_P3_r2": true,
+    "kernel_ladder_short_then_saturated_at_r-1_P3_r3": true,
+    "kernel_ladder_short_then_saturated_at_r-1_P3_r4": true,
+    "kernel_ladder_short_then_saturated_at_r-1_P3_r5": true,
+    "kernel_ladder_short_then_saturated_at_r-1_P4_r1": true,
+    "kernel_ladder_short_then_saturated_at_r-1_P4_r2": true,
+    "kernel_ladder_short_then_saturated_at_r-1_P4_r3": true,
+    "kernel_ladder_short_then_saturated_at_r-1_P4_r4": true,
+    "kernel_ladder_short_then_saturated_at_r-1_P4_r5": true,
+    "mutation_lag_r-1_recurrence_detected": true,
+    "mutation_recurrence_with_plus_sign_detected": true,
+    "mutation_unshifted_parent_term_detected": true,
+    "observation_example_r3_fiber_has_no_nonnegative_state": true,
+    "observation_long_theorem_algebra_also_holds_at_lambda_3/2_and_-1/2": true,
+    "table_row_2_generated_histories_residual_zero": true,
+    "table_row_3_parameters_match_example": true,
+    "table_row_3_residual_matches_exact": true,
+    "thm_long_N_r_invisible_at_every_horizon_P2_r1": true,
+    "thm_long_N_r_invisible_at_every_horizon_P2_r2": true,
+    "thm_long_N_r_invisible_at_every_horizon_P2_r3": true,
+    "thm_long_N_r_invisible_at_every_horizon_P2_r4": true,
+    "thm_long_N_r_invisible_at_every_horizon_P2_r5": true,
+    "thm_long_N_r_invisible_at_every_horizon_P3_r1": true,
+    "thm_long_N_r_invisible_at_every_horizon_P3_r2": true,
+    "thm_long_N_r_invisible_at_every_horizon_P3_r3": true,
+    "thm_long_N_r_invisible_at_every_horizon_P3_r4": true,
+    "thm_long_N_r_invisible_at_every_horizon_P3_r5": true,
+    "thm_long_N_r_invisible_at_every_horizon_P4_r1": true,
+    "thm_long_N_r_invisible_at_every_horizon_P4_r2": true,
+    "thm_long_N_r_invisible_at_every_horizon_P4_r3": true,
+    "thm_long_N_r_invisible_at_every_horizon_P4_r4": true,
+    "thm_long_N_r_invisible_at_every_horizon_P4_r5": true,
+    "thm_long_admissible_histories_lift_via_short_theorem_P2_r1": true,
+    "thm_long_admissible_histories_lift_via_short_theorem_P2_r2": true,
+    "thm_long_admissible_histories_lift_via_short_theorem_P2_r3": true,
+    "thm_long_admissible_histories_lift_via_short_theorem_P2_r4": true,
+    "thm_long_admissible_histories_lift_via_short_theorem_P2_r5": true,
+    "thm_long_admissible_histories_lift_via_short_theorem_P3_r1": true,
+    "thm_long_admissible_histories_lift_via_short_theorem_P3_r2": true,
+    "thm_long_admissible_histories_lift_via_short_theorem_P3_r3": true,
+    "thm_long_admissible_histories_lift_via_short_theorem_P3_r4": true,
+    "thm_long_admissible_histories_lift_via_short_theorem_P3_r5": true,
+    "thm_long_admissible_histories_lift_via_short_theorem_P4_r1": true,
+    "thm_long_admissible_histories_lift_via_short_theorem_P4_r2": true,
+    "thm_long_admissible_histories_lift_via_short_theorem_P4_r3": true,
+    "thm_long_admissible_histories_lift_via_short_theorem_P4_r4": true,
+    "thm_long_admissible_histories_lift_via_short_theorem_P4_r5": true,
+    "thm_long_and_short_agree_at_L=r-1_P2_r1": true,
+    "thm_long_and_short_agree_at_L=r-1_P2_r2": true,
+    "thm_long_and_short_agree_at_L=r-1_P2_r3": true,
+    "thm_long_and_short_agree_at_L=r-1_P2_r4": true,
+    "thm_long_and_short_agree_at_L=r-1_P2_r5": true,
+    "thm_long_and_short_agree_at_L=r-1_P3_r1": true,
+    "thm_long_and_short_agree_at_L=r-1_P3_r2": true,
+    "thm_long_and_short_agree_at_L=r-1_P3_r3": true,
+    "thm_long_and_short_agree_at_L=r-1_P3_r4": true,
+    "thm_long_and_short_agree_at_L=r-1_P3_r5": true,
+    "thm_long_and_short_agree_at_L=r-1_P4_r1": true,
+    "thm_long_and_short_agree_at_L=r-1_P4_r2": true,
+    "thm_long_and_short_agree_at_L=r-1_P4_r3": true,
+    "thm_long_and_short_agree_at_L=r-1_P4_r4": true,
+    "thm_long_and_short_agree_at_L=r-1_P4_r5": true,
+    "thm_long_fiber_is_lift_plus_N_r_P2_r1": true,
+    "thm_long_fiber_is_lift_plus_N_r_P2_r2": true,
+    "thm_long_fiber_is_lift_plus_N_r_P2_r3": true,
+    "thm_long_fiber_is_lift_plus_N_r_P2_r4": true,
+    "thm_long_fiber_is_lift_plus_N_r_P2_r5": true,
+    "thm_long_fiber_is_lift_plus_N_r_P3_r1": true,
+    "thm_long_fiber_is_lift_plus_N_r_P3_r2": true,
+    "thm_long_fiber_is_lift_plus_N_r_P3_r3": true,
+    "thm_long_fiber_is_lift_plus_N_r_P3_r4": true,
+    "thm_long_fiber_is_lift_plus_N_r_P3_r5": true,
+    "thm_long_fiber_is_lift_plus_N_r_P4_r1": true,
+    "thm_long_fiber_is_lift_plus_N_r_P4_r2": true,
+    "thm_long_fiber_is_lift_plus_N_r_P4_r3": true,
+    "thm_long_fiber_is_lift_plus_N_r_P4_r4": true,
+    "thm_long_fiber_is_lift_plus_N_r_P4_r5": true,
+    "thm_long_generated_histories_satisfy_recurrence_P2_r1": true,
+    "thm_long_generated_histories_satisfy_recurrence_P2_r2": true,
+    "thm_long_generated_histories_satisfy_recurrence_P2_r3": true,
+    "thm_long_generated_histories_satisfy_recurrence_P2_r4": true,
+    "thm_long_generated_histories_satisfy_recurrence_P2_r5": true,
+    "thm_long_generated_histories_satisfy_recurrence_P3_r1": true,
+    "thm_long_generated_histories_satisfy_recurrence_P3_r2": true,
+    "thm_long_generated_histories_satisfy_recurrence_P3_r3": true,
+    "thm_long_generated_histories_satisfy_recurrence_P3_r4": true,
+    "thm_long_generated_histories_satisfy_recurrence_P3_r5": true,
+    "thm_long_generated_histories_satisfy_recurrence_P4_r1": true,
+    "thm_long_generated_histories_satisfy_recurrence_P4_r2": true,
+    "thm_long_generated_histories_satisfy_recurrence_P4_r3": true,
+    "thm_long_generated_histories_satisfy_recurrence_P4_r4": true,
+    "thm_long_generated_histories_satisfy_recurrence_P4_r5": true,
+    "thm_long_image_equals_equal_sums_plus_recurrence_P2_r1": true,
+    "thm_long_image_equals_equal_sums_plus_recurrence_P2_r2": true,
+    "thm_long_image_equals_equal_sums_plus_recurrence_P2_r3": true,
+    "thm_long_image_equals_equal_sums_plus_recurrence_P2_r4": true,
+    "thm_long_image_equals_equal_sums_plus_recurrence_P2_r5": true,
+    "thm_long_image_equals_equal_sums_plus_recurrence_P3_r1": true,
+    "thm_long_image_equals_equal_sums_plus_recurrence_P3_r2": true,
+    "thm_long_image_equals_equal_sums_plus_recurrence_P3_r3": true,
+    "thm_long_image_equals_equal_sums_plus_recurrence_P3_r4": true,
+    "thm_long_image_equals_equal_sums_plus_recurrence_P3_r5": true,
+    "thm_long_image_equals_equal_sums_plus_recurrence_P4_r1": true,
+    "thm_long_image_equals_equal_sums_plus_recurrence_P4_r2": true,
+    "thm_long_image_equals_equal_sums_plus_recurrence_P4_r3": true,
+    "thm_long_image_equals_equal_sums_plus_recurrence_P4_r4": true,
+    "thm_long_image_equals_equal_sums_plus_recurrence_P4_r5": true,
+    "thm_long_kernel_equals_N_r_dimension_r-1_P2_r1": true,
+    "thm_long_kernel_equals_N_r_dimension_r-1_P2_r2": true,
+    "thm_long_kernel_equals_N_r_dimension_r-1_P2_r3": true,
+    "thm_long_kernel_equals_N_r_dimension_r-1_P2_r4": true,
+    "thm_long_kernel_equals_N_r_dimension_r-1_P2_r5": true,
+    "thm_long_kernel_equals_N_r_dimension_r-1_P3_r1": true,
+    "thm_long_kernel_equals_N_r_dimension_r-1_P3_r2": true,
+    "thm_long_kernel_equals_N_r_dimension_r-1_P3_r3": true,
+    "thm_long_kernel_equals_N_r_dimension_r-1_P3_r4": true,
+    "thm_long_kernel_equals_N_r_dimension_r-1_P3_r5": true,
+    "thm_long_kernel_equals_N_r_dimension_r-1_P4_r1": true,
+    "thm_long_kernel_equals_N_r_dimension_r-1_P4_r2": true,
+    "thm_long_kernel_equals_N_r_dimension_r-1_P4_r3": true,
+    "thm_long_kernel_equals_N_r_dimension_r-1_P4_r4": true,
+    "thm_long_kernel_equals_N_r_dimension_r-1_P4_r5": true
+  },
+  "discrepancies": [
+    {
+      "claim": "the generated LaTeX table fragment reproduces Table 1 (Data and code availability: 'LaTeX table fragments supporting this study')",
+      "finding": "the fragment has no line terminators (one 327-byte line), so \\toprule and \\midrule run into the following cell text and TeX reads the undefined control words \\topruleCertificate and \\midruleNormalized; as provided it cannot be \\input. Its parameter cells are plain text ('lambda=1/2'), not math. Cell by cell the values agree with Table 1, which main.tex types by hand rather than inputting the fragment.",
+      "location": "experiments/tables/history_realizability_certificates.tex (generated body of tab:certificates)"
+    }
+  ],
+  "example_nonrealizable": {
+    "history": [
+      [
+        "1/1",
+        "1/1"
+      ],
+      [
+        "1/1",
+        "1/1"
+      ],
+      [
+        "2/1",
+        "0/1"
+      ]
+    ],
+    "normalized_lift_with_r3": [
+      "9/1",
+      "-6/1",
+      "0/1",
+      "-3/1",
+      "6/1",
+      "0/1"
+    ],
+    "parameters": {
+      "L": 2,
+      "P": 2,
+      "lambda": "1/2",
+      "r": 2
+    },
+    "predicted_y2": [
+      "1/1",
+      "1/1"
+    ],
+    "rank_O_2_2": 3,
+    "rank_with_history_appended": 4,
+    "recurrence_coefficients_C(r,j)[-(1-lambda)]^(r-j)": [
+      "1/4",
+      "-1/1"
+    ],
+    "recurrence_lead_lambda^r": "1/4",
+    "residual_opposite_sign": [
+      "-1/1",
+      "1/1"
+    ],
+    "residual_y2_minus_prediction": [
+      "1/1",
+      "-1/1"
+    ]
+  },
+  "interpretations": [
+    "The recurrence residual is y^{n+r} minus the right-hand side of eq:history-recurrence, equal to the left side minus the right side of the expanded identity; for ex:nonrealizable it is (1,-1), as printed and as in the authors' outputs. The opposite sign convention would give (-1,1).",
+    "tab:certificates row 2 does not specify its generated history; the claim is checked for every fine state of that instance (each column of O_{6,3} satisfies the recurrence) and for three pseudo-random states. The authors' CSV lists the four residual vectors n = 0..3, all zero.",
+    "Condition 1 of thm:long-realization (equal sums of the first r states) together with the recurrence implies equal sums at all times, because the recurrence coefficients sum to one."
+  ],
+  "kernel_ladders_lambda_1/2": {
+    "P2_r1_lambda_1/2": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "P2_r2_lambda_1/2": [
+      2,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "P2_r3_lambda_1/2": [
+      4,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "P2_r4_lambda_1/2": [
+      6,
+      5,
+      4,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "P2_r5_lambda_1/2": [
+      8,
+      7,
+      6,
+      5,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "P3_r1_lambda_1/2": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "P3_r2_lambda_1/2": [
+      3,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "P3_r3_lambda_1/2": [
+      6,
+      4,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "P3_r4_lambda_1/2": [
+      9,
+      7,
+      5,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "P3_r5_lambda_1/2": [
+      12,
+      10,
+      8,
+      6,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "P4_r1_lambda_1/2": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "P4_r2_lambda_1/2": [
+      4,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "P4_r3_lambda_1/2": [
+      8,
+      5,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "P4_r4_lambda_1/2": [
+      12,
+      9,
+      6,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "P4_r5_lambda_1/2": [
+      16,
+      13,
+      10,
+      7,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ]
+  },
+  "long_horizon_cases": {
+    "P2_r1_L0": {
+      "dim_conditions": 2,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 0,
+      "rank_O": 2
+    },
+    "P2_r1_L1": {
+      "dim_conditions": 2,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 0,
+      "rank_O": 2
+    },
+    "P2_r1_L2": {
+      "dim_conditions": 2,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 0,
+      "rank_O": 2
+    },
+    "P2_r2_L1": {
+      "dim_conditions": 3,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 1,
+      "rank_O": 3
+    },
+    "P2_r2_L2": {
+      "dim_conditions": 3,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 1,
+      "rank_O": 3
+    },
+    "P2_r2_L3": {
+      "dim_conditions": 3,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 1,
+      "rank_O": 3
+    },
+    "P2_r2_L4": {
+      "dim_conditions": 3,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 1,
+      "rank_O": 3
+    },
+    "P2_r3_L2": {
+      "dim_conditions": 4,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 2,
+      "rank_O": 4
+    },
+    "P2_r3_L3": {
+      "dim_conditions": 4,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 2,
+      "rank_O": 4
+    },
+    "P2_r3_L4": {
+      "dim_conditions": 4,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 2,
+      "rank_O": 4
+    },
+    "P2_r3_L6": {
+      "dim_conditions": 4,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 2,
+      "rank_O": 4
+    },
+    "P2_r4_L3": {
+      "dim_conditions": 5,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 3,
+      "rank_O": 5
+    },
+    "P2_r4_L4": {
+      "dim_conditions": 5,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 3,
+      "rank_O": 5
+    },
+    "P2_r4_L5": {
+      "dim_conditions": 5,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 3,
+      "rank_O": 5
+    },
+    "P2_r4_L8": {
+      "dim_conditions": 5,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 3,
+      "rank_O": 5
+    },
+    "P2_r5_L10": {
+      "dim_conditions": 6,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 4,
+      "rank_O": 6
+    },
+    "P2_r5_L4": {
+      "dim_conditions": 6,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 4,
+      "rank_O": 6
+    },
+    "P2_r5_L5": {
+      "dim_conditions": 6,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 4,
+      "rank_O": 6
+    },
+    "P2_r5_L6": {
+      "dim_conditions": 6,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 4,
+      "rank_O": 6
+    },
+    "P3_r1_L0": {
+      "dim_conditions": 3,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 0,
+      "rank_O": 3
+    },
+    "P3_r1_L1": {
+      "dim_conditions": 3,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 0,
+      "rank_O": 3
+    },
+    "P3_r1_L2": {
+      "dim_conditions": 3,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 0,
+      "rank_O": 3
+    },
+    "P3_r2_L1": {
+      "dim_conditions": 5,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 1,
+      "rank_O": 5
+    },
+    "P3_r2_L2": {
+      "dim_conditions": 5,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 1,
+      "rank_O": 5
+    },
+    "P3_r2_L3": {
+      "dim_conditions": 5,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 1,
+      "rank_O": 5
+    },
+    "P3_r2_L4": {
+      "dim_conditions": 5,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 1,
+      "rank_O": 5
+    },
+    "P3_r3_L2": {
+      "dim_conditions": 7,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 2,
+      "rank_O": 7
+    },
+    "P3_r3_L3": {
+      "dim_conditions": 7,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 2,
+      "rank_O": 7
+    },
+    "P3_r3_L4": {
+      "dim_conditions": 7,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 2,
+      "rank_O": 7
+    },
+    "P3_r3_L6": {
+      "dim_conditions": 7,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 2,
+      "rank_O": 7
+    },
+    "P3_r4_L3": {
+      "dim_conditions": 9,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 3,
+      "rank_O": 9
+    },
+    "P3_r4_L4": {
+      "dim_conditions": 9,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 3,
+      "rank_O": 9
+    },
+    "P3_r4_L5": {
+      "dim_conditions": 9,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 3,
+      "rank_O": 9
+    },
+    "P3_r4_L8": {
+      "dim_conditions": 9,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 3,
+      "rank_O": 9
+    },
+    "P3_r5_L10": {
+      "dim_conditions": 11,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 4,
+      "rank_O": 11
+    },
+    "P3_r5_L4": {
+      "dim_conditions": 11,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 4,
+      "rank_O": 11
+    },
+    "P3_r5_L5": {
+      "dim_conditions": 11,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 4,
+      "rank_O": 11
+    },
+    "P3_r5_L6": {
+      "dim_conditions": 11,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 4,
+      "rank_O": 11
+    },
+    "P4_r1_L0": {
+      "dim_conditions": 4,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 0,
+      "rank_O": 4
+    },
+    "P4_r1_L1": {
+      "dim_conditions": 4,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 0,
+      "rank_O": 4
+    },
+    "P4_r1_L2": {
+      "dim_conditions": 4,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 0,
+      "rank_O": 4
+    },
+    "P4_r2_L1": {
+      "dim_conditions": 7,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 1,
+      "rank_O": 7
+    },
+    "P4_r2_L2": {
+      "dim_conditions": 7,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 1,
+      "rank_O": 7
+    },
+    "P4_r2_L3": {
+      "dim_conditions": 7,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 1,
+      "rank_O": 7
+    },
+    "P4_r2_L4": {
+      "dim_conditions": 7,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 1,
+      "rank_O": 7
+    },
+    "P4_r3_L2": {
+      "dim_conditions": 10,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 2,
+      "rank_O": 10
+    },
+    "P4_r3_L3": {
+      "dim_conditions": 10,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 2,
+      "rank_O": 10
+    },
+    "P4_r3_L4": {
+      "dim_conditions": 10,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 2,
+      "rank_O": 10
+    },
+    "P4_r3_L6": {
+      "dim_conditions": 10,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 2,
+      "rank_O": 10
+    },
+    "P4_r4_L3": {
+      "dim_conditions": 13,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 3,
+      "rank_O": 13
+    },
+    "P4_r4_L4": {
+      "dim_conditions": 13,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 3,
+      "rank_O": 13
+    },
+    "P4_r4_L5": {
+      "dim_conditions": 13,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 3,
+      "rank_O": 13
+    },
+    "P4_r4_L8": {
+      "dim_conditions": 13,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 3,
+      "rank_O": 13
+    },
+    "P4_r5_L10": {
+      "dim_conditions": 16,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 4,
+      "rank_O": 16
+    },
+    "P4_r5_L4": {
+      "dim_conditions": 16,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 4,
+      "rank_O": 16
+    },
+    "P4_r5_L5": {
+      "dim_conditions": 16,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 4,
+      "rank_O": 16
+    },
+    "P4_r5_L6": {
+      "dim_conditions": 16,
+      "lambdas": [
+        "1/10",
+        "1/3",
+        "1/2",
+        "2/3",
+        "9/10",
+        "1/1"
+      ],
+      "nullity": 4,
+      "rank_O": 16
+    }
+  },
+  "minimal_child_count_by_search": {
+    "P2_lambda_1/1": {
+      "L0": 1,
+      "L1": 2,
+      "L2": 3,
+      "L3": 4,
+      "L4": 5,
+      "L5": 6
+    },
+    "P2_lambda_1/10": {
+      "L0": 1,
+      "L1": 2,
+      "L2": 3,
+      "L3": 4,
+      "L4": 5,
+      "L5": 6
+    },
+    "P2_lambda_1/2": {
+      "L0": 1,
+      "L1": 2,
+      "L2": 3,
+      "L3": 4,
+      "L4": 5,
+      "L5": 6
+    },
+    "P2_lambda_1/3": {
+      "L0": 1,
+      "L1": 2,
+      "L2": 3,
+      "L3": 4,
+      "L4": 5,
+      "L5": 6
+    },
+    "P2_lambda_2/3": {
+      "L0": 1,
+      "L1": 2,
+      "L2": 3,
+      "L3": 4,
+      "L4": 5,
+      "L5": 6
+    },
+    "P2_lambda_9/10": {
+      "L0": 1,
+      "L1": 2,
+      "L2": 3,
+      "L3": 4,
+      "L4": 5,
+      "L5": 6
+    },
+    "P3_lambda_1/1": {
+      "L0": 1,
+      "L1": 2,
+      "L2": 3,
+      "L3": 4,
+      "L4": 5,
+      "L5": 6
+    },
+    "P3_lambda_1/10": {
+      "L0": 1,
+      "L1": 2,
+      "L2": 3,
+      "L3": 4,
+      "L4": 5,
+      "L5": 6
+    },
+    "P3_lambda_1/2": {
+      "L0": 1,
+      "L1": 2,
+      "L2": 3,
+      "L3": 4,
+      "L4": 5,
+      "L5": 6
+    },
+    "P3_lambda_1/3": {
+      "L0": 1,
+      "L1": 2,
+      "L2": 3,
+      "L3": 4,
+      "L4": 5,
+      "L5": 6
+    },
+    "P3_lambda_2/3": {
+      "L0": 1,
+      "L1": 2,
+      "L2": 3,
+      "L3": 4,
+      "L4": 5,
+      "L5": 6
+    },
+    "P3_lambda_9/10": {
+      "L0": 1,
+      "L1": 2,
+      "L2": 3,
+      "L3": 4,
+      "L4": 5,
+      "L5": 6
+    },
+    "P4_lambda_1/1": {
+      "L0": 1,
+      "L1": 2,
+      "L2": 3,
+      "L3": 4,
+      "L4": 5,
+      "L5": 6
+    },
+    "P4_lambda_1/10": {
+      "L0": 1,
+      "L1": 2,
+      "L2": 3,
+      "L3": 4,
+      "L4": 5,
+      "L5": 6
+    },
+    "P4_lambda_1/2": {
+      "L0": 1,
+      "L1": 2,
+      "L2": 3,
+      "L3": 4,
+      "L4": 5,
+      "L5": 6
+    },
+    "P4_lambda_1/3": {
+      "L0": 1,
+      "L1": 2,
+      "L2": 3,
+      "L3": 4,
+      "L4": 5,
+      "L5": 6
+    },
+    "P4_lambda_2/3": {
+      "L0": 1,
+      "L1": 2,
+      "L2": 3,
+      "L3": 4,
+      "L4": 5,
+      "L5": 6
+    },
+    "P4_lambda_9/10": {
+      "L0": 1,
+      "L1": 2,
+      "L2": 3,
+      "L3": 4,
+      "L4": 5,
+      "L5": 6
+    }
+  },
+  "passed": 162,
+  "results": "The identity behind eq:history-recurrence, R S^r = Pi_P R, the triangular change of basis and the layer-difference identity; thm:long-realization (image, constructive sufficiency, kernel N_r, fibers); the kernel ladder; cor:minimal-r (exhaustive search for r_min, the proof's counterexamples, codimension); ex:nonrealizable; tab:certificates rows 2 and 3; the authors' CSV and table fragment; bibliography keys",
+  "schema": "certified-simulation/coarse-history-realizability/independent-long-horizon-minimal-r/v1",
+  "scope": {
+    "analytic": "The note proves thm:long-realization for P >= 2, r >= 1, 0 < lambda <= 1, L >= r-1, and cor:minimal-r for P >= 2, L >= 0.",
+    "exclusion": "Finite sweeps do not prove the quantified statements; the proofs in the note carry the general claims. Bibliographic status is a dated observation, not a computation.",
+    "executed": "Exact checks for P = 2,3,4, r = 1..5, L in {r-1, r, r+1, 2r} and lambda in {1/10, 1/3, 1/2, 2/3, 9/10, 1}. Per instance: every column of O_{L,r} satisfies the equal-sum condition and the recurrence, and the exact rank equals the dimension of the condition set, so the image is exactly that set. Also checked per instance: constructive lifts of pseudo-random admissible histories, ker O = N_r, and fiber translates. Kernel ladders cover L = 0..2r+1. The minimal child count is found by search over r = 1..L+2 for P = 2,3,4, L = 0..5 and all six lambdas. The counterexample of cor:minimal-r is checked by exact rank at every r <= L.",
+    "independence": "No file of the authors' code was opened. Manuscript values, bibliography keys and the authors' generated outputs are transcribed only for comparison."
+  },
+  "sharpness_counterexamples_lambda_1/2": {
+    "P2_L1_r1": {
+      "codimension": 1,
+      "dim_M": 3,
+      "rank_O": 2,
+      "v": [
+        "1/1",
+        "-1/1"
+      ]
+    },
+    "P2_L2_r1": {
+      "codimension": 2,
+      "dim_M": 4,
+      "rank_O": 2,
+      "v": [
+        "1/1",
+        "-1/1"
+      ]
+    },
+    "P2_L2_r2": {
+      "codimension": 1,
+      "dim_M": 4,
+      "rank_O": 3,
+      "v": [
+        "1/1",
+        "-1/1"
+      ]
+    },
+    "P2_L3_r1": {
+      "codimension": 3,
+      "dim_M": 5,
+      "rank_O": 2,
+      "v": [
+        "1/1",
+        "-1/1"
+      ]
+    },
+    "P2_L3_r2": {
+      "codimension": 2,
+      "dim_M": 5,
+      "rank_O": 3,
+      "v": [
+        "1/1",
+        "-1/1"
+      ]
+    },
+    "P2_L3_r3": {
+      "codimension": 1,
+      "dim_M": 5,
+      "rank_O": 4,
+      "v": [
+        "1/1",
+        "-1/1"
+      ]
+    },
+    "P2_L4_r1": {
+      "codimension": 4,
+      "dim_M": 6,
+      "rank_O": 2,
+      "v": [
+        "1/1",
+        "-1/1"
+      ]
+    },
+    "P2_L4_r2": {
+      "codimension": 3,
+      "dim_M": 6,
+      "rank_O": 3,
+      "v": [
+        "1/1",
+        "-1/1"
+      ]
+    },
+    "P2_L4_r3": {
+      "codimension": 2,
+      "dim_M": 6,
+      "rank_O": 4,
+      "v": [
+        "1/1",
+        "-1/1"
+      ]
+    },
+    "P2_L4_r4": {
+      "codimension": 1,
+      "dim_M": 6,
+      "rank_O": 5,
+      "v": [
+        "1/1",
+        "-1/1"
+      ]
+    },
+    "P2_L5_r1": {
+      "codimension": 5,
+      "dim_M": 7,
+      "rank_O": 2,
+      "v": [
+        "1/1",
+        "-1/1"
+      ]
+    },
+    "P2_L5_r2": {
+      "codimension": 4,
+      "dim_M": 7,
+      "rank_O": 3,
+      "v": [
+        "1/1",
+        "-1/1"
+      ]
+    },
+    "P2_L5_r3": {
+      "codimension": 3,
+      "dim_M": 7,
+      "rank_O": 4,
+      "v": [
+        "1/1",
+        "-1/1"
+      ]
+    },
+    "P2_L5_r4": {
+      "codimension": 2,
+      "dim_M": 7,
+      "rank_O": 5,
+      "v": [
+        "1/1",
+        "-1/1"
+      ]
+    },
+    "P2_L5_r5": {
+      "codimension": 1,
+      "dim_M": 7,
+      "rank_O": 6,
+      "v": [
+        "1/1",
+        "-1/1"
+      ]
+    },
+    "P3_L1_r1": {
+      "codimension": 2,
+      "dim_M": 5,
+      "rank_O": 3,
+      "v": [
+        "1/1",
+        "-1/1",
+        "0/1"
+      ]
+    },
+    "P3_L2_r1": {
+      "codimension": 4,
+      "dim_M": 7,
+      "rank_O": 3,
+      "v": [
+        "1/1",
+        "-1/1",
+        "0/1"
+      ]
+    },
+    "P3_L2_r2": {
+      "codimension": 2,
+      "dim_M": 7,
+      "rank_O": 5,
+      "v": [
+        "1/1",
+        "-1/1",
+        "0/1"
+      ]
+    },
+    "P3_L3_r1": {
+      "codimension": 6,
+      "dim_M": 9,
+      "rank_O": 3,
+      "v": [
+        "1/1",
+        "-1/1",
+        "0/1"
+      ]
+    },
+    "P3_L3_r2": {
+      "codimension": 4,
+      "dim_M": 9,
+      "rank_O": 5,
+      "v": [
+        "1/1",
+        "-1/1",
+        "0/1"
+      ]
+    },
+    "P3_L3_r3": {
+      "codimension": 2,
+      "dim_M": 9,
+      "rank_O": 7,
+      "v": [
+        "1/1",
+        "-1/1",
+        "0/1"
+      ]
+    },
+    "P3_L4_r1": {
+      "codimension": 8,
+      "dim_M": 11,
+      "rank_O": 3,
+      "v": [
+        "1/1",
+        "-1/1",
+        "0/1"
+      ]
+    },
+    "P3_L4_r2": {
+      "codimension": 6,
+      "dim_M": 11,
+      "rank_O": 5,
+      "v": [
+        "1/1",
+        "-1/1",
+        "0/1"
+      ]
+    },
+    "P3_L4_r3": {
+      "codimension": 4,
+      "dim_M": 11,
+      "rank_O": 7,
+      "v": [
+        "1/1",
+        "-1/1",
+        "0/1"
+      ]
+    },
+    "P3_L4_r4": {
+      "codimension": 2,
+      "dim_M": 11,
+      "rank_O": 9,
+      "v": [
+        "1/1",
+        "-1/1",
+        "0/1"
+      ]
+    },
+    "P3_L5_r1": {
+      "codimension": 10,
+      "dim_M": 13,
+      "rank_O": 3,
+      "v": [
+        "1/1",
+        "-1/1",
+        "0/1"
+      ]
+    },
+    "P3_L5_r2": {
+      "codimension": 8,
+      "dim_M": 13,
+      "rank_O": 5,
+      "v": [
+        "1/1",
+        "-1/1",
+        "0/1"
+      ]
+    },
+    "P3_L5_r3": {
+      "codimension": 6,
+      "dim_M": 13,
+      "rank_O": 7,
+      "v": [
+        "1/1",
+        "-1/1",
+        "0/1"
+      ]
+    },
+    "P3_L5_r4": {
+      "codimension": 4,
+      "dim_M": 13,
+      "rank_O": 9,
+      "v": [
+        "1/1",
+        "-1/1",
+        "0/1"
+      ]
+    },
+    "P3_L5_r5": {
+      "codimension": 2,
+      "dim_M": 13,
+      "rank_O": 11,
+      "v": [
+        "1/1",
+        "-1/1",
+        "0/1"
+      ]
+    },
+    "P4_L1_r1": {
+      "codimension": 3,
+      "dim_M": 7,
+      "rank_O": 4,
+      "v": [
+        "1/1",
+        "-1/1",
+        "0/1",
+        "0/1"
+      ]
+    },
+    "P4_L2_r1": {
+      "codimension": 6,
+      "dim_M": 10,
+      "rank_O": 4,
+      "v": [
+        "1/1",
+        "-1/1",
+        "0/1",
+        "0/1"
+      ]
+    },
+    "P4_L2_r2": {
+      "codimension": 3,
+      "dim_M": 10,
+      "rank_O": 7,
+      "v": [
+        "1/1",
+        "-1/1",
+        "0/1",
+        "0/1"
+      ]
+    },
+    "P4_L3_r1": {
+      "codimension": 9,
+      "dim_M": 13,
+      "rank_O": 4,
+      "v": [
+        "1/1",
+        "-1/1",
+        "0/1",
+        "0/1"
+      ]
+    },
+    "P4_L3_r2": {
+      "codimension": 6,
+      "dim_M": 13,
+      "rank_O": 7,
+      "v": [
+        "1/1",
+        "-1/1",
+        "0/1",
+        "0/1"
+      ]
+    },
+    "P4_L3_r3": {
+      "codimension": 3,
+      "dim_M": 13,
+      "rank_O": 10,
+      "v": [
+        "1/1",
+        "-1/1",
+        "0/1",
+        "0/1"
+      ]
+    },
+    "P4_L4_r1": {
+      "codimension": 12,
+      "dim_M": 16,
+      "rank_O": 4,
+      "v": [
+        "1/1",
+        "-1/1",
+        "0/1",
+        "0/1"
+      ]
+    },
+    "P4_L4_r2": {
+      "codimension": 9,
+      "dim_M": 16,
+      "rank_O": 7,
+      "v": [
+        "1/1",
+        "-1/1",
+        "0/1",
+        "0/1"
+      ]
+    },
+    "P4_L4_r3": {
+      "codimension": 6,
+      "dim_M": 16,
+      "rank_O": 10,
+      "v": [
+        "1/1",
+        "-1/1",
+        "0/1",
+        "0/1"
+      ]
+    },
+    "P4_L4_r4": {
+      "codimension": 3,
+      "dim_M": 16,
+      "rank_O": 13,
+      "v": [
+        "1/1",
+        "-1/1",
+        "0/1",
+        "0/1"
+      ]
+    },
+    "P4_L5_r1": {
+      "codimension": 15,
+      "dim_M": 19,
+      "rank_O": 4,
+      "v": [
+        "1/1",
+        "-1/1",
+        "0/1",
+        "0/1"
+      ]
+    },
+    "P4_L5_r2": {
+      "codimension": 12,
+      "dim_M": 19,
+      "rank_O": 7,
+      "v": [
+        "1/1",
+        "-1/1",
+        "0/1",
+        "0/1"
+      ]
+    },
+    "P4_L5_r3": {
+      "codimension": 9,
+      "dim_M": 19,
+      "rank_O": 10,
+      "v": [
+        "1/1",
+        "-1/1",
+        "0/1",
+        "0/1"
+      ]
+    },
+    "P4_L5_r4": {
+      "codimension": 6,
+      "dim_M": 19,
+      "rank_O": 13,
+      "v": [
+        "1/1",
+        "-1/1",
+        "0/1",
+        "0/1"
+      ]
+    },
+    "P4_L5_r5": {
+      "codimension": 3,
+      "dim_M": 19,
+      "rank_O": 16,
+      "v": [
+        "1/1",
+        "-1/1",
+        "0/1",
+        "0/1"
+      ]
+    }
+  },
+  "table_1_row_2_residual_blocks": 4,
+  "verdict": "pass"
+}

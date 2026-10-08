@@ -1,0 +1,1008 @@
+\documentclass[11pt]{article}
+
+\usepackage[affil-it]{authblk}
+\renewcommand\Authfont{\normalsize}
+\renewcommand\Affilfont{\small\normalfont}
+\setlength{\affilsep}{0.5em}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage[nameinlink,capitalise,noabbrev]{cleveref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{remark}{Remark}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+
+\newcommand{\R}{\mathbb R}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\kerop}{ker}
+
+\title{Exact Lifting of Coarse Histories\\
+in Periodic Upwind Finite Volumes}
+
+\author[1]{Antonis Polemitis}
+\author[2,*]{Nicholas Christakis}
+\author[2]{Dimitris Drikakis}
+
+\affil[1]{UNIC Evolve, University of Nicosia, Nicosia CY-2417, Cyprus}
+\affil[2]{Institute for Advanced Modelling and Simulation,
+University of Nicosia, Nicosia CY-2417, Cyprus}
+\affil[*]{Corresponding author: \texttt{christakis.n@unic.ac.cy}}
+
+\hypersetup{
+  pdftitle={Exact Lifting of Coarse Histories in Periodic Upwind Finite Volumes},
+  pdfauthor={Antonis Polemitis, Nicholas Christakis, and Dimitris Drikakis},
+  pdfsubject={Finite-volume coarse-history lifting, realizability, and minimal child counts},
+  pdfkeywords={finite-volume methods, coarse graining, realizability, upwind advection, behavioral systems}
+}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+A prescribed coarse finite-volume history is not automatically compatible
+with a fine-grid realization and a declared fine-grid update.  This short
+note studies the inverse, or image-space, counterpart of finite-horizon
+predictive memory.  Instead of asking which coarse history is observed from a
+given fine state, we ask which parent-average histories can be lifted to a
+fine-grid initial state.
+
+For \(P\ge2\) parent cells and periodic scalar advection discretized by
+first-order positive upwind finite volumes, we give a complete constructive
+characterization.  For an \(L\)-step history, every mass-conserving parent
+trajectory is realizable if and only if the number of fine children per
+parent satisfies \(r\ge L+1\).  We construct a normalized linear right
+inverse of the observation map, canonical after fixing the zero-mean
+flux-gauge and zero-interior convention.  We also describe all fine-grid
+lifts of every realizable short-horizon history, identifying the remaining
+nonuniqueness as periodic flux-gauge freedom and unexposed interior child
+values.  When \(r<L+1\), arbitrary mass-conserving histories are no longer
+realizable: admissible histories satisfy an explicit lag-\(r\) parent-level
+recurrence induced by the fact that \(r\) fine-grid shifts equal one
+parent-level shift.
+
+All statements are algebraic over unrestricted real-valued fine states; no
+positivity, boundedness, invariant-domain, or entropy constraints are
+imposed.  Exact rational certificates reproduce a normalized lift, the
+long-horizon recurrence, and an explicit nonnegative mass-conserving but
+nonrealizable history.  The results provide a sharp discrete \(L\)-step
+minimal child-count law for the declared finite-volume hierarchy.
+\end{abstract}
+
+\noindent\textbf{Keywords:}
+finite-volume methods; coarse graining; trajectory realizability; upwind
+advection; behavioral systems; minimal child count.
+
+\medskip
+
+\noindent\textbf{Mathematics Subject Classification (2020):}
+65M08; 93B07; 93B03; 93B25.
+
+\section{Introduction}
+\label{sec:introduction}
+
+Finite-volume methods evolve cell averages through numerical fluxes at cell
+interfaces \cite{LeVeque2002,EymardGallouetHerbin2000}.  In coarse/fine
+coupling, adaptive mesh refinement, multirate integration, reduced modelling,
+and learned discretization, one may ask whether a proposed coarse trajectory
+is compatible with a declared fine-grid computation
+\cite{Berger1987,BergerColella1989,McCorquodaleColella2011,
+OsherSanders1983,ConstantinescuSandu2007,BarSinai2019,KochkovEtAl2021}.
+
+The companion finite-volume erasure paper studies the forward observation
+problem for a periodic scalar upwind hierarchy
+\cite{polemitis2026exactfinitehorizonmemoryconditioning}.  It asks: given a
+fine initial state, what parent-average history is observed, how much hidden
+memory is needed to predict that history, how well conditioned is the
+corresponding information, and when is it dissipated?  A second companion
+note studies one-step information boundaries
+\cite{PolemitisChristakisDrikakis2026OneStep}: it shows that parent averages
+together with complete initial parent-interface trace pairs close one
+forward-Euler transition but do not generally close a completed
+second-order strong-stability-preserving Runge--Kutta, equivalently Heun,
+transition, and it shows that conservative one-step closure does not
+determine entropy-accounting closure.
+
+The present note asks the image-space counterpart: given a parent-average
+history, when does some fine-grid initial state realize it?  The companion
+forward-analysis paper determines rank, nullspace, conditioning, and
+predictive memory of the fine-state-to-history map.  This note solves the
+inverse problem for the same declared hierarchy: it constructs a normalized
+right inverse, describes every fiber over an admissible history, and gives a
+necessary-and-sufficient description of the image.
+
+This inverse viewpoint is closely related to behavioral systems theory,
+where a dynamical system is studied through the set of trajectories that it
+generates rather than through one preferred state-space representation
+\cite{Willems1986ExactModelling,PoldermanWillems1998,MarkovskyDorfler2021}.
+It is also related to classical observability, realization, and model
+reduction \cite{CohnDee1988,HoKalman1966,Moore1981,Forney2011,
+Antoulas2005,BennerGugercinWillcox2015,PeherstorferWillcox2016}.  The
+finite-volume-specific contribution here is an exact lifting construction:
+the recurrence is induced explicitly by \(r\) fine-grid shifts producing one
+parent-level translation, and every realizable short-horizon history has a
+constructive fine-grid lift with a complete fiber description.
+
+The word lifting is also standard in equation-free and multiscale
+computation, where a coarse state is mapped to one or more compatible
+microscopic states before short microscopic simulation is used to advance
+macroscopic observables \cite{Kevrekidis2003}.  The present use is more
+specific: it is not merely state lifting at one time, but exact
+finite-horizon trajectory lifting for a declared finite-volume update,
+including a complete affine-fiber description.
+
+The result is sharp for \(P\ge2\).  Let \(P\) be the number of parent cells,
+\(r\) the number of fine children per parent, and \(L\) the number of
+requested update steps.  Then:
+\begin{itemize}
+\item if \(r\ge L+1\), every parent history through time \(L\) that
+conserves the sum of parent averages is realizable by an unrestricted fine
+state;
+\item if \(r<L+1\), mass conservation alone is insufficient, and admissible
+histories satisfy an explicit lag-\(r\) recurrence.
+\end{itemize}
+Thus
+\[
+  r_{\min}=L+1
+\]
+is a discrete \(L\)-step minimal child-count law.  It is not a
+fixed-physical-time mesh-resolution law: if parent widths are held fixed
+while \(r\) changes, then the fine-cell width and, at fixed Courant number,
+the time step also change.
+
+\paragraph{Contributions.}
+This note makes three contributions:
+\begin{enumerate}
+\item It constructs a normalized linear right inverse that lifts every
+mass-conserving \(L\)-step parent history to a fine-grid initial state when
+\(r\ge L+1\), after fixing the zero-mean flux-gauge and zero-interior
+convention.
+\item It parameterizes all such lifts and determines the exact fiber
+dimension, separating periodic flux-gauge freedom from unexposed interior
+child degrees of freedom.
+\item It characterizes longer admissible histories exactly by a sharp
+lag-\(r\) recurrence and derives \(r_{\min}=L+1\) as a consequence of the
+image characterization.
+\end{enumerate}
+
+All realizability statements are algebraic statements over the complete
+state space \(\R^{Pr}\).  They do not assert realizability under positivity,
+maximum-principle, invariant-domain, entropy, or physical admissibility
+constraints.
+
+\paragraph{Organization.}
+\Cref{sec:hierarchy} defines the periodic upwind hierarchy and its history
+map.  \Cref{sec:short-horizon} proves the short-horizon image-and-fiber
+theorem and gives an explicit canonical lift.  \Cref{sec:long-horizon}
+characterizes longer realizable histories by recurrence and proves the sharp
+minimal child-count law.  \Cref{sec:certificates} records exact rational
+certificate examples.  \Cref{sec:discussion} discusses scope and limitations,
+and \cref{sec:conclusion} concludes.
+
+\section{Periodic Upwind Hierarchy and History Map}
+\label{sec:hierarchy}
+
+Consider scalar advection
+\[
+  u_t+a u_x=0,
+  \qquad a>0,
+\]
+on a periodic one-dimensional domain.  The first-order positive upwind
+finite-volume update is
+\[
+  u_i^{n+1}
+  =
+  (1-\lambda)u_i^n+\lambda u_{i-1}^n,
+  \qquad 0<\lambda\le1,
+\]
+with periodic indexing, where
+\[
+  \lambda=\frac{a\Delta t}{h}
+\]
+is the Courant number.
+
+Let \(P\ge2\) be the number of parent cells, each containing \(r\ge1\) fine
+children.  Then
+\[
+  N=Pr
+\]
+is the number of fine cells.  Write
+\[
+  x=(x_{K,j}),
+  \qquad
+  K=0,\ldots,P-1,
+  \qquad
+  j=0,\ldots,r-1,
+\]
+with parent indices interpreted modulo \(P\).
+
+The parent-average restriction is
+\[
+  (Rx)_K=\frac1r\sum_{j=0}^{r-1}x_{K,j}.
+\]
+Let \(S\) be the downstream cyclic shift,
+\[
+  (Sx)_{K,j}
+  =
+  \begin{cases}
+  x_{K,j-1}, & j\ge1,\\
+  x_{K-1,r-1}, & j=0,
+  \end{cases}
+\]
+and set
+\[
+  A_\lambda=(1-\lambda)I+\lambda S.
+\]
+
+For a horizon \(L\ge0\), define the history map
+\[
+  {\cal O}_{L,r}
+  =
+  \begin{bmatrix}
+  R\\
+  RA_\lambda\\
+  \vdots\\
+  RA_\lambda^L
+  \end{bmatrix}
+  :
+  \R^{Pr}\to(\R^P)^{L+1}.
+\]
+Hence
+\[
+  {\cal O}_{L,r}x
+  =
+  (y^0,y^1,\ldots,y^L),
+  \qquad
+  y^n=RA_\lambda^n x.
+\]
+
+The dependence of \({\cal O}_{L,r}\) and of the lifting maps below on the
+fixed Courant number \(\lambda\) is suppressed in the notation.
+
+Let \(\Pi_P:\R^P\to\R^P\) denote the parent cyclic shift,
+\[
+  (\Pi_Py)_K=y_{K-1},
+\]
+and define the periodic difference operator
+\[
+  B=I-\Pi_P,
+  \qquad
+  (B\Phi)_K=\Phi_K-\Phi_{K-1}.
+\]
+Let
+\[
+  \R_0^P
+  =
+  \left\{
+  z\in\R^P:\mathbf 1_P^\top z=0
+  \right\}.
+\]
+
+The operator \(B\) maps \(\R^P\) into \(\R_0^P\), and its kernel on
+\(\R^P\) is the span of \(\mathbf 1_P\).  Its restriction to the zero-mean
+subspace,
+\[
+  B_0:=B|_{\R_0^P}:\R_0^P\to\R_0^P,
+\]
+is invertible.  We denote the inverse by \(B_0^{-1}\).  Thus
+\(B_0^{-1}g\) is the unique zero-mean register \(\Phi\) satisfying
+\[
+  B\Phi=g
+\]
+for a given \(g\in\R_0^P\).  Indeed, \(B\Phi=0\) implies that \(\Phi\) is
+constant, and the only constant vector in \(\R_0^P\) is zero.
+
+A concrete formula is obtained as follows.  Set
+\[
+  \widehat\Phi_0=0,
+  \qquad
+  \widehat\Phi_K=\sum_{m=1}^{K}g_m,
+  \qquad K=1,\ldots,P-1.
+\]
+Then the zero-mean solution is
+\[
+  B_0^{-1}g
+  =
+  \widehat\Phi
+  -
+  \frac1P\left(\sum_{K=0}^{P-1}\widehat\Phi_K\right)\mathbf 1_P.
+\]
+
+\begin{definition}[Mass-conserving parent histories]
+For \(L\ge0\), define
+\[
+  {\cal M}_{P,L}
+  =
+  \left\{
+  (y^0,\ldots,y^L)\in(\R^P)^{L+1}:
+  \mathbf 1_P^\top y^n=\mathbf 1_P^\top y^0
+  \text{ for }n=1,\ldots,L
+  \right\}.
+\]
+\end{definition}
+
+Every history in \(\im{\cal O}_{L,r}\) lies in \({\cal M}_{P,L}\), since the
+upwind update conserves the fine-grid sum.
+
+\section{Short-Horizon Image, Fibers, and Canonical Lifting}
+\label{sec:short-horizon}
+
+Assume
+\[
+  0\le L\le r-1.
+\]
+For \(L\ge1\), define right-collar variables
+\[
+  c_{K,j}=x_{K,r-1-j},
+  \qquad
+  j=0,\ldots,L-1.
+\]
+The outgoing upwind flux through the right face of parent \(K\) at time \(t\)
+is
+\[
+  \Phi_{K,t}
+  =
+  \lambda(A_\lambda^t x)_{K,r-1}
+  =
+  \lambda
+  \sum_{j=0}^{t}
+  \binom{t}{j}(1-\lambda)^{t-j}\lambda^j c_{K,j},
+  \qquad
+  t=0,\ldots,L-1.
+\]
+Write this map as
+\[
+  \begin{bmatrix}
+  \Phi_{K,0}\\
+  \Phi_{K,1}\\
+  \vdots\\
+  \Phi_{K,L-1}
+  \end{bmatrix}
+  =
+  T_{L,\lambda}
+  \begin{bmatrix}
+  c_{K,0}\\
+  c_{K,1}\\
+  \vdots\\
+  c_{K,L-1}
+  \end{bmatrix}.
+\]
+The matrix \(T_{L,\lambda}\) is lower triangular with diagonal entries
+\[
+  \lambda,\lambda^2,\ldots,\lambda^L,
+\]
+and hence is invertible for \(0<\lambda\le1\).
+
+The inverse is explicit.  If
+\[
+  \phi_K=(\Phi_{K,0},\ldots,\Phi_{K,L-1})^\top,
+  \qquad
+  c_K=T_{L,\lambda}^{-1}\phi_K,
+\]
+then for \(t=0,\ldots,L-1\),
+\[
+  c_{K,t}
+  =
+  \lambda^{-(t+1)}
+  \sum_{j=0}^{t}
+  \binom{t}{j}
+  \bigl[-(1-\lambda)\bigr]^{t-j}
+  \Phi_{K,j},
+  \qquad
+  t=0,\ldots,L-1.
+\]
+This is the binomial inverse of the lower-triangular collar-to-flux map.
+
+\begin{theorem}[Short-horizon image, fibers, and canonical lift]
+\label{thm:short-realization}
+Let \(P\ge2\), \(r\ge1\), \(0<\lambda\le1\), and \(0\le L\le r-1\).  Over
+the unrestricted fine state space \(\R^{Pr}\),
+\[
+  \im{\cal O}_{L,r}={\cal M}_{P,L}.
+\]
+Moreover:
+\begin{enumerate}
+\item There exists a normalized linear right inverse, canonical relative to the
+zero-mean flux-gauge and zero-interior convention,
+\[
+  {\cal L}_{L,r}:{\cal M}_{P,L}\to\R^{Pr}
+\]
+such that
+\[
+  {\cal O}_{L,r}{\cal L}_{L,r}=I_{{\cal M}_{P,L}}.
+\]
+
+\item For every \(Y\in{\cal M}_{P,L}\), the fiber
+\[
+  {\cal O}_{L,r}^{-1}(Y)
+\]
+is a nonempty affine space of dimension
+\[
+  P(r-L-1)+L.
+\]
+
+\item The fiber degrees of freedom consist of \(L\) periodic flux-gauge
+constants, one for each transition, and
+\[
+  P(r-L-1)
+\]
+unexposed interior child values.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+For \(L=0\), the statement is immediate: every
+\[
+  y^0\in\R^P
+\]
+is lifted canonically by setting
+\[
+  x_{K,0}=r y_K^0,
+  \qquad
+  x_{K,j}=0\quad(j=1,\ldots,r-1).
+\]
+The fiber dimension is \(P(r-1)\), as stated.
+
+Now let \(L\ge1\).  The inclusion
+\[
+  \im{\cal O}_{L,r}\subseteq{\cal M}_{P,L}
+\]
+follows from conservation.
+
+Conversely, let
+\[
+  Y=(y^0,\ldots,y^L)\in{\cal M}_{P,L}.
+\]
+For each transition \(t=0,\ldots,L-1\), define
+\[
+  g^t=r(y^t-y^{t+1}).
+\]
+Since \(Y\) conserves the sum of parent averages,
+\[
+  \mathbf 1_P^\top g^t=0.
+\]
+Choose the unique zero-mean flux register
+\[
+  \Phi^t=B_0^{-1}g^t\in\R_0^P.
+\]
+Then
+\[
+  B\Phi^t=r(y^t-y^{t+1}),
+\]
+or equivalently
+\[
+  y^{t+1}=y^t-\frac1rB\Phi^t.
+\]
+
+For each parent \(K\), define the flux history vector
+\[
+  \phi_K
+  =
+  (\Phi_{K,0},\ldots,\Phi_{K,L-1})^\top.
+\]
+Set
+\[
+  c_K=T_{L,\lambda}^{-1}\phi_K,
+\]
+and assign
+\[
+  x_{K,r-1-j}=c_{K,j},
+  \qquad j=0,\ldots,L-1.
+\]
+Assign all unexposed interior children
+\[
+  x_{K,j}=0,
+  \qquad j=1,\ldots,r-L-1,
+\]
+and finally set
+\[
+  x_{K,0}
+  =
+  r y_K^0-\sum_{j=1}^{r-1}x_{K,j}.
+\]
+This defines the normalized lift \({\cal L}_{L,r}Y\).  Its parent averages
+equal \(y^0\), and its outgoing fluxes equal \(\Phi^t\) for
+\(t=0,\ldots,L-1\).  The parent-update identity above then gives
+\[
+  {\cal O}_{L,r}{\cal L}_{L,r}Y=Y.
+\]
+
+It remains to characterize the fibers.  Let \(d\in\ker{\cal O}_{L,r}\).
+Then
+\[
+  Rd=0
+\]
+and the parent update shows that each outgoing-flux vector associated with
+\(d\) must satisfy
+\[
+  B\Phi^t(d)=0,
+  \qquad t=0,\ldots,L-1.
+\]
+Hence
+\[
+  \Phi^t(d)=\gamma_t\mathbf 1_P
+\]
+for some independent scalar gauge constants
+\[
+  \gamma_0,\ldots,\gamma_{L-1}.
+\]
+Inverting \(T_{L,\lambda}\), the corresponding collar perturbations are
+identical in every parent and are uniquely determined by
+\[
+  T_{L,\lambda}^{-1}
+  (\gamma_0,\ldots,\gamma_{L-1})^\top.
+\]
+The unexposed interior children
+\[
+  d_{K,j},
+  \qquad
+  K=0,\ldots,P-1,
+  \quad
+  j=1,\ldots,r-L-1,
+\]
+are arbitrary.  The values \(d_{K,0}\) are then uniquely fixed by the
+conditions \(Rd=0\).  Thus the kernel is parameterized by \(L\) gauge
+constants and \(P(r-L-1)\) free interior values, giving dimension
+\[
+  L+P(r-L-1).
+\]
+Every fiber is therefore the translate
+\[
+  {\cal O}_{L,r}^{-1}(Y)
+  =
+  {\cal L}_{L,r}Y+\ker{\cal O}_{L,r}.
+\]
+\end{proof}
+
+\begin{example}[Normalized short-horizon lift]
+\label{ex:canonical-lift}
+Let
+\[
+  P=2,
+  \qquad
+  L=1,
+  \qquad
+  r=2,
+  \qquad
+  \lambda=\frac12.
+\]
+Consider the mass-conserving one-step parent history
+\[
+  y^0=(0,0),
+  \qquad
+  y^1=(1,-1).
+\]
+Then
+\[
+  g^0=r(y^0-y^1)=(-2,2).
+\]
+The unique zero-mean interface register satisfying
+\[
+  B\Phi^0=g^0
+\]
+is
+\[
+  \Phi^0=(-1,1).
+\]
+Since
+\[
+  \Phi_{K,0}=\frac12c_{K,0},
+\]
+the right-collar values are
+\[
+  c_{0,0}=-2,
+  \qquad
+  c_{1,0}=2.
+\]
+The normalized lift is
+\[
+  x=(2,-2\mid -2,2).
+\]
+Direct calculation gives
+\[
+  Rx=(0,0),
+  \qquad
+  RA_{1/2}x=(1,-1).
+\]
+Thus
+\[
+  {\cal O}_{1,2}x=(y^0,y^1).
+\]
+\end{example}
+
+At the sharp child count
+\[
+  r=L+1,
+\]
+the fiber dimension in \cref{thm:short-realization} reduces to
+\[
+  L.
+\]
+Thus the only nonuniqueness in a short-horizon lift is the \(L\)-dimensional
+periodic flux gauge.
+
+\begin{remark}[Algebraic lifting versus stable lifting]
+The theorem establishes exact algebraic surjectivity.  It does not assert
+uniform boundedness or numerical stability of the right inverse.  The explicit
+binomial-inverse formula above contains inverse powers of \(\lambda\), so
+prescribed \(O(1)\) changes in parent histories may require large collar
+values when \(\lambda\) is small. The inverse
+\(B_0^{-1}\) also reflects the conditioning of the periodic difference
+operator and depends on \(P\).  Thus exact realizability and stable or
+physically moderate realizability are distinct questions.
+\end{remark}
+
+\section{Long-Horizon Realizability}
+\label{sec:long-horizon}
+
+When \(L\ge r\), mass conservation is no longer the only constraint.  The
+parent history must satisfy a linear recurrence induced by the identity
+\[
+  \bigl(A_\lambda-(1-\lambda)I\bigr)^r=\lambda^rS^r.
+\]
+Since
+\[
+  RS^r=\Pi_PR,
+\]
+this identity closes at the parent level after \(r\) fine-grid shifts.
+
+Define the all-horizon invisible subspace
+\[
+  {\cal N}_r
+  =
+  \left\{
+  x\in\R^{Pr}:
+  x_{K,j}=c_j\ \text{for all }K,\quad
+  \sum_{j=0}^{r-1}c_j=0
+  \right\}.
+\]
+It has dimension \(r-1\).
+
+\begin{theorem}[Long-horizon image and fibers]
+\label{thm:long-realization}
+Let \(P\ge2\), \(r\ge1\), \(0<\lambda\le1\), and \(L\ge r-1\).  A parent
+history
+\[
+  Y=(y^0,\ldots,y^L)\in(\R^P)^{L+1}
+\]
+belongs to \(\im{\cal O}_{L,r}\) if and only if:
+\begin{enumerate}
+\item the first \(r\) parent states have equal sums,
+\[
+  \mathbf 1_P^\top y^0
+  =
+  \cdots
+  =
+  \mathbf 1_P^\top y^{r-1};
+\]
+\item if \(L\ge r\), then for every \(n=0,\ldots,L-r\),
+\begin{equation}
+  y^{n+r}
+  =
+  \lambda^r\Pi_P y^n
+  -
+  \sum_{j=0}^{r-1}
+  \binom{r}{j}
+  \bigl[-(1-\lambda)\bigr]^{r-j}
+  y^{n+j}.
+  \label{eq:history-recurrence}
+\end{equation}
+\end{enumerate}
+For every realizable history,
+\[
+  {\cal O}_{L,r}^{-1}(Y)
+  =
+  x_\star+{\cal N}_r
+\]
+for any one lift \(x_\star\), and hence
+\[
+  \dim{\cal O}_{L,r}^{-1}(Y)=r-1.
+\]
+\end{theorem}
+
+\begin{proof}
+Suppose first that
+\[
+  Y={\cal O}_{L,r}x.
+\]
+Conservation gives the equality of parent sums.  Expanding
+\[
+  \bigl(A_\lambda-(1-\lambda)I\bigr)^r=\lambda^rS^r
+\]
+gives
+\[
+  \sum_{j=0}^{r}
+  \binom{r}{j}
+  \bigl[-(1-\lambda)\bigr]^{r-j}
+  A_\lambda^j
+  =
+  \lambda^rS^r.
+\]
+Multiplying by \(RA_\lambda^n\) and using
+\[
+  RS^r=\Pi_PR
+\]
+gives
+\[
+  \sum_{j=0}^{r}
+  \binom{r}{j}
+  \bigl[-(1-\lambda)\bigr]^{r-j}
+  y^{n+j}
+  =
+  \lambda^r\Pi_Py^n.
+\]
+Solving for \(y^{n+r}\) gives \eqref{eq:history-recurrence}.
+
+Conversely, suppose the stated sum condition and recurrence hold.  By
+\cref{thm:short-realization}, applied at horizon \(r-1\), there exists a
+fine state \(x_\star\in\R^{Pr}\) whose first \(r\) parent states are
+\[
+  y^0,\ldots,y^{r-1}.
+\]
+The parent history generated by \(x_\star\) satisfies
+\eqref{eq:history-recurrence}.  Since it agrees with \(Y\) for the first
+\(r\) states, induction gives agreement through time \(L\).
+
+It remains to identify the fiber.  Because the temporal transformation from
+\[
+  (R,RS,\ldots,RS^{r-1})
+\]
+to
+\[
+  (R,RA_\lambda,\ldots,RA_\lambda^{r-1})
+\]
+is triangular with nonzero diagonal entries, a vector
+\[
+  d\in\ker{\cal O}_{r-1,r}
+\]
+satisfies
+\[
+  RS^td=0,
+  \qquad t=0,\ldots,r-1.
+\]
+For \(t=0,\ldots,r-2\),
+\[
+  r(RS^{t+1}d-RS^td)_K
+  =
+  d_{K-1,r-1-t}-d_{K,r-1-t}.
+\]
+Thus every child layer
+\[
+  j=1,\ldots,r-1
+\]
+is constant across parents.  Since \(Rd=0\), child layer \(j=0\) is also
+constant across parents and the common child profile has zero sum.  Hence
+\[
+  \ker{\cal O}_{r-1,r}={\cal N}_r.
+\]
+The recurrence shows that no later observation reduces this kernel, so
+\[
+  \ker{\cal O}_{L,r}={\cal N}_r
+  \qquad
+  (L\ge r-1).
+\]
+Therefore every realizable fiber is
+\[
+  x_\star+{\cal N}_r
+\]
+and has dimension \(r-1\).
+\end{proof}
+
+\begin{corollary}[Sharp discrete minimal child-count law]
+\label{cor:minimal-r}
+Let \(P\ge2\) and \(L\ge0\).  For a fixed number of update steps \(L\), the
+minimal number of children per parent needed to realize every
+mass-conserving history in \({\cal M}_{P,L}\), over unrestricted real-valued
+fine states and for \(0<\lambda\le1\), is
+\[
+  r_{\min}=L+1.
+\]
+\end{corollary}
+
+\begin{proof}
+By \cref{thm:short-realization}, \(r=L+1\) is sufficient.
+
+Conversely, suppose \(r\le L\).  Choose a nonzero vector
+\[
+  v\in\R_0^P.
+\]
+Define a mass-conserving history through time \(L\) by
+\[
+  y^0=\cdots=y^{r-1}=0,
+  \qquad
+  y^r=v,
+\]
+and choose any zero-sum states for later times, for example
+\[
+  y^{r+1}=\cdots=y^L=0.
+\]
+The recurrence \eqref{eq:history-recurrence} at \(n=0\) predicts
+\[
+  y^r=0,
+\]
+because
+\[
+  y^0=\cdots=y^{r-1}=0.
+\]
+This contradicts \(y^r=v\ne0\).  Hence the history is mass-conserving but
+not realizable.  Therefore \(r\le L\) is insufficient.
+\end{proof}
+
+\begin{example}[Nonnegative mass-conserving but nonrealizable history]
+\label{ex:nonrealizable}
+Let
+\[
+  P=2,
+  \qquad
+  r=2,
+  \qquad
+  L=2,
+  \qquad
+  \lambda=\frac12.
+\]
+Consider
+\[
+  y^0=(1,1),
+  \qquad
+  y^1=(1,1),
+  \qquad
+  y^2=(2,0).
+\]
+The history is nonnegative and conserves the sum of parent averages.  However,
+the lag-two recurrence \eqref{eq:history-recurrence} with
+\[
+  y^0=y^1=(1,1)
+\]
+predicts
+\[
+  y^2=(1,1).
+\]
+The recurrence residual is therefore
+\[
+  (1,-1),
+\]
+so no fine initial state with two children per parent realizes this
+two-step parent history.
+\end{example}
+
+The minimal child-count law is a discrete-step law.  If parent width is fixed
+and \(r\) changes, then fine-cell width changes.  At fixed Courant number,
+the fine time step changes as well.  Thus the law does not claim a
+fixed-physical-time mesh-resolution criterion.
+
+\section{Exact Computational Certificates}
+\label{sec:certificates}
+
+The accompanying script verifies representative finite instances of the
+theorems and generates the reported exact rational examples.  The general
+results are established analytically above.  All certificate calculations use
+Python's \texttt{fractions.Fraction}, so no floating-point roundoff enters
+the reported values.
+
+\begin{table}[htbp]
+\centering
+\caption{Exact rational certificates generated by the accompanying script.
+All checks are performed with Python's \texttt{fractions.Fraction}, so the
+results do not depend on floating-point roundoff.  The first row constructs
+the normalized short-horizon lift in \cref{ex:canonical-lift}.  The second
+row checks that a generated parent history satisfies the order-\(r\)
+recurrence.  The third row gives the nonnegative nonrealizable
+mass-conserving history in \cref{ex:nonrealizable}.}
+\label{tab:certificates}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Certificate & Parameters & Result \\
+\midrule
+Normalized short-horizon lift & \(P=2,\ L=1,\ r=2,\ \lambda=1/2\) & exact lift \\
+Long-horizon recurrence & \(P=3,\ r=3,\ L=6,\ \lambda=1/2\) & residual zero \\
+Nonrealizable nonnegative history & \(P=2,\ r=2,\ L=2,\ \lambda=1/2\) & residual \((1,-1)\) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\Cref{tab:certificates} provides reproducibility checks for the finite
+examples.  It is not used as a substitute for the analytical proofs.
+
+\section{Discussion}
+\label{sec:discussion}
+
+The present note is the image-space counterpart of the finite-horizon
+observation analysis in
+\cite{polemitis2026exactfinitehorizonmemoryconditioning}, which
+characterizes rank, nullspace, conditioning, and predictive memory of the
+forward history map.  It is also complementary to the one-step
+information-boundary analysis in
+\cite{PolemitisChristakisDrikakis2026OneStep}.  Here we solve the inverse
+problem: we characterize the image of the history map, construct a normalized
+right inverse, and parameterize the fine-state fibers over every realizable
+parent history.
+
+The finite-volume-specific content is not merely that finite-dimensional
+linear trajectories satisfy a recurrence.  The recurrence here has an
+explicit form induced by
+\[
+  S^r=\text{one parent-level shift},
+\]
+begins sharply after the first \(r\) parent states, and is paired with a
+constructive fine-grid lifting map.  The short-horizon fibers separate
+periodic flux-gauge freedom from interior child values that have not yet
+reached a parent interface.
+
+This is not a validation theorem for nonlinear CFD.  It is an exact algebraic
+statement for a declared periodic scalar upwind hierarchy over unrestricted
+real-valued fine states.  Positivity, maximum principles, entropy
+admissibility, physical state constraints, nonlinear systems, nonperiodic
+boundaries, high-order reconstruction, and multistage integration require
+separate analysis.
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+For \(P\ge2\), \(0<\lambda\le1\), and unrestricted real-valued fine states,
+every mass-conserving parent history over \(L\) update steps in the periodic
+scalar upwind hierarchy is exactly liftable to a fine-grid initial state if
+and only if the number of children per parent satisfies
+\[
+  r\ge L+1.
+\]
+The lift can be chosen in a normalized canonical form by fixing the
+zero-mean periodic flux gauge, inverting the collar-to-flux map, setting
+unexposed interior children to zero, and using the \(j=0\) child to enforce the initial parent averages.
+
+When \(r<L+1\), mass conservation is insufficient.  The parent history must
+satisfy the explicit lag-\(r\) recurrence \eqref{eq:history-recurrence}.
+The full fiber structure is also determined: short-horizon lift ambiguity
+consists of periodic flux gauges and unexposed interior children, whereas
+long-horizon lift ambiguity reduces to the repeated zero-mean parent profile.
+
+The result provides a sharp discrete minimal child-count law and a
+constructive image-and-fiber characterization for the periodic upwind
+hierarchy. Together with the finite-horizon memory paper
+\cite{polemitis2026exactfinitehorizonmemoryconditioning} and the one-step
+information-boundary note \cite{PolemitisChristakisDrikakis2026OneStep},
+this result provides a three-part algebraic baseline for the scalar periodic
+upwind hierarchy: recursive prediction requires exact memory, one-step
+closure requires the correct interface and entropy-side information, and
+coarse histories themselves require sufficient subcell resolution to be
+realizable.
+
+\section*{Funding}
+
+No external funding was received for this work.
+
+\section*{Declaration of competing interest}
+
+The authors declare that they have no known competing financial interests or
+personal relationships that could have appeared to influence the work
+reported in this paper.
+
+\section*{CRediT authorship contribution statement}
+
+Antonis Polemitis: Conceptualization, Methodology, Verification, Writing--review and editing.  Nicholas Christakis:
+Conceptualization, Methodology, Formal analysis, Software, Verification,
+Writing--original draft, Writing--review and editing.  Dimitris Drikakis:
+Conceptualization, Methodology, Verification, Writing--review and editing.
+
+\section*{Data and code availability}
+
+The source code, exact rational certificate script, generated CSV files, and
+LaTeX table fragments supporting this study are available at
+\url{https://github.com/UniversityOfNicosia/certified-simulation}, under
+\texttt{papers/coarse-history-realizability}.  The finite certificate checks
+use exact rational arithmetic via Python's \texttt{fractions.Fraction};
+hence the reported finite identities, recurrence residuals, and table entries
+do not depend on floating-point roundoff.
+
+\bibliographystyle{unsrt}
+\bibliography{references}
+
+\end{document}
