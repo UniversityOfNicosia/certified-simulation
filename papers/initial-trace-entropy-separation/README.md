@@ -10,19 +10,19 @@ the entropy account, shown by an explicit Burgers–Rusanov family whose
 branches are conservatively identical yet entropy-distinguishable. It
 is the one-step companion to the program's
 [first paper](../finite-horizon-memory/) on multi-step memory. The
-manuscript is staged for author sign-off; it will be posted to arXiv
-and submitted to a journal after the release is frozen, and identifiers
-will be recorded here as they become permanent.
+release is frozen and archived; the note will be posted to arXiv and
+submitted to a journal, and identifiers will be recorded here as they
+become permanent.
 
 ## Contents
 
 | Directory | Contents | Status |
 | --- | --- | --- |
-| [`manuscript/`](manuscript/) | Paper source and the compiled PDF | staged |
-| [`certificates/`](certificates/) | Independent exact-arithmetic certificate programs, one per result | staged |
-| [`artifacts/`](artifacts/) | The certificates' canonical outputs, replayed byte-for-byte by CI | staged |
-| [`tests/`](tests/) | Replay tests: regenerate each certificate and require byte identity | staged |
-| [`experiments/`](experiments/) | The authors' certificate script: regenerates the paper's tables and CSV data in exact rational arithmetic | staged |
+| [`manuscript/`](manuscript/) | Paper source and the compiled PDF | released |
+| [`certificates/`](certificates/) | Independent exact-arithmetic certificate programs, one per result | released |
+| [`artifacts/`](artifacts/) | The certificates' canonical outputs, replayed byte-for-byte by CI | released |
+| [`tests/`](tests/) | Replay tests: regenerate each certificate and require byte identity | released |
+| [`experiments/`](experiments/) | The authors' certificate script: regenerates the paper's tables and CSV data in exact rational arithmetic | released |
 
 ## Replaying the paper
 
@@ -46,6 +46,18 @@ python papers/initial-trace-entropy-separation/certificates/certify_entropy_acco
 A successful replay reproduces the committed artifacts byte for byte
 (135 exact checks in total). Continuous integration reruns both layers
 on every change.
+
+## Release
+
+This folder is released as
+[`initial-trace-entropy-separation-v1`](https://github.com/UniversityOfNicosia/certified-simulation/releases/tag/initial-trace-entropy-separation-v1)
+(9 October 2026), approved for submission by all three authors. The
+release carries the per-file hash manifest and the arXiv source
+package, and is archived at Zenodo under version DOI
+[10.5281/zenodo.23271075](https://doi.org/10.5281/zenodo.23271075).
+The arXiv identifier will be recorded here once the preprint is
+posted. The verification ladder for checking the release is in
+[REPRODUCING.md](../../REPRODUCING.md).
 
 ## Licensing
 
