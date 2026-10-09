@@ -49,7 +49,8 @@ on every change.
 
 ## Licensing
 
-Everything in this folder follows the repository's terms in
+The `experiments/` directory is MIT licensed by its author (see its
+`LICENSE` file). Everything else follows the repository's terms in
 [LICENSES/](../../LICENSES/README.md): code under Apache-2.0, the
 certificate artifacts under CC BY 4.0, and the manuscript copyright
 the authors.
