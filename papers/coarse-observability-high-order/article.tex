@@ -1,35 +1,6 @@
-%% =====================================================================
-%%  ARTICLE 4 (working skeleton)
-%%
-%%  Coarse Observability Across High-Order Finite-Volume
-%%  Reconstructions: Universal Rank, Conditioning, and
-%%  Dissipative Memory
-%%  (title adopted 2026-08-24 from revision report 1, item P3)
-%%
-%%  Target journal : Advances in Computational Mathematics (Springer)
-%%                   (retargeted 2026-08-24 from J. Sci. Comput., item P4)
-%%  Document class : sn-jnl (Springer Nature), sn-mathphys-num style
-%%                   (class + .bst shipped locally, as in the FVerasure package)
-%%
-%%  Related manuscripts (cited as prior/related work, not depended upon):
-%%    [FVerasure] Exact Finite-Horizon Memory, Conditioning, and Dissipative
-%%              Decay in Coarse Upwind Finite-Volume Prediction (JSC, submitted)
-%%    [onestep] Initial-Trace Insufficiency and Entropy-Accounting Separation
-%%              in Finite-Volume Coarse Graining (in preparation)
-%%    [lifting] Exact Lifting of Coarse Histories in Periodic Upwind Finite
-%%              Volumes (short note; source in companion_articles/paper_C/)
-%%
-%%  Skeleton conventions:
-%%    - \todo{...} marks work to be done (renders red in the PDF).
-%%    - "Target Theorem/Conjecture" = result to be proved during drafting;
-%%      stated precisely so the numerical campaign can test it as-is.
-%%    - Figure/table filenames match the planned reproducibility repo layout
-%%      (figures/*.pdf, results/*.csv, tables/*.tex), as in the FVerasure package.
-%% =====================================================================
-
 \documentclass[pdflatex,sn-mathphys-num]{sn-jnl}% Math and Physical Sciences Numbered Reference Style
 
-%%---------------- Packages (mirrors the FVerasure known-good preamble) ----------------
+%%---------------- Packages ----------------
 \usepackage{graphicx}%
 \usepackage{amsmath,amssymb,amsfonts}%
 \usepackage{amsthm}%
@@ -87,9 +58,6 @@
 \newcommand{\OL}{{\cal O}_L}
 \newcommand{\Asch}{A^{[\rm sch]}_\lambda}
 
-%% Red TODO marker for the drafting phase.
-\newcommand{\todo}[1]{\textcolor{red}{\textbf{[TODO: #1]}}}
-
 \raggedbottom
 
 \begin{document}
@@ -109,18 +77,18 @@
 \affil[2]{\orgdiv{Institute for Advanced Modelling and Simulation}, \orgname{University of Nicosia}, \city{Nicosia}, \postcode{CY-2417}, \country{Cyprus}}
 
 \abstract{%
-Coarse finite-volume averages are generally not a predictive state: exact coarse prediction requires additional memory whose dimension, recoverability, and lifetime were determined exactly in a recent study for first-order upwind advection.
-This paper determines all three across the reconstruction hierarchy of practical computational fluid dynamics.
-For linear circulant schemes --- Lax--Wendroff, Beam--Warming, Fromm, third- and fifth-order upwind-biased, and linear weighted-essentially-non-oscillatory (WENO) reconstructions --- we prove a universality theorem: outside a spectral-collision set, provably finite and certified empty for every operator and grid considered, the finite-horizon observation rank equals $P+(P-1)\min\{L,r-1\}$ --- the first-order upwind ladder, regardless of stencil width or formal order.
-The proof exhibits an all-horizon invisible subspace and a universal depth-$r$ autonomous coarse recurrence, the scheme entering only through its coefficients.
+Coarse finite-volume averages are generally not a predictive state: exact coarse prediction requires additional memory, whose dimension, recoverability, and lifetime a recent study determined for first-order upwind advection.
+We determine all three for practical high-order reconstructions.
+For linear circulant schemes --- Lax--Wendroff, Beam--Warming, Fromm, third- and fifth-order upwind-biased, and linear weighted-essentially-non-oscillatory (WENO) reconstructions --- we prove that, outside a provably finite spectral-collision set certified empty for every tested configuration, the finite-horizon observation rank equals $P+(P-1)\min\{L,r-1\}$: the first-order upwind ladder, regardless of stencil width or formal order.
+The proof exhibits an all-horizon invisible subspace and a universal depth-$r$ coarse recurrence.
 Scheme dependence concentrates on three axes.
-\emph{Timing}: in the single-parent regime, the exposure rate counts active stencil collars, not stencil width, and localized detection obeys a sharp reach-limited law.
-\emph{Recoverability}: the smallest nonzero singular value of the single-parent observation map scales --- conjecturally for single-stage operators, with uniform numerical support --- as the Courant number raised to the exposure depth, so a second collar halves the conditioning exponent.
-\emph{Relevance}: closed-form leading dissipation coefficients for the whole family give the erasure law $1-\rho_N\sim\tfrac12A(\lambda)(2\pi/N)^{2s}$: less-dissipative operators retain unresolved information orders of magnitude longer at identical memory dimension, and the fully discrete dissipative order belongs to the scheme--integrator pair.
-For limited MUSCL and nonlinear WENO reconstructions, observability becomes state-dependent: on every affine limiter branch, the flux is exactly a linear blend, the active branch setting the local exposure rate, and collision ensembles at declared tolerances quantify the nonlinear residue --- including a plateau response-span staircase of approximately one direction per step across the tested amplitudes, beyond any linear budget.
-For coarse-model validation, the centralized memory dimension is invariant across the collision-free linear hierarchy; detection timing, recovery conditioning, and dissipative lifetime must be declared with the scheme--integrator pair.}
+\emph{Timing}: the single-parent exposure rate counts active stencil collars, not stencil width, and localized detection obeys a sharp reach-limited law.
+\emph{Recoverability}: for single-stage operators, the smallest nonzero singular value of the single-parent observation map is conjectured to scale as the Courant number raised to the exposure depth, so a second collar halves the conditioning exponent.
+\emph{Relevance}: closed-form dissipation coefficients give the erasure law $1-\rho_N\sim\tfrac12A(\lambda)(2\pi/N)^{2s}$, so less-dissipative operators retain unresolved information orders of magnitude longer at equal memory dimension; the dissipative order belongs to the scheme--integrator pair.
+For flux-limited and nonlinear WENO reconstructions, observability is state-dependent: the active affine limiter branch sets the local exposure rate, and collision ensembles at declared tolerances quantify the nonlinear residue.
+For coarse-model validation, the memory dimension is invariant across the linear hierarchy, while detection timing, conditioning, and lifetime must be declared with the scheme--integrator pair.}
 
-\keywords{Finite-volume methods, High-order schemes, WENO, MUSCL, Coarse graining, Observability, Numerical dissipation}
+\keywords{Finite-volume methods, High-order schemes, Coarse graining, Observability, Numerical dissipation}
 
 \pacs[MSC Classification]{65M08, 65F35, 93B07, 65M12}
 
@@ -155,7 +123,7 @@ The scope is deliberately narrow, namely, linear scalar advection on a uniform p
 \item \emph{Universality of the memory dimension} (\cref{thm:rank-universal,thm:invisible-general}): outside a spectral-collision set, provably finite (\cref{lem:collision-finite}) and certified empty on $(0,1]$ in exact rational arithmetic (\cref{prop:collision-empty,prop:collision-certificate}, E1b), $\rank\OL=P+(P-1)\min\{L,r-1\}$ --- the first-order upwind ladder; wider stencils do \emph{not} accelerate the exposure of centralized memory.
 \item \emph{Local timing} (\cref{sec:local}): in the single-parent regime ($Lw\le r-1$) the rank grows at $\sigma\in\{1,2\}$ dimensions per step --- counting active stencil collars, not stencil width --- with sharp reach-limited detection times (\cref{prop:local-rank,cor:detection-delay}) and per-parent encoder bounds (\cref{prop:local-encoder}).
 \item \emph{The exact dissipation ladder} (\cref{prop:dissipation,prop:contraction-general}): closed-form leading coefficients $A(\lambda)$ for every member, antidissipativity of the forward-Euler pairing of the fifth-order flux, and a certified strict-interior-stability decomposition for the SSP-RK3 pairing (\cref{prop:rk3-stability}), giving $1-\rho_N^{[\rm sch]}=\tfrac12A(\lambda)(2\pi/N)^{2s}(1+o(1))$: erasure in $\Theta(N^{2s})$ steps ($\Theta(N^{2s-1})$ in physical time), with the information half-life measured in E5.
-\item \emph{Conditioning of delayed information} (\cref{sec:conditioning}): a conservation form and realized-flux queue for every scheme, a queue--observation equivalence lemma (\cref{lem:queue-equivalence}), and the conjectured scaling $\sigma^{+}_{\min}({\cal O}_{L_q}\iota_K)\asymp\lambda^{L_q}$ for single-stage operators --- supported numerically in every tested scheme--horizon pair, a second collar halving the exponent --- with a first-order node-geometry criterion for which schemes lose effective rank first.
+\item \emph{Conditioning of delayed information} (\cref{sec:conditioning}): a conservation form and realized-flux queue for every scheme, a queue--observation equivalence lemma (\cref{lem:queue-equivalence}), and the conjectured scaling $\sigma^{+}_{\min}({\cal O}_{L_q}\iota_K)\asymp\lambda^{L_q}$ for single-stage operators --- supported numerically in every tested scheme--horizon pair and verified exactly at the two working grids, a second collar halving the exponent --- with a first-order node-geometry criterion for which schemes lose effective rank first.
 \item \emph{State-dependent observability of nonlinear schemes} (\cref{sec:nonlinear}, E6): a collision-ensemble methodology yielding response-span ranks at declared tolerances, validated against finite-difference linearizations; the active limiter branch sets the local exposure rate, the WENO regularization constant sets the amplitude below which the scheme is effectively linear, and plateau configurations expose a scale-free nonlinear channel growing the response span by approximately one dimension per step past the linear budget (\cref{prop:local-rank}).
 \item \emph{A falsification campaign across the hierarchy} (\cref{sec:num_exp}), with a full reproducibility package (data and code availability statement).
 \end{enumerate}
@@ -570,7 +538,7 @@ The statement is made on the single-parent observation map, which is defined at 
 When $L_qw\le r-1$, \cref{lem:queue-equivalence} transfers the same scaling verbatim to the generalized collar-to-queue map, $\sigma^{+}_{\min}\bigl(T^{[\rm sch]}_q\bigr)\asymp\lambda^{L_q}$; beyond that single-parent window, $T^{[\rm sch]}_q$ is not defined (\cref{def:queue-map}), and the observation-map form is the primary statement.
 In the early-horizon regime $L_q=\lceil q/\sigma\rceil$; for UW1 ($w=1$, so the queue form applies at every $q\le r-1$) this is the triangular law $\gamma(q)=q$ of \cite{PolemitisChristakisDrikakis2026FVerasure}.
 At equal memory dimension $q$, a two-collar scheme therefore requires a recovery tolerance of only $\sim\lambda^{q/2}$, whereas first-order upwind requires $\sim\lambda^{q}$ --- a conditioning dividend of the second collar.
-Experiment E3 (\cref{sec:exp-conditioning}) tests both regimes.
+Experiment E3 (\cref{sec:exp-conditioning}) tests both regimes; at the working grids $(P,r)\in\{(8,6),(8,8)\}$ the exponent is verified exactly.
 \end{conjecture}
 
 \begin{remark}[Relation to Vandermonde conditioning]\label{rem:vandermonde-prior}
@@ -960,9 +928,11 @@ Panels (left to right, top to bottom): \textbf{(a)}~UW1, first-order upwind; \te
 E3 measures the object of \cref{conj:conditioning} directly: the smallest nonzero singular value $\sigma^{+}_{\min}$ of the single-parent observation map $\OL\,\iota_K$, which is defined at every horizon.
 Within the single-parent window $Lw\le r-1$, \cref{lem:queue-equivalence} identifies it with the generalized queue map $T^{[\rm sch]}_q$ up to $\lambda$-independent constants; at the wraparound horizons beyond that window --- which the sweep enters for every scheme except first-order upwind ($w=1$) --- the observation-map form is the one being tested.
 E3 sweeps $\lambda\in[10^{-3},0.5]$ (15 logarithmically spaced values) and horizons $L=1,\ldots,r-1$, and fits the exponent $\gamma=\mathrm d\log\sigma^{+}_{\min}/\mathrm d\log\lambda$ on $\lambda\le0.05$.
-The singular values are computed in the coordinates of the basis $e_j-e_0$ ($j=1,\ldots,r-1$) of the zero-mean subspace rather than in its induced Euclidean norm; this basis is not orthonormal, but its Gram matrix has eigenvalues $1$ and $r$, so every singular value changes by a $\lambda$-independent factor in $[1,\sqrt r]$ and the fitted exponents are unaffected.
+The singular values are computed in the coordinates of the basis $e_j-e_0$ ($j=1,\ldots,r-1$) of the zero-mean subspace rather than in its induced Euclidean norm; this basis is not orthonormal, but its Gram matrix has eigenvalues $1$ and $r$, so every singular value changes by a factor in $[1,\sqrt r]$ for every $\lambda$, and the asymptotic exponents are unaffected; the fitted exponents are computed in these coordinates.
 \Cref{tab:queue-exponents} compares the fits with the prediction $\gamma=L_q$ of \cref{conj:conditioning}: the largest deviation across all $35$ scheme--horizon pairs is $0.05$.
 The measurements are consistent with the conjectured law in both regimes; they support the conjecture but do not prove it.
+At the two working grids the exponent itself is verified exactly: for all seven single-stage operators, $(P,r)\in\{(8,6),(8,8)\}$, and every $L=1,\ldots,r-1$, the $\lambda$-adic Smith form of the polynomial matrix $\OL\iota_K$ gives an exact asymptotic exponent of $\sigma^{+}_{\min}$ equal to $L_q$, and exactly $3$ for WENO5-LIN + SSP-RK3 at $L=1$ (independent certificate \texttt{certificates/certify\_dissipation\_conditioning\_erasure.py} of the reproducibility package).
+\Cref{conj:conditioning} is therefore verified exactly at these grids and open in general.
 
 \begin{table}[htbp]
 \centering
@@ -1008,7 +978,7 @@ $\max_k|g(\theta_k)|$ on a dense frequency grid ($N=2048$) over $\lambda=0.05,\l
 For this pairing, the scan is superseded by \emph{E4e}, the exact two-region Bernstein certificate of \cref{prop:rk3-stability} (decomposition verified exactly; $S\ge0.1440$ on $[-1,1]\times[0,\tfrac12]$ and $Q/\lambda\ge\tfrac1{24}$ on $[-1,1]\times[\tfrac12,1]$, one Bernstein cell each), for which the grid scan is now merely an independent cross-check.
 \emph{(c) The $N^{-2s}$ law.}
 \Cref{fig:erasure-rates} reports $|1-\rho_N|$ for $N\in\{24,48,96,192,384\}$ at $\lambda\in\{0.5,0.9\}$.
-Log--log slopes fitted on the last three $N$ match $-2s$ to three decimals for every stable scheme ($-2.000$, $-4.000$, $-6.000$, and $-5.999$ for UB5 at $\lambda=0.9$; WENO5-LIN + SSP-RK3 $-4.009$ and $-4.001$), and the ratio $(1-\rho_N)/[\tfrac12A(\lambda)\theta_1^{2s}]$ at $N=384$ lies in $[0.9999,1.0009]$ for all schemes and both $\lambda$.
+Log--log slopes fitted on the last three $N$ lie within $10^{-2}$ of $-2s$ for every stable scheme ($-2.000$, $-4.000$, $-6.000$, and $-5.999$ for UB5 at $\lambda=0.9$; WENO5-LIN + SSP-RK3 $-4.009$ and $-4.001$), and the ratio $(1-\rho_N)/[\tfrac12A(\lambda)\theta_1^{2s}]$ at $N=384$ lies in $[0.9999,1.0009]$ for all schemes and both $\lambda$.
 For UB5 at $\lambda=0.9$ these two values are evaluated in high-precision arithmetic ($0.99994$ and $-5.9994$): there $1-\rho_{384}\approx3\times10^{-14}$, which double precision does not resolve, and the double-precision entries of \texttt{erasure\_rate\_fits.csv} ($0.989$ and $-6.007$) carry that rounding error.
 WENO5-LIN + FE shows the predicted pathology: $\rho_N-1\approx+0.19$ at $\lambda=\tfrac12$, flat in $N$ (interior-frequency maximum).
 \emph{(d) Step flattening.}
@@ -1021,7 +991,7 @@ The step-function tail itself is a mode mixture and is pre-asymptotic at this ho
 \centering
 \includegraphics[width=0.85\textwidth]{figures/erasure_rates.pdf}
 \caption{E4c: $|1-\rho_N|$ versus $N$ (log--log) at $\lambda=0.5$ (left) and $0.9$ (right).
-Slopes match the dissipative orders $-2s$ of \cref{prop:dissipation} to three decimals; the flat top curve is the WENO5-LIN + FE instability ($\rho_N>1$, $N$-independent).
+Slopes lie within $10^{-2}$ of the dissipative orders $-2s$ of \cref{prop:dissipation}; the flat top curve is the WENO5-LIN + FE instability ($\rho_N>1$, $N$-independent).
 At $\lambda=0.5$ the four $2s=4$ semi-Lagrangian members overlay: LW/BW and FR/UB3 coincide pairwise exactly at this $\lambda$, and the two pairs share the leading coefficient $A=\tfrac3{64}$ (\cref{rem:coefficient-structure}(iii)).}
 \label{fig:erasure-rates}
 \end{figure}
@@ -1040,7 +1010,7 @@ Only four of the seven curves are distinguishable: at $\lambda=\tfrac12$ LW/BW a
 
 E5 repeats the delayed-collision experiment of \cite{PolemitisChristakisDrikakis2026FVerasure} across the family ($P=8$, $r=6$, $N=48$, $\lambda=\tfrac12$, detection threshold $\zeta=10^{-12}$).
 For each scheme and each admissible depth $t_0\le\lfloor(r-1)/w\rfloor$, the sharp compensated pair of \cref{cor:detection-delay} ($v=e_{j_2}-e_{j_1}$, $j_2=r-t_0m_L$, $j_1=t_0m_R$) evolves for $3\times10^5$ steps and its coarse trace $\|R(\Asch)^nv\|_2$ is recorded (\cref{fig:delayed-collisions}).
-Across the $12$ (scheme, depth) pairs with $t_0\ge1$ the first separation occurs \emph{exactly} at the predicted step $t^\ast=t_0$ --- coarse averages are zero to roundoff ($\sim10^{-17}$) through step $t_0-1$ and jump to $O(10^{-1})$ at $t_0$ --- confirming the sharpness of the detection-delay law for the prescribed pairs: geometric shielding of five steps for UW1 ($t_0=1,\ldots,5$), two for LW and BW, and one for FR, UB3, and UB5.
+Across the $12$ (scheme, depth) pairs with $t_0\ge1$ the first separation occurs \emph{exactly} at the predicted step $t^\ast=t_0$ --- coarse averages are zero to roundoff ($\sim10^{-17}$) through step $t_0-1$ and jump to between $3\times10^{-3}$ and $0.12$ at $t_0$ --- confirming the sharpness of the detection-delay law for the prescribed pairs: geometric shielding of five steps for UW1 ($t_0=1,\ldots,5$), two for LW and BW, and one for FR, UB3, and UB5.
 WENO5-LIN + SSP-RK3, whose tripled reach ($w=15>r-1$) admits no shielding at all at this refinement ratio ($t_0=0$), is detected immediately, at the first step, as predicted.
 
 \Cref{tab:half-life} reports the main diagnostic announced in \cref{rem:double-penalty}.
@@ -1201,7 +1171,7 @@ The worst-case global delay $r-1$ is again universal, but the prescribed deepest
 Within the tested family, wider effective reach shortens the geometric shielding time of the prescribed localized perturbations, but it does not accelerate the global observation-rank ladder.
 
 Recoverability is where scheme choice matters most given a fixed memory dimension.
-The conditioning of delayed information is set by the exposure depth, $\sigma^{+}_{\min}({\cal O}_{L_q}\iota_K)\asymp\lambda^{L_q}$ (\cref{conj:conditioning} --- conjectured on the single-parent observation map for single-stage operators, supported within $0.05$ in every fitted exponent by E3), so a second collar halves the exponent: under this law, recovering the deepest saturated direction costs a tolerance of $\lambda^{3}$ for every two-collar single-stage scheme against $\lambda^{5}$ for first-order upwind --- four orders of magnitude of headroom at $\lambda=10^{-2}$.
+The conditioning of delayed information is set by the exposure depth, $\sigma^{+}_{\min}({\cal O}_{L_q}\iota_K)\asymp\lambda^{L_q}$ (\cref{conj:conditioning} --- conjectured on the single-parent observation map for single-stage operators, supported within $0.05$ in every fitted exponent by E3 and verified exactly at the two working grids), so a second collar halves the exponent: under this law, recovering the deepest saturated direction costs a tolerance of $\lambda^{3}$ for every two-collar single-stage scheme against $\lambda^{5}$ for first-order upwind --- four orders of magnitude of headroom at $\lambda=10^{-2}$.
 The effective-rank ordering of E1 is the same phenomenon seen from above: Beam--Warming holds the full saturated rank at $\lambda=10^{-2}$, while Lax--Wendroff has already lost seven dimensions, although both share the exact ladder.
 E2 traces the dichotomy to first-order node geometry --- LW's purely imaginary node velocity collapses a class gap to $\sqrt3\,\lambda^2$ (measured $1.73\times10^{-4}$ at $\lambda=10^{-2}$), a loss repaired by none of the horizons tested and requiring far longer observation windows than first-order separation (\cref{rem:gramian}), whereas BW's injective node map keeps every class separated at first order.
 The warning of \cite{PolemitisChristakisDrikakis2026FVerasure} --- exact dimension should never be reported without its conditioning --- applies with more force across the hierarchy: the universal ladder makes schemes look identical exactly where they differ by orders of magnitude.
@@ -1242,7 +1212,7 @@ The encoder lower bounds are topological statements about continuous real-valued
 Several statements used or tested here remain conjectures or computer-assisted exact certificates rather than hand proofs, and are flagged as such in the text.
 \begin{enumerate}
 \item[(i)] The intermediate local rank law: the wrap-around upper bound is proved (\cref{lem:local-upper}), but its \emph{attainment} (\cref{conj:local-rank}) --- independence of the crossing functionals across parent boundaries --- is verified only numerically (exactly, at $r\in\{6,8\}$, E1c).
-\item[(ii)] The conditioning law $\sigma^{+}_{\min}({\cal O}_{L_q}\iota_K)\asymp\lambda^{L_q}$ for the single-stage operators (\cref{conj:conditioning}; equivalent to the collar-to-queue form within the single-parent window $L_qw\le r-1$) is supported to within $0.05$ in every fitted exponent (E3), but a two-sided proof needs quantitative singular-value bounds along the $\lambda$-order filtration of \cref{rem:lambda-orders}.
+\item[(ii)] The conditioning law $\sigma^{+}_{\min}({\cal O}_{L_q}\iota_K)\asymp\lambda^{L_q}$ for the single-stage operators (\cref{conj:conditioning}; equivalent to the collar-to-queue form within the single-parent window $L_qw\le r-1$) is supported to within $0.05$ in every fitted exponent (E3) and verified exactly at $(P,r)\in\{(8,6),(8,8)\}$ by an exact $\lambda$-adic computation of the exponent, but for general $(P,r)$ it is open: a two-sided proof needs quantitative singular-value bounds along the $\lambda$-order filtration of \cref{rem:lambda-orders}.
       It does not extend unchanged to multistage operators: for the WENO5-LIN + SSP-RK3 pairing, the exact local rank counts directions before they appear at the corresponding power of $\lambda$ ($\sigma^{+}_{\min}({\cal O}_1\iota_K)=O(\lambda^{3})$ with $L_3=1$, \cref{conj:conditioning}), and a conditioning law for multistage operators belongs to the time-integration study proposed under future work below.
 \item[(iii)] The collision-set emptiness certificate is analytic and grid-independent for UW1/LW/BW (\cref{prop:collision-empty}); for the wider stencils and the composed WENO5-LIN + SSP-RK3 pairing, it is an exact rational-arithmetic computation (\cref{prop:collision-certificate}, E1b) --- computer-assisted, without floating-point step --- but specific to the grid pairs examined, $(P,r)\in\{(8,6),(8,8)\}$.
       A grid-parameterized certificate, or a hand proof in the style of \cref{prop:collision-empty}, remains open.
@@ -1318,6 +1288,7 @@ The authors verified all cited sources, mathematical arguments, numerical result
 
 The complete reproducibility package for this study is publicly available in the Certified Simulation repository of the University of Nicosia, \url{https://github.com/UniversityOfNicosia/certified-simulation}, under \texttt{papers/coarse-observability-high-order}, as the frozen release tagged \texttt{coarse-observability-high-order-v1}.
 The package contains the Python scripts that generate every rank ladder, singular-value table, conditioning fit, erasure experiment, nonlinear ensemble, sensitivity sweep, CSV file, LaTeX table fragment, and figure reported in the manuscript, executable certificates that replay the paper's exact results (collision-set emptiness, interior stability of the SSP-RK3 pairing) in exact rational arithmetic, and instructions for reproducing the results.
+It also contains an independent certificate suite (\texttt{certificates/}), written from the manuscript's definitions alone, which re-derives the paper's exact results in exact arithmetic --- among them the conditioning exponents at the working grids --- and replays them against the committed outputs.
 The only dependencies are Python, NumPy, and Matplotlib; no external CFD solver or proprietary software is required.
 
 \section*{Supplementary information}

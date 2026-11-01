@@ -7,8 +7,6 @@ This module is part of the reproducibility package for the manuscript
     Reconstructions: Universal Rank, Conditioning, and
     Dissipative Memory
 
-(article_4, target: Advances in Computational Mathematics).
-
 Conventions
 -----------
 The PDE is u_t + a u_x = 0 with a > 0 and Courant number

@@ -1789,24 +1789,9 @@ def build_certificate() -> dict[str, Any]:
         "lambda_dependent_factor_cells": len(lambda_dependent_cells),
         "factor_ranges": factor_ranges,
     }
-    discrepancies.append(
-        {
-            "location": "sec:exp-conditioning (E3), new coordinate-convention sentence",
-            "claim": (
-                "the Gram matrix of e_j - e_0 has eigenvalues 1 and r, so every singular value changes "
-                "by a lambda-independent factor in [1, sqrt r] and the fitted exponents are unaffected"
-            ),
-            "finding": (
-                "eigenvalues 1 and r verified exactly and every factor lies in [1, sqrt 6], but the factor "
-                f"depends on lambda in {len(lambda_dependent_cells)} of 35 cells (LW, L=1: "
-                f"{lw_range['min_factor']} at lambda={lw_range['at_lambda']} to {lw_range['max_factor']} at "
-                f"lambda={lw_range['at_lambda_max']}); only the bound is lambda-independent; the asymptotic "
-                "exponents are unaffected (exact Smith exponents), but the finite-range fits move by up to "
-                f"{decimal_text(convention_fit_change, 2)} and {len(table_entries_changed)} two-decimal entries "
-                f"of tab:queue-exponents change ({'; '.join(table_entries_changed)})"
-            ),
-        }
-    )
+    # The 12 October wording states only the bound, "a factor in [1, sqrt r] for every
+    # lambda", says the asymptotic exponents are unaffected, and keeps the fits in the
+    # e_j - e_0 coordinates; the checks above verify each part.
 
     # Exclusion of WENO5-LIN + SSP-RK3 at L = 1.
     exclusion: dict[str, Any] = {}
@@ -2011,20 +1996,11 @@ def build_certificate() -> dict[str, Any]:
     )
     ub5_finding["exact_slope_last_three_N"] = slopes["ub5_lambda_0.9"]["exact_slope"]
     ub5_finding["authors_csv_slope"] = AUTHORS_ERASURE_SLOPES[("ub5", "0.9")]
-    remaining_quantifier = [
-        f"{n}_lambda_{lt}" for (n, lt), v in slope_values.items() if abs(v + orders[n]) >= Q(5, 10**4)
-    ]
-    discrepancies.append(
-        {
-            "location": "sec:exp-erasure, E4(c) slope sentence (wording)",
-            "claim": "slopes match -2s to three decimals for every stable scheme (... -5.999 for UB5 at lambda=0.9; WENO5-LIN + SSP-RK3 -4.009 and -4.001)",
-            "finding": (
-                "every quoted value is the exact three-decimal rounding, but the quantifier fails for "
-                f"the cells it lists ({', '.join(sorted(remaining_quantifier))}): exact slopes "
-                f"{slopes['ub5_lambda_0.9']['exact_slope']}, {slopes['weno5l_rk3_lambda_0.5']['exact_slope']}, "
-                f"{slopes['weno5l_rk3_lambda_0.9']['exact_slope']}; minor wording only"
-            ),
-        }
+    # E4(c) (12 October wording): the fitted slopes lie within 10^-2 of -2s for every stable
+    # scheme, both the exact slopes over the last three N and the authors' double-precision fits.
+    checks["e4_exact_and_authors_slopes_within_1e-2_of_minus_2s_every_stable_cell"] = all(
+        abs(v + orders[n]) < Q(1, 100) and abs(Q(AUTHORS_ERASURE_SLOPES[(n, lt)]) + orders[n]) < Q(1, 100)
+        for (n, lt), v in slope_values.items()
     )
 
     # Forward Euler: rho_N > 1, flat in N.

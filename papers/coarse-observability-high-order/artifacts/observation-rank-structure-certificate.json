@@ -1,6 +1,6 @@
 {
   "arithmetic": "fractions.Fraction and Python integers; exact ranks over Q; exact zero tests in Q[x]/Phi_N(x); rigorous outward-rounded fixed-point intervals (2^-320 grid) for cos/sin(2 pi v/N); tolerance zero for every exact statement",
-  "check_count": 258,
+  "check_count": 259,
   "checks": {
     "beam_warming_matches_section_2_display": true,
     "bw_local_ladder_jumps_by_two_at_L4": true,
@@ -60,6 +60,7 @@
     "detection_delay_kernel_dimensions_working_grids": true,
     "detection_delay_t0_zero_pair_detected_at_first_step": true,
     "detection_delay_twelve_pairs_with_t0_at_least_one_exact_at_t0": true,
+    "detection_jump_range_quoted_3e-3_to_0_12_rounds_exact_extremes": true,
     "detection_jump_sizes_exact_range_2_76e-3_to_0_118": true,
     "effective_support_nominal_on_open_interval_bw": true,
     "effective_support_nominal_on_open_interval_fromm": true,
@@ -620,13 +621,7 @@
       "separation_squared_at_detection": "26897761724479/1934917632000000"
     }
   },
-  "discrepancies": [
-    {
-      "claim": "coarse averages are zero to roundoff through step t0-1 and jump to O(10^-1) at t0",
-      "finding": "exact coarse separations ||R A^t0 v||_2 at lambda=1/2 range from 2.76e-3 (UB5, t0=1) and 3.68e-3 (BW, t0=2) to 0.118 (UW1, t0=1); 9 of the 12 pairs with t0>=1 jump to less than 0.05 (pre-existing clause, unchanged in the 5 October rebuild)",
-      "location": "sec:exp-collisions (E5), first paragraph"
-    }
-  ],
+  "discrepancies": [],
   "local_ranks": {
     "bw_r6_lambda_1": {
       "m_L": 1,
@@ -1717,7 +1712,7 @@
       ]
     }
   },
-  "passed": 258,
+  "passed": 259,
   "rank_cases": {
     "bw_P3_r4_lambda_1": {
       "class_node_counts": [

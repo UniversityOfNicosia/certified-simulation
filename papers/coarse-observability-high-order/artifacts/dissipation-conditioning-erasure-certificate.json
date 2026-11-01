@@ -1,6 +1,6 @@
 {
   "arithmetic": "fractions.Fraction and Python integers; exact polynomial identities in Q[x, lambda]; exact Smith exponents over Q[lambda]/(lambda^12); exact Sturm brackets; rigorous outward-rounded intervals (2^-320 grid) for cos(2 pi v/N), pi (Machin), square roots (integer isqrt) and logarithms (atanh series with tail bounds)",
-  "check_count": 110,
+  "check_count": 111,
   "checks": {
     "amplitude_series_two_routes_agree_bw": true,
     "amplitude_series_two_routes_agree_fromm": true,
@@ -35,6 +35,7 @@
     "e3_coordinate_to_induced_factor_within_1_and_sqrt_r_all_350_cells": true,
     "e3_factor_depends_on_lambda_lw_L1_1_174_to_1_807": true,
     "e3_finite_range_fits_change_up_to_8_4e-3_three_table_entries": true,
+    "e4_exact_and_authors_slopes_within_1e-2_of_minus_2s_every_stable_cell": true,
     "erasure_N384_defect_theta_series_route_overlaps_cosine_route": true,
     "erasure_csv_one_minus_rho_within_8_units_of_2^-53": true,
     "erasure_maximum_attained_at_k_1_strictly_all_N": true,
@@ -2149,18 +2150,7 @@
       ]
     }
   },
-  "discrepancies": [
-    {
-      "claim": "the Gram matrix of e_j - e_0 has eigenvalues 1 and r, so every singular value changes by a lambda-independent factor in [1, sqrt r] and the fitted exponents are unaffected",
-      "finding": "eigenvalues 1 and r verified exactly and every factor lies in [1, sqrt 6], but the factor depends on lambda in 33 of 35 cells (LW, L=1: 1.1737e+0 at lambda=1/1000 to 1.8074e+0 at lambda=1/2); only the bound is lambda-independent; the asymptotic exponents are unaffected (exact Smith exponents), but the finite-range fits move by up to 8.4e-3 and 3 two-decimal entries of tab:queue-exponents change (lw_L1: 1.01 -> 1.00; bw_L5: 3.95 -> 3.94; ub5_L1: 1.00 -> 0.99)",
-      "location": "sec:exp-conditioning (E3), new coordinate-convention sentence"
-    },
-    {
-      "claim": "slopes match -2s to three decimals for every stable scheme (... -5.999 for UB5 at lambda=0.9; WENO5-LIN + SSP-RK3 -4.009 and -4.001)",
-      "finding": "every quoted value is the exact three-decimal rounding, but the quantifier fails for the cells it lists (ub5_lambda_0.9, weno5l_rk3_lambda_0.5, weno5l_rk3_lambda_0.9): exact slopes -5.9993735e+0, -4.0089548e+0, -4.0008052e+0; minor wording only",
-      "location": "sec:exp-erasure, E4(c) slope sentence (wording)"
-    }
-  ],
+  "discrepancies": [],
   "dissipation": {
     "bw": {
       "A": "1/2*lam^1 + -5/4*lam^2 + 1*lam^3 + -1/4*lam^4",
@@ -2922,7 +2912,7 @@
       "retention_vs_uw1": "2.6618033e+3"
     }
   },
-  "passed": 110,
+  "passed": 111,
   "queue_exponent_refits_from_exact_sigma": {
     "bw_L1": {
       "authors_fit": "0.9965743365175631",

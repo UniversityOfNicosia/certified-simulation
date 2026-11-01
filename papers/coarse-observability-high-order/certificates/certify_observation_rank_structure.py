@@ -1253,16 +1253,11 @@ def build_certificate() -> dict[str, Any]:
         and max(deep.values()) == Q(1, 72) == deep["uw1_t0_1"]
         and len(below) == 9
     )
-    discrepancies.append(
-        {
-            "location": "sec:exp-collisions (E5), first paragraph",
-            "claim": "coarse averages are zero to roundoff through step t0-1 and jump to O(10^-1) at t0",
-            "finding": (
-                "exact coarse separations ||R A^t0 v||_2 at lambda=1/2 range from 2.76e-3 (UB5, "
-                "t0=1) and 3.68e-3 (BW, t0=2) to 0.118 (UW1, t0=1); 9 of the 12 pairs with t0>=1 "
-                "jump to less than 0.05 (pre-existing clause, unchanged in the 5 October rebuild)"
-            ),
-        }
+    # sec:exp-collisions (12 October wording): "jump to between 3x10^-3 and 0.12 at t0".
+    # The exact extremes round to those values at one and two significant figures.
+    checks["detection_jump_range_quoted_3e-3_to_0_12_rounds_exact_extremes"] = (
+        Q(25, 10**4) ** 2 <= min(deep.values()) < Q(35, 10**4) ** 2
+        and Q(115, 1000) ** 2 <= max(deep.values()) < Q(125, 1000) ** 2
     )
 
     check_count = len(checks)

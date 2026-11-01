@@ -77,7 +77,7 @@ python papers/coarse-observability-high-order/certificates/certify_observation_r
 python papers/coarse-observability-high-order/certificates/certify_dissipation_conditioning_erasure.py
 ```
 
-The two scripts run 368 exact checks between them and use only the
+The two scripts run 370 exact checks between them and use only the
 Python standard library. They cover the universal rank ladder, the
 invisible subspace, the local ranks, the spectral-collision
 certificate, the dissipation coefficients, interior stability, the

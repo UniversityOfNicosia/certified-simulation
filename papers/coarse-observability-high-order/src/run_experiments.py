@@ -1,5 +1,5 @@
 """
-Numerical experiments for article_4 (Advances in Computational Mathematics).
+Numerical experiments for the coarse-observability manuscript.
 
 Currently implemented
 ---------------------
@@ -74,8 +74,8 @@ E5  Delayed collisions and information half-life.
     and the measured peak-to-half decay; tail decay rate vs. rho_N.  Headline
     table: hiding time vs. retention factor relative to UW1.
 
-Outputs (written to article_4/results and article_4/figures)
-------------------------------------------------------------
+Outputs (written to ../results and ../figures)
+----------------------------------------------
     results/rank_ladders_linear.csv
     results/rank_collision_catalogue.csv
     results/collision_certificate.csv
@@ -133,7 +133,7 @@ import certificates as cert
 import nonlinear as nl
 import schemes as sch
 
-BASE = Path(__file__).resolve().parent.parent   # article_4/
+BASE = Path(__file__).resolve().parent.parent   # the paper folder
 RESULTS = BASE / "results"
 FIGURES = BASE / "figures"
 

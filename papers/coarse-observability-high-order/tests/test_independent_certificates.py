@@ -48,10 +48,12 @@ PUBLISHED_SHA256 = {
     "tables/half_life.tex": "7e2dcdda2dacb584c57379a0faa27a6bbb227b4ee2dd7a5c59659f657da0b214",
 }
 
-# Values quoted in article.tex (5 October 2026 rebuild) that the certificates verify, with
+# Values quoted in article.tex (12 October 2026 rebuild) that the certificates verify, with
 # the number of times each must occur: E4(c) and the proof of prop:contraction-general,
-# E5 in sec:exp-collisions, the E3 convention sentence, and the UB5 retention ratio in
-# rem:double-penalty, tab:half-life and sec:discussion.
+# E5 in sec:exp-collisions, the E3 convention sentence and the exact verification of
+# conj:conditioning at the working grids, and the UB5 retention ratio in
+# rem:double-penalty, tab:half-life and sec:discussion. A count of 0 pins out wording
+# that an earlier rebuild used and the certificates showed to be inaccurate.
 MANUSCRIPT_QUOTES = {
     r"$87{,}490$": 3,
     r"$87{,}500$": 0,
@@ -63,6 +65,14 @@ MANUSCRIPT_QUOTES = {
     r"($0.989$ and $-6.007$)": 1,
     r"the $12$ (scheme, depth) pairs with $t_0\ge1$": 1,
     r"its Gram matrix has eigenvalues $1$ and $r$": 1,
+    r"changes by a factor in $[1,\sqrt r]$ for every $\lambda$, and the asymptotic exponents are unaffected": 1,
+    r"$\lambda$-independent factor": 0,
+    r"lie within $10^{-2}$ of $-2s$ for every stable scheme": 1,
+    r"Slopes lie within $10^{-2}$ of the dissipative orders": 1,
+    r"to three decimals": 0,
+    r"jump to between $3\times10^{-3}$ and $0.12$ at $t_0$": 1,
+    r"jump to $O(10^{-1})$": 0,
+    r"is therefore verified exactly at these grids and open in general": 1,
 }
 
 _MODULES: dict[str, object] = {}

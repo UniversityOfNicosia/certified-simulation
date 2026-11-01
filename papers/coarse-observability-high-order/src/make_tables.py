@@ -2,7 +2,7 @@
 Regenerate the manuscript's numeric table bodies from the results CSVs.
 
 Writes LaTeX fragments (the rows between \\midrule and \\bottomrule) to
-article_4/results/tables/, so every number appearing in a table of
+../results/tables/, so every number appearing in a table of
 article.tex is machine-regenerable from the experiment artifacts:
 
     eff_rank_saturated.tex   tab:eff-rank-sat      (E2)
