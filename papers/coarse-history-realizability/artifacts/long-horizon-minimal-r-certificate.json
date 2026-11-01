@@ -34,39 +34,24 @@
       "AgdesteinVerstappenSanderse2026",
       "SanderseEtAl2025"
     ],
-    "findings": [
-      {
-        "claim": "note = {Manuscript submitted to Applied Numerical Mathematics}",
-        "finding": "stated status is inaccurate: as of 2026-10-08 the companion note has not been submitted; the repository records it as staged for sign-off, to be posted to arXiv and submitted after its release is frozen (papers/initial-trace-entropy-separation/README.md)",
-        "location": "references.bib entry PolemitisChristakisDrikakis2026OneStep (printed as [11])"
-      },
-      {
-        "claim": "eprint = {2608.08633}, archivePrefix = {arXiv}, url = {...}",
-        "finding": "the identifier is correct (arXiv:2608.08633, as recorded in papers/finite-horizon-memory/README.md) but the unsrt style prints none of eprint, archivePrefix or url, so reference [10] in Exact_lifting.pdf reads only 'Exact finite-horizon memory, ... prediction, 2026.' with no arXiv identifier or status; a note or howpublished field is needed",
-        "location": "references.bib entry polemitis2026exactfinitehorizonmemoryconditioning (printed as [10])"
-      },
-      {
-        "claim": "author fields Gallou{\"e}t and D{\"o}rfler",
-        "finding": "the umlaut macro lacks its backslash; Exact_lifting.pdf prints Gallou\"et and D\"orfler (a closing double quote before the vowel); the fields need {\\\"e} and {\\\"o}",
-        "location": "references.bib entries EymardGallouetHerbin2000 and MarkovskyDorfler2021 ([2], [14])"
-      }
-    ],
+    "findings": [],
     "missing_entries": [],
     "transcribed_fields": {
       "EymardGallouetHerbin2000": [
-        "Gallou{\"e}t"
+        "Gallou{\\\"e}t"
       ],
       "MarkovskyDorfler2021": [
-        "D{\"o}rfler"
+        "D{\\\"o}rfler"
       ],
       "PolemitisChristakisDrikakis2026OneStep": [
         "@misc{PolemitisChristakisDrikakis2026OneStep,",
-        "note={ManuscriptsubmittedtoAppliedNumericalMathematics},"
+        "year={2026}"
       ],
       "polemitis2026exactfinitehorizonmemoryconditioning": [
         "@misc{polemitis2026exactfinitehorizonmemoryconditioning,",
         "eprint={2608.08633},",
         "archivePrefix={arXiv},",
+        "note={arXiv:2608.08633},",
         "url={https://arxiv.org/abs/2608.08633}"
       ]
     }
@@ -77,7 +62,7 @@
     "authors_csv_row_2_matches_exact_residuals": true,
     "authors_csv_row_3_matches_exact_values": true,
     "authors_fragment_cells_match_table_1": true,
-    "authors_fragment_lacks_line_breaks_and_glues_rule_commands": true,
+    "authors_fragment_is_a_complete_line_structured_table": true,
     "bibliography_every_cited_key_has_an_entry": true,
     "bibliography_no_duplicate_entry_keys": true,
     "columns_by_integer_evolution_match_fraction_evolution": true,
@@ -236,13 +221,7 @@
     "thm_long_kernel_equals_N_r_dimension_r-1_P4_r4": true,
     "thm_long_kernel_equals_N_r_dimension_r-1_P4_r5": true
   },
-  "discrepancies": [
-    {
-      "claim": "the generated LaTeX table fragment reproduces Table 1 (Data and code availability: 'LaTeX table fragments supporting this study')",
-      "finding": "the fragment has no line terminators (one 327-byte line), so \\toprule and \\midrule run into the following cell text and TeX reads the undefined control words \\topruleCertificate and \\midruleNormalized; as provided it cannot be \\input. Its parameter cells are plain text ('lambda=1/2'), not math. Cell by cell the values agree with Table 1, which main.tex types by hand rather than inputting the fragment.",
-      "location": "experiments/tables/history_realizability_certificates.tex (generated body of tab:certificates)"
-    }
-  ],
+  "discrepancies": [],
   "example_nonrealizable": {
     "history": [
       [

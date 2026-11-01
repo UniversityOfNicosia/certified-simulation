@@ -39,7 +39,7 @@ LONG_ARTIFACT = "long-horizon-minimal-r-certificate.json"
 # The authors' generated outputs, hashed with line endings normalized to LF.
 PUBLISHED_SHA256 = {
     RESULTS_CSV: "279b31e3b2f97e5ebc92dd88fc9fbee820487d1d93c5c566f65d0d38a90bdaee",
-    TABLE_FRAGMENT: "a89cb83c86f6be64d09ba5513bbc54b364f7a3fa9004c804d3f58744087457e3",
+    TABLE_FRAGMENT: "7bb849ee685128b268e80b797a3017e569f271c03e30b59bdef2b54e52af3d24",
 }
 
 _MODULES: dict[str, object] = {}
@@ -161,10 +161,9 @@ def test_long_horizon_certificate_replays() -> None:
         f"L{h}": h + 1 for h in range(6)
     }
     assert document["kernel_ladders_lambda_1/2"]["P3_r4_lambda_1/2"] == [9, 7, 5, 3, 3, 3, 3, 3, 3, 3]
-    assert len(document["discrepancies"]) == 1
-    assert "history_realizability_certificates.tex" in document["discrepancies"][0]["location"]
+    assert document["discrepancies"] == []
     assert document["bibliography"]["missing_entries"] == []
-    assert len(document["bibliography"]["findings"]) == 3
+    assert document["bibliography"]["findings"] == []
     assert document["check_count"] == 162
 
 
@@ -210,9 +209,8 @@ def test_transcriptions_match_authors_outputs() -> None:
     fragment = TABLE_FRAGMENT.read_text(encoding="utf-8")
     assert fragment == long_.AUTHORS_TABLE_FRAGMENT
     assert short.AUTHORS_FRAGMENT_ROW_1 in fragment
-    # The recorded discrepancy: no line breaks, rule commands glued to cell text.
-    assert "\n" not in fragment
-    assert "\\topruleCertificate" in fragment and "\\midruleNormalized" in fragment
+    # The generated fragment is the manuscript's Table 1, verbatim.
+    assert fragment.rstrip("\n") in MANUSCRIPT.read_text(encoding="utf-8")
 
 
 def test_transcriptions_match_bibliography() -> None:
@@ -228,6 +226,9 @@ def test_transcriptions_match_bibliography() -> None:
     for key, fields in long_.BIB_FIELDS.items():
         for field in fields:
             assert field in entries[key], (key, field)
-    # The companion note's entry carries no arXiv identifier and the stated status.
+    # The companion note's entry states no status until it has an arXiv identifier,
+    # the first paper's entry prints its identifier, and no accent lacks its backslash.
     one_step = entries["PolemitisChristakisDrikakis2026OneStep"]
-    assert "eprint" not in one_step and "submittedtoAppliedNumericalMathematics" in one_step
+    assert "note=" not in one_step and "submitted" not in one_step.lower()
+    assert "note={arXiv:2608.08633}," in entries["polemitis2026exactfinitehorizonmemoryconditioning"]
+    assert '{"' not in bib

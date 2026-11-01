@@ -148,7 +148,7 @@ AUTHORS_CSV_LINE_1 = (
     'canonical_short_horizon_lift,"P=2, L=1, r=2, lambda=1/2",exact lift,'
     '"y0=(0,0), y1=(1,-1), x=(2,-2|-2,2)"'
 )
-AUTHORS_FRAGMENT_ROW_1 = r"Normalized short-horizon lift & P=2, L=1, r=2, lambda=1/2 & exact lift \\"
+AUTHORS_FRAGMENT_ROW_1 = r"Normalized short-horizon lift & \(P=2,\ L=1,\ r=2,\ \lambda=1/2\) & exact lift \\"
 
 
 def fill(template: str, values: Sequence[str]) -> str:
@@ -829,11 +829,7 @@ def build_certificate() -> dict[str, Any]:
         and parsed == {"y0": y[0], "y1": y[1], "x": x}
     )
     fragment_cells = [c.strip() for c in AUTHORS_FRAGMENT_ROW_1.removesuffix("\\\\").split("&")]
-    checks["authors_fragment_row_1_matches_table_row_1"] = fragment_cells == [
-        name,
-        params_tex.strip(r"\(\)").replace(r"\ ", " ").replace(r"\lambda", "lambda"),
-        result_tex,
-    ]
+    checks["authors_fragment_row_1_matches_table_row_1"] = fragment_cells == [name, params_tex, result_tex]
 
     # ------------------------------------------------------------------
     # The remark on algebraic versus stable lifting.
