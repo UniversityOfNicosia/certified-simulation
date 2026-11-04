@@ -236,7 +236,10 @@ BIB_FIELDS: dict[str, tuple[str, ...]] = {
     ),
     "PolemitisChristakisDrikakis2026OneStep": (
         r"@misc{PolemitisChristakisDrikakis2026OneStep,",
-        r"year={2026}",
+        r"year={2026},",
+        r"eprint={2611.04001},",
+        r"note={arXiv:2611.04001},",
+        r"url={https://arxiv.org/abs/2611.04001}",
     ),
     "EymardGallouetHerbin2000": (r'Gallou{\"e}t',),
     "MarkovskyDorfler2021": (r'D{\"o}rfler',),

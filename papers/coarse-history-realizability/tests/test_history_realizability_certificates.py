@@ -226,9 +226,9 @@ def test_transcriptions_match_bibliography() -> None:
     for key, fields in long_.BIB_FIELDS.items():
         for field in fields:
             assert field in entries[key], (key, field)
-    # The companion note's entry states no status until it has an arXiv identifier,
-    # the first paper's entry prints its identifier, and no accent lacks its backslash.
+    # Both companion entries print their arXiv identifiers, neither states a submission
+    # status, and no accent lacks its backslash.
     one_step = entries["PolemitisChristakisDrikakis2026OneStep"]
-    assert "note=" not in one_step and "submitted" not in one_step.lower()
+    assert "note={arXiv:2611.04001}," in one_step and "submitted" not in one_step.lower()
     assert "note={arXiv:2608.08633}," in entries["polemitis2026exactfinitehorizonmemoryconditioning"]
     assert '{"' not in bib

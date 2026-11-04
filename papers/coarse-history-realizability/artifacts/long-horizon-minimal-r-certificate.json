@@ -45,7 +45,10 @@
       ],
       "PolemitisChristakisDrikakis2026OneStep": [
         "@misc{PolemitisChristakisDrikakis2026OneStep,",
-        "year={2026}"
+        "year={2026},",
+        "eprint={2611.04001},",
+        "note={arXiv:2611.04001},",
+        "url={https://arxiv.org/abs/2611.04001}"
       ],
       "polemitis2026exactfinitehorizonmemoryconditioning": [
         "@misc{polemitis2026exactfinitehorizonmemoryconditioning,",
