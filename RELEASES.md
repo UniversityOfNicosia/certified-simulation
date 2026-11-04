@@ -27,5 +27,8 @@ recorded here on acceptance.
 `initial-trace-entropy-separation-v1` (9 October 2026) is archived at
 Zenodo: version DOI
 [10.5281/zenodo.23271075](https://doi.org/10.5281/zenodo.23271075).
-The paper will be posted to arXiv, and its identifier will be
-recorded here once assigned.
+The paper is posted at
+[arXiv:2611.04001](https://arxiv.org/abs/2611.04001)
+(DOI [10.48550/arXiv.2611.04001](https://doi.org/10.48550/arXiv.2611.04001)),
+produced from this release's source package. The journal identifier
+will be recorded here on acceptance.

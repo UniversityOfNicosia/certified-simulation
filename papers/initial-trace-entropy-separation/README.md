@@ -10,9 +10,9 @@ the entropy account, shown by an explicit Burgers–Rusanov family whose
 branches are conservatively identical yet entropy-distinguishable. It
 is the one-step companion to the program's
 [first paper](../finite-horizon-memory/) on multi-step memory. The
-release is frozen and archived; the note will be posted to arXiv and
-submitted to a journal, and identifiers will be recorded here as they
-become permanent.
+release is frozen and archived, and the note is posted at
+[arXiv:2611.04001](https://arxiv.org/abs/2611.04001). The journal identifier will be recorded here on
+acceptance.
 
 ## Contents
 
@@ -55,8 +55,13 @@ This folder is released as
 release carries the per-file hash manifest and the arXiv source
 package, and is archived at Zenodo under version DOI
 [10.5281/zenodo.23271075](https://doi.org/10.5281/zenodo.23271075).
-The arXiv identifier will be recorded here once the preprint is
-posted. The verification ladder for checking the release is in
+The posted preprint is
+[arXiv:2611.04001](https://arxiv.org/abs/2611.04001)
+(DOI [10.48550/arXiv.2611.04001](https://doi.org/10.48550/arXiv.2611.04001)),
+produced from this release's source package. arXiv's TeX installation
+prints one cross-reference to Lemma 4.2 as "Theorem 4.2" because the
+source loads cleveref before amsthm; the release PDF prints it
+correctly. The verification ladder for checking the release is in
 [REPRODUCING.md](../../REPRODUCING.md).
 
 ## Licensing
