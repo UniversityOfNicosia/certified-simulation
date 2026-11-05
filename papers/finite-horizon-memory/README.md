@@ -1,4 +1,4 @@
-# Exact Finite-Horizon Memory, Conditioning, and Dissipative Decay in Coarse Upwind Finite-Volume Prediction
+# Exact Finite-Horizon Memory, Conditioning, and Dissipative Decay of Coarse Upwind Finite-Volume Schemes
 
 The program's first paper, by Antonis Polemitis, Nicholas Christakis,
 and Dimitris Drikakis. It solves one family completely: for periodic
@@ -7,15 +7,24 @@ determines exactly what additional information coarse parent averages
 need for exact prediction, when the algebraically visible information
 is recoverable in practice, and how unresolved information decays
 under the scheme's own dissipation. The paper is posted at
-[arXiv:2608.08633](https://arxiv.org/abs/2608.08633) and is under
-journal submission; the journal identifier will be recorded here on
-acceptance.
+[arXiv:2608.08633](https://arxiv.org/abs/2608.08633); the journal
+identifier will be recorded here on acceptance.
+
+The manuscript in this folder is the paper's second version, staged
+for author sign-off. It carries the title and abstract the authors
+approved for journal submission and is set in Elsevier's elsarticle
+class; the body, theorems, proofs, figures, and references are
+unchanged apart from the experiments section, now titled "Numerical
+illustrations". The first version, titled "Exact Finite-Horizon Memory,
+Conditioning, and Dissipative Decay in Coarse Upwind Finite-Volume
+Prediction", is the frozen release `finite-horizon-memory-v1` described
+below.
 
 ## Contents
 
 | Directory | Contents | Status |
 | --- | --- | --- |
-| [`manuscript/`](manuscript/) | Paper source and the compiled PDF | staged |
+| [`manuscript/`](manuscript/) | Paper source (`article.tex`, `references.bib`), the compiled PDF, and the figures | second version staged for sign-off |
 | [`certificates/`](certificates/) | One exact-arithmetic certificate program per theorem | staged |
 | [`artifacts/`](artifacts/) | The certificates' canonical outputs, replayed byte-for-byte by CI | staged |
 | [`tests/`](tests/) | Replay tests: regenerate each certificate and require byte identity | staged |
@@ -55,6 +64,9 @@ The posted preprint is
 [arXiv:2608.08633](https://arxiv.org/abs/2608.08633)
 (DOI [10.48550/arXiv.2608.08633](https://doi.org/10.48550/arXiv.2608.08633)),
 produced from this release's source package.
+The second version will be released as `finite-horizon-memory-v2`
+once all three authors sign off, and posted as version 2 of the
+same arXiv identifier.
 The verification ladder for checking the release is in
 [REPRODUCING.md](../../REPRODUCING.md).
 

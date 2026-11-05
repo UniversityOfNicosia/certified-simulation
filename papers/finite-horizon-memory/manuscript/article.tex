@@ -1,87 +1,36 @@
-%Version 3.1 December 2024
-% See section 11 of the User Manual for version history
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%                                                                 %%
-%% Please do not use \input{...} to include other tex files.       %%
-%% Submit your LaTeX manuscript as one .tex document.              %%
-%%                                                                 %%
-%% All additional figures and files should be attached             %%
-%% separately and not embedded in the \TeX\ document itself.       %%
-%%                                                                 %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\PassOptionsToPackage{sort&compress}{natbib}% elsarticle loads natbib [numbers]
+\documentclass[preprint,12pt]{elsarticle}
 
-%%\documentclass[referee,sn-basic]{sn-jnl}% referee option is meant for double line spacing
-
-%%=======================================================%%
-%% to print line numbers in the margin use lineno option %%
-%%=======================================================%%
-
-%%\documentclass[lineno,pdflatex,sn-basic]{sn-jnl}% Basic Springer Nature Reference Style/Chemistry Reference Style
-
-%%=========================================================================================%%
-%% the documentclass is set to pdflatex as default. You can delete it if not appropriate.  %%
-%%=========================================================================================%%
-
-%%\documentclass[sn-basic]{sn-jnl}% Basic Springer Nature Reference Style/Chemistry Reference Style
-
-%%Note: the following reference styles support Namedate and Numbered referencing. By default the style follows the most common style. To switch between the options you can add or remove Numbered in the optional parenthesis. 
-%%The option is available for: sn-basic.bst, sn-chicago.bst%  
- 
-%%\documentclass[pdflatex,sn-nature]{sn-jnl}% Style for submissions to Nature Portfolio journals
-%%\documentclass[pdflatex,sn-basic]{sn-jnl}% Basic Springer Nature Reference Style/Chemistry Reference Style
-\documentclass[pdflatex,sn-mathphys-num]{sn-jnl}% Math and Physical Sciences Numbered Reference Style
-%%\documentclass[pdflatex,sn-mathphys-ay]{sn-jnl}% Math and Physical Sciences Author Year Reference Style
-%%\documentclass[pdflatex,sn-aps]{sn-jnl}% American Physical Society (APS) Reference Style
-%%\documentclass[pdflatex,sn-vancouver-num]{sn-jnl}% Vancouver Numbered Reference Style
-%%\documentclass[pdflatex,sn-vancouver-ay]{sn-jnl}% Vancouver Author Year Reference Style
-%%\documentclass[pdflatex,sn-apa]{sn-jnl}% APA Reference Style
-%%\documentclass[pdflatex,sn-chicago]{sn-jnl}% Chicago-based Humanities Reference Style
-
-%%%% Standard Packages
-%%<additional latex packages if required can be included here>
-
-\usepackage{graphicx}%
-\usepackage{multirow}%
-\usepackage{amsmath,amssymb,amsfonts}%
-\usepackage{amsthm}%
-\usepackage{mathrsfs}%
-\usepackage[title]{appendix}%
-\usepackage{xcolor}%
-\usepackage{textcomp}%
-\usepackage{manyfoot}%
-\usepackage{booktabs}%
-\usepackage{algorithm}%
-\usepackage{algorithmicx}%
-\usepackage{algpseudocode}%
-\usepackage{listings}%
-%%%%
-
-
-\makeatletter
-\@ifpackageloaded{geometry}%
-  {\geometry{a4paper,margin=1in}}%
-  {\usepackage[a4paper,margin=1in]{geometry}}
-\makeatother
-\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{amsthm}
+\usepackage{xcolor}
 \usepackage{booktabs}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{mathtools}
 \usepackage{subcaption}
 \usepackage{microtype}
-\usepackage[numbers,sort&compress]{natbib}
-\makeatletter
-\@ifpackageloaded{hyperref}%
-  {\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue,pdftitle={Exact Finite-Horizon Memory, Conditioning, and Dissipative Decay in Coarse Upwind Finite-Volume Prediction},pdfauthor={Antonis Polemitis, Nicholas Christakis, Dimitris Drikakis},}}%
-  {\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}\hypersetup{pdftitle={Exact Finite-Horizon Memory, Conditioning, and Dissipative Decay in Coarse Upwind Finite-Volume Prediction},pdfauthor={Antonis Polemitis, Nicholas Christakis, Dimitris Drikakis},}}
-\makeatother
-\makeatletter\let\orcidlogo\@undefined\makeatother
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{%
+  pdftitle={Exact Finite-Horizon Memory, Conditioning, and Dissipative Decay of Coarse Upwind Finite-Volume Schemes},%
+  pdfauthor={Antonis Polemitis, Nicholas Christakis, Dimitris Drikakis}}
+\urlstyle{rm}
 \usepackage{orcidlink}
 \usepackage[nameinlink]{cleveref}
+\usepackage{etoolbox}
 
+% Theorem environments (amsthm). Environment names, printed labels and
+% numbering (one independent counter per environment) are as in version 1.
+\theoremstyle{plain}
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}{Lemma}
 \newtheorem{proposition}{Proposition}
 \newtheorem{corollary}{Corollary}
 \newtheorem{remark}{Remark}
+\theoremstyle{remark}
+\newtheorem{example}{Example}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
 
 \newcommand{\R}{\mathbb R}
 \newcommand{\epsmach}{\epsilon_{\rm mach}}
@@ -89,94 +38,78 @@
 \DeclareMathOperator{\diag}{diag}
 \DeclareMathOperator{\TV}{TV}
 \DeclareMathOperator{\card}{card}
-%%%%%=============================================================================%%%%
-%%%%  Remarks: This template is provided to aid authors with the preparation
-%%%%  of original research articles intended for submission to journals published 
-%%%%  by Springer Nature. The guidance has been prepared in partnership with 
-%%%%  production teams to conform to Springer Nature technical requirements. 
-%%%%  Editorial and presentation requirements differ among journal portfolios and 
-%%%%  research disciplines. You may find sections in this template are irrelevant 
-%%%%  to your work and are empowered to omit any such section if allowed by the 
-%%%%  journal you intend to submit to. The submission guidelines and policies 
-%%%%  of the journal take precedence. A detailed User Manual is available in the 
-%%%%  template package for technical guidance.
-%%%%%=============================================================================%%%%
 
-%% as per the requirement new theorem styles can be included as shown below
-\theoremstyle{thmstyleone}%
-%\newtheorem{theorem}{Theorem}%  meant for continuous numbers
-%%\newtheorem{theorem}{Theorem}[section]% meant for sectionwise numbers
-%% optional argument [theorem] produces theorem numbering sequence instead of independent numbers for Proposition
-%\newtheorem{proposition}[theorem]{Proposition}% 
-%%\newtheorem{proposition}{Proposition}% to get separate numbers for theorem and proposition etc.
+\makeatletter
+% elsarticle's \paragraph appends a full stop to its title; the run-in
+% heading in the text already ends with one.
+\def\els@aparagraph[#1]#2{\elsparagraph[#1]{#2}}
+\def\els@bparagraph#1{\elsparagraph*{#1}}
+% Set section headings ragged right, so that a two-line heading is not
+% hyphenated.
+\patchcmd{\section}{\boldmath}{\boldmath\raggedright}{}%
+  {\@latex@error{Could not patch \string\section}\@ehc}
+% E-mail footnote.  elsarticle passes each \ead address through the .aux file,
+% so the footnote is missing from the first TeX pass, and a Tectonic build
+% started without article.aux then sets page 1 differently from (pdf/Xe)LaTeX.
+% Add each address to the footnote directly instead (old .aux lines are
+% ignored), and print the author's name there without the ORCID icon.
+\let\els@emailauthor\emailauthor
+\let\emailauthor\@gobbletwo
+\def\els@addemail#1#2{\els@emailauthor{#2}{{\let\orcidlink\@gobble\let\,\@empty#1}}}
+\gdef\@ead#1{\expandafter\els@addemail\expandafter{\the\@eadauthor}{#1}}
+% elsarticle's first-page footer ends with a stray space, which makes it
+% 2.6pt wider than the text block; remove that space.
+\let\els@ps@pprintTitle\ps@pprintTitle
+\def\ps@pprintTitle{\els@ps@pprintTitle
+  \let\els@oddfoot\@oddfoot
+  \def\@oddfoot{\els@oddfoot\unskip}%
+  \let\@evenfoot\@oddfoot}
+\makeatother
 
-\theoremstyle{thmstyletwo}%
-\newtheorem{example}{Example}%
-%\newtheorem{remark}{Remark}%
-
-\theoremstyle{thmstylethree}%
-\newtheorem{definition}{Definition}%
-
+% Allow a third line-breaking pass with extra stretch, so that paragraphs
+% that cannot otherwise be broken do not run into the margin.
+\setlength{\emergencystretch}{3em}
 \raggedbottom
-%%\unnumbered% uncomment this for unnumbered level heads
+
+\journal{Journal of Computational and Applied Mathematics}
 
 \begin{document}
 
-\title[Article Title]{Exact Finite-Horizon Memory, Conditioning, and Dissipative Decay in Coarse Upwind Finite-Volume Prediction}
+\begin{frontmatter}
 
-%%=============================================================%%
-%% GivenName	-> \fnm{Joergen W.}
-%% Particle	-> \spfx{van der} -> surname prefix
-%% FamilyName	-> \sur{Ploeg}
-%% Suffix	-> \sfx{IV}
-%% \author*[1,2]{\fnm{Joergen W.} \spfx{van der} \sur{Ploeg} 
-%%  \sfx{IV}}\email{iauthor@gmail.com}
-%%=============================================================%%
+\title{Exact Finite-Horizon Memory, Conditioning, and Dissipative Decay of Coarse Upwind Finite-Volume Schemes}
 
-\author[1]{\fnm{Antonis} \sur{Polemitis}\,\orcidlink{0000-0003-3188-8746}}\email{polemitis.an@unic.ac.cy}
+\author[evolve]{Antonis Polemitis\,\orcidlink{0000-0003-3188-8746}}
+\ead{polemitis.an@unic.ac.cy}
 
-\author*[2]{\fnm{Nicholas} \sur{Christakis}\,\orcidlink{0000-0001-9212-2336}}\email{christakis.n@unic.ac.cy}
-%\equalcont{These authors contributed equally to this work.}
+\author[iams]{Nicholas Christakis\corref{cor1}\,\orcidlink{0000-0001-9212-2336}}
+\ead{christakis.n@unic.ac.cy}
+\cortext[cor1]{Corresponding author.}
 
-\author[2]{\fnm{Dimitris} \sur{Drikakis}\,\orcidlink{0000-0002-3300-7669}}\email{drikakis.d@unic.ac.cy}
-%\equalcont{These authors contributed equally to this work.}
+\author[iams]{Dimitris Drikakis\,\orcidlink{0000-0002-3300-7669}}
+\ead{drikakis.d@unic.ac.cy}
 
-\affil[1]{\orgdiv{UNIC Evolve}, \orgname{University of Nicosia}, \city{Nicosia}, \postcode{CY-2417},  \country{Cyprus}}
+\affiliation[evolve]{organization={UNIC Evolve, University of Nicosia},
+            city={Nicosia},
+            postcode={CY-2417},
+            country={Cyprus}}
 
-\affil[2]{\orgdiv{Institute for Advanced Modelling and Simulation}, \orgname{University of Nicosia}, \city{Nicosia}, \postcode{CY-2417},  \country{Cyprus}}
+\affiliation[iams]{organization={Institute for Advanced Modelling and Simulation, University of Nicosia},
+            city={Nicosia},
+            postcode={CY-2417},
+            country={Cyprus}}
 
-%%==================================%%
-%% Sample for unstructured abstract %%
-%%==================================%%
+\begin{abstract}
+Coarse finite-volume averages do not generally form a predictive state: realized interface fluxes close a conservative update, but distinct fine-grid states with identical parent averages can generate different future coarse histories. For periodic scalar advection discretized by a first-order upwind finite-volume method with forward Euler time integration, we prove three exact results. First, a finite-horizon observation-rank law: each additional observation exposes one new child-cell layer and contributes one fewer independent direction than the number of parent cells, until the unresolved layers are exhausted; centralized prediction therefore requires one fewer additional coordinate than the number of parent cells per exposed layer, whereas product-local prediction requires one coordinate per layer in each parent, and an anchored flux-divergence queue attains the centralized bound, identifies the periodic flux gauge, and forms, at saturation, a minimal autonomous predictive state with the parent averages. Second, a conditioning theorem separating exact observability from stable recoverability: the collar-to-queue map becomes rapidly ill-conditioned as the Courant number decreases, so algebraically visible delayed information may fall below a prescribed numerical tolerance. Third, a sharp dissipative-decay theorem: for Courant numbers strictly between zero and one, the nonconstant component contracts under bounded arithmetic perturbations, with separate control of mean drift, an explicit perturbation neighborhood, and a grid-dependent decay time. Numerical illustrations accompany each theorem. The results provide exact reference points for assessing state sufficiency in coarse-grained, reduced, multiscale, and learned models.
+\end{abstract}
 
-\abstract{Coarse finite-volume averages do not generally form a predictive state:
-realized interface fluxes close a conservative update, but distinct fine-grid states with identical parent averages can generate different future coarse histories. We analyze this failure for periodic scalar
-advection discretized by a first-order upwind finite-volume method with forward Euler time integration. We derive a finite-horizon observation-rank law: each additional observation exposes one new child-cell layer and contributes one fewer independent direction than
-the number of parent cells, until the unresolved layers are exhausted. Centralized prediction therefore requires one fewer additional
-coordinate than the number of parent cells per exposed layer, whereas product-local prediction requires one coordinate per layer in each parent. An anchored flux-divergence queue attains the centralized bound,
-identifies the periodic flux gauge, and, at saturation, forms a minimal autonomous predictive state with the parent averages. We then distinguish exact observability from stable recoverability. The collar-to-queue map becomes rapidly ill-conditioned as the Courant number decreases, so algebraically visible delayed information may fall below a prescribed
-numerical tolerance. For Courant numbers strictly between zero and one, we prove contraction of the nonconstant component under bounded arithmetic perturbations, with separate control of mean drift, an
-explicit perturbation neighborhood, and a grid-dependent decay time. Numerical experiments illustrate the rank ladder, effective-rank loss, queue conditioning, step-function flattening, and delayed coarse separation followed by dissipative decay. The results provide a solvable benchmark for assessing state sufficiency in coarse, reduced, multiscale, and learned scientific models.}
+\begin{keyword}
+Finite-volume methods \sep Coarse graining \sep Predictive memory \sep
+Observability \sep Numerical dissipation \sep Stable recovery
+\MSC[2020] 65M08 \sep 65F35 \sep 93B07 \sep 65M12
+\end{keyword}
 
-%%================================%%
-%% Sample for structured abstract %%
-%%================================%%
-
-% \abstract{\textbf{Purpose:} The abstract serves both as a general introduction to the topic and as a brief, non-technical summary of the main results and their implications. The abstract must not include subheadings (unless expressly permitted in the journal's Instructions to Authors), equations or citations. As a guide the abstract should not exceed 200 words. Most journals do not set a hard limit however authors are advised to check the author instructions for the journal they are submitting to.
-% 
-% \textbf{Methods:} The abstract serves both as a general introduction to the topic and as a brief, non-technical summary of the main results and their implications. The abstract must not include subheadings (unless expressly permitted in the journal's Instructions to Authors), equations or citations. As a guide the abstract should not exceed 200 words. Most journals do not set a hard limit however authors are advised to check the author instructions for the journal they are submitting to.
-% 
-% \textbf{Results:} The abstract serves both as a general introduction to the topic and as a brief, non-technical summary of the main results and their implications. The abstract must not include subheadings (unless expressly permitted in the journal's Instructions to Authors), equations or citations. As a guide the abstract should not exceed 200 words. Most journals do not set a hard limit however authors are advised to check the author instructions for the journal they are submitting to.
-% 
-% \textbf{Conclusion:} The abstract serves both as a general introduction to the topic and as a brief, non-technical summary of the main results and their implications. The abstract must not include subheadings (unless expressly permitted in the journal's Instructions to Authors), equations or citations. As a guide the abstract should not exceed 200 words. Most journals do not set a hard limit however authors are advised to check the author instructions for the journal they are submitting to.}
-
-\keywords{Finite-volume methods, Coarse graining, Predictive memory, Observability, Numerical dissipation, Stable recovery}
-
-%%\pacs[JEL Classification]{D8, H51}
-
-\pacs[MSC Classification]{65M08, 65F35, 93B07, 65M12}
-
-\maketitle
+\end{frontmatter}
 
 \color{black}
 \section{Introduction} \label{intro}
@@ -1752,7 +1685,7 @@ The endpoint \(\lambda=1\) is excluded from \Cref{thm:erasure}.  In that
 case \(A_1=S\) is a unitary cyclic shift.  A step function translates without numerical flattening.
 \end{remark}
 
-\section{Numerical experiments}
+\section{Numerical illustrations}
 \label{sec:num_exp}
 
 The numerical experiments separate five effects and one consistency check.
@@ -2281,28 +2214,16 @@ hidden information available to the model, the prediction horizon, the
 floating-point tolerance, the numerical method, and whether the method
 preserves or erases unresolved information over that horizon.  This paper establishes that perspective in a scalar periodic model; the limitations and extensions identified in \Cref{sec:limitations} describe the natural next steps.
 
-\section*{Declarations}
-
-\subsection*{Funding}
-No external funding was received for this work.
-
-\subsection*{Competing interests}
+\section*{Declaration of competing interest}
 The authors declare that they have no financial or non-financial interests
 that are directly or indirectly related to the work submitted for
 publication.
 
-\subsection*{Author contributions}
+\section*{Author contributions}
 A.P. contributed to conceptualization, interpretation, verification, and writing.  N.C. contributed to conceptualization, mathematical analysis, numerical analysis, software, interpretation, verification, and writing.  D.D. contributed to conceptualization, numerical analysis, interpretation, verification, and writing.
 
-\section*{Acknowledgments}
-
-The authors used generative-AI tools in the course of this work, for
-literature discovery, adversarial review of the mathematical
-arguments, copyediting suggestions, and assistance with experiment
-and verification code.  The research questions, results, and
-conclusions are the authors' own.  The authors verified the cited
-sources, mathematical arguments, numerical results, and final text,
-and assume responsibility for all content.
+\section*{Funding}
+No external funding was received for this work.
 
 \section*{Data and code availability}
 
@@ -2318,11 +2239,17 @@ reproducing the results, and executable certificates that replay the
 paper's exact results in exact rational arithmetic.  No external CFD
 solver or proprietary software is required.
 
+\section*{Declaration of generative AI and AI-assisted technologies in the writing process}
 
+During the preparation of this work the authors used generative AI tools for
+literature discovery, adversarial review of the mathematical
+arguments, copyediting suggestions, and assistance with experiment
+and verification code.  The research questions, results, and
+conclusions are the authors' own.  The authors verified the cited
+sources, mathematical arguments, numerical results, and final text,
+and assume responsibility for all content.
 
-
-\bibliography{sn-bibliography}% common bib file
-%% if required, the content of .bbl file can be included here once bbl is generated
-%%\input sn-article.bbl
+\bibliographystyle{elsarticle-num}
+\bibliography{references}
 
 \end{document}
